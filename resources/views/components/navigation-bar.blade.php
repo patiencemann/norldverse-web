@@ -120,17 +120,30 @@
                     </li>
                 </ul>
 
-                <a href="{{ route('get.login') }}" data-tooltip-target="tooltip-discord-2"
-                    class="hidden sm:inline-block text-gray-500 dark:text-gray-400 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
-                </a>
-                <div id="tooltip-discord-2" role="tooltip"
-                    class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
-                    data-popper-placement="top"
-                    style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
-                    Login to your account
-                    <div class="tooltip-arrow" data-popper-arrow="" style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
-                </div>
+                @if (Auth::check())
+                    <a href="{{ route('post.logout') }}" data-tooltip-target="tooltip-discord-2"
+                        class="hidden sm:inline-block text-gray-500 dark:text-gray-400 bg-red-200 dark:hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 mr-1">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>                    </a>
+                    <div id="tooltip-discord-2" role="tooltip"
+                        class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-black bg-red-200 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
+                        data-popper-placement="top"
+                        style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
+                        Logout your account
+                        <div class="tooltip-arrow" data-popper-arrow="" style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
+                    </div>
+                @else
+                    <a href="{{ route('get.login') }}" data-tooltip-target="tooltip-discord-2"
+                        class="hidden sm:inline-block text-gray-500 dark:text-gray-400 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
+                    </a>
+                    <div id="tooltip-discord-2" role="tooltip"
+                        class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
+                        data-popper-placement="top"
+                        style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
+                        Login to your account
+                        <div class="tooltip-arrow" data-popper-arrow="" style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
+                    </div>
+                @endif
 
                 <a href="https://github.com/manirabona-programer" data-tooltip-target="tooltip-github-2"
                     class="hidden sm:inline-block text-gray-500 dark:text-gray-400 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
@@ -188,6 +201,16 @@
                     <div class="tooltip-arrow" data-popper-arrow=""
                         style="position: absolute; left: 0px; transform: translate(69px, 0px);"></div>
                 </div>
+
+                @if (Auth::check())
+                    <a href="{{ route('get.dashboard') }}" class="ml-3">
+                        <div id="tooltip-jese" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
+                            {{ Auth::user()->name }}
+                            <div class="tooltip-arrow" data-popper-arrow></div>
+                        </div>
+                        <img data-tooltip-target="tooltip-jese" class="w-10 h-10 rounded" src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name }}">
+                    </a>
+                @endif
 
                 {{-- <a href="/blogs" class="md:hidden inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-3" style="background: #bfd291">Articles</a> --}}
                 {{-- <a href="/blogs" class="hidden md:inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-3" style="background: #bfd291">Blogs & Articles</a> --}}

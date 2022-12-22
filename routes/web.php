@@ -18,12 +18,19 @@ use Illuminate\Support\Facades\Auth;
     |
     */
 
-    Route::get('/', [HomeController::class, 'index']);
+    Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/docs/1', [HomeController::class, 'singleDoc'])->name('get.doc');
-    Route::get('/oauth-login', [HomeController::class, 'login'])->name('get.login');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('get.dashboard');
 
-    Route::get('/init/git/oauth', [LoginController::class, 'initGitHubOauth'])->name('init.Git.oauth');
-    Route::get('/complete/oauth', [LoginController::class, 'completeGitHubOauth'])->name('complete.Git.oauth');
+    Route::get('/oauth-login', [HomeController::class, 'login'])->name('get.login');
+    Route::get('/oauth/{provider}', [LoginController::class, 'redirectToProvider'])->name('init.oauth');
+
+    Route::get('/complete/github/oauth', [LoginController::class, 'handleGithubCallback'])->name('complete.github.oauth');
+    Route::get('/complete/google/oauth', [LoginController::class, 'handleGoogleCallback'])->name('complete.google.oauth');
+
+    Route::group(['middleware' => 'auth'], function() {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('get.dashboard');
+        Route::get('/write-doc', [DashboardController::class, 'writeDoc'])->name('get.writable-doc');
+        Route::get('/logout', [LoginController::class, 'logout'])->name('post.logout');
+    });
 
     Auth::routes();

@@ -11,4 +11,11 @@
         public function index() {
             return view('pages.Auth.dashboard');
         }
+
+        /**
+         * Return dashboard view controller
+         */
+        public function writeDoc() {
+            return view('pages.Auth.write');
+        }
     }
