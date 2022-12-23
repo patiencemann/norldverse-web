@@ -1,6 +1,7 @@
 <?php
 
-    use Illuminate\Http\Request;
+    use App\Http\Controllers\DocCommentController;
+    use App\Http\Controllers\DocController;
     use Illuminate\Support\Facades\Route;
 
     /*
@@ -14,6 +15,23 @@
     |
     */
 
-    Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-        return $request->user();
+    Route::group(['middleware' => 'auth:api'], function() {
+        /**
+         * -----------------------------------------------
+         * Docs routes
+         * ------------------------------------------------
+         */
+        Route::post('/docs', [DocController::class, 'store'])->name('post.docs');
+        Route::get('/docs', [DocController::class, 'index'])->name('get.docs');
+        Route::delete('/docs/{doc}', [DocController::class, 'destroy'])->name('delete.docs');
+        Route::put('/docs/{doc}', [DocController::class, 'update'])->name('update.docs');
+
+        /**
+         * -----------------------------------------------
+         * Doc Comments routes
+         * ------------------------------------------------
+         */
+        Route::post('/comments', [DocCommentController::class, 'store'])->name('post.comments');
+        Route::get('/comments/{doc}', [DocCommentController::class, 'index'])->name('get.comments');
+        Route::delete('/comments/{doc}', [DocCommentController::class, 'destroy'])->name('delete.comments');
     });

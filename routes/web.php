@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoginController;
-use Illuminate\Auth\Events\Login;
-use Illuminate\Support\Facades\Auth;
+    use App\Http\Controllers\DashboardController;
+    use App\Http\Controllers\HomeController;
+    use App\Http\Controllers\LoginController;
+    use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
 
     /*
@@ -21,12 +20,27 @@ use Illuminate\Support\Facades\Auth;
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/docs/1', [HomeController::class, 'singleDoc'])->name('get.doc');
 
+     /**
+     * --------------------------------------
+     * OAuth pages Web route
+     * --------------------------------------
+     */
     Route::get('/oauth-login', [HomeController::class, 'login'])->name('get.login');
     Route::get('/oauth/{provider}', [LoginController::class, 'redirectToProvider'])->name('init.oauth');
 
+    /**
+     * --------------------------------------
+     * OAuth Authentication Web route
+     * --------------------------------------
+     */
     Route::get('/complete/github/oauth', [LoginController::class, 'handleGithubCallback'])->name('complete.github.oauth');
     Route::get('/complete/google/oauth', [LoginController::class, 'handleGoogleCallback'])->name('complete.google.oauth');
 
+    /**
+     * --------------------------------------
+     * Authenticated user Web route
+     * --------------------------------------
+     */
     Route::group(['middleware' => 'auth'], function() {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('get.dashboard');
         Route::get('/write-doc', [DashboardController::class, 'writeDoc'])->name('get.writable-doc');

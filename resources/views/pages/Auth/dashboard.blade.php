@@ -67,10 +67,11 @@
                                 </div>
                             </div>
                             <div class="flex items-center gap-x-2">
-                                <button type="button" class="inline-flex items-center justify-center h-9 px-5 rounded bg-gray-400 text-gray-900 hover:text-white hover:bg-gray-900 text-sm font-bold transition">
-                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                                    <span>Create new doc</span>
-                                </button>
+                                <div class="inline-flex rounded-md shadow-sm">
+                                    <a href="{{ route('get.writable-doc') }}" aria-current="page" class="py-2 px-4 text-md font-bold text-white bg-gray-700 rounded border border-gray-200 hover:bg-gray-900 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+                                        Create new Doc
+                                    </a>
+                                </div>
                             </div>
                         </div>
 
