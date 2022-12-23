@@ -23,7 +23,7 @@
                                         </div>
                                         <div id="w-node-_20de0388-c874-0d1d-b43f-a06cf864f8d6-fdadf31b"
                                             class="text-size-xsmall text-color-primary-2 text-style-allcaps">
-                                            5 min read
+                                            5 min read {message}
                                         </div>
                                     </div>
                                     <h2 class="heading-medium margin-24">

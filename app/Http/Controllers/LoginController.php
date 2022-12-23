@@ -2,14 +2,13 @@
 
     namespace App\Http\Controllers;
 
-    use Illuminate\Http\Request;
     use App\Providers\RouteServiceProvider;
     use Illuminate\Foundation\Auth\AuthenticatesUsers;
     use App\Models\User;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
-use Laravel\Socialite\Facades\Socialite;
+    use Carbon\Carbon;
+    use Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Facades\Session;
+    use Laravel\Socialite\Facades\Socialite;
 
     class LoginController extends Controller {
         /*
