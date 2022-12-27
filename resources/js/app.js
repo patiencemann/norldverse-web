@@ -21,6 +21,9 @@ window.Vue = require('vue').default;
 
 Vue.component('doc-card', require('./components/docCard.vue').default);
 Vue.component('doc-writer', require('./components/docWriter.vue').default);
+Vue.component('docs', require('./components/docs.vue').default);
+Vue.component('front-docs', require('./components/front-docs.vue').default);
+Vue.component('loader', require('./components/loader.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

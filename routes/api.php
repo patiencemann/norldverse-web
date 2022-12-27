@@ -15,6 +15,8 @@
     |
     */
 
+    Route::get('/public/docs', [DocController::class, 'public'])->name('get.docs');
+
     Route::group(['middleware' => 'auth:api'], function() {
         /**
          * -----------------------------------------------

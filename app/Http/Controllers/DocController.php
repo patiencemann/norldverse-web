@@ -5,6 +5,7 @@
     use App\Http\Requests\StoreDocRequest;
     use App\Http\Resources\DocResource;
     use App\Models\Doc;
+    use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
     class DocController extends Controller {
         /**
@@ -18,6 +19,17 @@
             );
         }
 
+         /**
+         * Display a listing of the resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function public() {
+            return DocResource::collection(
+                Doc::where('status', true)->orderBy('created_at', 'desc')->get()
+            );
+        }
+
         /**
          * Store a newly created resource in storage.
          *
@@ -25,7 +37,13 @@
          * @return \Illuminate\Http\Response
          */
         public function store(StoreDocRequest $request) {
+            $imageFile = Cloudinary::uploadFile(
+                $request->file('image')->getRealPath(),
+                $options = array('public_id' => 'patienceman-docs/' . $request->image)
+            )->getSecurePath();
+
             $doc = authUser()->docs()->create($request->validated());
+            $doc->docMedia()->create([ 'file_url' => $imageFile ]);
 
             return response()->json([
                 'data' => DocResource::make($doc),
@@ -77,7 +95,7 @@
          */
         public function destroy(Doc $doc) {
             $doc->delete();
-            
+
             return response()->json([
                 'message' => 'Doc deleted successfully'
             ]);
