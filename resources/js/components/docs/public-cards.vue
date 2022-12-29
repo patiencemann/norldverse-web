@@ -15,27 +15,34 @@
                                 {{ doc.created_at }}
                             </div>
                         </div>
-                        <div id="w-node-_50a8a0ce-14cc-e732-021c-a2cc147308a1-fdadf31b"
-                            class="text-size-xsmall text-color-primary-2 text-style-allcaps">
-                            5 min read
-                        </div>
+                        <read-time :text="doc.contents" />
                     </div>
                     <h2 class="heading-xsmall margin-16">{{ doc.title }}</h2>
-                    <p class="text-size-xlarge">{{ doc.caption }}</p>
+                    <p class="text-size-xlarge card-caption">{{ doc.caption }}</p>
                 </div>
             </a>
         </div>
     </div>
 </template>
 
+<style>
+    .card-caption {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+</style>
+
 <script>
-    import Loader from './loader.vue';
+    import Loader from '../common/loader.vue';
 
     export default {
         data() {
             return {
                 isLoading: false,
-                docs: []
+                docs: [],
+                timeToRead: 0
             }
         },
         components: {

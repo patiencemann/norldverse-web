@@ -2,6 +2,7 @@
 
     namespace App\Http\Controllers;
 
+    use App\Models\Doc;
     use Illuminate\Support\Facades\Auth;
 
     class HomeController extends Controller {
@@ -19,8 +20,8 @@
          *
          * @return \Illuminate\Contracts\Support\Renderable
          */
-        public function singleDoc() {
-            return view('pages.single-doc');
+        public function singleDoc(Doc $doc) {
+            return view('pages.single-doc', compact('doc'));
         }
 
         /**

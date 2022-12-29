@@ -50,25 +50,11 @@
             <div class="px-6 py-8">
                 <div class="max-w-4xl mx-auto">
                     <div class="bg-white rounded-3xl p-8 mb-5">
-                        <h1 class="text-3xl font-bold mb-10">PatienceMan Documents Forlder</h1>
+                        <h1 class="text-3xl font-bold mb-10">{{ authUser()->name }}'s Documents</h1>
                         <div class="flex items-center justify-between">
-                            <div class="flex items-stretch">
-                                <div class="text-gray-400 text-xs">Members<br>connected</div>
-                                <div class="h-100 border-l mx-4"></div>
-                                <div class="flex flex-nowrap -space-x-3">
-                                    <div class="h-9 w-9">
-                                        <img class="object-cover w-full h-full rounded-full"
-                                            src="https://ui-avatars.com/api/?background=random">
-                                    </div>
-                                    <div class="h-9 w-9">
-                                        <img class="object-cover w-full h-full rounded-full"
-                                            src="https://ui-avatars.com/api/?background=random">
-                                    </div>
-                                </div>
-                            </div>
                             <div class="flex items-center gap-x-2">
                                 <div class="inline-flex rounded-md shadow-sm">
-                                    <a href="{{ route('get.writable-doc') }}" aria-current="page" class="py-2 px-4 text-md font-bold text-white bg-gray-700 rounded border border-gray-200 hover:bg-gray-900 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
+                                    <a href="{{ route('get.writable-doc') }}" aria-current="page" class="py-2 px-4 text-md text-center font-bold text-white bg-gray-700 rounded border border-gray-200 hover:bg-gray-900 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">
                                         Create new Doc
                                     </a>
                                 </div>
@@ -79,8 +65,7 @@
 
                         <div class="grid grid-cols-2 gap-x-20">
                             {{-- all delived docs --}}
-                            <x-loader />
-                            <docs />
+                            <admin-cards />
                         </div>
                     </div>
                 </div>
