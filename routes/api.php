@@ -15,6 +15,14 @@
     |
     */
 
+    /**
+     * add comments feature
+     * add sentry for error and exception handling and reports
+     * Launch
+     */
+
+    Route::get('/public/docs', [DocController::class, 'public'])->name('get.docs');
+
     Route::group(['middleware' => 'auth:api'], function() {
         /**
          * -----------------------------------------------
@@ -23,6 +31,7 @@
          */
         Route::post('/docs', [DocController::class, 'store'])->name('post.docs');
         Route::get('/docs', [DocController::class, 'index'])->name('get.docs');
+        Route::get('/docs/{doc}', [DocController::class, 'show'])->name('get.doc');
         Route::delete('/docs/{doc}', [DocController::class, 'destroy'])->name('delete.docs');
         Route::put('/docs/{doc}', [DocController::class, 'update'])->name('update.docs');
 

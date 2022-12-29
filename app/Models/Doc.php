@@ -6,6 +6,7 @@
     use Illuminate\Database\Eloquent\Model;
     use Illuminate\Database\Eloquent\Relations\BelongsTo;
     use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
     class Doc extends Model {
         use HasFactory;
@@ -39,5 +40,14 @@
          */
         public function docComments(): HasMany {
             return $this->hasMany(DocComment::class);
+        }
+
+        /**
+         * Doc HasMany media
+         *
+         * @return HasOne
+         */
+        public function docMedia(): HasOne {
+            return $this->hasOne(DocMedia::class);
         }
     }

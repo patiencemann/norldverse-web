@@ -25,5 +25,9 @@
         "vue": "^2.7.14",
         "vue-loader": "^15.10.1",
         "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "@toast-ui/editor": "^3.2.1",
+        "codemirror": "^6.0.1"
     }
 }

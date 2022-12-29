@@ -2,7 +2,8 @@
 
     namespace App\Http\Resources;
 
-    use Illuminate\Http\Resources\Json\JsonResource;
+use App\Models\DocMedia;
+use Illuminate\Http\Resources\Json\JsonResource;
 
     class DocResource extends JsonResource {
         /**
@@ -18,6 +19,7 @@
                 'title' => $this->title,
                 'caption' => $this->caption,
                 'contents' => $this->contents,
+                'media' => DocMediaResource::make($this->docMedia),
                 'created_at' => $this->created_at->diffForHumans()
             ];
         }

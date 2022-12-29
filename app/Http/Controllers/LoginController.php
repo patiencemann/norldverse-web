@@ -70,7 +70,10 @@
          * @return  User
          */
         public function findOrCreateUser($providerUser, $providerName) {
-            $authUser = User::where('provider_id', $providerUser->id)->first();
+            $authUser = User::where('provider_id', $providerUser->id)
+                            ->where('provider', $providerName)
+                            ->where('email', $providerUser->email)
+                            ->first();
 
             if ($authUser) return $authUser;
 

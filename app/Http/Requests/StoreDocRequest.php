@@ -15,6 +15,7 @@
                 'title' => ['required', 'string'],
                 'caption' => ['required', 'string'],
                 'contents' => ['required', 'string'],
+                'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif']
             ];
         }
     }

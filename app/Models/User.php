@@ -3,7 +3,8 @@
     namespace App\Models;
 
     use Illuminate\Database\Eloquent\Factories\HasFactory;
-    use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Foundation\Auth\User as Authenticatable;
     use Illuminate\Notifications\Notifiable;
     use Laravel\Passport\HasApiTokens;
 
@@ -45,4 +46,22 @@
         protected $casts = [
             'email_verified_at' => 'datetime',
         ];
+
+        /**
+         * User hasMany docs
+         *
+         * @return HasMany
+         */
+        public function docs(): HasMany {
+            return $this->hasMany(Doc::class);
+        }
+
+        /**
+         * User hasMany comments
+         *
+         * @return HasMany
+         */
+        public function docComments(): HasMany {
+            return $this->hasMany(DocComment::class);
+        }
     }

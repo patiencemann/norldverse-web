@@ -33,11 +33,11 @@
                 <div class="flex justify-between items-center">
                     <a href="/" class="flex" data-tooltip-target="tooltip-logo-1">
                         <div class="cursor-pointer w-12">
-                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_5_marketing_svg1.svg"
-                                alt="logo">
+                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_5_marketing_svg1.svg" alt="logo">
                         </div>
-                        <span class="self-center text-2xl mt-2 font-semibold whitespace-nowrap dark:text-white ml-4"
-                            style="font-family: 'Anek Telugu', sans-serif; font-weight: 700">PatienceManDocs</span>
+                        <span class="self-center text-2xl mt-2 font-semibold whitespace-nowrap dark:text-white ml-4" style="font-family: 'Anek Telugu', sans-serif; font-weight: 700">
+                            Patienceman
+                        </span>
                     </a>
                     <div id="tooltip-logo-1" role="tooltip"
                         class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"

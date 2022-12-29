@@ -1,6 +1,7 @@
 <?php
 
     use App\Http\Controllers\DashboardController;
+    use App\Http\Controllers\DocController;
     use App\Http\Controllers\HomeController;
     use App\Http\Controllers\LoginController;
     use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,7 @@
     */
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
-    Route::get('/docs/1', [HomeController::class, 'singleDoc'])->name('get.doc');
+    Route::get('/docs/{doc}', [HomeController::class, 'singleDoc'])->name('get.doc');
 
      /**
      * --------------------------------------
@@ -44,6 +45,7 @@
     Route::group(['middleware' => 'auth'], function() {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('get.dashboard');
         Route::get('/write-doc', [DashboardController::class, 'writeDoc'])->name('get.writable-doc');
+        Route::get('/update-docs/{doc}', [DocController::class, 'edit'])->name('put.doc');
         Route::get('/logout', [LoginController::class, 'logout'])->name('post.logout');
     });
 

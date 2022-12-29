@@ -49,7 +49,7 @@
         <main class="ml-50 pt-10 max-h-screen overflow-auto">
             <div class="px-6 py-8">
                 <div class="max-w-4xl mx-auto">
-                    <doc-writer />
+                    <write-doc />
                 </div>
             </div>
         </main>
