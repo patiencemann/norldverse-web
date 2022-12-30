@@ -2,9 +2,10 @@
 
     namespace App\Http\Resources;
 
+    use App\Models\User;
     use Illuminate\Http\Resources\Json\JsonResource;
 
-    class DocResource extends JsonResource {
+    class DocCommentUserResource extends JsonResource {
         /**
          * Transform the resource into an array.
          *
@@ -13,13 +14,9 @@
          */
         public function toArray($request) {
             return [
-                'id' => $this->id,
-                'user' => UserResource::make($this->user),
-                'title' => $this->title,
-                'caption' => $this->caption,
-                'contents' => $this->contents,
-                'media' => DocMediaResource::make($this->docMedia),
-                'created_at' => $this->created_at->diffForHumans()
+                'user' => UserResource::make(
+                    User::getById($this->user_id)
+                ),
             ];
         }
     }
