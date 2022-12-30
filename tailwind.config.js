@@ -8,6 +8,9 @@ module.exports = {
     ],
     theme: {
         extend: {},
+        fontFamily: {
+            'anek': ['"Anek Telugu"', 'sans-serif']
+        },
     },
     plugins: [require("flowbite/plugin")],
 };

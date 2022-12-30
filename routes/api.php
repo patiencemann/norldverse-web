@@ -16,8 +16,10 @@
     */
 
     /**
-     * add comments feature
      * add sentry for error and exception handling and reports
+     * add roles and permissions
+     * fix the Oauth different issue
+     * use slag instead of ids
      * Launch
      */
 
@@ -40,7 +42,9 @@
          * Doc Comments routes
          * ------------------------------------------------
          */
-        Route::post('/comments', [DocCommentController::class, 'store'])->name('post.comments');
-        Route::get('/comments/{doc}', [DocCommentController::class, 'index'])->name('get.comments');
+        Route::post('/comments/{doc}', [DocCommentController::class, 'store'])->name('post.comments');
         Route::delete('/comments/{doc}', [DocCommentController::class, 'destroy'])->name('delete.comments');
     });
+
+    Route::get('/comments/{doc}', [DocCommentController::class, 'index'])->name('get.comments');
+    Route::get('/unique/comments/{doc}', [DocCommentController::class, 'unique'])->name('get.unique.comments');

@@ -15,7 +15,8 @@
             return [
                 'user' => UserResource::make($this->user),
                 'doc' => DocResource::make($this->doc),
-                'message' => $this->message
+                'message' => $this->message,
+                'created_at' => $this->created_at->format('M d, Y')
             ];
         }
     }

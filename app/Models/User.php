@@ -64,4 +64,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
         public function docComments(): HasMany {
             return $this->hasMany(DocComment::class);
         }
+
+        /**
+         * Get user by id
+         *
+         * @param Int $userId
+         * @return User
+         */
+        public static function getById(Int $userId) {
+            return User::where('id', $userId)->first();
+        }
     }

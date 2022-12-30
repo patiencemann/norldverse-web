@@ -4,8 +4,10 @@
 
     use App\Http\Requests\StoreDocCommentRequest;
     use App\Http\Resources\DocCommentResource;
+    use App\Http\Resources\DocCommentUserResource;
     use App\Models\Doc;
     use App\Models\DocComment;
+    use Illuminate\Http\Request;
 
     class DocCommentController extends Controller {
         /**
@@ -14,7 +16,26 @@
          * @return \Illuminate\Http\Response
          */
         public function index(Doc $doc) {
-            return DocCommentResource::collection($doc->docComments);
+            return DocCommentResource::collection(
+                $doc->docComments()
+                    ->orderBy('created_at', 'desc')
+                    ->get()
+            );
+        }
+
+        /**
+         * Display a listing of the resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function unique(Doc $doc, Request $request) {
+            return DocCommentUserResource::collection(
+                $doc->docComments()
+                    ->distinct()
+                    ->select('user_id')
+                    ->take($request->count ?? 50)
+                    ->get()
+            );
         }
 
         /**
@@ -54,7 +75,7 @@
          */
         public function destroy(DocComment $comment) {
             $comment->delete();
-            
+
             return response()->json([
                 'message' => "Doc Comment deleted successfully"
             ]);
