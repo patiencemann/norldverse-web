@@ -18,7 +18,6 @@
     */
 
     /**
-     * add sentry for error and exception handling and reports
      * use slag instead of ids
      * Launch
      */

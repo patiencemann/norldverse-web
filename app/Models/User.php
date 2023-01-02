@@ -8,10 +8,13 @@
     use Illuminate\Notifications\Notifiable;
     use Laravel\Passport\HasApiTokens;
     use Laratrust\Traits\LaratrustUserTrait;
+    use Illuminate\Support\Str;
 
     class User extends Authenticatable {
-        use LaratrustUserTrait;
-        use HasApiTokens, HasFactory, Notifiable;
+        use HasApiTokens,
+            HasFactory,
+            Notifiable,
+            LaratrustUserTrait;
 
         /**
          * The attributes that are mass assignable.
@@ -48,6 +51,17 @@
         protected $casts = [
             'email_verified_at' => 'datetime',
         ];
+
+        protected static function boot() {
+            parent::boot();
+
+            /**
+             * Generate doc slug
+             */
+            static::creating(function ($user) {
+                $user->slug = Str::lower(Str::slug($user->name)."_".Str::random(10));
+            });
+        }
 
         /**
          * User hasMany docs

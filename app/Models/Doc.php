@@ -6,7 +6,8 @@
     use Illuminate\Database\Eloquent\Model;
     use Illuminate\Database\Eloquent\Relations\BelongsTo;
     use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+    use Illuminate\Database\Eloquent\Relations\HasOne;
+    use Illuminate\Support\Str;
 
     class Doc extends Model {
         use HasFactory;
@@ -23,6 +24,17 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
             'contents',
             'status'
         ];
+
+        protected static function boot() {
+            parent::boot();
+
+            /**
+             * Generate doc slug
+             */
+            static::creating(function ($doc) {
+                $doc->slug = Str::lower(Str::slug($doc->title)."_".Str::random(10));
+            });
+        }
 
         /**
          * Doc belongs to user

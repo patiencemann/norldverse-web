@@ -13,6 +13,7 @@
         public function up() {
             Schema::create('doc_comments', function (Blueprint $table) {
                 $table->id();
+                $table->string('slug')->nullable();
                 $table->unsignedBigInteger('doc_id');
                 $table->unsignedBigInteger('user_id');
                 $table->longText('message');
