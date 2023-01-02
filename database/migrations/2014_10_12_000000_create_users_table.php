@@ -13,6 +13,7 @@
         public function up() {
             Schema::create('users', function (Blueprint $table) {
                 $table->id();
+                $table->string('slug')->nullable();
                 $table->string('name');
                 $table->string('email');
                 $table->timestamp('email_verified_at')->nullable();

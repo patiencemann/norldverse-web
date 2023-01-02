@@ -17,6 +17,7 @@
                 'name' => $this->name,
                 'email' => $this->email,
                 'avatar' => $this->avatar,
+                'provider' => $this->provider,
                 'created_at' => $this->created_at->diffForHumans()
             ];
         }

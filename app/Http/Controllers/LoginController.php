@@ -4,10 +4,8 @@
 
     use App\Providers\RouteServiceProvider;
     use Illuminate\Foundation\Auth\AuthenticatesUsers;
-    use App\Models\User;
+    use App\Services\AuthService;
     use Carbon\Carbon;
-    use Illuminate\Support\Facades\Auth;
-    use Illuminate\Support\Facades\Session;
     use Laravel\Socialite\Facades\Socialite;
 
     class LoginController extends Controller {
@@ -56,45 +54,29 @@
          */
         public function handleProviderCallback($provider) {
             $providerUser = Socialite::driver($provider)->user();
-            $authUser = $this->findOrCreateUser($providerUser, $provider);
-            Auth::login($authUser, true);
-            return redirect($this->redirectTo);
-        }
 
-        /**
-         * If a user has registered before using social auth, return the user
-         * else, create a new user object.
-         *
-         * @param  $user Socialite user object
-         * @param $provider Social auth provider
-         * @return  User
-         */
-        public function findOrCreateUser($providerUser, $providerName) {
-            $authUser = User::where('provider_id', $providerUser->id)
-                            ->where('provider', $providerName)
-                            ->where('email', $providerUser->email)
-                            ->first();
-
-            if ($authUser) return $authUser;
-
-            return User::create([
+            $authService = AuthService::handle([
                 'name' => $providerUser->name,
                 'email' => $providerUser->email,
-                'provider' => $providerName,
+                'provider' => $provider,
                 'provider_id' => $providerUser->id,
                 'provider_token' => $providerUser->token,
                 'provider_remember_token' =>$providerUser->refreshToken,
                 'email_verified_at' => Carbon::now(),
                 'avatar' => $providerUser->avatar
             ]);
+
+            $authUser = $authService->updateOrCreateUser();
+            $authService->login($authUser);
+
+            return redirect($this->redirectTo);
         }
 
         /**
          * Logout authenticated user
          */
         public function logout() {
-            Session::flush();
-            Auth::logout();
+            AuthService::logout();
             return redirect()->route('home');
         }
 

@@ -12,6 +12,7 @@
          */
         public function run() {
             $this->call([
+                LaratrustSeeder::class,
                 UserSeeder::class,
                 DocSeeder::class,
                 DocCommentSeeder::class

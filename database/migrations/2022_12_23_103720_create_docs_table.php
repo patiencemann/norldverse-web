@@ -13,6 +13,7 @@
         public function up() {
             Schema::create('docs', function (Blueprint $table) {
                 $table->id();
+                $table->string('slug')->nullable();
                 $table->unsignedBigInteger('user_id');
                 $table->string('title');
                 $table->longText('caption');
