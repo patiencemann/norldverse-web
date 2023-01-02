@@ -20,10 +20,10 @@
                 'email_verified_at' => now(),
                 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
                 'remember_token' => Str::random(10),
-                'provider_id' => $this->faker->numberBetween(2, 40),
-                'provider' => 'github',
-                'provider_token' => Str::random(10),
-                'provider_remember_token' => Str::random(10),
+                'provider_id' => defaultProvider()->id,
+                'provider' => defaultProvider()->name,
+                'provider_token' => defaultProvider()->token,
+                'provider_remember_token' => defaultProvider()->remember_token,
             ];
         }
 

@@ -27,5 +27,9 @@
             if (! $this->app->routesAreCached()) {
                 Passport::routes();
             }
+
+            Passport::tokensExpireIn(now()->addDays(15));
+            Passport::refreshTokensExpireIn(now()->addDays(30));
+            Passport::personalAccessTokensExpireIn(now()->addMonths(6));
         }
     }
