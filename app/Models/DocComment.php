@@ -29,7 +29,7 @@
              * Generate doc slug
              */
             static::creating(function ($comment) {
-                $comment->slug = Str::lower(Str::slug($comment->user()->name)."_comment_".Str::random(10));
+                $comment->slug = Str::lower(Str::slug($comment->user->name)."_comment_".Str::random(10));
             });
         }
 

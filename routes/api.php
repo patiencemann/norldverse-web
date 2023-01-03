@@ -3,7 +3,6 @@
     use App\Http\Controllers\DocCommentController;
     use App\Http\Controllers\DocController;
     use App\Http\Controllers\UserController;
-    use App\Models\Role;
     use Illuminate\Support\Facades\Route;
 
     /*
@@ -16,11 +15,6 @@
     | is assigned the "api" middleware group. Enjoy building your API!
     |
     */
-
-    /**
-     * use slag instead of ids
-     * Launch
-     */
 
     /**
      * -------------------------
@@ -80,7 +74,7 @@
          * ADMIN Routes
          * ---------------------------------------------
          */
-        Route::group(['middleware' => ['role:'.Role::ADMIN]], function() {
+        Route::group(['middleware' => ['hasAdminRole']], function() {
             /**
              * ---------------------------
              * Docs Routes

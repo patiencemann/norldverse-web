@@ -1,6 +1,6 @@
 @extends('layouts.guest')
 
-@section('title') Home @stop
+@section('title') {{ $doc->title }} @stop
 
 @section('content')
     <x-navigation-bar />

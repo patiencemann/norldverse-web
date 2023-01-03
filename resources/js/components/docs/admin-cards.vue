@@ -6,18 +6,7 @@
             <loader />
         </div>
 
-        <div class="-m-2 text-center">
-            <div class="p-5" v-if="hasResponse">
-                <div class="inline-flex items-center bg-white leading-none text-red-600 rounded-full p-2 shadow text-teal text-sm">
-                    <span class="inline-flex bg-red-600 text-white rounded-full py-2.5 px-3 justify-center items-center text-center">
-                        Delete
-                    </span>
-                    <span class="inline-flex px-2 font-bold text-md"
-                        v-text="response"
-                    ></span>
-                </div>
-            </div>
-        </div>
+        <alert :hasResponse="hasResponse" :response="response" :responseType="responseType" />
 
         <div class="space-y-4">
 
@@ -62,7 +51,8 @@
                 isLoading: false,
                 docs: [],
                 response: '',
-                hasResponse: false
+                hasResponse: false,
+                responseType: 'success'
             }
         },
         components: {
@@ -77,13 +67,21 @@
                 this.docs = response.data.data
             },
             async deleteDoc(docId) {
-                this.isLoading = true;
-                let response = await axios.delete(`/api/docs/${docId}`);
+                try{
+                    this.isLoading = true;
+                    let response = await axios.delete(`/api/docs/${docId}`);
+
+                    this.responseType = 'success';
+                    this.response = response.data.message;
+                    
+                    this.getDocs();
+                }catch(error){
+                    this.response = "something went wrong";
+                    this.responseType = 'error';
+                }
 
                 this.isLoading = false;
                 this.hasResponse = true;
-                this.response = response.data.message;
-                this.getDocs();
             }
         },
         beforeMount() {

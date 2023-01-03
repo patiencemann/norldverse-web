@@ -30,7 +30,7 @@
                 <loader />
             </div>
 
-            <alert :hasResponse="hasResponse" :response="response" responseType="success" />
+            <alert :hasResponse="hasResponse" :response="response" :responseType="responseType" />
         </div>
     </template>
 
@@ -41,7 +41,6 @@
             props: {
                 doc_identity: Number
             },
-            inheritAttrs: false,
             data() {
                 return {
                     data: {
@@ -53,6 +52,7 @@
                     response: "",
                     hasResponse: false,
                     isLoading: false,
+                    responseType: 'success'
                 };
             },
             methods: {
@@ -65,24 +65,29 @@
                     this.data.title = data.title;
                     this.data.caption = data.caption;
                     this.data.contents = data.contents;
-                    console.log(response.data)
                 },
 
                 // Create and store doc
                 async updateDoc() {
                     this.isLoading = true;
 
-                    let formData = new FormData;
-                        formData.append('title', this.data.title);
-                        formData.append('image', this.data.image);
-                        formData.append('caption', this.data.caption);
-                        formData.append('contents', this.data.contents);
+                    try{
+                        let formData = new FormData();
+                            formData.append('title', this.data.title);
+                            formData.append('image', this.data.image);
+                            formData.append('caption', this.data.caption);
+                            formData.append('contents', tinymce.get("tinymce").getContent());
 
-                    let response = await axios.put(`/api/docs/${this.doc_identity}`, formData);
+                        console.log(formData.entries)
+                        let response = await axios.put(`/api/docs/${this.doc_identity}`, formData);
+                        this.response = response.data.message;
+                    }catch(error){
+                        this.response = "Something went wrong, 😞🙏 try again later";
+                        this.responseType = 'error';
+                    }
 
                     this.isLoading = false;
                     this.hasResponse = true;
-                    this.response = response.data.message;
                 },
                 onFileChange(e) {
                     this.data.image = e.target.files[0];

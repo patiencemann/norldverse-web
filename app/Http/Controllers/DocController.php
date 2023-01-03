@@ -79,7 +79,13 @@
          * @return \Illuminate\Http\Response
          */
         public function update(StoreDocRequest $request, Doc $doc) {
-            $doc = $doc->update($request->validated());
+            $imageFile = Cloudinary::uploadFile(
+                $request->file('image')->getRealPath(),
+                $options = array('public_id' => 'patienceman-docs/' . $request->image)
+            )->getSecurePath();
+
+            $doc->update($request->validated());
+            $doc->docMedia()->update([ 'file_url' => $imageFile ]);
 
             return response()->json([
                 'data' => DocResource::make($doc),

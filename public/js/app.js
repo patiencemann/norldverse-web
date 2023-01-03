@@ -5327,7 +5327,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       comments: '',
       response: '',
       isLoading: false,
-      hasResponse: false
+      hasResponse: false,
+      responseType: 'success'
     };
   },
   methods: {
@@ -5339,32 +5340,34 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
+                _context.prev = 0;
                 _this.isLoading = true;
-                _context.next = 3;
+                _context.next = 4;
                 return axios.post("/api/comments/".concat(_this.doc), {
                   message: _this.comments
                 });
-              case 3:
+              case 4:
                 response = _context.sent;
                 _this.isLoading = false;
+                _this.hasResponse = true;
                 _this.response = response.data.message;
-                _this.enableAlert();
+                _this.responseType = 'success';
                 _this.comments = '';
                 _this.$root.$emit("docComments");
-              case 9:
+                _context.next = 17;
+                break;
+              case 13:
+                _context.prev = 13;
+                _context.t0 = _context["catch"](0);
+                _this.response = "something went wrong";
+                _this.responseType = 'error';
+              case 17:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, null, [[0, 13]]);
       }))();
-    },
-    enableAlert: function enableAlert() {
-      var _this2 = this;
-      this.hasResponse = true;
-      setTimeout(function () {
-        _this2.hasResponse = false;
-      }, 3000);
     }
   }
 });
@@ -5512,6 +5515,11 @@ __webpack_require__.r(__webpack_exports__);
     hasResponse: Boolean,
     response: String,
     responseType: String
+  },
+  methods: {
+    diableAlert: function diableAlert() {
+      this.hasResponse = false;
+    }
   }
 });
 
@@ -5668,7 +5676,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       isLoading: false,
       docs: [],
       response: '',
-      hasResponse: false
+      hasResponse: false,
+      responseType: 'success'
     };
   },
   components: {
@@ -5706,21 +5715,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
+                _context2.prev = 0;
                 _this2.isLoading = true;
-                _context2.next = 3;
+                _context2.next = 4;
                 return axios["delete"]("/api/docs/".concat(docId));
-              case 3:
+              case 4:
                 response = _context2.sent;
-                _this2.isLoading = false;
-                _this2.hasResponse = true;
+                _this2.responseType = 'success';
                 _this2.response = response.data.message;
                 _this2.getDocs();
-              case 8:
+                _context2.next = 14;
+                break;
+              case 10:
+                _context2.prev = 10;
+                _context2.t0 = _context2["catch"](0);
+                _this2.response = "something went wrong";
+                _this2.responseType = 'error';
+              case 14:
+                _this2.isLoading = false;
+                _this2.hasResponse = true;
+              case 16:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2);
+        }, _callee2, null, [[0, 10]]);
       }))();
     }
   },
@@ -5813,7 +5832,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   props: {
     doc_identity: Number
   },
-  inheritAttrs: false,
   data: function data() {
     return {
       data: {
@@ -5824,7 +5842,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       },
       response: "",
       hasResponse: false,
-      isLoading: false
+      isLoading: false,
+      responseType: 'success'
     };
   },
   methods: {
@@ -5846,8 +5865,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.data.title = data.title;
                 _this.data.caption = data.caption;
                 _this.data.contents = data.contents;
-                console.log(response.data);
-              case 10:
+              case 9:
               case "end":
                 return _context.stop();
             }
@@ -5865,24 +5883,34 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context2.prev = _context2.next) {
               case 0:
                 _this2.isLoading = true;
+                _context2.prev = 1;
                 formData = new FormData();
                 formData.append('title', _this2.data.title);
                 formData.append('image', _this2.data.image);
                 formData.append('caption', _this2.data.caption);
-                formData.append('contents', _this2.data.contents);
-                _context2.next = 8;
+                formData.append('contents', tinymce.get("tinymce").getContent());
+                console.log(formData.entries);
+                _context2.next = 10;
                 return axios__WEBPACK_IMPORTED_MODULE_0___default().put("/api/docs/".concat(_this2.doc_identity), formData);
-              case 8:
+              case 10:
                 response = _context2.sent;
+                _this2.response = response.data.message;
+                _context2.next = 18;
+                break;
+              case 14:
+                _context2.prev = 14;
+                _context2.t0 = _context2["catch"](1);
+                _this2.response = "Something went wrong, 😞🙏 try again later";
+                _this2.responseType = 'error';
+              case 18:
                 _this2.isLoading = false;
                 _this2.hasResponse = true;
-                _this2.response = response.data.message;
-              case 12:
+              case 20:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2);
+        }, _callee2, null, [[1, 14]]);
       }))();
     },
     onFileChange: function onFileChange(e) {
@@ -5925,7 +5953,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       },
       response: "",
       hasResponse: false,
-      isLoading: false
+      isLoading: false,
+      responseType: 'success'
     };
   },
   methods: {
@@ -5939,24 +5968,35 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 _this.isLoading = true;
+                _context.prev = 1;
                 formData = new FormData();
                 formData.append('title', _this.data.title);
                 formData.append('image', _this.data.image);
                 formData.append('caption', _this.data.caption);
                 formData.append('contents', tinymce.get("tinymce").getContent());
-                _context.next = 8;
+                _context.next = 9;
                 return axios__WEBPACK_IMPORTED_MODULE_0___default().post("/api/docs", formData);
-              case 8:
+              case 9:
                 response = _context.sent;
+                _this.responseType = "success";
+                _this.response = response.data.message;
+                window.location.href = '/dashboard';
+                _context.next = 19;
+                break;
+              case 15:
+                _context.prev = 15;
+                _context.t0 = _context["catch"](1);
+                _this.responseType = "error";
+                _this.response = "something went wrong";
+              case 19:
                 _this.isLoading = false;
                 _this.hasResponse = true;
-                _this.response = response.data.message;
-              case 12:
+              case 21:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, null, [[1, 15]]);
       }))();
     },
     onFileChange: function onFileChange(e) {
@@ -6061,7 +6101,7 @@ var render = function render() {
     attrs: {
       hasResponse: _vm.hasResponse,
       response: _vm.response,
-      responseType: "success"
+      responseType: _vm.responseType
     }
   })], 1)]);
 };
@@ -6236,20 +6276,79 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", {
-    staticClass: "-m-2 text-center"
-  }, [_vm.hasResponse ? _c("div", {
-    staticClass: "p-5"
-  }, [_c("div", {
-    staticClass: "inline-flex items-center bg-white leading-none text-green-600 rounded-full p-2 shadow text-teal text-sm"
-  }, [_c("span", {
-    staticClass: "inline-flex bg-green-600 text-white rounded-full py-2.5 px-3 justify-center items-center text-center"
-  }, [_vm._v("green")]), _vm._v(" "), _c("span", {
-    staticClass: "inline-flex px-2 font-bold text-md",
-    domProps: {
-      textContent: _vm._s(_vm.response)
+  return _vm.hasResponse ? _c("div", {
+    staticClass: "flex fixed z-30 bottom-2 right-4 items-center p-4 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800",
+    attrs: {
+      id: "toast-success",
+      role: "alert"
     }
-  })])]) : _vm._e()]);
+  }, [_vm.responseType == "success" ? _c("div", {
+    staticClass: "inline-flex flex-shrink-0 justify-center items-center w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200"
+  }, [_c("svg", {
+    staticClass: "w-5 h-5",
+    attrs: {
+      "aria-hidden": "true",
+      fill: "currentColor",
+      viewBox: "0 0 20 20",
+      xmlns: "http://www.w3.org/2000/svg"
+    }
+  }, [_c("path", {
+    attrs: {
+      "fill-rule": "evenodd",
+      d: "M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z",
+      "clip-rule": "evenodd"
+    }
+  })]), _vm._v(" "), _c("span", {
+    staticClass: "sr-only"
+  }, [_vm._v("Check icon")])]) : _c("div", {
+    staticClass: "inline-flex flex-shrink-0 justify-center items-center w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200"
+  }, [_c("svg", {
+    staticClass: "w-5 h-5",
+    attrs: {
+      "aria-hidden": "true",
+      fill: "currentColor",
+      viewBox: "0 0 20 20",
+      xmlns: "http://www.w3.org/2000/svg"
+    }
+  }, [_c("path", {
+    attrs: {
+      "fill-rule": "evenodd",
+      d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z",
+      "clip-rule": "evenodd"
+    }
+  })]), _vm._v(" "), _c("span", {
+    staticClass: "sr-only"
+  }, [_vm._v("Error icon")])]), _vm._v(" "), _c("div", {
+    staticClass: "ml-3 text-sm font-normal"
+  }, [_vm._v(_vm._s(_vm.response))]), _vm._v(" "), _c("button", {
+    staticClass: "ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700",
+    attrs: {
+      type: "button",
+      "data-dismiss-target": "#toast-success",
+      "aria-label": "Close"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.diableAlert();
+      }
+    }
+  }, [_c("span", {
+    staticClass: "sr-only"
+  }, [_vm._v("Close")]), _vm._v(" "), _c("svg", {
+    staticClass: "w-5 h-5",
+    attrs: {
+      "aria-hidden": "true",
+      fill: "currentColor",
+      viewBox: "0 0 20 20",
+      xmlns: "http://www.w3.org/2000/svg"
+    }
+  }, [_c("path", {
+    attrs: {
+      "fill-rule": "evenodd",
+      d: "M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z",
+      "clip-rule": "evenodd"
+    }
+  })])])]) : _vm._e();
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -6518,20 +6617,13 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", [_c("h2", {
     staticClass: "text-2xl font-bold mb-4"
-  }, [_vm._v("Your docs in one place")]), _vm._v(" "), _vm.isLoading ? _c("div", [_c("loader")], 1) : _vm._e(), _vm._v(" "), _c("div", {
-    staticClass: "-m-2 text-center"
-  }, [_vm.hasResponse ? _c("div", {
-    staticClass: "p-5"
-  }, [_c("div", {
-    staticClass: "inline-flex items-center bg-white leading-none text-red-600 rounded-full p-2 shadow text-teal text-sm"
-  }, [_c("span", {
-    staticClass: "inline-flex bg-red-600 text-white rounded-full py-2.5 px-3 justify-center items-center text-center"
-  }, [_vm._v("\n                    Delete\n                ")]), _vm._v(" "), _c("span", {
-    staticClass: "inline-flex px-2 font-bold text-md",
-    domProps: {
-      textContent: _vm._s(_vm.response)
+  }, [_vm._v("Your docs in one place")]), _vm._v(" "), _vm.isLoading ? _c("div", [_c("loader")], 1) : _vm._e(), _vm._v(" "), _c("alert", {
+    attrs: {
+      hasResponse: _vm.hasResponse,
+      response: _vm.response,
+      responseType: _vm.responseType
     }
-  })])]) : _vm._e()]), _vm._v(" "), _c("div", {
+  }), _vm._v(" "), _c("div", {
     staticClass: "space-y-4"
   }, _vm._l(_vm.docs, function (doc) {
     return _c("div", {
@@ -6593,7 +6685,7 @@ var render = function render() {
         }
       }
     }, [_vm._v("\n                        Delete\n                    ")])])])]);
-  }), 0)]);
+  }), 0)], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -6744,7 +6836,7 @@ var render = function render() {
     attrs: {
       hasResponse: _vm.hasResponse,
       response: _vm.response,
-      responseType: "success"
+      responseType: _vm.responseType
     }
   })], 1);
 };
@@ -6842,7 +6934,7 @@ var render = function render() {
     attrs: {
       hasResponse: _vm.hasResponse,
       response: _vm.response,
-      responseType: "success"
+      responseType: _vm.responseType
     }
   })], 1);
 };

@@ -26,7 +26,7 @@
                 <loader />
             </div>
 
-            <alert :hasResponse="hasResponse" :response="response" responseType="success" />
+            <alert :hasResponse="hasResponse" :response="response" :responseType="responseType" />
         </div>
     </template>
 
@@ -45,6 +45,7 @@
                     response: "",
                     hasResponse: false,
                     isLoading: false,
+                    responseType: 'success'
                 };
             },
             methods: {
@@ -52,17 +53,25 @@
                 async createDoc() {
                     this.isLoading = true;
 
-                    let formData = new FormData;
+                    try{
+                        let formData = new FormData;
                         formData.append('title', this.data.title);
                         formData.append('image', this.data.image);
                         formData.append('caption', this.data.caption);
                         formData.append('contents', tinymce.get("tinymce").getContent());
 
-                    let response = await axios.post("/api/docs", formData);
+                        let response = await axios.post("/api/docs", formData);
+
+                        this.responseType = "success";
+                        this.response = response.data.message;
+                        window.location.href = '/dashboard';
+                    }catch(error){
+                        this.responseType = "error";
+                        this.response = "something went wrong";
+                    }
 
                     this.isLoading = false;
                     this.hasResponse = true;
-                    this.response = response.data.message;
                 },
                 onFileChange(e) {
                     this.data.image = e.target.files[0];
