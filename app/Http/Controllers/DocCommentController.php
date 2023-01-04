@@ -53,7 +53,7 @@
 
             return response()->json([
                 'data' => DocCommentResource::make($comment),
-                'message' => "Comment created successfully"
+                'message' => "Comment Created/Posted successfully"
             ]);
         }
 
@@ -77,7 +77,7 @@
             $comment->delete();
 
             return response()->json([
-                'message' => "Doc Comment deleted successfully"
+                'message' => "Comment removed successfully"
             ]);
         }
     }

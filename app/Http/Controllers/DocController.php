@@ -47,7 +47,7 @@
 
             return response()->json([
                 'data' => DocResource::make($doc),
-                'message' => "Doc created successfully"
+                'message' => "Doc Created/Posted successfully"
             ], 200);
         }
 
@@ -103,7 +103,7 @@
             $doc->delete();
 
             return response()->json([
-                'message' => 'Doc deleted successfully'
+                'message' => 'Doc removed successfully'
             ]);
         }
     }
