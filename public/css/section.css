@@ -5114,6 +5114,35 @@ figcaption {
     margin: 56px auto;
 }
 
+.rich-text pre, .rich-text code {
+    padding: 14px;
+    overflow: auto;
+    font-size: 17px;
+    background-color: #e3e8ef;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 730px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 20px;
+    font-weight: 500;
+    word-break: normal;
+    display: block;
+    white-space: pre;
+}
+
+.rich-text pre .pl-k {
+    color: #cf222e;
+}
+
+.rich-text pre .pl-v, .pl-smw {
+    color: #953800;
+}
+
+.rich-text pre .pl-c {
+    color: #6e7781;
+}
+
 .form-input {
     min-height: 56px;
     margin-bottom: 0px;

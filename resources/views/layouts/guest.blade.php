@@ -14,7 +14,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Patienceman - Docs - @yield('title')</title>
+    <title>@yield('title') - Patienceman</title>
 
     {{-- Extenral dynamics links --}}
     <link href="/css/app.css" rel="stylesheet">

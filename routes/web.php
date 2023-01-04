@@ -43,11 +43,20 @@
      * Authenticated user Web route
      * --------------------------------------
      */
-    Route::group(['middleware' => ['hasAdminRole', 'auth']], function() {
-        Route::get('/dashboard', [DashboardController::class, 'index'])->name('get.dashboard');
-        Route::get('/write-doc', [DashboardController::class, 'writeDoc'])->name('get.writable-doc');
-        Route::get('/update-docs/{doc}', [DocController::class, 'edit'])->name('put.doc');
+    Route::group(['middleware' => ['auth']], function() {
+         /**
+         * --------------------------------------
+         * Admin web routes
+         * --------------------------------------
+         */
+        Route::group(['middleware' => ['hasAdminRole']], function() {
+            Route::get('/dashboard', [DashboardController::class, 'index'])->name('get.dashboard');
+            Route::get('/write-doc', [DashboardController::class, 'writeDoc'])->name('get.writable-doc');
+            Route::get('/update-docs/{doc}', [DocController::class, 'edit'])->name('put.doc');
+        });
+
         Route::get('/logout', [LoginController::class, 'logout'])->name('post.logout');
     });
+
 
     Auth::routes();

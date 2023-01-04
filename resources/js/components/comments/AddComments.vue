@@ -14,7 +14,7 @@
                 <button type="button" @click="createComment()" class="inline-flex font-anek items-center py-2.5 px-4 text-sm font-bold text-center text-white bg-green-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
                     Post comment
                 </button>
-                <alert :hasResponse="hasResponse" :response="response" responseType="success" />
+                <alert :hasResponse="hasResponse" :response="response" :responseType="responseType" />
             </form>
         </div>
     </template>
@@ -29,28 +29,28 @@
                     comments: '',
                     response: '',
                     isLoading: false,
-                    hasResponse: false
+                    hasResponse: false,
+                    responseType: 'success'
                 }
             },
             methods: {
                 async createComment() {
-                    this.isLoading = true;
-                    let response = await axios.post(`/api/comments/${this.doc}`, { message: this.comments });
-                    this.isLoading = false;
+                    try{
+                        this.isLoading = true;
+                        let response = await axios.post(`/api/comments/${this.doc}`, { message: this.comments });
+                        this.isLoading = false;
 
-                    this.response = response.data.message;
-                    this.enableAlert();
-                    
-                    this.comments = '';
-                    this.$root.$emit("docComments");
+                        this.hasResponse = true;
+                        this.response = response.data.message;
+                        this.responseType = 'success';
+
+                        this.comments = '';
+                        this.$root.$emit("docComments");
+                    }catch(error){
+                        this.response = "something went wrong";
+                        this.responseType = 'error';
+                    }
                 },
-                enableAlert() {
-                    this.hasResponse = true;
-
-                    setTimeout(() => {
-                        this.hasResponse = false;
-                    }, 3000);
-                }
             }
         }
     </script>

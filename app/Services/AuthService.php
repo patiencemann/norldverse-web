@@ -81,7 +81,7 @@
          * logout authenticated user
          * @return void
          */
-        public static function logout() {
+        public static function logout() :void {
             Session::flush();
             Auth::logout();
         }
