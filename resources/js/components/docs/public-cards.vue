@@ -17,8 +17,8 @@
                             </div>
                             <read-time :text="doc.contents" />
                         </div>
-                        <h2 class="heading-xsmall margin-16">{{ doc.title }}</h2>
-                        <p class="text-size-xlarge card-caption">{{ doc.caption }}</p>
+                        <h2 class="heading-xsmall margin-16 dark:text-white">{{ doc.title }}</h2>
+                        <p class="text-size-xlarge card-caption dark:text-white">{{ doc.caption }}</p>
                     </div>
                 </a>
             </div>

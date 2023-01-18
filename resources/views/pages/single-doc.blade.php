@@ -9,12 +9,12 @@
         <div class="section wf-section">
             <div class="container">
                 <div class="grid post-cms">
-                    <a id="w-node-f57e326d-a19c-7eee-2611-0c96c7b2fe67-91ad0a2d" href="/author/esther-howard" class="author-item margin-24 w-inline-block font-anek">
+                    <a id="w-node-f57e326d-a19c-7eee-2611-0c96c7b2fe67-91ad0a2d" href="/author/esther-howard" class="author-item margin-24 w-inline-block font-anek dark:text-white">
                         <img src="{{ $doc->user->avatar }}" loading="lazy" alt="{{ $doc->user->name }}" class="author-avatar" />
                         <div>{{ $doc->user->name }}</div>
                     </a>
                     <div id="w-node-_505d2201-f684-2352-90d4-5418fdd4cf84-91ad0a2d" class="column-xlarge text-align-center margin-24">
-                        <h1 class="heading-large font-anek">
+                        <h1 class="heading-large font-anek dark:text-white">
                             {{ $doc->title }}
                         </h1>
                     </div>
@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div id="w-node-c930898f-48f9-5bdc-ba0a-ec34c5dbc399-91ad0a2d" class="column-2xlarge">
-                        <div id="w-node-f70628f9-6789-54b4-d320-8d24eaa0f0c3-91ad0a2d" class="rich-text w-richtext">
+                        <div id="w-node-f70628f9-6789-54b4-d320-8d24eaa0f0c3-91ad0a2d" class="rich-text w-richtext dark:text-white">
                             {!! $doc->contents !!}
                         </div>
                     </div>

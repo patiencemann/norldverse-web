@@ -1,5 +1,21 @@
 /** @type {import('tailwindcss').Config} */
+const { colors: defaultColors } = require('tailwindcss/defaultTheme')
+
+const colors = {
+    ...defaultColors,
+    ...{
+        "deep-green": {
+            "900": "#04293A",
+            "800": "#111827"
+        },
+        "deep-text": {
+            "900": "#72acfe"
+        }
+    },
+}
+
 module.exports = {
+    darkMode: 'class',
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
@@ -11,6 +27,7 @@ module.exports = {
         fontFamily: {
             'anek': ['"Anek Telugu"', 'sans-serif']
         },
+        "colors": colors
     },
     plugins: [require("flowbite/plugin")],
 };

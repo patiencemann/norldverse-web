@@ -5,7 +5,7 @@
 @section('content')
     <x-navigation-bar />
 
-    <nav class="navbar-expand-lg navbar-dark bg-dark ftco-navbar-light mt-10">
+    <nav class="navbar-expand-lg navbar-dark bg-dark ftco-navbar-light mt-20">
         <div class="container">
             <div class="docs-list">
                 <div class="w-dyn-list">
