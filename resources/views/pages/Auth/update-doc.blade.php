@@ -46,7 +46,7 @@
             </div>
         </header>
 
-        <main class="ml-50 pt-10 max-h-screen overflow-auto">
+        <main class="ml-50 pt-10 max-h-screen overflow-auto dark:bg-gray-900">
             <div class="px-6 py-8">
                 <div class="max-w-4xl mx-auto">
                     <update-doc v-bind:doc_identity="{{ $doc->id }}" />

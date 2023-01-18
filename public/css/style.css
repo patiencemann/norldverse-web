@@ -2038,8 +2038,6 @@ h5,
 .ftco-navbar-light {
     background: transparent !important;
     z-index: 3;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
     margin-bottom: 0;
     padding-bottom: 0;
     padding-top: 0;

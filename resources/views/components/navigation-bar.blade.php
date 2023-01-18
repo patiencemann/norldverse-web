@@ -1,22 +1,9 @@
-<header
-    class="sticky top-0 z-40 flex-none mx-auto w-full bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
-    <div id="banner" tabindex="-1"
-        class="flex z-50 justify-center py-3 px-4 w-full bg-gray-50 border border-b border-gray-200 dark:border-gray-600 lg:py-4 dark:bg-gray-700">
-        <div class="items-center md:flex">
-            @if (session()->has('message'))
-                <p class="text-sm font-medium text-gray-900 md:my-0 dark:text-white">
-                    <span
-                        class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 hidden md:inline">New</span>
-                    {{ session('message') }}
-                </p>
-            @endif
-        </div>
-    </div>
-    <div class="mx-auto w-full max-w-8xl 2xl:container 2xl:mx-auto lg:px-20 md:px-6 py-3 px-4">
+<header class="sticky top-0 z-40 flex-none mx-auto w-full bg-white border-b dark:border-gray-600 dark:bg-deep-green-800">
+    <div class="mx-auto w-full max-w-8xl 2xl:container 2xl:mx-auto lg:px-20 md:px-6 py-3 px-4 dark:bg-deep-green-800 shadow-md">
         <div class="conatiner flex justify-between items-center ">
             <div class="flex items-center">
                 <button id="toggleSidebarMobile" aria-expanded="true" aria-controls="sidebar"
-                    class="p-2 mr-2 text-gray-600 rounded cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    class="p-2 mr-2 text-gray-600 rounded cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
                     <svg id="toggleSidebarMobileHamburger" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -122,7 +109,7 @@
 
                 @if (Auth::check())
                     <a href="{{ route('post.logout') }}" data-tooltip-target="tooltip-discord-2"
-                        class="hidden sm:inline-block text-gray-500 dark:text-gray-400 bg-red-200 dark:hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 mr-1">
+                        class="hidden sm:inline-block text-gray-500 dark:text-gray-400 bg-red-200 dark:bg-red-700 dark:hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 mr-1">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>                    </a>
                     <div id="tooltip-discord-2" role="tooltip"
                         class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-black bg-red-200 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
@@ -133,7 +120,7 @@
                     </div>
                 @else
                     <a href="{{ route('get.login') }}" data-tooltip-target="tooltip-discord-2"
-                        class="hidden sm:inline-block text-gray-500 dark:text-gray-400 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
+                        class="hidden sm:inline-block text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 mr-1">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path></svg>
                     </a>
                     <div id="tooltip-discord-2" role="tooltip"
@@ -146,7 +133,7 @@
                 @endif
 
                 <a href="https://github.com/manirabona-programer" data-tooltip-target="tooltip-github-2"
-                    class="hidden sm:inline-block text-gray-500 dark:text-gray-400 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
+                    class="hidden sm:inline-block text-gray-500 dark:text-gray-400 dark:bg-gray-700 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-700 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
                     <svg class="w-5 h-5" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github"
                         role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                         <path fill="currentColor"
@@ -163,7 +150,7 @@
                         style="position: absolute; left: 0px; transform: translate(60px, 0px);"></div>
                 </div>
                 <a href="https://discordapp.com/users/981120403764301854" data-tooltip-target="tooltip-discord-2"
-                    class="hidden sm:inline-block text-gray-500 dark:text-gray-400 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
+                    class="hidden sm:inline-block text-gray-500 dark:text-gray-400 dark:bg-gray-700 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 mr-1">
                     <svg class="w-6 h-6" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="discord"
                         role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                         <path fill="currentColor"
@@ -180,16 +167,13 @@
                     <div class="tooltip-arrow" data-popper-arrow=""
                         style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
                 </div>
-                <button id="theme-toggle" data-tooltip-target="tooltip-toggle" type="button"
-                    class="text-gray-500 dark:text-gray-400 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-                    <svg id="theme-toggle-dark-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                <button id="theme-toggle" onclick="toggleDarkMode()" data-tooltip-target="tooltip-toggle" type="button" class="flex text-gray-500 dark:bg-gray-700 dark:text-gray-400 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
                     </svg>
-                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
                             fill-rule="evenodd" clip-rule="evenodd"></path>
                     </svg>
                 </button>
@@ -211,9 +195,6 @@
                         <img data-tooltip-target="tooltip-jese" class="w-10 h-10 rounded" src="{{ authUser()->avatar }}" alt="{{ authUser()->name }}">
                     </a>
                 @endif
-
-                {{-- <a href="/blogs" class="md:hidden inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-3" style="background: #bfd291">Articles</a> --}}
-                {{-- <a href="/blogs" class="hidden md:inline-flex items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-3" style="background: #bfd291">Blogs & Articles</a> --}}
             </div>
         </div>
     </div>

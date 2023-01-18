@@ -6058,7 +6058,7 @@ var render = function render() {
   })])]), _vm._v(" "), _c("form", {
     staticClass: "mb-6 w-full ml-3"
   }, [_c("div", {
-    staticClass: "py-2 px-4 mb-4 bg-white rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+    staticClass: "py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700"
   }, [_c("label", {
     staticClass: "sr-only font-anek",
     attrs: {
@@ -6189,9 +6189,11 @@ var render = function render() {
   }, [_vm.isLoading ? _c("div", [_c("comment-skeleton")], 1) : _vm._e(), _vm._v(" "), _vm._l(_vm.comments, function (comment) {
     return _c("div", {
       key: comment.id,
-      staticClass: "p-6 mb-6 text-base bg-white border-t border-gray-200 dark:border-gray-700 dark:bg-gray-900 rounded"
+      staticClass: "p-6 mb-6 text-base border-t shadow-md border-gray-200 dark:border-gray-700 dark:bg-gray-700 rounded"
     }, [_c("div", {
-      staticClass: "flex justify-between items-center mb-2"
+      staticClass: "flex justify-between items-center mb-2 dark:bg-gray-700"
+    }, [_c("div", {
+      staticClass: "flex items-center"
     }, [_c("div", {
       staticClass: "flex items-center"
     }, [_c("p", {
@@ -6202,7 +6204,7 @@ var render = function render() {
         src: comment.user.avatar,
         alt: comment.user.name
       }
-    }), _vm._v("\n                    " + _vm._s(comment.user.name) + "\n                ")]), _vm._v(" "), _c("p", {
+    }), _vm._v("\n                        " + _vm._s(comment.user.name) + "\n                    ")]), _vm._v(" "), _c("p", {
       staticClass: "text-sm text-gray-600 dark:text-gray-400 font-anek"
     }, [_c("time", {
       attrs: {
@@ -6210,7 +6212,7 @@ var render = function render() {
         datetime: comment.created_at,
         title: comment.created_at
       }
-    }, [_vm._v(_vm._s(comment.created_at))])])]), _vm._v(" "), _c("button", {
+    }, [_vm._v(_vm._s(comment.created_at))])])])]), _vm._v(" "), _c("button", {
       staticClass: "inline-flex font-anek items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
       attrs: {
         id: "dropdownComment3Button",
@@ -6232,7 +6234,7 @@ var render = function render() {
     })]), _vm._v(" "), _c("span", {
       staticClass: "sr-only"
     }, [_vm._v("Comment settings")])]), _vm._v(" "), _vm._m(0, true)]), _vm._v(" "), _c("p", {
-      staticClass: "text-gray-500 dark:text-gray-400 font-anek"
+      staticClass: "text-gray-500 dark:text-gray-400 dark:bg-gray-700 font-anek"
     }, [_vm._v(_vm._s(comment.message))])]);
   })], 2);
 };
@@ -6632,7 +6634,7 @@ var render = function render() {
   }, _vm._l(_vm.docs, function (doc) {
     return _c("div", {
       key: doc.id,
-      staticClass: "p-4 bg-white border rounded-xl text-gray-800 space-y-2 flex justify-between items-center"
+      staticClass: "p-4 bg-gray-100 dark:bg-gray-800 border dark:border-gray-800 rounded-xl text-gray-800 space-y-2 flex justify-between items-center"
     }, [_c("img", {
       staticClass: "w-60 h-60 rounded",
       attrs: {
@@ -6641,7 +6643,7 @@ var render = function render() {
         alt: doc.title
       }
     }), _vm._v(" "), _c("div", {
-      staticClass: "ml-4"
+      staticClass: "ml-4 dark:text-white"
     }, [_c("div", {
       staticClass: "flex justify-between"
     }, [_c("div", {
@@ -6649,14 +6651,14 @@ var render = function render() {
     }, [_vm._v("Number " + _vm._s(doc.id))]), _vm._v(" "), _c("div", {
       staticClass: "text-gray-400 text-xs"
     }, [_vm._v(_vm._s(doc.created_at))])]), _vm._v(" "), _c("a", {
-      staticClass: "font-bold hover:text-yellow-800 hover:underline",
+      staticClass: "font-bold hover:text-yellow-800 hover:underline dark:text-white",
       attrs: {
         href: "javascript:void(0)"
       }
     }, [_vm._v(_vm._s(doc.title))]), _vm._v(" "), _c("div", {
-      staticClass: "text-sm text-gray-600"
+      staticClass: "text-sm text-gray-600 dark:text-white"
     }, [_c("svg", {
-      staticClass: "text-gray-800 inline align-middle mr-1",
+      staticClass: "text-gray-800 inline align-middle mr-1 dark:text-white",
       attrs: {
         xmlns: "http://www.w3.org/2000/svg",
         width: "1em",
@@ -6752,9 +6754,9 @@ var render = function render() {
         text: doc.contents
       }
     })], 1), _vm._v(" "), _c("h2", {
-      staticClass: "heading-xsmall margin-16"
+      staticClass: "heading-xsmall margin-16 dark:text-white"
     }, [_vm._v(_vm._s(doc.title))]), _vm._v(" "), _c("p", {
-      staticClass: "text-size-xlarge card-caption"
+      staticClass: "text-size-xlarge card-caption dark:text-white"
     }, [_vm._v(_vm._s(doc.caption))])])])]);
   }), 0)]);
 };
@@ -6780,9 +6782,9 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "bg-white rounded-3xl p-8 mb-5"
+    staticClass: "bg-gray-100 dark:bg-gray-700 rounded-3xl p-8 mb-5"
   }, [_c("h1", {
-    staticClass: "text-3xl font-bold mb-10",
+    staticClass: "text-3xl font-bold mb-10 dark:text-white",
     domProps: {
       textContent: _vm._s(_vm.data.title)
     }
@@ -6878,9 +6880,9 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "bg-white rounded-3xl p-8 mb-5"
+    staticClass: "bg-gray-100 dark:bg-gray-700 rounded-3xl p-8 mb-5"
   }, [_c("h1", {
-    staticClass: "text-3xl font-bold mb-10",
+    staticClass: "text-3xl font-bold mb-10 dark:text-white",
     domProps: {
       textContent: _vm._s(_vm.data.title)
     }
@@ -7012,9 +7014,9 @@ var staticRenderFns = [function () {
       id: "w-node-_20de0388-c874-0d1d-b43f-a06cf864f8d6-fdadf31b"
     }
   }, [_vm._v("\n                        Software Developer\n                    ")])]), _vm._v(" "), _c("h2", {
-    staticClass: "heading-medium margin-24"
+    staticClass: "heading-medium margin-24 dark:text-white"
   }, [_vm._v("\n                    “What a computer is to me is the most remarkable tool that we have ever come up with. It's the equivalent of a bicycle for our minds.”\n                ")]), _vm._v(" "), _c("p", {
-    staticClass: "text-size-xlarge"
+    staticClass: "text-size-xlarge dark:text-white"
   }, [_vm._v("\n                    Because it let you think, struggle and find a solution within u natural computer, remember think twice before start typy/copy/past..ing...\n                ")])])])])]);
 }];
 render._withStripped = true;

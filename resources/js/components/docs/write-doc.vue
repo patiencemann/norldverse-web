@@ -1,6 +1,6 @@
     <template>
-        <div class="bg-white rounded-3xl p-8 mb-5">
-            <h1 class="text-3xl font-bold mb-10" v-text="data.title"></h1>
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-3xl p-8 mb-5">
+            <h1 class="text-3xl font-bold mb-10 dark:text-white" v-text="data.title"></h1>
 
             <form action="#" @submit.prevent="createDoc()" enctype="multipart/form-data">
                 <!-- Title -->

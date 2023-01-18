@@ -5002,7 +5002,7 @@ figcaption {
     margin-right: auto;
     margin-bottom: 32px;
     margin-left: auto;
-    font-size: 28px;
+    font-size: 30px;
     font-family: 'Anek Telugu', sans-serif;
     font-weight: 700;
 }
@@ -5012,7 +5012,7 @@ figcaption {
     margin-right: auto;
     margin-bottom: 32px;
     margin-left: auto;
-    font-size: 24px;
+    font-size: 26px;
     font-family: 'Anek Telugu', sans-serif;
     font-weight: 700;
 }
@@ -5141,6 +5141,19 @@ figcaption {
 
 .rich-text pre .pl-c {
     color: #6e7781;
+}
+
+@media (prefers-color-scheme: dark) {
+    .rich-text h6,
+    .rich-text h5,
+    .rich-text h4,
+    .rich-text h3,
+    .rich-text h2,
+    .rich-text h1,
+    .rich-text a{
+        color: #72acfe !important;
+        -webkit-text-fill-color: #72acfe !important;
+    }
 }
 
 .form-input {

@@ -15,10 +15,10 @@
                             Software Developer
                         </div>
                     </div>
-                    <h2 class="heading-medium margin-24">
+                    <h2 class="heading-medium margin-24 dark:text-white">
                         “What a computer is to me is the most remarkable tool that we have ever come up with. It's the equivalent of a bicycle for our minds.”
                     </h2>
-                    <p class="text-size-xlarge">
+                    <p class="text-size-xlarge dark:text-white">
                         Because it let you think, struggle and find a solution within u natural computer, remember think twice before start typy/copy/past..ing...
                     </p>
                 </div>

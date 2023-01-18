@@ -9,7 +9,7 @@
 @section('content')
     <x-navigation-bar />
 
-    <div class="relative bg-gray-200 overflow-hidden max-h-screen">
+    <div class="relative bg-gray-200 dark:bg-gray-900 overflow-hidden max-h-screen">
         <header class="fixed right-0 top-0 left-60 bg-yellow-50 py-3 px-4 h-16">
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-center justify-between">
@@ -49,7 +49,7 @@
         <main class="ml-50 pt-10 max-h-screen overflow-auto">
             <div class="px-6 py-8">
                 <div class="max-w-4xl mx-auto">
-                    <div class="bg-white rounded-3xl p-8 mb-5">
+                    <div class="bg-gray-100 rounded-3xl p-8 mb-5 dark:bg-gray-700">
                         <h1 class="text-3xl font-bold mb-10">{{ authUser()->name }}'s Documents</h1>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-x-2">
