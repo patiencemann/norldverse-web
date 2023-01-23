@@ -9,8 +9,11 @@
                 <!-- Caption -->
                 <custom-input placeholder="What are you thinking!?., just caption...." v-model="data.caption"/>
 
+                <!-- File preview -->
+                <file-preview :preview="data.image" />
+
                 <!-- File input -->
-                <file-input @change="onFileChange" />
+                <file-input @change="onFileChange" v-model="data.image" />
 
                 <!-- Rich text area -->
                 <rich-textarea v-model="data.contents" placeholder="Write your full thoughts here..." />
@@ -52,7 +55,7 @@
                     response: "",
                     hasResponse: false,
                     isLoading: false,
-                    responseType: 'success'
+                    responseType: 'success',
                 };
             },
             methods: {
@@ -65,6 +68,7 @@
                     this.data.title = data.title;
                     this.data.caption = data.caption;
                     this.data.contents = data.contents;
+                    this.data.image = data.media.file_url
                 },
 
                 // Create and store doc
@@ -78,11 +82,11 @@
                             formData.append('caption', this.data.caption);
                             formData.append('contents', tinymce.get("tinymce").getContent());
 
-                        console.log(formData.entries)
-                        let response = await axios.put(`/api/docs/${this.doc_identity}`, formData);
+                        let response = await axios.post(`/api/docs/${this.doc_identity}`, formData);
                         this.response = response.data.message;
+                        this.responseType = "success";
                     }catch(error){
-                        this.response = "Something went wrong, 😞🙏 try again later";
+                        this.response = "Something went wrong, 😞 try again later, with image";
                         this.responseType = 'error';
                     }
 

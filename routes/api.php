@@ -81,7 +81,7 @@
              * ---------------------------
              */
             Route::post('/docs', [DocController::class, 'store'])->name('post.docs');
-            Route::put('/docs/{doc}', [DocController::class, 'update'])->name('update.docs');
+            Route::post('/docs/{doc}', [DocController::class, 'update'])->name('update.docs');
             Route::delete('/docs/{doc}', [DocController::class, 'destroy'])->name('delete.docs');
 
             /**

@@ -9,6 +9,9 @@
                 <!-- Caption -->
                 <custom-input placeholder="What are you thinking!?., just caption...." v-model="data.caption"/>
 
+                <!-- File preview -->
+                <file-preview :preview="preview" />
+
                 <!-- File input -->
                 <file-input @change="onFileChange" />
 
@@ -45,7 +48,8 @@
                     response: "",
                     hasResponse: false,
                     isLoading: false,
-                    responseType: 'success'
+                    responseType: 'success',
+                    preview: '',
                 };
             },
             methods: {
@@ -75,9 +79,7 @@
                 },
                 onFileChange(e) {
                     this.data.image = e.target.files[0];
-                },
-                richTextChange(e) {
-                    console.log(tinyMCE)
+                    this.preview = URL.createObjectURL(e.target.files[0]);
                 },
             },
         };
