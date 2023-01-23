@@ -68,7 +68,7 @@
          * @return \Illuminate\Http\Response
          */
         public function edit(Doc $doc) {
-            return view('pages.auth.update-doc', compact('doc'));
+            return view('pages.Auth.update-doc', compact('doc'));
         }
 
         /**
