@@ -7,9 +7,9 @@
                 <div class="w-10 h-10 rounded-full"><img data-tooltip-target="tooltip-jese" class="w-full h-full rounded-full" :src="avatar" alt="PatienceMan"></div>
             </div>
             <form class="mb-6 w-full ml-3 ">
-                <div class="py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                <div class="bg-gray-50 py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                     <label for="comment" class="sr-only font-anek">Your comment</label>
-                    <textarea id="comment" v-model="comments" rows="6" class="px-0 w-full text-base font-anek text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800" placeholder="Write a comment..." required></textarea>
+                    <textarea id="comment" v-model="comments" rows="6" class="bg-gray-50 px-0 w-full text-base font-anek text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800" placeholder="Write a comment..." required></textarea>
                 </div>
                 <button type="button" @click="createComment()" class="inline-flex font-anek items-center py-2.5 px-4 text-sm font-bold text-center text-white bg-green-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800">
                     Post comment

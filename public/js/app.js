@@ -6075,7 +6075,7 @@ var render = function render() {
   })])]), _vm._v(" "), _c("form", {
     staticClass: "mb-6 w-full ml-3"
   }, [_c("div", {
-    staticClass: "py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+    staticClass: "bg-gray-50 py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700"
   }, [_c("label", {
     staticClass: "sr-only font-anek",
     attrs: {
@@ -6088,7 +6088,7 @@ var render = function render() {
       value: _vm.comments,
       expression: "comments"
     }],
-    staticClass: "px-0 w-full text-base font-anek text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800",
+    staticClass: "bg-gray-50 px-0 w-full text-base font-anek text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800",
     attrs: {
       id: "comment",
       rows: "6",
@@ -6206,11 +6206,11 @@ var render = function render() {
   }, [_vm.isLoading ? _c("div", [_c("comment-skeleton")], 1) : _vm._e(), _vm._v(" "), _vm._l(_vm.comments, function (comment) {
     return _c("div", {
       key: comment.id,
-      staticClass: "p-6 mb-6 text-base border-t shadow-md border-gray-200 dark:border-gray-700 dark:bg-gray-700 rounded"
+      staticClass: "bg-gray-50 p-6 mb-6 text-base border-t shadow-md border-gray-200 dark:border-gray-700 dark:bg-gray-700 rounded"
     }, [_c("div", {
-      staticClass: "flex justify-between items-center mb-2 dark:bg-gray-700"
+      staticClass: "bg-gray-50 flex justify-between items-center mb-2 dark:bg-gray-700"
     }, [_c("div", {
-      staticClass: "flex items-center"
+      staticClass: "flex items-center bg-gray-50 dark:bg-gray-700"
     }, [_c("div", {
       staticClass: "flex items-center"
     }, [_c("p", {
@@ -6230,7 +6230,7 @@ var render = function render() {
         title: comment.created_at
       }
     }, [_vm._v(_vm._s(comment.created_at))])])])]), _vm._v(" "), _c("button", {
-      staticClass: "inline-flex font-anek items-center p-2 text-sm font-medium text-center text-gray-400 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
+      staticClass: "inline-flex font-anek items-center p-2 text-sm font-medium text-center text-gray-400 bg-gray-50 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600",
       attrs: {
         id: "dropdownComment3Button",
         "data-dropdown-toggle": "dropdownComment3",
@@ -6298,7 +6298,7 @@ var render = function render() {
   return _c("div", {
     staticClass: "mb-4"
   }, [_c("button", {
-    staticClass: "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800",
+    staticClass: "text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800",
     attrs: {
       "data-popover-target": "popover-image-preview",
       type: "button"
