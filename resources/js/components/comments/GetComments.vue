@@ -1,40 +1,26 @@
     <template>
-        <div class="comment-wrapper mt-3">
+        <div class="comments-section mt-5">
             <div v-if="isLoading">
                 <comment-skeleton />
             </div>
-            <div class="bg-gray-50 p-6 mb-6 text-base border-t shadow-md border-gray-200 dark:border-gray-700 dark:bg-gray-700 rounded" v-for="comment in comments" :key="comment.id">
-                <div class="bg-gray-50 flex justify-between items-center mb-2 dark:bg-gray-700">
-                    <div class="flex items-center bg-gray-50 dark:bg-gray-700">
-                        <div class="flex items-center">
-                            <p class="inline-flex items-center mr-3 text-md font-anek font-bold text-gray-900  dark:text-white">
-                                <img class="mr-2 w-6 h-6 rounded-full" :src="comment.user.avatar" :alt="comment.user.name">
-                                {{ comment.user.name }}
-                            </p>
-                            <p class="text-sm text-gray-600 dark:text-gray-400 font-anek">
-                                <time pubdate :datetime="comment.created_at" :title="comment.created_at">{{ comment.created_at }}</time>
-                            </p>
-                        </div>
-                    </div>
 
-                    <button id="dropdownComment3Button" data-dropdown-toggle="dropdownComment3" class="inline-flex font-anek items-center p-2 text-sm font-medium text-center text-gray-400 bg-gray-50 rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-50 dark:bg-gray-900 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
-                        <svg class="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                        </svg>
-                        <span class="sr-only">Comment settings</span>
-                    </button>
-
-                    <!-- Dropdown menu -->
-                    <div id="dropdownComment3" class="hidden z-10 w-36 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-200 font-anek" aria-labelledby="dropdownMenuIconHorizontalButton">
-                            <li>
-                                <a href="#" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Report</a>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="d-flex flex-start mb-4" v-for="comment in comments" :key="comment.id">
+                <div class="mr-3">
+                    <img class="rounded-circle shadow-1-strong me-3 h-20 w-20" :src="comment.user.avatar" :alt="comment.user.name">
                 </div>
-                <p class="text-gray-500 dark:text-gray-400 dark:bg-gray-700 font-anek">{{ comment.message }}</p>
+                <div class="card w-100">
+                  <div class="card-body p-4">
+                    <div class="">
+                      <div class="comment-title">
+                        <h5>{{ comment.user.name }}</h5>
+                        <span>{{comment.created_at}}</span>
+                      </div>
+                      <p>{{ comment.message }}</p>
+                    </div>
+                  </div>
+                </div>
             </div>
+
         </div>
     </template>
     <script>

@@ -23,6 +23,7 @@
      */
     Route::post('/users/login', [UserController::class, 'login'])->name('post.login.user');
     Route::post('/users/create', [UserController::class, 'createUser'])->name('post.create.user');
+    Route::get('/vistors', [UserController::class, 'trustedUser'])->name('get.v.users');
 
     /**
      * -------------------------

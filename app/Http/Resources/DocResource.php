@@ -19,6 +19,7 @@
                 'caption' => $this->caption,
                 'contents' => $this->contents,
                 'media' => DocMediaResource::make($this->docMedia),
+                'comments' => DocCommentUserResource::collection($this->docComments()->distinct()->select('user_id')->take(5)->get()),
                 'created_at' => $this->created_at->diffForHumans()
             ];
         }

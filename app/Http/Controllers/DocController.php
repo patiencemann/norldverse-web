@@ -26,7 +26,7 @@
          */
         public function public() {
             return DocResource::collection(
-                Doc::where('status', true)->orderBy('created_at', 'desc')->get()
+                Doc::withCount('docComments')->where('status', true)->orderBy('created_at', 'desc')->get()
             );
         }
 
