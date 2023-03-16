@@ -26,7 +26,7 @@
          */
         public function public() {
             return DocResource::collection(
-                Doc::where('status', true)->orderBy('created_at', 'desc')->get()
+                Doc::withCount('docComments')->where('status', true)->orderBy('created_at', 'desc')->get()
             );
         }
 
@@ -68,7 +68,7 @@
          * @return \Illuminate\Http\Response
          */
         public function edit(Doc $doc) {
-            return view('pages.auth.update-doc', compact('doc'));
+            return view('pages.Auth.update-doc', compact('doc'));
         }
 
         /**

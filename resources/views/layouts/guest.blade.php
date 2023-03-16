@@ -24,6 +24,8 @@
     {{-- Custom style links --}}
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/neon.css">
+    <link rel="stylesheet" href="/css/bash.css">
     <link rel="stylesheet" href="/css/section.css">
 
     @yield('style')

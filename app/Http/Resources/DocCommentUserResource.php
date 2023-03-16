@@ -14,9 +14,7 @@
          */
         public function toArray($request) {
             return [
-                'user' => UserResource::make(
-                    User::getById($this->user_id)
-                ),
+                'user' => UserResource::make(User::getById($this->user_id)),
             ];
         }
     }

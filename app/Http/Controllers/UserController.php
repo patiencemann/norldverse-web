@@ -115,4 +115,19 @@
                 "message" => "invalid email, passpord or both"
             ], 400);
         }
+
+        /**
+         * Login User
+         *
+         * @param UserLoginRequest $request
+         * @return JsonResponse
+         */
+        public function trustedUser() {
+            $users = User::withCount('docComments')->orderBy('doc_comments_count', 'desc')->get();
+
+            return response()->json([
+                "message" => "invalid email, passpord or both",
+                "data" => UserResource::collection($users)
+            ]);
+        }
     }

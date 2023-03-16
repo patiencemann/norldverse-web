@@ -23,6 +23,7 @@
      */
     Route::post('/users/login', [UserController::class, 'login'])->name('post.login.user');
     Route::post('/users/create', [UserController::class, 'createUser'])->name('post.create.user');
+    Route::get('/vistors', [UserController::class, 'trustedUser'])->name('get.v.users');
 
     /**
      * -------------------------
@@ -81,7 +82,7 @@
              * ---------------------------
              */
             Route::post('/docs', [DocController::class, 'store'])->name('post.docs');
-            Route::put('/docs/{doc}', [DocController::class, 'update'])->name('update.docs');
+            Route::post('/docs/{doc}', [DocController::class, 'update'])->name('update.docs');
             Route::delete('/docs/{doc}', [DocController::class, 'destroy'])->name('delete.docs');
 
             /**

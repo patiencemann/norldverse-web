@@ -1,5 +1,5 @@
     <template>
-        <div class="bg-gray-100 dark:bg-gray-700 rounded-3xl p-8 mb-5">
+        <div class="bg-gray-100 dark:bg-gray-700 rounded-3xl p-10 mb-5">
             <h1 class="text-3xl font-bold mb-10 dark:text-white" v-text="data.title"></h1>
 
             <form action="#" @submit.prevent="createDoc()" enctype="multipart/form-data">
@@ -8,6 +8,9 @@
 
                 <!-- Caption -->
                 <custom-input placeholder="What are you thinking!?., just caption...." v-model="data.caption"/>
+
+                <!-- File preview -->
+                <file-preview :preview="preview" />
 
                 <!-- File input -->
                 <file-input @change="onFileChange" />
@@ -45,7 +48,8 @@
                     response: "",
                     hasResponse: false,
                     isLoading: false,
-                    responseType: 'success'
+                    responseType: 'success',
+                    preview: '',
                 };
             },
             methods: {
@@ -75,9 +79,7 @@
                 },
                 onFileChange(e) {
                     this.data.image = e.target.files[0];
-                },
-                richTextChange(e) {
-                    console.log(tinyMCE)
+                    this.preview = URL.createObjectURL(e.target.files[0]);
                 },
             },
         };
