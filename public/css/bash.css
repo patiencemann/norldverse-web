@@ -631,7 +631,14 @@ body .is-partial-color:not(.is-partial-dark) {
 
 @media (max-width: 768px) {
     .post-header-content {
+        flex: 1 0 100%;
+        max-width: 100%;
+        padding-top: 3vh;
         max-width: 660px;
+    }
+
+    .post-header-image {
+        display: none;
     }
 
     .post-header-content > div:first-child {
@@ -781,6 +788,7 @@ body .is-partial-color:not(.is-partial-dark) {
         margin-bottom: 5vh;
     }
 }
+
 
 @media (max-width: 768px) {
     .is-partial-color + div .loop-subtitle,
@@ -2178,6 +2186,7 @@ body .is-partial-color:not(.is-partial-dark) {
 @media (max-width: 768px) {
     .post-content {
         max-width: 100%;
+        padding: 60px 20px 30px 20px;
     }
 
     .post-content p {
@@ -2410,4 +2419,10 @@ body .is-partial-color:not(.is-partial-dark) {
     margin-top: 3px;
     font-size: 16px;
     color: #797c82;
+}
+
+@media (max-width: 768px) {
+    .comments {
+        padding: 20px;
+    }
 }

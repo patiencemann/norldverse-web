@@ -10,9 +10,13 @@ iframe[title="portal-notification"] {
 html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
+    font-size: 62.5%;
+    font-family: 'Anek Telugu', sans-serif;
 }
 body {
     margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 main {
     display: block;
@@ -134,9 +138,6 @@ template {
     display: none;
 }
 
-html {
-    font-size: 62.5%;
-}
 html,
 body {
     -webkit-font-smoothing: antialiased;
@@ -174,9 +175,5 @@ a {
 *,
 *::before,
 *::after {
-    font-family: 'Anek Telugu', sans-serif;
-}
-
-html {
     font-family: 'Anek Telugu', sans-serif;
 }
