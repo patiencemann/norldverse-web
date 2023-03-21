@@ -25,7 +25,7 @@
                         </div>
                         <span class="self-center text-3xl mt-2 font-semibold whitespace-nowrap dark:text-white ml-4"
                             style="font-family: 'Anek Telugu', sans-serif; font-weight: 700; font-size: 3rem">
-                            Patience-man
+                            Patienceman
                         </span>
                     </a>
                     <div id="tooltip-logo-1" role="tooltip"

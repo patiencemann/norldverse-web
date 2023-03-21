@@ -12244,6 +12244,9 @@ input:checked + .toggle-bg {
 .overflow-hidden {
   overflow: hidden;
 }
+.overflow-x-auto {
+  overflow-x: auto;
+}
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -12508,8 +12511,20 @@ input:checked + .toggle-bg {
 .pt-2 {
   padding-top: 0.5rem;
 }
+.pr-2 {
+  padding-right: 0.5rem;
+}
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+.text-left {
+  text-align: left;
+}
 .text-center {
   text-align: center;
+}
+.text-right {
+  text-align: right;
 }
 .align-baseline {
   vertical-align: baseline;
@@ -12618,6 +12633,9 @@ input:checked + .toggle-bg {
 }
 .underline {
   text-decoration-line: underline;
+}
+.no-underline {
+  text-decoration-line: none;
 }
 .antialiased {
   -webkit-font-smoothing: antialiased;

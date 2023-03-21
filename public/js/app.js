@@ -6717,7 +6717,7 @@ var render = function render() {
     }, [_c("a", {
       staticClass: "global-link",
       attrs: {
-        href: "/docs/" + doc.id,
+        href: "/docs/" + doc.slug,
         "aria-label": doc.title
       }
     }), _vm._v(" "), _c("img", {
@@ -6739,7 +6739,7 @@ var render = function render() {
     }, [_vm._v("Number " + _vm._s(doc.id))]), _vm._v(" "), _c("a", {
       staticClass: "bg-indigo-200",
       attrs: {
-        href: "/docs/" + doc.id
+        href: "/docs/" + doc.slug
       }
     }, [_vm._v("Visit ")]), _vm._v(" "), _c("a", {
       attrs: {
@@ -6764,7 +6764,7 @@ var render = function render() {
       staticClass: "item-title"
     }, [_c("a", {
       attrs: {
-        href: "/docs/" + doc.id
+        href: "/docs/" + doc.slug
       }
     }, [_vm._v(_vm._s(doc.title))])]), _vm._v(" "), _c("p", {
       staticClass: "item-excerpt"
@@ -6803,7 +6803,7 @@ var render = function render() {
     }, [_c("a", {
       staticClass: "global-link",
       attrs: {
-        href: "/docs/" + doc.id,
+        href: "/docs/" + doc.slug,
         "aria-label": doc.title
       }
     }), _vm._v(" "), _c("img", {
@@ -6861,7 +6861,7 @@ var render = function render() {
       staticClass: "item-title"
     }, [_c("a", {
       attrs: {
-        href: "/docs/" + doc.id
+        href: "/docs/" + doc.slug
       }
     }, [_vm._v(_vm._s(doc.title))])]), _vm._v(" "), _c("p", {
       staticClass: "item-excerpt"

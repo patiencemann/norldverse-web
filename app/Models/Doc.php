@@ -19,22 +19,12 @@
          */
         protected $fillable = [
             'user_id',
+            'slug',
             'title',
             'caption',
             'contents',
             'status'
         ];
-
-        protected static function boot() {
-            parent::boot();
-
-            /**
-             * Generate doc slug
-             */
-            static::creating(function ($doc) {
-                $doc->slug = Str::lower(Str::slug($doc->title)."_".Str::random(10));
-            });
-        }
 
         /**
          * Doc belongs to user

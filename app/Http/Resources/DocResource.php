@@ -14,6 +14,7 @@
         public function toArray($request) {
             return [
                 'id' => $this->id,
+                'slug' => $this->slug,
                 'user' => UserResource::make($this->user),
                 'title' => $this->title,
                 'caption' => $this->caption,

@@ -1321,7 +1321,7 @@ body .is-partial-color:not(.is-partial-dark) {
     font-weight: var(--font-weight-three-medium);
     line-height: 1.4;
     max-width: 400px;
-    margin: 0 0 3vh;
+    margin: 0 0 0vh;
 }
 .footer-nav,
 .footer-nav-column {
@@ -2186,7 +2186,7 @@ body .is-partial-color:not(.is-partial-dark) {
 @media (max-width: 768px) {
     .post-content {
         max-width: 100%;
-        padding: 60px 20px 30px 20px;
+        padding: 60px 40px 30px 40px;
     }
 
     .post-content p {

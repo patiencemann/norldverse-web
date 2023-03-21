@@ -11,9 +11,13 @@
                         Patienceman
                     </span>
                 </div>
-                <p class="footer-description">A minimal, functional theme for running a paid-membership publication on
-                    Ghost.</p>
+                <p class="footer-description ml-4">
+                    When you believe in something so strongly and keep on pushing it so persistently,
+                    somehow you can make the impossible possible. and Ideas in different topics or
+                    fields can often inspire new ideas and broaden the potential solution space.
+                </p>
             </div>
+
             <div class="footer-copyright">
                 © <a href="https://basho-partial.fueko.net">Patienceman</a> 2023.
                 Published with <a href="https://ghost.org" target="_blank" rel="noopener noreferrer">Ghost</a> and <a

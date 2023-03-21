@@ -38,3 +38,14 @@
             ];
         }
     }
+
+    if (!function_exists('generateSlug')) {
+        /**
+         * Generate random slug code
+         * @param int $length
+         * @return mixed
+         */
+        function generateSlug(string $uniqueIdentifier = '', string $prefix = null) {
+            return Str::lower($uniqueIdentifier. '-' .Str::slug($prefix));
+        }
+    }
