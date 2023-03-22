@@ -565,6 +565,10 @@ body .is-partial-color:not(.is-partial-dark) {
     background-color: var(--color-body-partial);
 }
 
+.post-socials {
+    max-width: 80%;
+}
+
 .post-item-author:last-of-type {
     margin-right: 5px;
 }
