@@ -10,7 +10,11 @@
             <div class="post-header-container">
                 <div class="post-header-content">
                     <div>
-                        <div class="post-tags global-tags"><a href="/tag/lifestyle/">Lifestyle</a><a href="/tag/creative/">Creative</a><a href="/tag/people/">People</a></div>
+                        <div class="post-tags global-tags">
+                            @foreach ($doc->docTopic->topics as $topic)
+                                <a>{{ $topic }}</a>
+                            @endforeach
+                        </div>
                         <h1 class="post-title global-title">{{ $doc->title }}</h1>
                         <p class="post-excerpt global-excerpt">{{ $doc->caption }}</p>
                     </div>

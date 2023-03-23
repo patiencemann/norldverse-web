@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f48e89541a4e2f77eef61584392e71d9",
+    "content-hash": "f6797652948434db0c028dc9aca2ef28",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3618,6 +3618,58 @@
                 "source": "https://github.com/paragonie/random_compat"
             },
             "time": "2020-10-15T08:29:30+00:00"
+        },
+        {
+            "name": "patienceman/filtan",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/manirabona-programer/filtan.git",
+                "reference": "6950b6b7dc29975c564bdcd76be9903399e0a33f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/manirabona-programer/filtan/zipball/6950b6b7dc29975c564bdcd76be9903399e0a33f",
+                "reference": "6950b6b7dc29975c564bdcd76be9903399e0a33f",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Patienceman\\Filtan\\FiltanServiceProvider"
+                    ],
+                    "aliases": {
+                        "Filtan": "Patienceman\\Filtan\\Facades\\Filtan"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Patienceman\\Filtan\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "manirabona patience",
+                    "email": "hseal419@gmail.com"
+                }
+            ],
+            "description": "package",
+            "keywords": [
+                "filtan",
+                "filters",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/manirabona-programer/filtan/issues",
+                "source": "https://github.com/manirabona-programer/filtan/tree/v1.0.3"
+            },
+            "time": "2022-11-18T16:35:33+00:00"
         },
         {
             "name": "php-http/client-common",

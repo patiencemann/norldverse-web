@@ -31,6 +31,7 @@
      * ---------------------------
      */
     Route::get('/public/docs', [DocController::class, 'public'])->name('get.docs');
+    Route::get('/public/doc-tags', [DocController::class, 'tags'])->name('get.tags');
 
     /**
      * -------------------------

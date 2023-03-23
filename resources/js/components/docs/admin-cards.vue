@@ -21,8 +21,8 @@
                 <div class="item-content">
                     <div class="item-tags global-tags">
                         <span>
-                            <a href="/tag/people/">Number {{doc.id}}</a>
-                            <a :href="'/docs/'+doc.slug" class="bg-indigo-200">Visit </a>
+                            <a v-for="topic in doc.topics.topics" :key="topic">{{ topic }}</a>
+
                             <a href="">
                                 <read-time :text="doc.contents" />
                             </a>

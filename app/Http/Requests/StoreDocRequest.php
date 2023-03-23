@@ -15,7 +15,15 @@
                 'title' => ['required', 'string'],
                 'caption' => ['required', 'string'],
                 'contents' => ['required', 'string'],
-                'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif']
+                'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif'],
+                'topics' => ['required', 'array'],
+                'topics.*' => ['string']
             ];
+        }
+
+        protected function prepareForValidation(): void {
+            $this->merge([
+                'topics' => json_decode($this->topics),
+            ]);
         }
     }

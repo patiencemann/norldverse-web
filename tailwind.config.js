@@ -27,7 +27,10 @@ module.exports = {
         fontFamily: {
             'anek': ['"Anek Telugu"', 'sans-serif']
         },
-        "colors": colors
+        "colors": colors,
+        borderRadius: {
+            'd-lg': "20px"
+        }
     },
     plugins: [require("flowbite/plugin")],
 };
