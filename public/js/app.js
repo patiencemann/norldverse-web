@@ -5820,13 +5820,40 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           }
         }, _callee);
       }))();
+    },
+    searchDoc: function searchDoc(query) {
+      var _this2 = this;
+      return _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
+        var response;
+        return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _this2.isLoading = true;
+                _this2.docs = [];
+                _context2.next = 4;
+                return axios.get("/api/public/docs?query=".concat(query));
+              case 4:
+                response = _context2.sent;
+                _this2.isLoading = false;
+                _this2.docs = response.data.data;
+              case 7:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
     }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this3 = this;
     this.getDocs('all');
     this.$root.$on('loadedDoc', function (tag) {
-      return _this2.getDocs(tag);
+      return _this3.getDocs(tag);
+    });
+    this.$root.$on('searchDoc', function (query) {
+      return _this3.searchDoc(query);
     });
   }
 });
@@ -6128,7 +6155,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   name: "global-tags",
   data: function data() {
     return {
-      tags: []
+      tags: [],
+      search: ''
     };
   },
   methods: {
@@ -6142,7 +6170,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _this.isLoading = true;
                 _context.next = 3;
-                return axios__WEBPACK_IMPORTED_MODULE_0___default().get('/api/public/doc-tags');
+                return axios__WEBPACK_IMPORTED_MODULE_0___default().get("/api/public/doc-tags");
               case 3:
                 response = _context.sent;
                 _this.isLoading = false;
@@ -6157,6 +6185,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     findByTag: function findByTag(tag) {
       this.$root.$emit("loadedDoc", tag);
+    },
+    searchDoc: function searchDoc() {
+      this.$root.$emit("searchDoc", this.search);
     }
   },
   mounted: function mounted() {
@@ -7371,7 +7402,34 @@ var render = function render() {
         return _vm.findByTag("all");
       }
     }
-  }, [_vm._v("All")]), _vm._v(" "), _vm._l(_vm.tags, function (tag) {
+  }, [_vm._v("All")]), _vm._v(" "), _c("div", {
+    staticClass: "search-box"
+  }, [_c("input", {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.search,
+      expression: "search"
+    }],
+    attrs: {
+      type: "text",
+      placeholder: "  Search Everything..."
+    },
+    domProps: {
+      value: _vm.search
+    },
+    on: {
+      keyup: _vm.searchDoc,
+      input: function input($event) {
+        if ($event.target.composing) return;
+        _vm.search = $event.target.value;
+      }
+    }
+  }), _vm._v(" "), _c("button", {
+    attrs: {
+      type: "reset"
+    }
+  })]), _vm._v(" "), _vm._l(_vm.tags, function (tag) {
     return _c("a", {
       key: tag,
       on: {
@@ -7533,7 +7591,7 @@ var render = function render() {
       role: "list"
     }
   }, [_c("div", {
-    staticClass: "max-w-md p-4 border border-gray-200 rounded-d-lg shadow-sm animate-pulse md:p-6 dark:border-gray-700",
+    staticClass: "max-w-md p-4 border border-gray-200 rounded-lg shadow-sm animate-pulse md:p-6 dark:border-gray-700",
     attrs: {
       role: "status"
     }
@@ -7562,7 +7620,7 @@ var render = function render() {
   }), _vm._v(" "), _c("span", {
     staticClass: "sr-only"
   }, [_vm._v("Loading...")])]), _vm._v(" "), _c("div", {
-    staticClass: "max-w-md p-4 border border-gray-200 rounded-d-lg shadow-sm animate-pulse md:p-6 dark:border-gray-700",
+    staticClass: "max-w-md p-4 border border-gray-200 rounded-lg shadow-sm animate-pulse md:p-6 dark:border-gray-700",
     attrs: {
       role: "status"
     }
@@ -7591,7 +7649,7 @@ var render = function render() {
   }), _vm._v(" "), _c("span", {
     staticClass: "sr-only"
   }, [_vm._v("Loading...")])]), _vm._v(" "), _c("div", {
-    staticClass: "max-w-md p-4 border border-gray-200 rounded-d-lg shadow-sm animate-pulse md:p-6 dark:border-gray-700",
+    staticClass: "max-w-md p-4 border border-gray-200 rounded-lg shadow-sm animate-pulse md:p-6 dark:border-gray-700",
     attrs: {
       role: "status"
     }
@@ -7620,7 +7678,7 @@ var render = function render() {
   }), _vm._v(" "), _c("span", {
     staticClass: "sr-only"
   }, [_vm._v("Loading...")])]), _vm._v(" "), _c("div", {
-    staticClass: "max-w-md p-4 border border-gray-200 rounded-d-lg shadow-sm animate-pulse md:p-6 dark:border-gray-700",
+    staticClass: "max-w-md p-4 border border-gray-200 rounded-lg shadow-sm animate-pulse md:p-6 dark:border-gray-700",
     attrs: {
       role: "status"
     }

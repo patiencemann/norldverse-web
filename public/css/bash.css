@@ -2480,3 +2480,75 @@ body .is-partial-color:not(.is-partial-dark) {
         padding: 20px;
     }
 }
+
+.search-box {
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+    border-radius: 2.5em;
+    margin-right: 8px;
+}
+.search-box input[type="text"] {
+    font-family: inherit;
+    font-weight: 600;
+    width: 2.5em;
+    height: 2.5em;
+    padding: 5px 15px;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 2.5em;
+    border: solid 0.2em #615c5c;
+    font-size: 17px;
+    transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55) 150ms;
+}
+.search-box input[type="text"]:focus {
+    outline: none !important;
+}
+.search-box input[type="text"]:focus,
+.search-box input[type="text"]:not(:placeholder-shown) {
+    width: 18em;
+    transition: width 800ms cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+.search-box input[type="text"]:focus + button[type="reset"],
+.search-box input[type="text"]:not(:placeholder-shown) + button[type="reset"] {
+    transform: rotate(-45deg) translateY(0);
+    transition: transform 150ms ease-out 800ms;
+    top: 0.40em;
+}
+.search-box input[type="text"]:focus + button[type="reset"]:after,
+.search-box
+    input[type="text"]:not(:placeholder-shown)
+    + button[type="reset"]:after {
+    opacity: 1;
+    transition: top 100ms ease-out 950ms, right 150ms ease-out 950ms,
+        opacity 150ms ease 950ms;
+}
+.search-box button[type="reset"] {
+    background-color: transparent;
+    width: 1.4em;
+    height: 1.4em;
+    border: 0;
+    padding: 0;
+    outline: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -0.20em;
+    right: 0.70em;
+    transform: rotate(-35deg) translateY(2.2em);
+    transition: transform 150ms ease-out 150ms;
+}
+.search-box button[type="reset"]:before,
+.search-box button[type="reset"]:after {
+    content: "";
+    background-color: #615c5c;
+    width: 0.2em;
+    height: 1em;
+    position: absolute;
+}
+.search-box button[type="reset"]:after {
+    transform: rotate(90deg);
+    opacity: 0;
+    transition: transform 150ms ease-out, opacity 150ms ease-out;
+}

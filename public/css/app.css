@@ -11908,6 +11908,12 @@ input:checked + .toggle-bg {
 .mr-1 {
   margin-right: 0.25rem;
 }
+.mt-3 {
+  margin-top: 0.75rem;
+}
+.mr-4 {
+  margin-right: 1rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -11938,11 +11944,11 @@ input:checked + .toggle-bg {
 .mb-10 {
   margin-bottom: 2.5rem;
 }
-.mt-3 {
-  margin-top: 0.75rem;
-}
 .mb-2\.5 {
   margin-bottom: 0.625rem;
+}
+.mb-7 {
+  margin-bottom: 1.75rem;
 }
 .mb-8 {
   margin-bottom: 2rem;
@@ -11952,9 +11958,6 @@ input:checked + .toggle-bg {
 }
 .mb-1 {
   margin-bottom: 0.25rem;
-}
-.mb-7 {
-  margin-bottom: 1.75rem;
 }
 .block {
   display: block;
@@ -11998,6 +12001,9 @@ input:checked + .toggle-bg {
 .h-10 {
   height: 2.5rem;
 }
+.h-4 {
+  height: 1rem;
+}
 .h-20 {
   height: 5rem;
 }
@@ -12016,20 +12022,14 @@ input:checked + .toggle-bg {
 .h-2 {
   height: 0.5rem;
 }
-.h-48 {
-  height: 12rem;
+.h-80 {
+  height: 20rem;
 }
 .h-64 {
   height: 16rem;
 }
 .h-9 {
   height: 2.25rem;
-}
-.h-4 {
-  height: 1rem;
-}
-.h-80 {
-  height: 20rem;
 }
 .max-h-screen {
   max-height: 100vh;
@@ -12054,6 +12054,9 @@ input:checked + .toggle-bg {
 }
 .w-10 {
   width: 2.5rem;
+}
+.w-4 {
+  width: 1rem;
 }
 .w-16 {
   width: 4rem;
@@ -12084,9 +12087,6 @@ input:checked + .toggle-bg {
 }
 .w-1\/2 {
   width: 50%;
-}
-.w-4 {
-  width: 1rem;
 }
 .max-w-6xl {
   max-width: 72rem;
@@ -12263,8 +12263,38 @@ input:checked + .toggle-bg {
 .whitespace-nowrap {
   white-space: nowrap;
 }
-.rounded-d-lg {
-  border-radius: 20px;
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+.rounded {
+  border-radius: 0.25rem;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+.rounded-sm {
+  border-radius: 0.125rem;
+}
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+.rounded-md {
+  border-radius: 0.375rem;
+}
+.rounded-t-lg {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.rounded-l-lg {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.rounded-r-lg {
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 .border {
   border-width: 1px;
@@ -12481,6 +12511,9 @@ input:checked + .toggle-bg {
 }
 .pt-6 {
   padding-top: 1.5rem;
+}
+.pr-10 {
+  padding-right: 2.5rem;
 }
 .pt-3 {
   padding-top: 0.75rem;
@@ -13304,6 +13337,10 @@ a {
 
   .sm\:justify-between {
     justify-content: space-between;
+  }
+
+  .sm\:rounded-lg {
+    border-radius: 0.5rem;
   }
 
   .sm\:p-16 {

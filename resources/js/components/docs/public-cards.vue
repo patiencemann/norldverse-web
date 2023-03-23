@@ -59,11 +59,19 @@
                 let response = await axios.get(`/api/public/docs?tag=${tag}`);
                 this.isLoading = false;
                 this.docs = response.data.data
+            },
+            async searchDoc(query) {
+                this.isLoading = true;
+                this.docs = [];
+                let response = await axios.get(`/api/public/docs?query=${query}`);
+                this.isLoading = false;
+                this.docs = response.data.data
             }
         },
         mounted() {
             this.getDocs('all');
             this.$root.$on('loadedDoc', (tag) =>  this.getDocs(tag));
+            this.$root.$on('searchDoc', (query) =>  this.searchDoc(query));
         }
     }
 </script>

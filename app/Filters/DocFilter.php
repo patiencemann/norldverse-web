@@ -17,5 +17,15 @@
                 });
             }
         }
+
+        /**
+         * Filter docs by search query
+         * @param string query
+         */
+        public function query($query) {
+            $this->builder->where('title', 'LIKE', '%'.$query.'%')
+                        ->orWhere('caption', 'LIKE', '%'.$query.'%')
+                        ->orWhere('contents', 'LIKE', '%'.$query.'%');
+        }
     }
 
