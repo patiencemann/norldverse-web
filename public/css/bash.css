@@ -283,13 +283,18 @@ body .is-partial-color:not(.is-partial-dark) {
     align-items: flex-start;
     flex-wrap: wrap;
     position: relative;
+    height: 30px;
 }
 .title-tags:empty {
     display: none;
 }
 .title-tags span{
     position: absolute;
-    top: -38px;
+    top: -45px;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+    padding: 5px;
 }
 .title-tags a {
     font-family: var(--font-family-three);
@@ -2538,6 +2543,7 @@ body .is-partial-color:not(.is-partial-dark) {
     right: 0.70em;
     transform: rotate(-35deg) translateY(2.2em);
     transition: transform 150ms ease-out 150ms;
+    z-index: 99;
 }
 .search-box button[type="reset"]:before,
 .search-box button[type="reset"]:after {
