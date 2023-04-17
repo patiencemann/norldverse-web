@@ -2,31 +2,26 @@
     <div id="social-platforms">
         <vue-goodshare-facebook
             :page_url="page_url"
-            title_social="facebook"
             has_icon
             has_counter>
         </vue-goodshare-facebook>
         <vue-goodshare-twitter
             :page_url="href"
-            title_social="twitter"
             has_icon
             has_counter>
         </vue-goodshare-twitter>
         <vue-goodshare-linkedin
             :page_url="href"
-            title_social="linkedIn"
             has_icon
             has_counter>
         </vue-goodshare-linkedin>
         <vue-goodshare-pinterest
             :page_url="href"
-            title_social="pinterest"
             has_icon
             has_counter>
         </vue-goodshare-pinterest>
         <vue-goodshare-reddit
             :page_url="href"
-            title_social="reddit"
             has_icon
             has_counter>
         </vue-goodshare-reddit>
@@ -71,3 +66,10 @@
         },
     };
 </script>
+<style scoped>
+    .button-social{
+        padding: 5px 10px;
+        text-align: center !important;
+        border-radius: 10px !important;
+    }
+</style>
