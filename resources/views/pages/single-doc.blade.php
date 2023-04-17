@@ -31,7 +31,14 @@
                                 <time datetime="2021-08-06">{{ $doc->created_at->diffForHumans() }} — <read-time text="{{ $doc->contents }}" /></time>
                             </div>
                         </div>
-                        <social-share :sharedData="{{ $doc }}" />
+
+                        {{-- Share this doc --}}
+                        <social-share
+                            page_description="{{ $doc->caption }}"
+                            page_title="{{ $doc->title }}"
+                            quote="{{ $doc->user->name }}"
+                            hashtag="{{ $doc->docTopic->topics[0] }}"
+                        />
                     </div>
                 </div>
                 <div class="post-header-image">
