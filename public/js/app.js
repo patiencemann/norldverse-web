@@ -7056,15 +7056,15 @@ var render = function render() {
     attrs: {
       id: "social-platforms"
     }
-  }, [_c("vue-goodshare-facebook", {
+  }, [_c("vue-goodshare-twitter", {
     attrs: {
-      page_url: _vm.page_url,
+      page_url: _vm.href,
       has_icon: "",
       has_counter: ""
     }
-  }), _vm._v(" "), _c("vue-goodshare-twitter", {
+  }), _vm._v(" "), _c("vue-goodshare-facebook", {
     attrs: {
-      page_url: _vm.href,
+      page_url: _vm.page_url,
       has_icon: "",
       has_counter: ""
     }
@@ -13071,7 +13071,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.button-social[data-v-3bc01898]{\n    padding: 5px 10px;\n    text-align: center !important;\n    border-radius: 10px !important;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#social-platforms[data-v-3bc01898] {\n    margin-top: 30px;\n}\n.button-social[data-v-3bc01898] {\n    padding: 7px 10px;\n    border-radius: 10px !important;\n    font-family: \"Anek Telugu\", sans-serif;\n    font-size: 1.4rem;\n    font-weight: 600;\n    line-height: 1;\n    display: inline-block;\n    margin: 0 5px 5px 0;\n    transition: background-color 0.2s ease;\n    text-align: center;\n    align-items: center;\n}\n.button-social svg[data-v-3bc01898], .button-social i[data-v-3bc01898] {\n    line-height: 0;\n    display: inline-flex;\n    height: 14px;\n    margin-right: 5px;\n    padding: 7px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

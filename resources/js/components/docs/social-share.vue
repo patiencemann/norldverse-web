@@ -1,15 +1,15 @@
 <template>
     <div id="social-platforms">
-        <vue-goodshare-facebook
-            :page_url="page_url"
-            has_icon
-            has_counter>
-        </vue-goodshare-facebook>
         <vue-goodshare-twitter
             :page_url="href"
             has_icon
             has_counter>
         </vue-goodshare-twitter>
+        <vue-goodshare-facebook
+            :page_url="page_url"
+            has_icon
+            has_counter>
+        </vue-goodshare-facebook>
         <vue-goodshare-linkedin
             :page_url="href"
             has_icon
@@ -63,13 +63,31 @@
             VueGoodshareLinkedIn,
             VueGoodsharePinterest,
             VueGoodshareReddit
-        },
+        }
     };
 </script>
 <style scoped>
-    .button-social{
-        padding: 5px 10px;
-        text-align: center !important;
+    #social-platforms {
+        margin-top: 30px;
+    }
+    .button-social {
+        padding: 7px 10px;
         border-radius: 10px !important;
+        font-family: "Anek Telugu", sans-serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        line-height: 1;
+        display: inline-block;
+        margin: 0 5px 5px 0;
+        transition: background-color 0.2s ease;
+        text-align: center;
+        align-items: center;
+    }
+    .button-social svg, .button-social i {
+        line-height: 0;
+        display: inline-flex;
+        height: 14px;
+        margin-right: 5px;
+        padding: 7px;
     }
 </style>

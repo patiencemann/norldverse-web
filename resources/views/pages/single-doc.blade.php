@@ -26,20 +26,21 @@
                                     <img src="{{ $doc->user->avatar }}" loading="lazy" alt="{{ $doc->user->name }}">
                                 </div>
                             </div>
+
                             <div class="post-meta-content">
                                 <a href="https://twitter.com/ManirabonaW">{{ $doc->user->name }}</a>
                                 <time datetime="2021-08-06">{{ $doc->created_at->diffForHumans() }} — <read-time text="{{ $doc->contents }}" /></time>
                             </div>
                         </div>
-
-                        {{-- Share this doc --}}
-                        <social-share
-                            page_description="{{ $doc->caption }}"
-                            page_title="{{ $doc->title }}"
-                            quote="{{ $doc->user->name }}"
-                            hashtag="{{ $doc->docTopic->topics[0] }}"
-                        />
                     </div>
+
+                    {{-- Share this doc --}}
+                    <social-share
+                        page_description="{{ $doc->caption }}"
+                        page_title="{{ $doc->title }}"
+                        quote="{{ $doc->user->name }}"
+                        hashtag="{{ $doc->docTopic->topics[0] }}"
+                    />
                 </div>
                 <div class="post-header-image">
                     <figure>
@@ -48,9 +49,10 @@
                                         {{ $doc->docMedia->file_url }} 600w,
                                         {{ $doc->docMedia->file_url }} 1200w"
                                 sizes="(max-width:480px) 300px, (max-width:768px) 600px, 1200px"
-                                src="{{ $doc->docMedia->file_url }}" alt="{{ $doc->title }}">
+                                src="{{ $doc->docMedia->file_url }}" alt="{{ $doc->title }}" id="global-image-picker">
                         </div>
                     </figure>
+                    <div class="gradient-overlay"></div>
                 </div>
             </div>
         </div>
