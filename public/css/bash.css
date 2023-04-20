@@ -20,7 +20,7 @@
     --font-weight-three-regular: 400;
     --font-weight-three-medium: 500;
     --font-weight-three-bold: 700;
-    --ghost-accent-color: #ff4d82;
+    --ghost-accent-color: #0c9aca;
     --color-font-one: #151618;
     --color-font-two: #fff;
     --color-font-three: #151618;
@@ -151,6 +151,7 @@ body .is-partial-color:not(.is-partial-dark) {
     --opacity-one: 0.8;
     --opacity-two: 1;
 }
+
 .dark-mode .is-partial-color:not(.is-partial-dark) {
     --color-font-three: #f7f7f5;
     --color-font-four: #f7f7f5;
@@ -1574,32 +1575,34 @@ body .is-partial-color:not(.is-partial-dark) {
     margin-top: 1em;
     margin-bottom: 18px;
     margin-left: -1px;
+    font-family: var(--font-family-three) !important;
+    font-weight: var(--font-weight-three-bold) !important;
 }
 
 .post-content h4,
 .post-content h5,
 .post-content h6 {
-    font-family: var(--font-family-three);
-    font-weight: var(--font-weight-three-bold);
+    font-family: var(--font-family-three) !important;
+    font-weight: var(--font-weight-three-bold) !important;
     line-height: 1.55;
     margin-top: 1.2em;
     margin-bottom: 10px;
 }
 
 .post-content h1 {
-    font-size: 5.8rem;
+    font-size: 5rem;
 }
 
 .post-content h2 {
-    font-size: 4.5rem;
+    font-size: 4rem;
 }
 
 .post-content h3 {
-    font-size: 3.2rem;
+    font-size: 3rem;
 }
 
 .post-content h4 {
-    font-size: 2.4rem;
+    font-size: 2rem;
 }
 
 .post-content h5 {
@@ -1615,6 +1618,7 @@ body .is-partial-color:not(.is-partial-dark) {
 .post-content p {
     line-height: 1.62;
     position: relative;
+    font-weight: 400 !important;
 }
 
 .post-content strong {
@@ -1668,6 +1672,8 @@ body .is-partial-color:not(.is-partial-dark) {
     padding-bottom: 5px;
     padding-left: 1em;
     border-left: 4px solid var(--ghost-accent-color);
+    color: rgba(117, 117, 117, 1);
+    letter-spacing: .8px;
 }
 
 .post-content blockquote.kg-blockquote-alt {

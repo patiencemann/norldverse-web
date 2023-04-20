@@ -2,26 +2,32 @@
     <div id="social-platforms">
         <vue-goodshare-twitter
             :page_url="href"
+            :page_title="page_title"
+            :page-description="page_description"
             has_icon
             has_counter>
         </vue-goodshare-twitter>
         <vue-goodshare-facebook
             :page_url="page_url"
+            :page_title="page_title"
             has_icon
             has_counter>
         </vue-goodshare-facebook>
         <vue-goodshare-linkedin
             :page_url="href"
+            :page_title="page_title"
             has_icon
             has_counter>
         </vue-goodshare-linkedin>
         <vue-goodshare-pinterest
             :page_url="href"
+            :page_title="page_title"
             has_icon
             has_counter>
         </vue-goodshare-pinterest>
         <vue-goodshare-reddit
             :page_url="href"
+            :page_title="page_title"
             has_icon
             has_counter>
         </vue-goodshare-reddit>
@@ -45,14 +51,6 @@
                 default: () => ""
             },
             page_title: {
-                type: String,
-                default: () => ""
-            },
-            quote: {
-                type: String,
-                default: () => ""
-            },
-            hashtag: {
                 type: String,
                 default: () => ""
             },

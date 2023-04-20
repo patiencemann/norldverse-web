@@ -5898,18 +5898,6 @@ __webpack_require__.r(__webpack_exports__);
       "default": function _default() {
         return "";
       }
-    },
-    quote: {
-      type: String,
-      "default": function _default() {
-        return "";
-      }
-    },
-    hashtag: {
-      type: String,
-      "default": function _default() {
-        return "";
-      }
     }
   },
   components: {
@@ -7059,30 +7047,36 @@ var render = function render() {
   }, [_c("vue-goodshare-twitter", {
     attrs: {
       page_url: _vm.href,
+      page_title: _vm.page_title,
+      "page-description": _vm.page_description,
       has_icon: "",
       has_counter: ""
     }
   }), _vm._v(" "), _c("vue-goodshare-facebook", {
     attrs: {
       page_url: _vm.page_url,
+      page_title: _vm.page_title,
       has_icon: "",
       has_counter: ""
     }
   }), _vm._v(" "), _c("vue-goodshare-linkedin", {
     attrs: {
       page_url: _vm.href,
+      page_title: _vm.page_title,
       has_icon: "",
       has_counter: ""
     }
   }), _vm._v(" "), _c("vue-goodshare-pinterest", {
     attrs: {
       page_url: _vm.href,
+      page_title: _vm.page_title,
       has_icon: "",
       has_counter: ""
     }
   }), _vm._v(" "), _c("vue-goodshare-reddit", {
     attrs: {
       page_url: _vm.href,
+      page_title: _vm.page_title,
       has_icon: "",
       has_counter: ""
     }

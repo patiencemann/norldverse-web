@@ -38,8 +38,6 @@
                     <social-share
                         page_description="{{ $doc->caption }}"
                         page_title="{{ $doc->title }}"
-                        quote="{{ $doc->user->name }}"
-                        hashtag="{{ $doc->docTopic->topics[0] }}"
                     />
                 </div>
                 <div class="post-header-image">
