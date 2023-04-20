@@ -2,9 +2,11 @@
 
     namespace App\Http\Controllers;
 
+    use App\Filters\DocFilter;
     use App\Http\Requests\StoreDocRequest;
     use App\Http\Resources\DocResource;
     use App\Models\Doc;
+    use App\Models\DocTopic;
     use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
     class DocController extends Controller {
@@ -24,9 +26,13 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function public() {
+        public function public(DocFilter $filters) {
             return DocResource::collection(
-                Doc::withCount('docComments')->where('status', true)->orderBy('created_at', 'desc')->get()
+                Doc::withCount('docComments')
+                    ->filter($filters)
+                    ->where('status', true)
+                    ->orderBy('created_at', 'desc')
+                    ->get()
             );
         }
 
@@ -43,7 +49,8 @@
             )->getSecurePath();
 
             $doc = authUser()->docs()->create($request->validated());
-            $doc->docMedia()->create([ 'file_url' => $imageFile ]);
+            $doc->docMedia()->create(['file_url' => $imageFile]);
+            $doc->docTopic()->create(['topics' => array_map('trim', array_map('strtolower', $request->topics))]);
 
             return response()->json([
                 'data' => DocResource::make($doc),
@@ -86,6 +93,7 @@
 
             $doc->update($request->validated());
             $doc->docMedia()->update([ 'file_url' => $imageFile ]);
+            $doc->docTopic()->update(['topics' => array_map('trim', array_map('strtolower', $request->topics))]);
 
             return response()->json([
                 'data' => DocResource::make($doc),
@@ -104,6 +112,28 @@
 
             return response()->json([
                 'message' => 'Doc removed successfully'
+            ]);
+        }
+
+        /**
+         * Remove the specified resource from storage.
+         *
+         * @param  \App\Models\Doc  $doc
+         * @return \Illuminate\Http\Response
+         */
+        public function tags() {
+            $tags = [];
+
+            foreach(DocTopic::all() as $topics){
+                foreach($topics->topics as $topic){
+                    if(!in_array(strtolower(trim($topic)), $tags))
+                        array_push($tags, strtolower(trim($topic)));
+                }
+            }
+
+            return response()->json([
+                'tags' => $tags,
+                'message' => 'tags listed'
             ]);
         }
     }

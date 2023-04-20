@@ -4,20 +4,18 @@
     use Illuminate\Database\Schema\Blueprint;
     use Illuminate\Support\Facades\Schema;
 
-    class CreateDocCommentsTable extends Migration {
+    class CreateDocTopicsTable extends Migration {
         /**
          * Run the migrations.
          *
          * @return void
          */
         public function up() {
-            Schema::create('doc_comments', function (Blueprint $table) {
+            Schema::create('doc_topics', function (Blueprint $table) {
                 $table->id();
-                $table->string('slug')->unique()->nullable();
                 $table->unsignedBigInteger('doc_id');
-                $table->unsignedBigInteger('user_id');
-                $table->longText('message');
-                $table->boolean('status')->default(true)->nullable();
+                $table->json('topics');
+                $table->boolean('active_status')->nullable()->default(true);
                 $table->timestamps();
             });
         }
@@ -28,6 +26,6 @@
          * @return void
          */
         public function down() {
-            Schema::dropIfExists('doc_comments');
+            Schema::dropIfExists('doc_topics');
         }
     }

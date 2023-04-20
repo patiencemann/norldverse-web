@@ -8,9 +8,11 @@
     use Illuminate\Database\Eloquent\Relations\HasMany;
     use Illuminate\Database\Eloquent\Relations\HasOne;
     use Illuminate\Support\Str;
+    use Patienceman\Filtan\Filterable;
 
     class Doc extends Model {
-        use HasFactory;
+        use HasFactory,
+            Filterable;
 
         /**
          * The attributes that are mass assignable.
@@ -19,22 +21,12 @@
          */
         protected $fillable = [
             'user_id',
+            'slug',
             'title',
             'caption',
             'contents',
             'status'
         ];
-
-        protected static function boot() {
-            parent::boot();
-
-            /**
-             * Generate doc slug
-             */
-            static::creating(function ($doc) {
-                $doc->slug = Str::lower(Str::slug($doc->title)."_".Str::random(10));
-            });
-        }
 
         /**
          * Doc belongs to user
@@ -61,5 +53,13 @@
          */
         public function docMedia(): HasOne {
             return $this->hasOne(DocMedia::class);
+        }
+
+        /**
+         * Doc has one to topics
+         * @return HasOne
+         */
+        public function docTopic(): HasOne {
+            return $this->hasOne(DocTopic::class);
         }
     }

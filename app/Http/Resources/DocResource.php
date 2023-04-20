@@ -14,11 +14,13 @@
         public function toArray($request) {
             return [
                 'id' => $this->id,
+                'slug' => $this->slug,
                 'user' => UserResource::make($this->user),
                 'title' => $this->title,
                 'caption' => $this->caption,
                 'contents' => $this->contents,
                 'media' => DocMediaResource::make($this->docMedia),
+                'topics' => DocTopicResource::make($this->docTopic),
                 'comments' => DocCommentUserResource::collection($this->docComments()->distinct()->select('user_id')->take(5)->get()),
                 'created_at' => $this->created_at->diffForHumans()
             ];
