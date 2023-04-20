@@ -16,7 +16,7 @@
                 <file-input @change="onFileChange" v-model="data.image" />
 
                 <!-- Rich text area -->
-                <rich-textarea v-model="data.contents" placeholder="Write your full thoughts here..." />
+                <rich-textarea v-model="data.contents" :value="data.contents" placeholder="Write your full thoughts here..." />
 
                 <div class="mt-5 flex justify-between items-center">
                     <button

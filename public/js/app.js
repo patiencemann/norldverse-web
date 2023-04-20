@@ -7160,6 +7160,7 @@ var render = function render() {
     }
   }), _vm._v(" "), _c("rich-textarea", {
     attrs: {
+      value: _vm.data.contents,
       placeholder: "Write your full thoughts here..."
     },
     model: {

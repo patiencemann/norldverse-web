@@ -1673,7 +1673,6 @@ body .is-partial-color:not(.is-partial-dark) {
     padding-left: 1em;
     border-left: 4px solid var(--ghost-accent-color);
     color: rgba(117, 117, 117, 1);
-    letter-spacing: .8px;
 }
 
 .post-content blockquote.kg-blockquote-alt {
