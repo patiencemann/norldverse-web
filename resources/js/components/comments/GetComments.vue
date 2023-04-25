@@ -1,26 +1,28 @@
     <template>
-        <div class="comments-section mt-5">
-            <div v-if="isLoading">
-                <comment-skeleton />
-            </div>
-
-            <div class="d-flex flex-start mb-4" v-for="comment in comments" :key="comment.id">
-                <div class="mr-3">
-                    <img class="rounded-circle shadow-1-strong me-3 h-20 w-20" :src="comment.user.avatar" :alt="comment.user.name">
+        <div>
+            <div class="comments-section mt-5" v-if="comments.length < 0">
+                <div v-if="isLoading">
+                    <comment-skeleton />
                 </div>
-                <div class="card w-100">
-                  <div class="card-body p-4">
-                    <div class="">
-                      <div class="comment-title">
-                        <h5>{{ comment.user.name }}</h5>
-                        <span>{{comment.created_at}}</span>
-                      </div>
-                      <p>{{ comment.message }}</p>
+
+                <div class="d-flex flex-start mb-4" v-for="comment in comments" :key="comment.id">
+                    <div class="mr-3">
+                        <img class="rounded-circle shadow-1-strong me-3 h-20 w-20" :src="comment.user.avatar" :alt="comment.user.name">
                     </div>
-                  </div>
+                    <div class="card w-100">
+                        <div class="card-body p-4">
+                        <div class="">
+                            <div class="comment-title">
+                            <h5>{{ comment.user.name }}</h5>
+                            <span>{{comment.created_at}}</span>
+                            </div>
+                            <p>{{ comment.message }}</p>
+                        </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </template>
     <script>
