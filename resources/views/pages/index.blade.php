@@ -13,5 +13,5 @@
         </div>
     </main>
 
-    <x-footer />
+    {{-- <x-footer /> --}}
 @stop
