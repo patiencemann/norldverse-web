@@ -29,6 +29,7 @@
     "dependencies": {
         "@toast-ui/editor": "^3.2.1",
         "codemirror": "^6.0.1",
+        "html2pdf.js": "^0.10.1",
         "vue-goodshare": "^1.6.1",
         "vue-social-sharing": "^3.0.9"
     }

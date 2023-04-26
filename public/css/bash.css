@@ -596,8 +596,13 @@ body .is-partial-color:not(.is-partial-dark) {
     opacity: var(--opacity-two);
 }
 
+.post-meta-content a{
+    font-size: 1.9rem;
+}
+
 .post-meta time {
     display: block;
+    font-size: 1.5rem;
 }
 
 .post-meta a:hover {
@@ -611,12 +616,12 @@ body .is-partial-color:not(.is-partial-dark) {
     margin-top: 0;
     text-align: left;
     position: relative;
-    min-width: 50px;
+    min-width: 70px;
 }
 
 .post-item-author {
-    width: 40px !important;
-    height: 40px !important;
+    width: 60px !important;
+    height: 60px !important;
     border-width: 5px;
     background-color: var(--color-body-partial);
 }
@@ -1043,6 +1048,7 @@ body .is-partial-color:not(.is-partial-dark) {
 }
 .global-item-author a {
     pointer-events: auto;
+    font-weight: 600 !important;
 }
 .global-item-author img {
     width: 101%;

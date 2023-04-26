@@ -5,59 +5,61 @@
 @section('content')
     <x-navigation-bar />
 
-    <div class="post-header">
-        <div class="post-header-wrap global-padding">
-            <div class="post-header-container">
-                <div class="post-header-content">
-                    <div>
-                        <div class="post-tags global-tags">
-                            @foreach ($doc->docTopic->topics as $topic)
-                                <a>{{ $topic }}</a>
-                            @endforeach
+    <div id="downloadable">
+        <div class="post-header">
+            <div class="post-header-wrap global-padding">
+                <div class="post-header-container">
+                    <div class="post-header-content">
+                        <div>
+                            <div class="post-tags global-tags">
+                                @foreach ($doc->docTopic->topics as $topic)
+                                    <a>{{ $topic }}</a>
+                                @endforeach
+                            </div>
+                            <h1 class="post-title global-title">{{ $doc->title }}</h1>
+                            <p class="post-excerpt global-excerpt">{{ $doc->caption }}</p>
                         </div>
-                        <h1 class="post-title global-title">{{ $doc->title }}</h1>
-                        <p class="post-excerpt global-excerpt">{{ $doc->caption }}</p>
-                    </div>
-                    <div class="flex justify-between items-center post-socials">
-                        <div class="post-meta">
-                            <div class="post-authors">
-                                <div class="post-item-author global-item-author is-image global-image">
-                                    <a href="https://twitter.com/ManirabonaW" class="global-link" title="{{ $doc->user->name }}"></a>
-                                    <img src="{{ $doc->user->avatar }}" loading="lazy" alt="{{ $doc->user->name }}">
+                        <div class="flex justify-between items-center post-socials">
+                            <div class="post-meta">
+                                <div class="post-authors">
+                                    <div class="post-item-author global-item-author is-image global-image">
+                                        <a href="https://twitter.com/ManirabonaW" class="global-link font-bold" title="{{ $doc->user->name }}"></a>
+                                        <img src="{{ $doc->user->avatar }}" loading="lazy" alt="{{ $doc->user->name }}">
+                                    </div>
+                                </div>
+
+                                <div class="post-meta-content">
+                                    <a href="https://twitter.com/ManirabonaW" class="font-bold">{{ $doc->user->name }}</a>
+                                    <time datetime="{{ $doc->created_at }}">{{ $doc->created_at->diffForHumans() }} — <read-time text="{{ $doc->contents }}" /></time>
                                 </div>
                             </div>
-
-                            <div class="post-meta-content">
-                                <a href="https://twitter.com/ManirabonaW">{{ $doc->user->name }}</a>
-                                <time datetime="2021-08-06">{{ $doc->created_at->diffForHumans() }} — <read-time text="{{ $doc->contents }}" /></time>
-                            </div>
                         </div>
+
+                        {{-- Share this doc --}}
+                        <social-share
+                            page_description="{{ $doc->caption }}"
+                            page_title="{{ $doc->title }}"
+                        />
                     </div>
-
-                    {{-- Share this doc --}}
-                    <social-share
-                        page_description="{{ $doc->caption }}"
-                        page_title="{{ $doc->title }}"
-                    />
-                </div>
-                <div class="post-header-image">
-                    <figure>
-                        <div class="global-image global-image-orientation global-radius is-square">
-                            <img srcset="{{ $doc->docMedia->file_url }} 300w,
-                                        {{ $doc->docMedia->file_url }} 600w,
-                                        {{ $doc->docMedia->file_url }} 1200w"
-                                sizes="(max-width:480px) 300px, (max-width:768px) 600px, 1200px"
-                                src="{{ $doc->docMedia->file_url }}" alt="{{ $doc->title }}" id="global-image-picker">
-                        </div>
-                    </figure>
-                    <div class="gradient-overlay"></div>
+                    <div class="post-header-image">
+                        <figure>
+                            <div class="global-image global-image-orientation global-radius is-square">
+                                <img srcset="{{ $doc->docMedia->file_url }} 300w,
+                                            {{ $doc->docMedia->file_url }} 600w,
+                                            {{ $doc->docMedia->file_url }} 1200w"
+                                    sizes="(max-width:480px) 300px, (max-width:768px) 600px, 1200px"
+                                    src="{{ $doc->docMedia->file_url }}" alt="{{ $doc->title }}" id="global-image-picker">
+                            </div>
+                        </figure>
+                        <div class="gradient-overlay"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="post-content">
-        {!! $doc->contents !!}
+        <div class="post-content" id="page_brak_post_content">
+            {!! $doc->contents !!}
+        </div>
     </div>
 
     <section class="comments" style="background-image: url('/img/space-guy.jpg')">
