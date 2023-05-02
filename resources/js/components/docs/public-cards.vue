@@ -5,7 +5,7 @@
         </div>
         <div class="loop-wrap">
             <article class="item is-loop is-image" v-for="doc in docs" :key="doc.id">
-                <div class="item-image global-image global-image-orientation global-radius is-landscape">
+                <div class="item-image global-image global-image-orientation global-radius is-landscape bg-gray-300">
                     <a :href="'/docs/'+doc.slug" class="global-link" :aria-label="doc.title"></a>
                     <img :src="doc.media.file_url" loading="lazy" :alt="doc.title"
                         :srcset="doc.media.file_url+' 300w,'+ doc.media.file_url+' 600w,'+ doc.media.file_url+' 1200w'"

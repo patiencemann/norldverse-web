@@ -137,7 +137,8 @@
         justify-content: center;
         max-width: 60rem;
         padding: 1rem 2rem;
-        text-align: center
+        text-align: center;
+        border: 1px solid #dbe0e4;
     }
 
     @media(min-width: 64em) {
