@@ -29,8 +29,8 @@
                             </a>
                         </span>
                     </div>
-                    <h2 class="item-title"><a :href="'/docs/'+doc.slug">{{ doc.title }}</a></h2>
-                    <p class="item-excerpt">{{ doc.caption }}</p>
+                    <h2 class="item-title" style="margin-top: 1.3rem"><a :href="'/docs/'+doc.slug" class="dark:text-gray-200">{{ doc.title }}</a></h2>
+                    <p class="item-excerpt dark:text-gray-200">{{ doc.caption }}</p>
                 </div>
             </article>
         </div>

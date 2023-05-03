@@ -2,7 +2,7 @@
         <div class="bg-gray-100 dark:bg-gray-700 rounded-3xl p-10 mb-5">
             <h1 class="text-3xl font-bold mb-10 dark:text-white" v-text="data.title"></h1>
 
-            <form action="#" @submit.prevent="createDoc()" enctype="multipart/form-data">
+            <form action="#" @submit.prevent="createDoc()" @keypress.enter.prevent="" enctype="multipart/form-data">
                 <!-- Title -->
                 <custom-input placeholder="Your Title" v-model="data.title"/>
 
@@ -25,7 +25,7 @@
                         </button>
                     </span>
                 </div>
-                <custom-input placeholder="Topics..." v-model="data.topic" @keyup.space="onNewTopicEnter" @focus="cleanTopicPlaceholder"/>
+                <custom-input placeholder="Topics..." v-model="data.topic" @keyup.space="onNewTopicEnter" @focus="cleanTopicPlaceholder" @keypress.enter="onNewTopicEnter"/>
 
                 <!-- Rich text area -->
                 <rich-textarea v-model="data.contents" placeholder="Write your full thoughts here..." />

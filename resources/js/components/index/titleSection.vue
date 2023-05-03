@@ -1,6 +1,6 @@
 <template>
     <div class="loop-subtitle">
-        <small class="loop-subtitle-title global-title">
+        <small class="loop-subtitle-title global-title dark:text-gray-200">
             See what I’ve <br>
             <span>Written lately</span>
         </small>
@@ -11,7 +11,7 @@
                     <img :src="user.avatar" loading="lazy" :alt="user.name">
                 </div>
             </div>
-            <small>Meet our top Vistors</small>
+            <small class="dark:text-gray-200">Meet our top Vistors</small>
         </div>
     </div>
 </template>

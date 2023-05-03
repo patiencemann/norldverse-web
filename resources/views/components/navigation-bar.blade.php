@@ -1,6 +1,6 @@
 <header class="site-header" style="background-image: url('/img/space-guy.jpg')">
     <div class="container">
-        <div class="header-inner flex justify-space-between">
+        <div class="header-inner flex justify-space-between dark:bg-deep-green-800">
             <div class="flex items-center">
                 <button id="toggleSidebarMobile" aria-expanded="true" aria-controls="sidebar"
                     class="p-2 mr-2 text-gray-600 rounded cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
@@ -43,6 +43,20 @@
                 <ul id="flowbiteMenu"
                     class="mr-3 hidden items-center justify-center flex-col pt-6 lg:flex-row lg:self-center lg:py-0 lg:flex">
                     <li class="lg:px-2 xl:px-3 lg:mb-0">
+                        <a target="_blank" href="https://patienceman.com"
+                            data-tooltip-target="tooltip-portifolio"
+                            class="mt-2 text-md font-medium text-gray-900 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500 flex items-center justify-center"
+                            style="font-family: 'Anek Telugu', sans-serif; font-weight: 600">Portifolio</a>
+                        <div id="tooltip-portifolio" role="tooltip"
+                            class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
+                            data-popper-placement="top"
+                            style="font-size: 15px;position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
+                            Check My portifolio
+                            <div class="tooltip-arrow" data-popper-arrow=""
+                                style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
+                        </div>
+                    </li>
+                    <li class="lg:px-2 xl:px-3 lg:mb-0">
                         <a target="_blank" href="https://twitter.com/ManirabonaW"
                             data-tooltip-target="tooltip-twitter"
                             class="mt-2 text-md font-medium text-gray-900 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500 flex items-center justify-center"
@@ -50,22 +64,8 @@
                         <div id="tooltip-twitter" role="tooltip"
                             class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
                             data-popper-placement="top"
-                            style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
+                            style="font-size: 15px;position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
                             Find Patience Manirabona On Twitter
-                            <div class="tooltip-arrow" data-popper-arrow=""
-                                style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
-                        </div>
-                    </li>
-                    <li class="lg:px-2 xl:px-3 lg:mb-0 mt-2">
-                        <a target="_blank" href="https://www.facebook.com/nolanil.manirabona"
-                            data-tooltip-target="tooltip-facebook"
-                            class="mt-2 text-md font-medium text-gray-900 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500"
-                            style="font-family: 'Anek Telugu', sans-serif; font-weight: 600;">Facebook</a>
-                        <div id="tooltip-facebook" role="tooltip"
-                            class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
-                            data-popper-placement="top"
-                            style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
-                            Find Patience Manirabona On Facebook
                             <div class="tooltip-arrow" data-popper-arrow=""
                                 style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
                         </div>
@@ -78,7 +78,7 @@
                         <div id="tooltip-linkedin" role="tooltip"
                             class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
                             data-popper-placement="top"
-                            style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
+                            style="font-size: 15px;position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
                             Find Patience Manirabona On LinkedIn
                             <div class="tooltip-arrow" data-popper-arrow=""
                                 style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
@@ -92,22 +92,8 @@
                         <div id="tooltip-insta" role="tooltip"
                             class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
                             data-popper-placement="top"
-                            style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
+                            style="font-size: 15px;position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
                             Find Patience Manirabona On Instagram
-                            <div class="tooltip-arrow" data-popper-arrow=""
-                                style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
-                        </div>
-                    </li>
-                    <li class="lg:px-2 xl:px-3 lg:mb-0 mt-2">
-                        <a target="_blank" href="https://mail.google.com/mail/u/?authuser=user@gmail.com"
-                            data-tooltip-target="tooltip-email"
-                            class="mt-2 text-md font-medium text-gray-900 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500"
-                            style="font-family: 'Anek Telugu', sans-serif; font-weight: 700">Gmail</a>
-                        <div id="tooltip-email" role="tooltip"
-                            class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
-                            data-popper-placement="top"
-                            style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
-                            Contact with Patience Manirabona via email
                             <div class="tooltip-arrow" data-popper-arrow=""
                                 style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
                         </div>
@@ -115,7 +101,7 @@
                 </ul>
 
                 @if (Auth::check())
-                    <a href="{{ route('post.logout') }}" data-tooltip-target="tooltip-discord-2"
+                    <a href="{{ route('post.logout') }}" data-tooltip-target="tooltip-logout"
                         class="hidden sm:inline-block text-gray-500 dark:text-gray-400 bg-red-200 dark:bg-red-700 dark:hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 mr-1"
                         style="font-size: 24px">
                         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -125,16 +111,16 @@
                             </path>
                         </svg>
                     </a>
-                    <div id="tooltip-discord-2" role="tooltip"
+                    <div id="tooltip-logout" role="tooltip"
                         class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-black bg-red-200 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
                         data-popper-placement="top"
-                        style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
+                        style="font-size: 17px;position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
                         Logout your account
                         <div class="tooltip-arrow" data-popper-arrow=""
                             style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
                     </div>
                 @else
-                    <a href="{{ route('get.login') }}" data-tooltip-target="tooltip-discord-2"
+                    <a href="{{ route('get.login') }}" data-tooltip-target="tooltip-login"
                         class="hidden sm:inline-block text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 mr-1">
                         <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg">
@@ -143,10 +129,10 @@
                             </path>
                         </svg>
                     </a>
-                    <div id="tooltip-discord-2" role="tooltip"
+                    <div id="tooltip-login" role="tooltip"
                         class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
                         data-popper-placement="top"
-                        style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
+                        style="font-size: 15px;position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
                         Login to your account
                         <div class="tooltip-arrow" data-popper-arrow=""
                             style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
@@ -166,7 +152,7 @@
                 <div id="tooltip-github-2" role="tooltip"
                     class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
                     data-popper-placement="top"
-                    style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1179px, -62px);">
+                    style="font-size: 15px;position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1179px, -62px);">
                     View Patience on Github
                     <div class="tooltip-arrow" data-popper-arrow=""
                         style="position: absolute; left: 0px; transform: translate(60px, 0px);"></div>
@@ -185,7 +171,7 @@
                 <div id="tooltip-discord-2" role="tooltip"
                     class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
                     data-popper-placement="top"
-                    style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
+                    style="font-size: 15px;position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
                     Connect with me on Discord
                     <div class="tooltip-arrow" data-popper-arrow=""
                         style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
@@ -193,21 +179,17 @@
                 <button id="theme-toggle" onclick="toggleDarkMode()" data-tooltip-target="tooltip-toggle"
                     type="button"
                     class="flex text-gray-500 dark:bg-gray-700 dark:text-gray-400 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-                    <svg id="theme-toggle-dark-icon" class="hidden w-10 h-10" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    <svg id="theme-toggle-dark-icon" style="font-size: 20px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
                     </svg>
-                    <svg id="theme-toggle-light-icon" class="hidden" style="font-size: 20px" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                            fill-rule="evenodd" clip-rule="evenodd"></path>
+                    <svg id="theme-toggle-light-icon" style="font-size: 20px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                     </svg>
                 </button>
                 <div id="tooltip-toggle" role="tooltip"
                     class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
                     data-popper-placement="top"
-                    style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1262px, -62px);">
+                    style="font-size: 15px;position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1262px, -62px);">
                     Toggle dark mode
                     <div class="tooltip-arrow" data-popper-arrow=""
                         style="position: absolute; left: 0px; transform: translate(69px, 0px);"></div>
@@ -215,7 +197,7 @@
 
                 @if (Auth::check())
                     <a href="{{ route('get.dashboard') }}" class="ml-3">
-                        <div id="tooltip-jese" role="tooltip"
+                        <div id="tooltip-jese" role="tooltip" style="font-size: 15px;"
                             class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
                             {{ authUser()->name }}
                             <div class="tooltip-arrow" data-popper-arrow></div>

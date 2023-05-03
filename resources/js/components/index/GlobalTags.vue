@@ -1,14 +1,14 @@
 <template>
     <div class="title-tags">
         <span>
-            <a @click="findByTag('all')">All</a>
+            <a @click="findByTag('all')" class="dark:bg-deep-green-800 dark:text-gray-200 dark:hover:text-gray-900">All</a>
             <div class="search-box">
-                <input type="text" placeholder="  Search Everything..." v-model="search" @keyup="searchDoc" />
+                <input type="text" class="dark:bg-deep-green-800 dark:text-gray-200" placeholder="  Search Everything..." v-model="search" @keyup="searchDoc" />
                 <button type="reset"></button>
             </div>
-            <a v-for="tag in tags" :key="tag" @click="findByTag(tag)">{{
-                tag
-            }}</a>
+            <a v-for="tag in tags" :key="tag" @click="findByTag(tag)" class="dark:bg-deep-green-800 dark:text-gray-200 dark:hover:text-gray-900">
+                {{ tag }}
+            </a>
         </span>
     </div>
 </template>

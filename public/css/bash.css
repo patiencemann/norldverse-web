@@ -1518,11 +1518,14 @@ body .is-partial-color:not(.is-partial-dark) {
 }
 
 /* POST CONTENTS */
+.post-content-container{
+    width: 100%;
+}
 
 .post-content {
     font-size: 2rem;
     max-width: var(--max-width-post-wrap);
-    margin: 0 auto 14vh;
+    margin: 0 auto 0vh;
     padding: 60px 0px 30px 0px;
     font-family: var(--font-family-system);
 }
@@ -1535,6 +1538,18 @@ body .is-partial-color:not(.is-partial-dark) {
 .post-content h6:first-child,
 .post-content p:first-child {
     margin-top: 0;
+}
+
+.dark .dark\:text-gray-300 > h1,
+.dark .dark\:text-gray-300 > h2,
+.dark .dark\:text-gray-300 > h3,
+.dark .dark\:text-gray-300 > h4,
+.dark .dark\:text-gray-300 > h5 {
+    color: white;
+}
+
+.dark .dark\:text-gray-300 > a {
+    color: var(--ghost-accent-color) !important;
 }
 
 .post-content p,

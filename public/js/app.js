@@ -6390,7 +6390,7 @@ var render = function render() {
   return _c("div", {
     staticClass: "flex justify-between items-center mb-6"
   }, [_c("h2", {
-    staticClass: "text-lg font-anek text-gray-900 dark:text-white",
+    staticClass: "text-lg font-anek text-gray-900",
     staticStyle: {
       "font-size": "25px"
     }
@@ -6534,6 +6534,9 @@ var render = function render() {
     }
   }, [_vm.hasResponse ? _c("div", {
     staticClass: "flex fixed z-30 bottom-2 right-4 items-center p-4 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800",
+    staticStyle: {
+      "font-siz": "20px"
+    },
     attrs: {
       id: "toast-success",
       role: "alert"
@@ -6575,7 +6578,10 @@ var render = function render() {
   })]), _vm._v(" "), _c("span", {
     staticClass: "sr-only"
   }, [_vm._v("Error icon")])]), _vm._v(" "), _c("div", {
-    staticClass: "ml-3 text-sm font-normal"
+    staticClass: "ml-3 font-normal",
+    staticStyle: {
+      "font-size": "22px !important"
+    }
   }, [_vm._v(_vm._s(_vm.response))]), _vm._v(" "), _c("button", {
     staticClass: "ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700",
     attrs: {
@@ -7030,13 +7036,17 @@ var render = function render() {
         text: doc.contents
       }
     })], 1)], 2)]), _vm._v(" "), _c("h2", {
-      staticClass: "item-title"
+      staticClass: "item-title",
+      staticStyle: {
+        "margin-top": "1.3rem"
+      }
     }, [_c("a", {
+      staticClass: "dark:text-gray-200",
       attrs: {
         href: "/docs/" + doc.slug
       }
     }, [_vm._v(_vm._s(doc.title))])]), _vm._v(" "), _c("p", {
-      staticClass: "item-excerpt"
+      staticClass: "item-excerpt dark:text-gray-200"
     }, [_vm._v(_vm._s(doc.caption))])])]);
   }), 0)]);
 };
@@ -7120,7 +7130,7 @@ var render = function render() {
   }, [_c("div", {
     staticClass: "yogurt-3xbgk5"
   }, [_c("div", {
-    staticClass: "yogurt-qo1k2 mt-2"
+    staticClass: "yogurt-qo1k2"
   }, [_vm._v("Save")]), _vm._v(" "), _c("div", {
     staticClass: "yogurt-qdsa8 ml-3"
   }, [_c("svg", {
@@ -7287,6 +7297,10 @@ var render = function render() {
       submit: function submit($event) {
         $event.preventDefault();
         return _vm.createDoc();
+      },
+      keypress: function keypress($event) {
+        if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) return null;
+        $event.preventDefault();
       }
     }
   }, [_c("custom-input", {
@@ -7366,7 +7380,11 @@ var render = function render() {
         if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "space", 32, $event.key, [" ", "Spacebar"])) return null;
         return _vm.onNewTopicEnter.apply(null, arguments);
       },
-      focus: _vm.cleanTopicPlaceholder
+      focus: _vm.cleanTopicPlaceholder,
+      keypress: function keypress($event) {
+        if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) return null;
+        return _vm.onNewTopicEnter.apply(null, arguments);
+      }
     },
     model: {
       value: _vm.data.topic,
@@ -7432,6 +7450,7 @@ var render = function render() {
   return _c("div", {
     staticClass: "title-tags"
   }, [_c("span", [_c("a", {
+    staticClass: "dark:bg-deep-green-800 dark:text-gray-200 dark:hover:text-gray-900",
     on: {
       click: function click($event) {
         return _vm.findByTag("all");
@@ -7446,6 +7465,7 @@ var render = function render() {
       value: _vm.search,
       expression: "search"
     }],
+    staticClass: "dark:bg-deep-green-800 dark:text-gray-200",
     attrs: {
       type: "text",
       placeholder: "  Search Everything..."
@@ -7467,12 +7487,13 @@ var render = function render() {
   })]), _vm._v(" "), _vm._l(_vm.tags, function (tag) {
     return _c("a", {
       key: tag,
+      staticClass: "dark:bg-deep-green-800 dark:text-gray-200 dark:hover:text-gray-900",
       on: {
         click: function click($event) {
           return _vm.findByTag(tag);
         }
       }
-    }, [_vm._v(_vm._s(tag))]);
+    }, [_vm._v("\n            " + _vm._s(tag) + "\n        ")]);
   })], 2)]);
 };
 var staticRenderFns = [];
@@ -7517,13 +7538,15 @@ var render = function render() {
         alt: user.name
       }
     })]);
-  }), 0), _vm._v(" "), _c("small", [_vm._v("Meet our top Vistors")])]) : _vm._e()]);
+  }), 0), _vm._v(" "), _c("small", {
+    staticClass: "dark:text-gray-200"
+  }, [_vm._v("Meet our top Vistors")])]) : _vm._e()]);
 };
 var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("small", {
-    staticClass: "loop-subtitle-title global-title"
+    staticClass: "loop-subtitle-title global-title dark:text-gray-200"
   }, [_vm._v("\n        See what I’ve "), _c("br"), _vm._v(" "), _c("span", [_vm._v("Written lately")])]);
 }];
 render._withStripped = true;
