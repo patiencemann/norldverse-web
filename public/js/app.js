@@ -6308,7 +6308,10 @@ var render = function render() {
   })])]), _vm._v(" "), _c("form", {
     staticClass: "mb-6 w-full ml-3"
   }, [_c("div", {
-    staticClass: "bg-gray-50 py-2 px-4 mb-4 rounded-lg rounded-t-lg border-0 border-gray-200 dark:bg-deep-green-900 dark:border-gray-700"
+    staticClass: "bg-gray-50 py-2 px-4 mb-4 rounded-lg rounded-t-lg dark:bg-deep-green-900 dark:border-gray-700",
+    staticStyle: {
+      border: "1px solid #dbe0e4 !important"
+    }
   }, [_c("label", {
     staticClass: "sr-only font-anek",
     attrs: {
@@ -6485,7 +6488,7 @@ var render = function render() {
         alt: comment.user.name
       }
     })]), _vm._v(" "), _c("div", {
-      staticClass: "absolute z-10 invisible inline-block w-80 text-sm text-gray-500 transition-opacity duration-300 border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-deep-green-800 dark:border-gray-600",
+      staticClass: "absolute z-10 invisible inline-block w-80 text-sm text-gray-500 transition-opacity duration-300 border border-gray-200 bg-gray-50 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-deep-green-800 dark:border-gray-600",
       attrs: {
         "data-popover": "",
         id: "popover-user-profile-for-" + comment.user.id,

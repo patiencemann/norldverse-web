@@ -10,7 +10,7 @@
                         <img :data-popover-target="'popover-user-profile-for-'+comment.user.id" class="ring-2 ring-gray-300 dark:ring-gray-500 rounded-circle shadow-1-strong me-3 h-20 w-20" :src="comment.user.avatar" :alt="comment.user.name">
                     </div>
 
-                    <div data-popover :id="'popover-user-profile-for-'+comment.user.id" role="tooltip" class="absolute z-10 invisible inline-block w-80 text-sm text-gray-500 transition-opacity duration-300 border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-deep-green-800 dark:border-gray-600">
+                    <div data-popover :id="'popover-user-profile-for-'+comment.user.id" role="tooltip" class="absolute z-10 invisible inline-block w-80 text-sm text-gray-500 transition-opacity duration-300 border border-gray-200 bg-gray-50 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-deep-green-800 dark:border-gray-600">
                         <div class="p-3">
                             <div class="flex items-center justify-between mb-2">
                                 <a href="#"> <img class="h-20 w-20 rounded-full" :src="comment.user.avatar" :alt="comment.user.name"> </a>
