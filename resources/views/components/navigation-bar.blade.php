@@ -31,7 +31,7 @@
                     <div id="tooltip-logo-1" role="tooltip"
                         class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
                         data-popper-placement="top"
-                        style="position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
+                        style="font-size: 15px; position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
                         Patience Manirabona Logo
                         <div class="tooltip-arrow" data-popper-arrow=""
                             style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
@@ -179,10 +179,10 @@
                 <button id="theme-toggle" onclick="toggleDarkMode()" data-tooltip-target="tooltip-toggle"
                     type="button"
                     class="flex text-gray-500 dark:bg-gray-700 dark:text-gray-400 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-                    <svg id="theme-toggle-dark-icon" style="font-size: 20px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <svg id="theme-toggle-dark-icon" class="w-10 h-10" style="font-size: 20px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
                     </svg>
-                    <svg id="theme-toggle-light-icon" style="font-size: 20px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <svg id="theme-toggle-light-icon" class="w-10 h-10" style="font-size: 20px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                     </svg>
                 </button>
@@ -202,7 +202,7 @@
                             {{ authUser()->name }}
                             <div class="tooltip-arrow" data-popper-arrow></div>
                         </div>
-                        <img data-tooltip-target="tooltip-jese" class=" w-16 h-16 rounded"
+                        <img data-tooltip-target="tooltip-jese" class="ring-2 ring-gray-300 dark:ring-gray-500 w-16 h-16 rounded"
                             src="{{ authUser()->avatar }}" alt="{{ authUser()->name }}">
                     </a>
                 @endif

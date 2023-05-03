@@ -5340,33 +5340,44 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.prev = 0;
+                if (!(_this.comments == "")) {
+                  _context.next = 6;
+                  break;
+                }
+                _this.hasResponse = true;
+                _this.response = "Write your message";
+                _this.responseType = 'error';
+                _context.next = 23;
+                break;
+              case 6:
                 _this.isLoading = true;
-                _context.next = 4;
+                _context.prev = 7;
+                _context.next = 10;
                 return axios.post("/api/comments/".concat(_this.doc), {
                   message: _this.comments
                 });
-              case 4:
+              case 10:
                 response = _context.sent;
-                _this.isLoading = false;
                 _this.hasResponse = true;
                 _this.response = response.data.message;
                 _this.responseType = 'success';
                 _this.comments = '';
                 _this.$root.$emit("docComments");
-                _context.next = 17;
+                _context.next = 22;
                 break;
-              case 13:
-                _context.prev = 13;
-                _context.t0 = _context["catch"](0);
+              case 18:
+                _context.prev = 18;
+                _context.t0 = _context["catch"](7);
                 _this.response = "something went wrong";
                 _this.responseType = 'error';
-              case 17:
+              case 22:
+                _this.isLoading = false;
+              case 23:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 13]]);
+        }, _callee, null, [[7, 18]]);
       }))();
     }
   }
@@ -6288,7 +6299,7 @@ var render = function render() {
   }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "w-20 h-20 rounded-full"
   }, [_c("img", {
-    staticClass: "w-full h-full rounded-full",
+    staticClass: "ring-2 ring-gray-300 dark:ring-gray-500 w-full h-full rounded-full",
     attrs: {
       "data-tooltip-target": "tooltip-jese",
       src: _vm.avatar,
@@ -6297,7 +6308,7 @@ var render = function render() {
   })])]), _vm._v(" "), _c("form", {
     staticClass: "mb-6 w-full ml-3"
   }, [_c("div", {
-    staticClass: "bg-gray-50 py-2 px-4 mb-4 rounded-lg rounded-t-lg border border-gray-200 dark:bg-gray-800 dark:border-gray-700"
+    staticClass: "bg-gray-50 py-2 px-4 mb-4 rounded-lg rounded-t-lg border-0 border-gray-200 dark:bg-deep-green-900 dark:border-gray-700"
   }, [_c("label", {
     staticClass: "sr-only font-anek",
     attrs: {
@@ -6310,7 +6321,7 @@ var render = function render() {
       value: _vm.comments,
       expression: "comments"
     }],
-    staticClass: "bg-gray-50 px-0 w-full text-base font-anek text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-gray-800 pt-3",
+    staticClass: "bg-gray-50 px-0 w-full text-base font-anek font-bold leading-9 text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-deep-green-900 pt-3",
     staticStyle: {
       "font-size": "17px",
       "line-height": "22px"
@@ -6318,32 +6329,57 @@ var render = function render() {
     attrs: {
       id: "comment",
       rows: "6",
-      placeholder: "Write a comment...",
+      placeholder: "Write your comment...",
       required: ""
     },
     domProps: {
       value: _vm.comments
     },
     on: {
+      keypress: function keypress($event) {
+        if (!$event.type.indexOf("key") && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) return null;
+        $event.preventDefault();
+        return _vm.createComment();
+      },
       input: function input($event) {
         if ($event.target.composing) return;
         _vm.comments = $event.target.value;
       }
     }
   })]), _vm._v(" "), _c("button", {
-    staticClass: "p-4 inline-flex font-anek items-center py-2.5 px-4 text-sm font-bold text-center text-white bg-green-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800",
+    staticClass: "disabled:opacity-75 relative p-4 h-22 w-56 inline-flex font-anek items-center justify-center py-2.5 px-4 text-sm font-bold text-center text-white bg-deep-green-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800",
     staticStyle: {
       "font-size": "16px !important"
     },
     attrs: {
-      type: "button"
+      type: "button",
+      disabled: _vm.isLoading
     },
     on: {
       click: function click($event) {
         return _vm.createComment();
       }
     }
-  }, [_vm._v("\n            Post comment\n        ")]), _vm._v(" "), _c("alert", {
+  }, [_vm._v("\n            Post comment\n            "), _vm.isLoading ? _c("svg", {
+    staticClass: "absolute top-3 right-0 left-24 bottom-0 mr-2 inline h-10 w-10 animate-spin text-indigo-400",
+    attrs: {
+      "aria-hidden": "true",
+      role: "status",
+      viewBox: "0 0 100 101",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg"
+    }
+  }, [_c("path", {
+    attrs: {
+      d: "M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z",
+      fill: "currentColor"
+    }
+  }), _vm._v(" "), _c("path", {
+    attrs: {
+      d: "M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z",
+      fill: "#FFF"
+    }
+  })]) : _vm._e()]), _vm._v(" "), _c("alert", {
     attrs: {
       hasResponse: _vm.hasResponse,
       response: _vm.response,
@@ -6399,7 +6435,7 @@ var render = function render() {
   }, [_vm._l(_vm.uniqueUser.slice(0, _vm.limit), function (user) {
     return _c("img", {
       key: user.id,
-      staticClass: "w-10 h-10 rounded-full border-2 border-white dark:border-gray-800",
+      staticClass: "ring-2 ring-gray-300 dark:ring-gray-500 w-10 h-10 rounded-full border-2 border-white dark:border-gray-800",
       attrs: {
         src: user.user.avatar,
         alt: ""
@@ -6433,8 +6469,8 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("div", [_vm.comments.length < 0 ? _c("div", {
-    staticClass: "comments-section mt-5"
+  return _c("div", [_vm.comments.length > 0 ? _c("div", {
+    staticClass: "comments-section relative dark:bg-deep-green-900 mt-5"
   }, [_vm.isLoading ? _c("div", [_c("comment-skeleton")], 1) : _vm._e(), _vm._v(" "), _vm._l(_vm.comments, function (comment) {
     return _c("div", {
       key: comment.id,
@@ -6442,18 +6478,71 @@ var render = function render() {
     }, [_c("div", {
       staticClass: "mr-3"
     }, [_c("img", {
-      staticClass: "rounded-circle shadow-1-strong me-3 h-20 w-20",
+      staticClass: "ring-2 ring-gray-300 dark:ring-gray-500 rounded-circle shadow-1-strong me-3 h-20 w-20",
       attrs: {
+        "data-popover-target": "popover-user-profile-for-" + comment.user.id,
         src: comment.user.avatar,
         alt: comment.user.name
       }
     })]), _vm._v(" "), _c("div", {
-      staticClass: "card w-100"
+      staticClass: "absolute z-10 invisible inline-block w-80 text-sm text-gray-500 transition-opacity duration-300 border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-deep-green-800 dark:border-gray-600",
+      attrs: {
+        "data-popover": "",
+        id: "popover-user-profile-for-" + comment.user.id,
+        role: "tooltip"
+      }
+    }, [_c("div", {
+      staticClass: "p-3"
+    }, [_c("div", {
+      staticClass: "flex items-center justify-between mb-2"
+    }, [_c("a", {
+      attrs: {
+        href: "#"
+      }
+    }, [_c("img", {
+      staticClass: "h-20 w-20 rounded-full",
+      attrs: {
+        src: comment.user.avatar,
+        alt: comment.user.name
+      }
+    })])]), _vm._v(" "), _c("p", {
+      staticClass: "text-base font-semibold leading-none text-gray-900 dark:text-white mt-4"
+    }, [_c("a", {
+      staticClass: "dark:text-[#E8E8ED] font-anek",
+      staticStyle: {
+        "font-size": "20px"
+      },
+      attrs: {
+        href: "#"
+      }
+    }, [_vm._v(_vm._s(comment.user.name))])]), _vm._v(" "), _c("p", {
+      staticClass: "mb-3 text-sm font-normal mt-2"
+    }, [_c("a", {
+      staticClass: "hover:underline dark:text-[#E8E8ED] font-anek",
+      staticStyle: {
+        "font-size": "16px"
+      },
+      attrs: {
+        href: "#"
+      }
+    }, [_vm._v(_vm._s(comment.user.email))])])]), _vm._v(" "), _c("div", {
+      attrs: {
+        "data-popper-arrow": ""
+      }
+    })]), _vm._v(" "), _c("div", {
+      staticClass: "card w-100 dark:bg-deep-green-700 border-1 border-gray-300 dark:border-gray-200",
+      staticStyle: {
+        border: "1px solid gray"
+      }
     }, [_c("div", {
       staticClass: "card-body p-4"
     }, [_c("div", {}, [_c("div", {
       staticClass: "comment-title"
-    }, [_c("h5", [_vm._v(_vm._s(comment.user.name))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(comment.created_at))])]), _vm._v(" "), _c("p", [_vm._v(_vm._s(comment.message))])])])])]);
+    }, [_c("h5", {
+      staticClass: "dark:text-[#E8E8ED]"
+    }, [_vm._v(_vm._s(comment.user.name))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(comment.created_at))])]), _vm._v(" "), _c("p", {
+      staticClass: "dark:text-[#E8E8ED]"
+    }, [_vm._v(_vm._s(comment.message))])])])])]);
   })], 2) : _vm._e()]);
 };
 var staticRenderFns = [];
@@ -6535,7 +6624,7 @@ var render = function render() {
   }, [_vm.hasResponse ? _c("div", {
     staticClass: "flex fixed z-30 bottom-2 right-4 items-center p-4 mb-4 w-full max-w-xs text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800",
     staticStyle: {
-      "font-siz": "20px"
+      "font-siz": "15px"
     },
     attrs: {
       id: "toast-success",
@@ -6580,7 +6669,7 @@ var render = function render() {
   }, [_vm._v("Error icon")])]), _vm._v(" "), _c("div", {
     staticClass: "ml-3 font-normal",
     staticStyle: {
-      "font-size": "22px !important"
+      "font-size": "15px !important"
     }
   }, [_vm._v(_vm._s(_vm.response))]), _vm._v(" "), _c("button", {
     staticClass: "ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700",
@@ -7083,7 +7172,7 @@ var render = function render() {
     staticClass: "novashare-buttons novashare-floating novashare-no-print"
   }, [_c("vue-goodshare-twitter", {
     attrs: {
-      page_url: _vm.href,
+      page_url: _vm.page_url,
       page_title: _vm.page_title,
       "page-description": _vm.page_description,
       has_icon: "",
@@ -7093,27 +7182,31 @@ var render = function render() {
     attrs: {
       page_url: _vm.page_url,
       page_title: _vm.page_title,
+      "page-description": _vm.page_description,
       has_icon: "",
       has_counter: ""
     }
-  }), _vm._v(" "), _c("vue-goodshare-linkedin", {
+  }), _vm._v(" "), _c("vue-goodshare-linkedIn", {
     attrs: {
-      page_url: _vm.href,
+      page_url: _vm.page_url,
       page_title: _vm.page_title,
+      "page-description": _vm.page_description,
       has_icon: "",
       has_counter: ""
     }
   }), _vm._v(" "), _c("vue-goodshare-pinterest", {
     attrs: {
-      page_url: _vm.href,
+      page_url: _vm.page_url,
       page_title: _vm.page_title,
+      "page-description": _vm.page_description,
       has_icon: "",
       has_counter: ""
     }
   }), _vm._v(" "), _c("vue-goodshare-reddit", {
     attrs: {
-      page_url: _vm.href,
+      page_url: _vm.page_url,
       page_title: _vm.page_title,
+      "page-description": _vm.page_description,
       has_icon: "",
       has_counter: ""
     }
@@ -7546,7 +7639,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("small", {
-    staticClass: "loop-subtitle-title global-title dark:text-gray-200"
+    staticClass: "loop-subtitle-title global-title dark:text-gray-200 font-anek"
   }, [_vm._v("\n        See what I’ve "), _c("br"), _vm._v(" "), _c("span", [_vm._v("Written lately")])]);
 }];
 render._withStripped = true;
@@ -7575,7 +7668,7 @@ var staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "p-4 space-y-4 w-full rounded divide-y divide-gray-200 animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700",
+    staticClass: "absolute top-0 left-0 bottom-0 right-0 bg-deep-green-900 z-50 p-4 space-y-4 w-full rounded divide-y divide-gray-200 animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700",
     attrs: {
       role: "status"
     }

@@ -2483,7 +2483,6 @@ body .is-partial-color:not(.is-partial-dark) {
 .comments {
     background-color: rgba(245, 245, 245, 1);
     background-position: left;
-    border-top: var(--border) var(--color-border-one);
     padding: 20px 0px 5px 0px;
 }
 .comment-container{

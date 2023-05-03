@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Manirabona Patience" />
 
-    <meta name="description" content="" />
+    <meta name="description" content="A short for weblog, where i frequently updated web page used for personal commentary or business content. Often interactive and for individual blog posts where readers can leave comments." />
     <meta name="rating" content="adult" />
+    <meta name="keywords" content="manirabona, patience, manirabona patience, patienceman, personal blog, blogs, docs" />
     <meta name="rating" content="RTA-5042-1996-1400-1577-RTA" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/x-icon" href="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_5_marketing_svg1.svg">

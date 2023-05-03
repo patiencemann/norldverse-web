@@ -1,5 +1,5 @@
 <template>
-    <div role="status" class="p-4 space-y-4 w-full rounded divide-y divide-gray-200 animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700">
+    <div role="status" class="absolute top-0 left-0 bottom-0 right-0 bg-deep-green-900 z-50 p-4 space-y-4 w-full rounded divide-y divide-gray-200 animate-pulse dark:divide-gray-700 md:p-6 dark:border-gray-700">
         <div class="flex justify-between items-center">
             <div>
                 <div class="h-2.5 bg-gray-300 rounded-full dark:bg-gray-600 w-24 mb-2.5"></div>

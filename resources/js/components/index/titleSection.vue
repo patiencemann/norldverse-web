@@ -1,6 +1,6 @@
 <template>
     <div class="loop-subtitle">
-        <small class="loop-subtitle-title global-title dark:text-gray-200">
+        <small class="loop-subtitle-title global-title dark:text-gray-200 font-anek">
             See what I’ve <br>
             <span>Written lately</span>
         </small>

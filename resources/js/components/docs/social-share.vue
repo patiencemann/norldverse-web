@@ -4,7 +4,7 @@
             <h4 class="share__text">Share on</h4>
             <div class="novashare-buttons novashare-floating novashare-no-print">
                 <vue-goodshare-twitter
-                    :page_url="href"
+                    :page_url="page_url"
                     :page_title="page_title"
                     :page-description="page_description"
                     has_icon
@@ -14,27 +14,31 @@
                 <vue-goodshare-facebook
                     :page_url="page_url"
                     :page_title="page_title"
+                    :page-description="page_description"
                     has_icon
                     has_counter
                 >
                 </vue-goodshare-facebook>
-                <vue-goodshare-linkedin
-                    :page_url="href"
+                <vue-goodshare-linkedIn
+                    :page_url="page_url"
                     :page_title="page_title"
+                    :page-description="page_description"
                     has_icon
                     has_counter
                 >
-                </vue-goodshare-linkedin>
+                </vue-goodshare-linkedIn>
                 <vue-goodshare-pinterest
-                    :page_url="href"
+                    :page_url="page_url"
                     :page_title="page_title"
+                    :page-description="page_description"
                     has_icon
                     has_counter
                 >
                 </vue-goodshare-pinterest>
                 <vue-goodshare-reddit
-                    :page_url="href"
+                    :page_url="page_url"
                     :page_title="page_title"
+                    :page-description="page_description"
                     has_icon
                     has_counter
                 >

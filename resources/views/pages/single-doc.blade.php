@@ -64,7 +64,7 @@
         </div>
     </div>
 
-    <section class="comments dark:bg-deep-green-800" style="background-image: url('/img/space-guy.jpg')">
+    <section class="comments dark:bg-deep-green-800">
         <div class="comment-container">
             <div>
                 {{-- Comment statistics --}}
