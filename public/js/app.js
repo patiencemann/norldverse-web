@@ -6426,7 +6426,7 @@ var render = function render() {
   return _c("div", {
     staticClass: "flex justify-between items-center mb-6"
   }, [_c("h2", {
-    staticClass: "text-lg font-anek text-gray-900",
+    staticClass: "text-lg font-anek text-gray-900 dark:text-[#E8E8ED]",
     staticStyle: {
       "font-size": "25px"
     }
