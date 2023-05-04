@@ -4,9 +4,9 @@
                 <div id="tooltip-jese" role="tooltip" class="font-anek inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
                     <div class="tooltip-arrow" data-popper-arrow></div>
                 </div>
-                <div class="w-20 h-20 rounded-full"><img data-tooltip-target="tooltip-jese" class="ring-2 ring-gray-300 dark:ring-gray-500 w-full h-full rounded-full" :src="avatar" alt="PatienceMan"></div>
+                <div class="w-20 h-20 rounded-full"><img data-tooltip-target="tooltip-jese" class="ring-4 ring-gray-50 dark:ring-gray-500 w-full h-full rounded-full" :src="avatar" alt="PatienceMan"></div>
             </div>
-            <form class="mb-6 w-full ml-4">
+            <form class="mb-6 w-full ml-7">
                 <div class="bg-gray-50 py-2 px-4 mb-4 rounded-lg dark:bg-deep-green-900 border border-[#dbe0e4] dark:border-none">
                     <label for="comment" class="sr-only font-anek">Your comment</label>
                     <textarea id="comment" v-model="comments" @keypress.enter.prevent="createComment()" rows="6" style="font-size: 17px; line-height: 22px" class="bg-gray-50 px-0 w-full text-base font-anek font-bold leading-9 text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-deep-green-900 pt-3" placeholder="Write your comment..." required></textarea>

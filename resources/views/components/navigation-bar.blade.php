@@ -395,7 +395,7 @@
                             <div class="tooltip-arrow" data-popper-arrow></div>
                         </div>
                         <img data-tooltip-target="tooltip-jese"
-                            class="ring-2 ring-gray-300 dark:ring-gray-500 w-16 h-16 rounded"
+                            class="ring-4 ring-gray-50 dark:ring-gray-500 w-16 h-16 rounded"
                             src="{{ authUser()->avatar }}" alt="{{ authUser()->name }}">
                     </a>
                 @endif

@@ -6317,14 +6317,14 @@ var render = function render() {
   }, [_vm._m(0), _vm._v(" "), _c("div", {
     staticClass: "w-20 h-20 rounded-full"
   }, [_c("img", {
-    staticClass: "ring-2 ring-gray-300 dark:ring-gray-500 w-full h-full rounded-full",
+    staticClass: "ring-4 ring-gray-50 dark:ring-gray-500 w-full h-full rounded-full",
     attrs: {
       "data-tooltip-target": "tooltip-jese",
       src: _vm.avatar,
       alt: "PatienceMan"
     }
   })])]), _vm._v(" "), _c("form", {
-    staticClass: "mb-6 w-full ml-4"
+    staticClass: "mb-6 w-full ml-7"
   }, [_c("div", {
     staticClass: "bg-gray-50 py-2 px-4 mb-4 rounded-lg dark:bg-deep-green-900 border border-[#dbe0e4] dark:border-none"
   }, [_c("label", {
@@ -6489,18 +6489,20 @@ var render = function render() {
     _c = _vm._self._c;
   return _c("div", [_vm.comments.length > 0 ? _c("div", {
     staticClass: "comments-section relative bg-gray-100 dark:bg-deep-green-900 mt-5"
-  }, [_vm.isLoading ? _c("div", [_c("comment-skeleton")], 1) : _vm._e(), _vm._v(" "), _vm._l(_vm.comments, function (comment) {
-    return _c("div", {
+  }, [_vm.isLoading ? _c("div", [_c("comment-skeleton")], 1) : _vm._e(), _vm._v(" "), _c("ol", {
+    staticClass: "relative border-l border-gray-300 dark:border-gray-700"
+  }, _vm._l(_vm.comments, function (comment) {
+    return _c("li", {
       key: comment.id,
-      staticClass: "d-flex flex-start mb-4"
-    }, [_c("div", {
-      staticClass: "mr-3"
+      staticClass: "mb-10 ml-9"
+    }, [_c("span", {
+      staticClass: "absolute flex items-center justify-center w-20 h-20 bg-blue-100 rounded-circle -left-9 ring-4 ring-gray-200 dark:ring-gray-50 dark:bg-blue-900"
     }, [_c("img", {
-      staticClass: "ring-2 ring-gray-300 dark:ring-gray-500 rounded-circle shadow-1-strong me-3 h-20 w-20",
+      staticClass: "rounded-circle",
       attrs: {
+        alt: comment.user.name,
         "data-popover-target": "popover-user-profile-for-" + comment.user.id,
-        src: comment.user.avatar,
-        alt: comment.user.name
+        src: comment.user.avatar
       }
     })]), _vm._v(" "), _c("div", {
       staticClass: "absolute z-10 invisible inline-block w-80 text-sm text-gray-500 transition-opacity duration-300 border border-gray-200 bg-gray-50 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-deep-green-800 dark:border-gray-600",
@@ -6514,6 +6516,7 @@ var render = function render() {
     }, [_c("div", {
       staticClass: "flex items-center justify-between mb-2"
     }, [_c("a", {
+      staticClass: "timeline-item-icon",
       attrs: {
         href: "#"
       }
@@ -6558,10 +6561,10 @@ var render = function render() {
       staticClass: "comment-title"
     }, [_c("h5", {
       staticClass: "dark:text-[#E8E8ED]"
-    }, [_vm._v(_vm._s(comment.user.name))]), _vm._v(" "), _c("span", [_vm._v(_vm._s(comment.created_at))])]), _vm._v(" "), _c("p", {
+    }, [_vm._v(_vm._s(comment.user.name))]), _vm._v(" "), _c("span", [_vm._v("commented on " + _vm._s(comment.created_at))])]), _vm._v(" "), _c("p", {
       staticClass: "dark:text-[#E8E8ED]"
     }, [_vm._v(_vm._s(comment.message))])])])])]);
-  })], 2) : _vm._e()]);
+  }), 0)]) : _vm._e()]);
 };
 var staticRenderFns = [];
 render._withStripped = true;

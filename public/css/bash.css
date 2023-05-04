@@ -2494,7 +2494,7 @@ body .is-partial-color:not(.is-partial-dark) {
 .comments-section{
     overflow: scroll;
     max-height: 460px;
-    padding: 10px;
+    padding: 30px 30px 30px 40px;
     border-radius: 20px;
     background-color: rgba(245, 245, 245, 1);
 }
