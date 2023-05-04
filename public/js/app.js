@@ -7169,7 +7169,23 @@ var render = function render() {
         href: "/docs/" + doc.slug,
         "aria-label": doc.title
       }
-    }), _vm._v(" "), _c("img", {
+    }), _vm._v(" "), _c("div", {
+      directives: [{
+        name: "lazy-container",
+        rawName: "v-lazy-container",
+        value: {
+          selector: "img",
+          loading: "/img/img-spinner.gif"
+        },
+        expression: "{ selector: 'img', loading: '/img/img-spinner.gif'}"
+      }]
+    }, [_c("img", {
+      directives: [{
+        name: "lazy",
+        rawName: "v-lazy",
+        value: doc.media.file_url,
+        expression: "doc.media.file_url"
+      }],
       attrs: {
         src: doc.media.file_url,
         loading: "lazy",
@@ -7177,7 +7193,7 @@ var render = function render() {
         srcset: doc.media.file_url + " 300w," + doc.media.file_url + " 600w," + doc.media.file_url + " 1200w",
         sizes: "(max-width:480px) 300px, (max-width:768px) 600px, 1200px"
       }
-    }), _vm._v(" "), _c("div", {
+    })]), _vm._v(" "), _c("div", {
       staticClass: "item-authors global-authors"
     }, [_c("div", _vm._l(doc.comments.slice(0, 4), function (comment) {
       return _c("div", {
@@ -7200,7 +7216,7 @@ var render = function render() {
       staticClass: "item-content"
     }, [_c("div", {
       staticClass: "item-tags global-tags"
-    }, [_c("span", [_vm._l(doc.topics.topics, function (topic) {
+    }, [_c("span", [_vm._l(doc.topics.topics.slice(0, 2), function (topic) {
       return _c("a", {
         key: topic
       }, [_vm._v(_vm._s(topic))]);

@@ -1549,7 +1549,7 @@ body .is-partial-color:not(.is-partial-dark) {
 }
 
 .dark .dark\:text-gray-300 > a {
-    color: var(--ghost-accent-color) !important;
+    color: #0c9aca !important;
 }
 
 .post-content p,

@@ -67,6 +67,7 @@
         }
 
         var themeToggleBtn = document.getElementById('theme-toggle');
+
         toggleTheme();
 
         function toggleDarkMode() {
@@ -93,7 +94,7 @@
                 }
             }
 
-            toggleTheme();
+            window.location.reload();
         }
     </script>
 </body>
