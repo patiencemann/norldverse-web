@@ -6293,7 +6293,7 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", {
-    staticClass: "d-flex"
+    staticClass: "d-flex mt-3"
   }, [_c("div", {
     staticClass: "auth-user"
   }, [_vm._m(0), _vm._v(" "), _c("div", {
@@ -6306,12 +6306,9 @@ var render = function render() {
       alt: "PatienceMan"
     }
   })])]), _vm._v(" "), _c("form", {
-    staticClass: "mb-6 w-full ml-3"
+    staticClass: "mb-6 w-full ml-4"
   }, [_c("div", {
-    staticClass: "bg-gray-50 py-2 px-4 mb-4 rounded-lg rounded-t-lg dark:bg-deep-green-900 dark:border-gray-700",
-    staticStyle: {
-      border: "1px solid #dbe0e4 !important"
-    }
+    staticClass: "bg-gray-50 py-2 px-4 mb-4 rounded-lg dark:bg-deep-green-900 border border-[#dbe0e4] dark:border-none"
   }, [_c("label", {
     staticClass: "sr-only font-anek",
     attrs: {
@@ -6350,7 +6347,7 @@ var render = function render() {
       }
     }
   })]), _vm._v(" "), _c("button", {
-    staticClass: "disabled:opacity-75 relative p-4 h-22 w-56 inline-flex font-anek items-center justify-center py-2.5 px-4 text-sm font-bold text-center text-white bg-deep-green-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800",
+    staticClass: "disabled:opacity-75 relative p-4 h-22 w-56 inline-flex font-anek items-center justify-center py-2.5 px-4 text-sm font-bold text-center text-white bg-deep-green-700 rounded-lg focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-primary-800 border border-[#dbe0e4] dark:border-none",
     staticStyle: {
       "font-size": "16px !important"
     },
@@ -6473,7 +6470,7 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("div", [_vm.comments.length > 0 ? _c("div", {
-    staticClass: "comments-section relative dark:bg-deep-green-900 mt-5"
+    staticClass: "comments-section relative bg-gray-100 dark:bg-deep-green-900 mt-5"
   }, [_vm.isLoading ? _c("div", [_c("comment-skeleton")], 1) : _vm._e(), _vm._v(" "), _vm._l(_vm.comments, function (comment) {
     return _c("div", {
       key: comment.id,
@@ -6533,9 +6530,9 @@ var render = function render() {
         "data-popper-arrow": ""
       }
     })]), _vm._v(" "), _c("div", {
-      staticClass: "card w-100 dark:bg-deep-green-700 border-1 border-gray-300 dark:border-gray-200",
+      staticClass: "card bg-gray-50 w-100 dark:bg-deep-green-700 border-1 border-gray-300 dark:border-gray-200",
       staticStyle: {
-        border: "1px solid gray"
+        border: "1px solid #dbe0e4"
       }
     }, [_c("div", {
       staticClass: "card-body p-4"

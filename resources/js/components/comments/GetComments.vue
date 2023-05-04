@@ -1,6 +1,6 @@
     <template>
         <div>
-            <div class="comments-section relative dark:bg-deep-green-900 mt-5" v-if="comments.length > 0">
+            <div class="comments-section relative bg-gray-100 dark:bg-deep-green-900 mt-5" v-if="comments.length > 0">
                 <div v-if="isLoading">
                     <comment-skeleton />
                 </div>
@@ -25,7 +25,7 @@
                         <div data-popper-arrow></div>
                     </div>
 
-                    <div class="card w-100 dark:bg-deep-green-700 border-1 border-gray-300 dark:border-gray-200" style="border: 1px solid gray">
+                    <div class="card bg-gray-50 w-100 dark:bg-deep-green-700 border-1 border-gray-300 dark:border-gray-200" style="border: 1px solid #dbe0e4">
                         <div class="card-body p-4">
                             <div class="">
                                 <div class="comment-title">

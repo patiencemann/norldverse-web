@@ -73,11 +73,14 @@
 
             <div>
                 @if (Auth::check())
+                    <div class="mb-4">
+                        <h2 class="font-anek dark:text-[#E8E8ED]">Share your comments</h2>
+                    </div>
                     {{-- Add comment --}}
                     <add-comments avatar="{{ authUser()->avatar }}" doc="{{ $doc->id }}" />
                 @else
                     <div class="mb-4">
-                        <h2 class="font-anek">Sign In to share <br> your comments</h2>
+                        <h2 class="font-anek dark:text-[#E8E8ED]">Sign In to share <br> your comments</h2>
                     </div>
                     <div>
                         <a href="{{ route('init.oauth', ['google']) }}" class="text-white font-anek bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-3 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2">
