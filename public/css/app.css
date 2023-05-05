@@ -11908,6 +11908,9 @@ input:checked + .toggle-bg {
 .mr-3 {
   margin-right: 0.75rem;
 }
+.ml-2 {
+  margin-left: 0.5rem;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -11940,9 +11943,6 @@ input:checked + .toggle-bg {
 }
 .mb-5 {
   margin-bottom: 1.25rem;
-}
-.ml-2 {
-  margin-left: 0.5rem;
 }
 .ml-5 {
   margin-left: 1.25rem;

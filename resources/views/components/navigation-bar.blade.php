@@ -25,7 +25,7 @@
                 <div id="drawer-navigation" class="fixed top-0 left-0 z-40 w-80 h-screen p-6 transition-transform -translate-x-full bg-gray-50 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
                     <a href="/" class="flex mt-5" data-tooltip-target="tooltip-logo-1">
                         <div class="cursor-pointer w-20">
-                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_5_marketing_svg1.svg" alt="Manirabpna Patience Logo">
+                            <img src="/img/logos/logo-no-background.svg" alt="Patienceman Logo">
                         </div>
                     </a>
                     <div class="py-4 overflow-y-auto">
@@ -208,8 +208,8 @@
                 <div class="flex justify-between items-center">
                     <a href="/" class="flex" data-tooltip-target="tooltip-logo-1">
                         <div class="cursor-pointer w-20">
-                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_5_marketing_svg1.svg"
-                                alt="logo">
+                            <img src="/img/logos/logo-no-background.svg"
+                                alt="patienceman logo">
                         </div>
                         <span class="self-center text-3xl mt-2 font-semibold whitespace-nowrap dark:text-white ml-4"
                             style="font-family: 'Anek Telugu', sans-serif; font-weight: 700; font-size: 3rem">
@@ -395,7 +395,7 @@
                             <div class="tooltip-arrow" data-popper-arrow></div>
                         </div>
                         <img data-tooltip-target="tooltip-jese"
-                            class="ring-4 ring-gray-50 dark:ring-gray-500 w-16 h-16 rounded"
+                            class="ring-4 ring-gray-50 dark:ring-gray-500 w-16 h-16 rounded-circle ml-2"
                             src="{{ authUser()->avatar }}" alt="{{ authUser()->name }}">
                     </a>
                 @endif

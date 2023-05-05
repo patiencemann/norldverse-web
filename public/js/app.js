@@ -6321,7 +6321,7 @@ var render = function render() {
     attrs: {
       "data-tooltip-target": "tooltip-jese",
       src: _vm.avatar,
-      alt: "PatienceMan"
+      alt: "patienceman"
     }
   })])]), _vm._v(" "), _c("form", {
     staticClass: "mb-6 w-full ml-7"
@@ -6456,7 +6456,7 @@ var render = function render() {
       staticClass: "ring-2 ring-gray-300 dark:ring-gray-500 w-10 h-10 rounded-full border-2 border-white dark:border-gray-800",
       attrs: {
         src: user.user.avatar,
-        alt: ""
+        alt: user.user.name
       }
     });
   }), _vm._v(" "), Object.keys(_vm.uniqueUser).length > _vm.limit ? _c("a", {
