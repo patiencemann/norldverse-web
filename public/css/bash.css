@@ -52,6 +52,7 @@
     --color-alert-error: #ff6c78;
     --opacity-one: 0.8;
     --opacity-two: 1;
+    color-scheme: light dark;
 }
 .partial-dark-mode,
 .auto-partial-dark-mode {
@@ -2344,14 +2345,26 @@ blockquote.format:after {
     );
 }
 
-@media (prefers-color-scheme: dark) {
-    .post-content h2,
+@media (prefers-color-scheme: light) {
+	.post-content h2,
     .post-content h1,
     .post-content h3,
     .post-content h4,
     .post-content h5,
     .post-content h6 {
-        color: white !important;
+        color: black !important;
+    }
+}
+
+
+@media (prefers-color-scheme: dark) {
+    .dark .post-content h2,
+    .dark .post-content h1,
+    .dark .post-content h3,
+    .dark .post-content h4,
+    .dark .post-content h5,
+    .dark .post-content h6 {
+        color: rgb(255, 255, 255) !important;
     }
 
     .post-content a {
@@ -2363,16 +2376,8 @@ blockquote.format:after {
         line-height: 1.4;
     }
 
-    .post-content blockquote p {
-        margin: 0;
-    }
-
-    .post-content blockquote {
-        color: rgb(165, 164, 164);
-    }
-
-    .post-content blockquote.kg-blockquote-alt::before {
-        color: var(--ghost-accent-color) !important;
+    .dark .post-content blockquote {
+        color: rgb(138, 137, 137);
     }
 
     .post-content blockquote cite {
