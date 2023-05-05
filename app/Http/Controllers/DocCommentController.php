@@ -3,8 +3,9 @@
     namespace App\Http\Controllers;
 
     use App\Http\Requests\StoreDocCommentRequest;
-    use App\Http\Resources\DocCommentResource;
-    use App\Http\Resources\DocCommentUserResource;
+    use App\Http\Resources\Public\DocCommentResource as PublicDocCommentResource;
+    use App\Http\Resources\Private\DocCommentResource as PrivateDocCommentResource;
+    use App\Http\Resources\Public\DocCommentUserResource;
     use App\Models\Doc;
     use App\Models\DocComment;
     use Illuminate\Http\Request;
@@ -16,7 +17,7 @@
          * @return \Illuminate\Http\Response
          */
         public function index(Doc $doc) {
-            return DocCommentResource::collection(
+            return PublicDocCommentResource::collection(
                 $doc->docComments()
                     ->orderBy('created_at', 'desc')
                     ->get()
@@ -52,7 +53,7 @@
             ));
 
             return response()->json([
-                'data' => DocCommentResource::make($comment),
+                'data' => PrivateDocCommentResource::make($comment),
                 'message' => "Comment Created/Posted successfully"
             ]);
         }
@@ -64,7 +65,7 @@
          * @return \Illuminate\Http\Response
          */
         public function show(DocComment $comment) {
-            return DocCommentResource::make($comment);
+            return PublicDocCommentResource::make($comment);
         }
 
         /**

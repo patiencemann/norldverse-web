@@ -4,7 +4,8 @@
 
     use App\Filters\DocFilter;
     use App\Http\Requests\StoreDocRequest;
-    use App\Http\Resources\DocResource;
+    use App\Http\Resources\Public\DocResource as PublicDocResource;
+    use App\Http\Resources\Private\DocResource as PrivateDocResource;
     use App\Models\Doc;
     use App\Models\DocTopic;
     use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -16,7 +17,7 @@
          * @return \Illuminate\Http\Response
          */
         public function index() {
-            return DocResource::collection(
+            return PrivateDocResource::collection(
                 Doc::where('status', true)->orderBy('created_at', 'desc')->get()
             );
         }
@@ -27,7 +28,7 @@
          * @return \Illuminate\Http\Response
          */
         public function public(DocFilter $filters) {
-            return DocResource::collection(
+            return PublicDocResource::collection(
                 Doc::withCount('docComments')
                     ->filter($filters)
                     ->where('status', true)
@@ -53,7 +54,7 @@
             $doc->docTopic()->create(['topics' => array_map('trim', array_map('strtolower', $request->topics))]);
 
             return response()->json([
-                'data' => DocResource::make($doc),
+                'data' => PrivateDocResource::make($doc),
                 'message' => "Doc Created/Posted successfully"
             ], 200);
         }
@@ -65,7 +66,7 @@
          * @return \Illuminate\Http\Response
          */
         public function show(Doc $doc) {
-            return DocResource::make($doc);
+            return PrivateDocResource::make($doc);
         }
 
         /**
@@ -96,7 +97,7 @@
             $doc->docTopic()->update(['topics' => array_map('trim', array_map('strtolower', $request->topics))]);
 
             return response()->json([
-                'data' => DocResource::make($doc),
+                'data' => PrivateDocResource::make($doc),
                 'message' => 'Doc updated successfully'
             ]);
         }

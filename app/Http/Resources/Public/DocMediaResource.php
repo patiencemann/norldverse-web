@@ -1,6 +1,6 @@
 <?php
 
-    namespace App\Http\Resources;
+    namespace App\Http\Resources\Public;
 
     use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -15,7 +15,7 @@
             return [
                 'id' => $this->id,
                 'file_url' => $this->file_url,
-                'created_at' => $this->created_at
+                'created_at' => $this->created_at->toDateTimeString()
             ];
         }
     }

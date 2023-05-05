@@ -5,7 +5,8 @@
     use App\Http\Requests\StoreClientRequest;
     use App\Http\Requests\StoreUserRequest;
     use App\Http\Requests\UserLoginRequest;
-    use App\Http\Resources\UserResource;
+    use App\Http\Resources\Private\UserResource as PrivateUserResource;
+    use App\Http\Resources\Public\UserResource as PublicUserResource;
     use App\Models\Role;
     use App\Models\User;
     use App\Services\AuthService;
@@ -20,7 +21,7 @@
          * @return \Illuminate\Http\Response
          */
         public function index() {
-            return UserResource::collection(
+            return PrivateUserResource::collection(
                 User::orderBy('created_at', 'desc')->get()
             );
         }
@@ -32,7 +33,7 @@
          * @return \Illuminate\Http\Response
          */
         public function show(User $user) {
-            return UserResource::make($user);
+            return PrivateUserResource::make($user);
         }
 
         /**
@@ -92,7 +93,7 @@
 
             return response()->json([
                 "message" => "user created successfully",
-                "data" => UserResource::make($user),
+                "data" => PrivateUserResource::make($user),
                 "access_token" => AuthService::accessToken($user)
             ], 200);
         }
@@ -107,7 +108,7 @@
             if (Auth::attempt(['email' => $request->email, 'password' => $request->password]))
                 return response()->json([
                     "message" => "Auth attempts success",
-                    "data" => UserResource::make(authUser()),
+                    "data" => PrivateUserResource::make(authUser()),
                     "access_token" => AuthService::accessToken(authUser())
                 ], 400);
 
@@ -127,7 +128,7 @@
 
             return response()->json([
                 "message" => "invalid email, passpord or both",
-                "data" => UserResource::collection($users)
+                "data" => PublicUserResource::collection($users)
             ]);
         }
     }
