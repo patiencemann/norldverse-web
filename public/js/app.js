@@ -7172,17 +7172,7 @@ var render = function render() {
         href: "/docs/" + doc.slug,
         "aria-label": doc.title
       }
-    }), _vm._v(" "), _c("div", {
-      directives: [{
-        name: "lazy-container",
-        rawName: "v-lazy-container",
-        value: {
-          selector: "img",
-          loading: "/img/img-spinner.gif"
-        },
-        expression: "{ selector: 'img', loading: '/img/img-spinner.gif'}"
-      }]
-    }, [_c("img", {
+    }), _vm._v(" "), _c("img", {
       directives: [{
         name: "lazy",
         rawName: "v-lazy",
@@ -7196,7 +7186,7 @@ var render = function render() {
         srcset: doc.media.file_url + " 300w," + doc.media.file_url + " 600w," + doc.media.file_url + " 1200w",
         sizes: "(max-width:480px) 300px, (max-width:768px) 600px, 1200px"
       }
-    })]), _vm._v(" "), _c("div", {
+    }), _vm._v(" "), _c("div", {
       staticClass: "item-authors global-authors"
     }, [_c("div", _vm._l(doc.comments.slice(0, 4), function (comment) {
       return _c("div", {

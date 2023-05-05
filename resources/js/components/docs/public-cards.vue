@@ -7,11 +7,9 @@
             <article class="item is-loop is-image" v-for="doc in docs" :key="doc.id">
                 <div class="item-image global-image global-image-orientation global-radius is-landscape bg-gray-300">
                     <a :href="'/docs/'+doc.slug" class="global-link" :aria-label="doc.title"></a>
-                    <div v-lazy-container="{ selector: 'img', loading: '/img/img-spinner.gif'}">
-                        <img v-lazy="doc.media.file_url" :src="doc.media.file_url" loading="lazy" :alt="doc.title"
-                            :srcset="doc.media.file_url+' 300w,'+ doc.media.file_url+' 600w,'+ doc.media.file_url+' 1200w'"
-                            sizes="(max-width:480px) 300px, (max-width:768px) 600px, 1200px">
-                    </div>
+                    <img v-lazy="doc.media.file_url" :src="doc.media.file_url" loading="lazy" :alt="doc.title"
+                        :srcset="doc.media.file_url+' 300w,'+ doc.media.file_url+' 600w,'+ doc.media.file_url+' 1200w'"
+                        sizes="(max-width:480px) 300px, (max-width:768px) 600px, 1200px">
                     <div class="item-authors global-authors">
                         <div>
                             <div class="item-author global-item-author is-image global-image" v-for="comment in doc.comments.slice(0, 4)" :key="comment.id">
