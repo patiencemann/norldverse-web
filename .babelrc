@@ -1,0 +1,10 @@
+{
+    "plugins": [
+      ["prismjs", {
+          "languages": ["swift", "typoscript", "vim", "yaml", "javascript", "css", "markup", "php", "css", "c","csharp", "dotnet", "git", "perl", "nginx", "mongodb", "json", "java", "http", "go", "sass"],
+          "plugins": ["line-numbers", "show-language", "highlight-keywords", "download-button", "match-braces", "diff-highlight", "treeview"],
+          "theme": "twilight",
+          "css": true
+      }]
+    ]
+  }

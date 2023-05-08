@@ -59,7 +59,7 @@
 
         <div class="post-content-container dark:bg-deep-green-900">
             <div class="post-content dark:text-gray-300" id="page_brak_post_content">
-                {!! $doc->contents !!}
+                <render-mark-down contents="{{ $doc->contents }}" />
             </div>
         </div>
     </div>
