@@ -22,6 +22,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
 
     {{-- Custom style links --}}
     <link rel="stylesheet" href="/css/app.css">
@@ -49,9 +51,9 @@
 
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.tiny.cloud/1/nnlpesm8jfglmqbkm0xy1bh0p3pzhfpslfkjyt978k8whp6l/tinymce/6/tinymce.min.js"
-        referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/nnlpesm8jfglmqbkm0xy1bh0p3pzhfpslfkjyt978k8whp6l/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
     {{-- Dark theme handler --}}
     <script>

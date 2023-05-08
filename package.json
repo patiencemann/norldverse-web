@@ -27,9 +27,12 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "@kangc/v-md-editor": "^1.7.11",
         "@toast-ui/editor": "^3.2.1",
-        "codemirror": "^6.0.1",
+        "babel-plugin-prismjs": "^2.1.0",
+        "codemirror": "^5.65.13",
         "html2pdf.js": "^0.10.1",
+        "react-codemirror2": "^7.2.1",
         "vue-goodshare": "^1.6.1",
         "vue-lazyload": "^3.0.0",
         "vue-social-sharing": "^3.0.9"

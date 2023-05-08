@@ -1,21 +1,63 @@
     <template>
-        <div class="bg-gray-100 dark:bg-gray-700 rounded-3xl p-10 mb-5">
-            <h1 class="text-3xl font-bold mb-10 dark:text-white" v-text="data.title"></h1>
+        <div class="bg-gray-50 dark:bg-gray-700 rounded-3xl p-10 mb-5">
 
             <form action="#" @submit.prevent="createDoc()" @keypress.enter.prevent="" enctype="multipart/form-data">
                 <!-- Title -->
-                <custom-input placeholder="Your Title" v-model="data.title"/>
+                <div class="mb-6 mt-2">
+                    <label for="helper-text" class="block mb-4 text-sm font-anek text-gray-900 dark:text-white font-bold" style="font-size: 20px">Your Title </label>
+                    <input  style="font-size: 22px" type="text" id="helper-text" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="data.title" placeholder="Title">
+                    <p style="font-size: 18px" id="helper-text-explanation" class="mt-4 text-sm text-gray-500 dark:text-gray-400">Blog title</p>
+                </div>
 
                 <!-- Caption -->
-                <custom-input placeholder="What are you thinking!?., just caption...." v-model="data.caption"/>
+                <div class="mb-6 mt-5">
+                    <label for="helper-text" class="block mb-4 text-sm font-anek font-bold text-gray-900 dark:text-white" style="font-size: 19px">Your Caption</label>
+                    <input  style="font-size: 22px" type="text" id="helper-text" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="data.caption" placeholder="Descriptive Caption">
+                    <p style="font-size: 18px" id="helper-text-explanation" class="mt-4 text-sm text-gray-500 dark:text-gray-400">Short description about the blog</p>
+                </div>
 
-                <!-- File preview -->
-                <file-preview :preview="preview" />
+                <hr class="w-full h-1 mx-auto my-6 bg-gray-500 border-0 rounded md:my-10 dark:bg-gray-700">
 
                 <!-- File input -->
-                <file-input @change="onFileChange" />
+                <div class="flex items-center justify-center w-full">
+                    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                            <svg
+                                aria-hidden="true"
+                                class="w-20 h-20 mb-3 text-gray-400"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                                ></path>
+                            </svg>
+                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400" style="font-size: 17px; line-height: 24px">
+                                <span class="font-semibold">Click to upload</span>
+                                or drag and drop
+                            </p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400" style="font-size: 17px">
+                                SVG, PNG, JPG or GIF (MAX. 800x400px)
+                            </p>
+                        </div>
+                        <input
+                            type="file"
+                            class="hidden"
+                            id="dropzone-file"
+                            @change="onFileChange"
+                        />
+                    </label>
+                </div>
+
+                <hr class="w-full h-1 mx-auto my-6 bg-gray-500 border-0 rounded md:my-10 dark:bg-gray-700">
 
                 <!-- Topics -->
+                <label for="helper-text" class="block mb-4 text-sm font-anek font-bold text-gray-900 dark:text-white" style="font-size: 19px">Add Related topics</label>
                 <div class="mt-3 mb-3">
                     <span v-for="topic in data.selectedTopics" :key="topic" id="badge-dismiss-default" class="inline-flex items-center px-4 py-2 mr-2 font-bold text-1xl text-blue-800 bg-blue-100 rounded dark:bg-blue-900 dark:text-blue-300">
                         {{ topic }}
@@ -25,14 +67,34 @@
                         </button>
                     </span>
                 </div>
-                <custom-input placeholder="Topics..." v-model="data.topic" @keyup.space="onNewTopicEnter" @focus="cleanTopicPlaceholder" @keypress.enter="onNewTopicEnter"/>
+                <div class="mb-6 mt-2">
+                    <input
+                        type="text"
+                        style="font-size: 17px"
+                        class="bg-gray-50 border border-none text-gray-900 text-md rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        placeholder="Ex: economics"
+                        v-model="data.topic"
+                        @keyup.space="onNewTopicEnter"
+                        @focus="cleanTopicPlaceholder"
+                        @keypress.enter="onNewTopicEnter"
+                    />
+                    <p style="font-size: 18px" id="helper-text-explanation" class="mt-4 text-sm text-gray-500 dark:text-gray-400">Ex: economic, applications, etc...</p>
+                </div>
 
                 <!-- Rich text area -->
-                <rich-textarea v-model="data.contents" placeholder="Write your full thoughts here..." />
+                <v-md-editor
+                    height="600px"
+                    v-model="data.contents">
+                </v-md-editor>
+
+                <hr class="w-full h-1 mx-auto my-4 bg-gray-500 border-0 rounded md:my-10 dark:bg-gray-700" />
 
                 <div class="mt-5 flex justify-between items-center">
                     <button type="submit" id="submit-doc-btn" class="text-white text-center border border-none bg-green-800 hover:bg-green-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-bold rounded-full text-md px-4 py-3 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
-                        Publish the doc
+                        Publish Now
+                    </button>
+                    <button type="button" class="text-white text-center border border-none bg-gray-400 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-bold rounded-full text-md px-4 py-3 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                        Save as draft
                     </button>
                 </div>
             </form>
@@ -47,17 +109,75 @@
 
     <script>
         import axios from "axios";
+        import Vue from 'vue';
+        import VMdEditor from '@kangc/v-md-editor/lib/codemirror-editor';
+        import enUS from '@kangc/v-md-editor/lib/lang/en-US';
+
+        import '@kangc/v-md-editor/lib/style/codemirror-editor.css';
+        import githubTheme from '@kangc/v-md-editor/lib/theme/github.js';
+
+        // Support Code copier
+        import '@kangc/v-md-editor/lib/theme/style/github.css';
+        import createCopyCodePlugin from '@kangc/v-md-editor/lib/plugins/copy-code/index';
+
+        // Suport line number
+        import '@kangc/v-md-editor/lib/plugins/copy-code/copy-code.css';
+        import createLineNumbertPlugin from '@kangc/v-md-editor/lib/plugins/line-number/index';
+
+        // Support Emoji
+        import createEmojiPlugin from '@kangc/v-md-editor/lib/plugins/emoji/index';
+        import '@kangc/v-md-editor/lib/plugins/emoji/emoji.css';
+
+        // highlightjs
+        import hljs from 'highlight.js';
+
+        // Resources for the codemirror editor
+        import Codemirror from 'codemirror';
+
+        // mode
+        import 'codemirror/mode/markdown/markdown';
+        import 'codemirror/mode/javascript/javascript';
+        import 'codemirror/mode/css/css';
+        import 'codemirror/mode/htmlmixed/htmlmixed';
+        import 'codemirror/mode/vue/vue';
+
+        // edit
+        import 'codemirror/addon/edit/closebrackets';
+        import 'codemirror/addon/edit/closetag';
+        import 'codemirror/addon/edit/matchbrackets';
+
+        // placeholder
+        import 'codemirror/addon/display/placeholder';
+
+        // active-line
+        import 'codemirror/addon/selection/active-line';
+
+        // scrollbar
+        import 'codemirror/addon/scroll/simplescrollbars';
+        import 'codemirror/addon/scroll/simplescrollbars.css';
+
+        // style
+        import 'codemirror/lib/codemirror.css';
+
+        VMdEditor.lang.use('en-US', enUS);
+        VMdEditor.Codemirror = Codemirror;
+        VMdEditor.use(githubTheme, { Hljs: hljs, });
+        VMdEditor.use(createCopyCodePlugin());
+        VMdEditor.use(createLineNumbertPlugin());
+        VMdEditor.use(createEmojiPlugin());
+
+        Vue.use(VMdEditor);
 
         export default {
             data() {
                 return {
                     data: {
-                        title: "Title - Untitled Doc",
-                        caption: "Caption - Dont leave earth",
-                        contents: "The world is better place than moon",
+                        title: "",
+                        caption: "",
+                        contents: "",
                         image: '',
                         selectedTopics: [],
-                        topic: 'Ex: economics'
+                        topic: ''
                     },
                     response: "",
                     hasResponse: false,
@@ -76,7 +196,7 @@
                         formData.append('title', this.data.title);
                         formData.append('image', this.data.image);
                         formData.append('caption', this.data.caption);
-                        formData.append('contents', tinymce.get("tinymce").getContent());
+                        formData.append('contents', this.data.contents);
                         formData.append('topics', JSON.stringify(this.data.selectedTopics));
 
                         let response = await axios.post("/api/docs", formData);
