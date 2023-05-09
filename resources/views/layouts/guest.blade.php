@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Manirabona Patience" />
 
+    @if (Auth::check())
+        <meta name="user" content="{{ Auth::user() }}">
+    @endif
+
     <meta name="description" content="A short for weblog, where i frequently updated web page used for personal commentary or business content. Often interactive and for individual blog posts where readers can leave comments." />
     <meta name="rating" content="adult" />
     <meta name="keywords" content="manirabona, patience, manirabona patience, patienceman, personal blog, blogs, docs" />
@@ -16,7 +20,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="color-scheme" content="light dark">
 
-    <title>@yield('title') - Patienceman</title>
+    <title>@yield('title') - Blogs - Patienceman</title>
 
     {{-- Extenral dynamics links --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">

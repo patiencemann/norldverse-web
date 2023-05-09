@@ -1,12 +1,12 @@
     <template>
         <div class="bg-gray-50 dark:bg-gray-700 rounded-3xl p-10 mb-5">
+            <form @submit.prevent="createDoc()" @keypress.enter.prevent="" enctype="multipart/form-data">
 
-            <form action="#" @submit.prevent="createDoc()" @keypress.enter.prevent="" enctype="multipart/form-data">
                 <!-- Title -->
                 <div class="mb-6 mt-2">
                     <label for="helper-text" class="block mb-4 text-sm font-anek text-gray-900 dark:text-white font-bold" style="font-size: 20px">Your Title </label>
                     <input  style="font-size: 22px" type="text" id="helper-text" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="data.title" placeholder="Title">
-                    <p style="font-size: 18px" id="helper-text-explanation" class="mt-4 text-sm text-gray-500 dark:text-gray-400">Blog title</p>
+                    <p style="font-size: 18px" id="helper-text-explanation" class="mt-4 text-sm text-gray-500 dark:text-gray-400">Add your Blog/doc title</p>
                 </div>
 
                 <!-- Caption -->
@@ -82,10 +82,7 @@
                 </div>
 
                 <!-- Rich text area -->
-                <v-md-editor
-                    height="600px"
-                    v-model="data.contents">
-                </v-md-editor>
+                <rich-textarea v-model="data.contents" />
 
                 <hr class="w-full h-1 mx-auto my-4 bg-gray-500 border-0 rounded md:my-10 dark:bg-gray-700" />
 
@@ -93,7 +90,7 @@
                     <button type="submit" id="submit-doc-btn" class="text-white text-center border border-none bg-green-800 hover:bg-green-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-bold rounded-full text-md px-4 py-3 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
                         Publish Now
                     </button>
-                    <button type="button" class="text-white text-center border border-none bg-gray-400 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-bold rounded-full text-md px-4 py-3 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                    <button type="button" @click="saveInDraft" class="text-white text-center border border-none bg-gray-400 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-bold rounded-full text-md px-4 py-3 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
                         Save as draft
                     </button>
                 </div>
@@ -109,64 +106,6 @@
 
     <script>
         import axios from "axios";
-        import Vue from 'vue';
-        import VMdEditor from '@kangc/v-md-editor/lib/codemirror-editor';
-        import enUS from '@kangc/v-md-editor/lib/lang/en-US';
-
-        import '@kangc/v-md-editor/lib/style/codemirror-editor.css';
-        import githubTheme from '@kangc/v-md-editor/lib/theme/github.js';
-
-        // Support Code copier
-        import '@kangc/v-md-editor/lib/theme/style/github.css';
-        import createCopyCodePlugin from '@kangc/v-md-editor/lib/plugins/copy-code/index';
-
-        // Suport line number
-        import '@kangc/v-md-editor/lib/plugins/copy-code/copy-code.css';
-        import createLineNumbertPlugin from '@kangc/v-md-editor/lib/plugins/line-number/index';
-
-        // Support Emoji
-        import createEmojiPlugin from '@kangc/v-md-editor/lib/plugins/emoji/index';
-        import '@kangc/v-md-editor/lib/plugins/emoji/emoji.css';
-
-        // highlightjs
-        import hljs from 'highlight.js';
-
-        // Resources for the codemirror editor
-        import Codemirror from 'codemirror';
-
-        // mode
-        import 'codemirror/mode/markdown/markdown';
-        import 'codemirror/mode/javascript/javascript';
-        import 'codemirror/mode/css/css';
-        import 'codemirror/mode/htmlmixed/htmlmixed';
-        import 'codemirror/mode/vue/vue';
-
-        // edit
-        import 'codemirror/addon/edit/closebrackets';
-        import 'codemirror/addon/edit/closetag';
-        import 'codemirror/addon/edit/matchbrackets';
-
-        // placeholder
-        import 'codemirror/addon/display/placeholder';
-
-        // active-line
-        import 'codemirror/addon/selection/active-line';
-
-        // scrollbar
-        import 'codemirror/addon/scroll/simplescrollbars';
-        import 'codemirror/addon/scroll/simplescrollbars.css';
-
-        // style
-        import 'codemirror/lib/codemirror.css';
-
-        VMdEditor.lang.use('en-US', enUS);
-        VMdEditor.Codemirror = Codemirror;
-        VMdEditor.use(githubTheme, { Hljs: hljs, });
-        VMdEditor.use(createCopyCodePlugin());
-        VMdEditor.use(createLineNumbertPlugin());
-        VMdEditor.use(createEmojiPlugin());
-
-        Vue.use(VMdEditor);
 
         export default {
             data() {
@@ -184,27 +123,55 @@
                     isLoading: false,
                     responseType: 'success',
                     preview: '',
+                    metaUser: document.querySelector("meta[name='user']").getAttribute("content"),
+                    authUser: null
                 };
             },
             methods: {
-                // Create and store doc
+                /**
+                 * Check if trying to edit drafts
+                 * and async drafts
+                */
+                asyncDraftDoc() {
+                    const draftId = this.getParameterByName('draft');
+                    const user = document.querySelector("meta[name='user']").getAttribute("content");
+                    const authUser = JSON.parse(user);
+                    const key = "patienceman_&_"+authUser.email+"_drafts";
+                    const myDrafts = JSON.parse(localStorage.getItem(key));
+
+                    if(myDrafts.hasOwnProperty(`${draftId}`)){
+                        const doc = myDrafts[`${draftId}`];
+
+                        this.data.title = doc.title;
+                        this.data.caption = doc.caption;
+                        this.data.contents = doc.contents;
+                        this.data.image = doc.image;
+                        this.data.selectedTopics = doc.selectedTopics;
+                        this.data.topic = doc.topic;
+                    }
+                },
+
+                /**
+                 * Store and publish custom blog
+                 * then redirect back to dashboard
+                */
                 async createDoc() {
                     this.isLoading = true;
 
                     try{
                         let formData = new FormData;
-                        formData.append('title', this.data.title);
-                        formData.append('image', this.data.image);
-                        formData.append('caption', this.data.caption);
-                        formData.append('contents', this.data.contents);
-                        formData.append('topics', JSON.stringify(this.data.selectedTopics));
+                            formData.append('title', this.data.title);
+                            formData.append('image', this.data.image);
+                            formData.append('caption', this.data.caption);
+                            formData.append('contents', this.data.contents);
+                            formData.append('topics', JSON.stringify(this.data.selectedTopics));
 
                         let response = await axios.post("/api/docs", formData);
 
                         this.responseType = "success";
                         this.response = response.data.message;
                         window.location.href = '/dashboard';
-                    }catch(error){
+                    } catch(error) {
                         this.responseType = "error";
                         this.response = "something went wrong";
                     }
@@ -212,24 +179,87 @@
                     this.isLoading = false;
                     this.hasResponse = true;
                 },
+
+                /**
+                 * Save blog in localstorange
+                 * then show-off success message
+                */
+                saveInDraft() {
+                    const user = document.querySelector("meta[name='user']").getAttribute("content");
+                    const authUser = JSON.parse(user);
+                    const key = "patienceman_&_"+authUser.email+"_drafts";
+
+                    const myDrafts = localStorage.getItem(key);
+                    const newData = this.data;
+                    const uniqueId = "id" + Math.random().toString(16).slice(2)
+
+
+                    if(myDrafts){
+                        const newDrafts = JSON.parse(myDrafts);
+                            newDrafts[`${uniqueId}`] = newData;
+                        localStorage.setItem(key, JSON.stringify(newDrafts));
+                    } else {
+                        const newDrafts = {};
+                            newDrafts[`${uniqueId}`] = newData;
+                        localStorage.setItem(key, JSON.stringify(newDrafts));
+                    }
+
+                    this.responseType = "success";
+                    this.response = "Saved in your drafts";
+                    this.hasResponse = true;
+                },
+
+                /**
+                 * listern to inputfile change
+                 * and keep image in data handler
+                */
                 onFileChange(e) {
                     this.data.image = e.target.files[0];
                     this.preview = URL.createObjectURL(e.target.files[0]);
                 },
+
+                /**
+                 * listen to any topic trigger and
+                 * then store topic in selected topic model
+                 *
+                 * @param event
+                */
                 onNewTopicEnter(e) {
                     if (!this.data.selectedTopics.includes(e.target.value)) {
                         this.data.topic = "";
                         this.data.selectedTopics.push(e.target.value);
                     }
                 },
+
+                /**
+                 * remove custom topic from data when
+                 * function call
+                 *
+                 * @param topic
+                */
                 removeTopic(topic) {
                     this.data.selectedTopics.splice(
                         this.data.selectedTopics.indexOf(topic), 1
                     );
                 },
+
+                /**
+                 * Clear temporary topic handler
+                 * */
                 cleanTopicPlaceholder() {
                     this.data.topic = "";
-                }
+                },
+                getParameterByName(name, url = window.location.href) {
+                    name = name.replace(/[\[\]]/g, '\\$&');
+                    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                        results = regex.exec(url);
+                    if (!results) return null;
+                    if (!results[2]) return '';
+                    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+                },
             },
+            mounted() {
+                this.asyncDraftDoc();
+            }
         };
     </script>

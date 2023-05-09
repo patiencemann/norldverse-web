@@ -1,40 +1,80 @@
 <template>
-    <div class="mb-6 mt-3">
-        <textarea
-            id="tinymce"
-            rows="4"
-            class="block p-4 w-full text-md text-gray-900 bg-gray-100 rounded-lg border border-none focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+    <div class="mb-6 mt-6">
+        <v-md-editor
+            height="600px"
             @input="$emit('update', $event.target.value)"
             v-on="$listeners"
-            :value="value"
-        ></textarea>
+            :value="value">
+        </v-md-editor>
     </div>
 </template>
 
 <script>
+    import Vue from 'vue';
+    import VMdEditor from '@kangc/v-md-editor/lib/codemirror-editor';
+    import enUS from '@kangc/v-md-editor/lib/lang/en-US';
+
+    import '@kangc/v-md-editor/lib/style/codemirror-editor.css';
+    import githubTheme from '@kangc/v-md-editor/lib/theme/github.js';
+
+    // Support Code copier
+    import '@kangc/v-md-editor/lib/theme/style/github.css';
+    import createCopyCodePlugin from '@kangc/v-md-editor/lib/plugins/copy-code/index';
+
+    // Suport line number
+    import '@kangc/v-md-editor/lib/plugins/copy-code/copy-code.css';
+    import createLineNumbertPlugin from '@kangc/v-md-editor/lib/plugins/line-number/index';
+
+    // Support Emoji
+    import createEmojiPlugin from '@kangc/v-md-editor/lib/plugins/emoji/index';
+    import '@kangc/v-md-editor/lib/plugins/emoji/emoji.css';
+
+    // highlightjs
+    import hljs from 'highlight.js';
+
+    // Resources for the codemirror editor
+    import Codemirror from 'codemirror';
+
+    // mode
+    import 'codemirror/mode/markdown/markdown';
+    import 'codemirror/mode/javascript/javascript';
+    import 'codemirror/mode/css/css';
+    import 'codemirror/mode/htmlmixed/htmlmixed';
+    import 'codemirror/mode/vue/vue';
+
+    // edit
+    import 'codemirror/addon/edit/closebrackets';
+    import 'codemirror/addon/edit/closetag';
+    import 'codemirror/addon/edit/matchbrackets';
+
+    // placeholder
+    import 'codemirror/addon/display/placeholder';
+
+    // active-line
+    import 'codemirror/addon/selection/active-line';
+
+    // scrollbar
+    import 'codemirror/addon/scroll/simplescrollbars';
+    import 'codemirror/addon/scroll/simplescrollbars.css';
+
+    // style
+    import 'codemirror/lib/codemirror.css';
+
+    VMdEditor.lang.use('en-US', enUS);
+    VMdEditor.Codemirror = Codemirror;
+    VMdEditor.use(githubTheme, { Hljs: hljs, });
+    VMdEditor.use(createCopyCodePlugin());
+    VMdEditor.use(createLineNumbertPlugin());
+    VMdEditor.use(createEmojiPlugin());
+
+    Vue.use(VMdEditor);
+
     export default {
-        props: ["value"],
         inheritAttrs: false,
+        props: ["value"],
         model: {
             prop: "value",
             event: "update",
         },
-        mounted() {
-            tinymce.init({
-                selector: 'textarea#tinymce',
-                height: 700,
-                menubar: true,
-                plugins: [
-                    'advlist autolink lists link image charmap print preview anchor',
-                    'searchreplace visualblocks code fullscreen',
-                    'insertdatetime media table paste code help wordcount', 'image'
-                ],
-                toolbar: 'undo redo | formatselect | ' +
-                    'bold italic backcolor | alignleft aligncenter ' +
-                    'alignright alignjustify | bullist numlist outdent indent | ' +
-                    'removeformat | help',
-                content_css: '//www.tiny.cloud/css/codepen.min.css'
-            });
-        }
     };
 </script>
