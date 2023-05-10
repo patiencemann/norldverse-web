@@ -11948,6 +11948,9 @@ input:checked + .toggle-bg {
 .mb-5 {
   margin-bottom: 1.25rem;
 }
+.mt-6 {
+  margin-top: 1.5rem;
+}
 .ml-5 {
   margin-left: 1.25rem;
 }
@@ -11965,9 +11968,6 @@ input:checked + .toggle-bg {
 }
 .-mb-px {
   margin-bottom: -1px;
-}
-.mt-6 {
-  margin-top: 1.5rem;
 }
 .mb-1 {
   margin-bottom: 0.25rem;

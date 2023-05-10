@@ -82,7 +82,12 @@
                 </div>
 
                 <!-- Rich text area -->
-                <rich-textarea v-model="data.contents" />
+                <div class="mb-6 mt-6">
+                    <v-md-editor
+                        height="600px"
+                        v-model="data.contents">
+                    </v-md-editor>
+                </div>
 
                 <hr class="w-full h-1 mx-auto my-4 bg-gray-500 border-0 rounded md:my-10 dark:bg-gray-700" />
 
@@ -106,6 +111,64 @@
 
     <script>
         import axios from "axios";
+        import Vue from 'vue';
+        import VMdEditor from '@kangc/v-md-editor/lib/codemirror-editor';
+        import enUS from '@kangc/v-md-editor/lib/lang/en-US';
+
+        import '@kangc/v-md-editor/lib/style/codemirror-editor.css';
+        import githubTheme from '@kangc/v-md-editor/lib/theme/github.js';
+
+        // Support Code copier
+        import '@kangc/v-md-editor/lib/theme/style/github.css';
+        import createCopyCodePlugin from '@kangc/v-md-editor/lib/plugins/copy-code/index';
+
+        // Suport line number
+        import '@kangc/v-md-editor/lib/plugins/copy-code/copy-code.css';
+        import createLineNumbertPlugin from '@kangc/v-md-editor/lib/plugins/line-number/index';
+
+        // Support Emoji
+        import createEmojiPlugin from '@kangc/v-md-editor/lib/plugins/emoji/index';
+        import '@kangc/v-md-editor/lib/plugins/emoji/emoji.css';
+
+        // highlightjs
+        import hljs from 'highlight.js';
+
+        // Resources for the codemirror editor
+        import Codemirror from 'codemirror';
+
+        // mode
+        import 'codemirror/mode/markdown/markdown';
+        import 'codemirror/mode/javascript/javascript';
+        import 'codemirror/mode/css/css';
+        import 'codemirror/mode/htmlmixed/htmlmixed';
+        import 'codemirror/mode/vue/vue';
+
+        // edit
+        import 'codemirror/addon/edit/closebrackets';
+        import 'codemirror/addon/edit/closetag';
+        import 'codemirror/addon/edit/matchbrackets';
+
+        // placeholder
+        import 'codemirror/addon/display/placeholder';
+
+        // active-line
+        import 'codemirror/addon/selection/active-line';
+
+        // scrollbar
+        import 'codemirror/addon/scroll/simplescrollbars';
+        import 'codemirror/addon/scroll/simplescrollbars.css';
+
+        // style
+        import 'codemirror/lib/codemirror.css';
+
+        VMdEditor.lang.use('en-US', enUS);
+        VMdEditor.Codemirror = Codemirror;
+        VMdEditor.use(githubTheme, { Hljs: hljs, });
+        VMdEditor.use(createCopyCodePlugin());
+        VMdEditor.use(createLineNumbertPlugin());
+        VMdEditor.use(createEmojiPlugin());
+
+        Vue.use(VMdEditor);
 
         export default {
             data() {
@@ -158,6 +221,8 @@
                 async createDoc() {
                     this.isLoading = true;
 
+                    console.log(this.data);
+
                     try{
                         let formData = new FormData;
                             formData.append('title', this.data.title);
@@ -192,7 +257,6 @@
                     const myDrafts = localStorage.getItem(key);
                     const newData = this.data;
                     const uniqueId = "id" + Math.random().toString(16).slice(2)
-
 
                     if(myDrafts){
                         const newDrafts = JSON.parse(myDrafts);
