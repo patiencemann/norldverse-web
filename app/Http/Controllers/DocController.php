@@ -8,7 +8,9 @@
     use App\Http\Resources\Private\DocResource as PrivateDocResource;
     use App\Models\Doc;
     use App\Models\DocTopic;
+    use App\Notifications\DatabaseNotification;
     use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+    use Patienceman\Notifier\Notifier;
 
     class DocController extends Controller {
         /**
@@ -53,6 +55,14 @@
             $doc->docMedia()->create(['file_url' => $imageFile]);
             $doc->docTopic()->create(['topics' => array_map('trim', array_map('strtolower', $request->topics))]);
 
+            (new Notifier())->send([
+                DatabaseNotification::process([
+                    "subject" => "New published blog",
+                    "message" => $doc->title." have been published and ready",
+                    'action' => "/dashboard"
+                ])->to(authUser())
+            ]);
+
             return response()->json([
                 'data' => PrivateDocResource::make($doc),
                 'message' => "Doc Created/Posted successfully"
@@ -96,6 +106,14 @@
             $doc->docMedia()->update([ 'file_url' => $imageFile ]);
             $doc->docTopic()->update(['topics' => array_map('trim', array_map('strtolower', $request->topics))]);
 
+            (new Notifier())->send([
+                DatabaseNotification::process([
+                    "subject" => "Blog updated successfully",
+                    "message" => $doc->title." have been updated",
+                    'action' => "/dashboard"
+                ])->to(authUser())
+            ]);
+
             return response()->json([
                 'data' => PrivateDocResource::make($doc),
                 'message' => 'Doc updated successfully'
@@ -111,6 +129,14 @@
         public function destroy(Doc $doc) {
             $doc->delete();
 
+            (new Notifier())->send([
+                DatabaseNotification::process([
+                    "subject" => "Blog Deleted",
+                    "message" => $doc->title." have been deleted/removed and no longer live",
+                    'action' => "/dashboard"
+                ])->to(authUser())
+            ]);
+
             return response()->json([
                 'message' => 'Doc removed successfully'
             ]);
@@ -125,7 +151,7 @@
         public function tags() {
             $tags = [];
 
-            foreach(DocTopic::all() as $topics){
+            foreach(DocTopic::orderByRaw('RAND()')->get() as $topics){
                 foreach($topics->topics as $topic){
                     if(!in_array(strtolower(trim($topic)), $tags))
                         array_push($tags, strtolower(trim($topic)));

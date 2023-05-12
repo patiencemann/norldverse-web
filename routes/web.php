@@ -4,7 +4,9 @@
     use App\Http\Controllers\DocController;
     use App\Http\Controllers\HomeController;
     use App\Http\Controllers\LoginController;
-    use App\Models\Role;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
+use App\Models\Role;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
 
@@ -49,7 +51,7 @@
          * Admin web routes
          * --------------------------------------
          */
-        Route::group(['middleware' => ['hasAdminRole']], function() {
+        Route::group(['middleware' => ['hasWritterRole']], function() {
             Route::get('/dashboard', [DashboardController::class, 'index'])->name('get.dashboard');
             Route::get('/write-doc', [DashboardController::class, 'writeDoc'])->name('get.writable-doc');
             Route::get('/update-docs/{doc}', [DocController::class, 'edit'])->name('put.doc');

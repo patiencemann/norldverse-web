@@ -3,8 +3,10 @@
 
     use App\Models\Role;
     use App\Models\User;
+    use App\Notifications\DatabaseNotification;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Session;
+    use Patienceman\Notifier\Notifier;
 
     class AuthService {
         /**
@@ -45,6 +47,15 @@
         public function createUser($role) {
             $user = User::create($this->providerUser);
             $user->attachRole($role);
+
+            (new Notifier())->send([
+                DatabaseNotification::process([
+                    "subject" => "Welcome to patienceman - blogs",
+                    "message" => "You account have been created, you can view different written stories or request to become a writter",
+                    'action' => "/"
+                ])->to($user)
+            ]);
+
             return $user;
         }
 

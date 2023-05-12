@@ -1,6 +1,13 @@
 @extends('layouts.guest')
 
-@section('title') {{ $doc->title }} @stop
+@section('meta-data')
+    <meta name="description" content="{{ $doc->caption }}" />
+    <meta name="keywords" content="@foreach ($doc->docTopic->topics as $topic) {{ $topic."," }} @endforeach" />
+@stop
+
+@section('title')
+    {{ $doc->title }}
+@stop
 
 @section('content')
     <x-navigation-bar />

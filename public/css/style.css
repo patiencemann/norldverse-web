@@ -3056,3 +3056,18 @@ textarea.form-control {
         stroke-dashoffset: -136px;
     }
 }
+
+
+/* Notification */
+.notification-model{
+    width: 30rem !important;
+}
+
+.notification-model .single-notification{
+    display: flex !important;
+}
+
+.notification-model .single-notification .notification-message {
+    font-size: 15px !important;
+    line-height: 1.3;
+}

@@ -1,6 +1,13 @@
 @extends('layouts.guest')
 
-@section('title') Home @stop
+@section('meta-data')
+    <meta name="description" content="A short for weblog, where i frequently updated web page used for personal commentary or business content. Often interactive and for individual blog posts where readers can leave comments." />
+    <meta name="keywords" content="manirabona, patience, manirabona patience, patienceman, personal blog, blogs, docs" />
+@stop
+
+@section('title')
+    Home
+@stop
 
 @section('content')
     <x-navigation-bar />
@@ -12,6 +19,4 @@
             <div class=""> <public-cards /> </div>
         </div>
     </main>
-
-    {{-- <x-footer /> --}}
 @stop

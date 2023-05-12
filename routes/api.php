@@ -1,5 +1,6 @@
 <?php
 
+    use App\Http\Controllers\NotificationController;
     use App\Http\Controllers\DocCommentController;
     use App\Http\Controllers\DocController;
     use App\Http\Controllers\UserController;
@@ -76,7 +77,7 @@
          * ADMIN Routes
          * ---------------------------------------------
          */
-        Route::group(['middleware' => ['hasAdminRole']], function() {
+        Route::group(['middleware' => ['hasWritterRole']], function() {
             /**
              * ---------------------------
              * Docs Routes
@@ -92,10 +93,24 @@
              * --------------------------
              */
             Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('delete.user');
+
         });
+
+        /**
+         * ----------------------------------------------------------------------
+         * Notifications routes
+         * ----------------------------------------------------------------------
+         */
+        Route::get('/notifications', [NotificationController::class, 'index']);
+        Route::post('/notifications/{notification}', [NotificationController::class, 'unRead']);
+        Route::post('/notifications/read/all', [NotificationController::class, 'readAll']);
+        Route::get('/notifications/count', [NotificationController::class, 'count']);
+        Route::delete('/notifications/{notification}', [NotificationController::class, 'destroy']);
 
         /**
          * Get client id and secret
          */
         Route::post('/clients', [UserController::class, 'storeClient'])->name('post.clients');
+
+        Route::post('/become-writter', [UserController::class, 'becomeWritter'])->name('user.become.writter');
     });

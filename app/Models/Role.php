@@ -14,4 +14,5 @@
         public const SUPER_ADMIN = 'superadministrator';
         public const ADMIN = 'administrator';
         public const USER = 'user';
+        public const WRITTER = "writter";
     }

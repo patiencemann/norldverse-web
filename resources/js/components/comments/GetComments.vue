@@ -1,6 +1,6 @@
     <template>
         <div>
-            <div class="comments-section relative bg-gray-100 dark:bg-deep-green-900 mt-5" v-if="comments.length > 0">
+            <div class="comments-section relative bg-gray-100 dark:bg-deep-green-900 mt-3" v-if="comments.length > 0">
                 <div v-if="isLoading">
                     <comment-skeleton />
                 </div>
