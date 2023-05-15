@@ -16,7 +16,7 @@
         <div class="loop-section global-padding dark:bg-deep-green-800">
             <div> <global-tags /> </div>
             <div class=""> <title-section /> </div>
-            <div class=""> <public-cards /> </div>
+            <div class=""> <public-cards auth="{{ Auth::check() }}" /> </div>
         </div>
     </main>
 @stop

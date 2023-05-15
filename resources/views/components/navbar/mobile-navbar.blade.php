@@ -81,18 +81,18 @@
                             style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
                     </div>
                 </li>
+                <li class="lg:px-2 xl:px-3 lg:mb-0 mt-2">
+                    <a target="_blank" href="{{ route('update.profile') }}"
+                        data-tooltip-target="tooltip-insta"
+                        class="mt-2 text-md font-medium text-gray-900 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-500"
+                        style="font-family: 'Anek Telugu', sans-serif; font-weight: 700">My profile</a>
+                </li>
             </ul>
 
             @if (Auth::check())
                 <a href="{{ route('post.logout') }}" data-tooltip-target="tooltip-logout"
                     class=" mb-4 text-gray-500 dark:text-gray-400 bg-red-200 dark:bg-red-700 dark:hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 mr-1"
-                    style="font-size: 24px">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
-                        </path>
-                    </svg> Logout
+                    style="font-size: 24px"> Logout
                 </a>
                 <div id="tooltip-logout" role="tooltip"
                     class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-black bg-red-200 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
@@ -104,13 +104,8 @@
                 </div>
             @else
                 <a href="{{ route('get.login') }}" data-tooltip-target="tooltip-login"
-                    class=" mb-4 text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 mr-1">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
-                        </path>
-                    </svg> Login
+                    class="mb-4 text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 mr-1">
+                     Login
                 </a>
                 <div id="tooltip-login" role="tooltip"
                     class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
@@ -183,7 +178,10 @@
             </div>
 
             @if (Auth::check())
-                <a href="{{ route('get.dashboard') }}" class="ml-3">
+                <!-- Notification menu -->
+                <notification-list></notification-list>
+
+                <a href="{{ route('get.dashboard') }}" class="ml-3 mt-5">
                     <div id="tooltip-jese" role="tooltip" style="font-size: 15px;"
                         class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
                         {{ authUser()->name }}

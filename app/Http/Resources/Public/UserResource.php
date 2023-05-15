@@ -16,7 +16,8 @@
                 'id' => $this->id,
                 'name' => $this->name,
                 'email' => $this->email,
-                'avatar' => $this->avatar
+                'avatar' => $this->avatar,
+                'metaData' => $this->userMetaData
             ];
         }
     }

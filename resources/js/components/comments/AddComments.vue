@@ -7,7 +7,7 @@
                 <div class="w-20 h-20 rounded-full"><img data-tooltip-target="tooltip-jese" class="ring-4 ring-gray-50 dark:ring-gray-500 w-full h-full rounded-full" :src="avatar" alt="patienceman"></div>
             </div>
             <form class="mb-3 w-full ml-7">
-                <div class="relative px-2 py-2 rounded-xl bg-gray-50 dark:bg-gray-700 border border-[#dbe0e4] dark:border-none">
+                <div class="relative px-2 py-2 rounded-xl bg-gray-50 dark:bg-deep-green-900 border border-[#dbe0e4] dark:border-none">
                     <div class="bg-gray-50 py-2 px-4 mb-4 rounded-lg dark:bg-deep-green-900" style="with: 100%">
                         <label for="comment" class="sr-only font-anek">Your comment</label>
                         <textarea id="comment" v-model="comments" @keypress.enter.prevent="createComment()" rows="1" style="font-size: 17px; line-height: 22px; width: 100%" class="bg-gray-50 px-0 w-full text-base font-anek font-bold leading-9 text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-deep-green-900 pt-3" placeholder="Write your comment..." required></textarea>

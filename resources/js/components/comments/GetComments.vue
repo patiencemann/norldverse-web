@@ -11,16 +11,21 @@
                             <img :alt="comment.user.name" :data-popover-target="'popover-user-profile-for-'+comment.user.id" class="rounded-circle" :src="comment.user.avatar"/>
                         </span>
 
-                        <div data-popover :id="'popover-user-profile-for-'+comment.user.id" role="tooltip" class="absolute z-10 invisible inline-block w-80 text-sm text-gray-500 transition-opacity duration-300 border border-gray-200 bg-gray-50 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-deep-green-800 dark:border-gray-600">
+                        <div data-popover :id="'popover-user-profile-for-'+comment.user.id" role="tooltip" class="absolute z-10 invisible inline-block w-96 text-sm text-gray-500 transition-opacity duration-300 border border-gray-200 bg-gray-50 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:bg-deep-green-800 dark:border-gray-600">
                             <div class="p-3">
                                 <div class="flex items-center justify-between mb-2">
                                     <a href="#" class="timeline-item-icon"> <img class="h-20 w-20 rounded-full" :src="comment.user.avatar" :alt="comment.user.name"> </a>
                                 </div>
                                 <p class="text-base font-semibold leading-none text-gray-900 dark:text-white mt-4">
-                                    <a href="#" class="dark:text-[#E8E8ED] font-anek" style="font-size: 20px">{{comment.user.name}}</a>
+                                    <a href="#" class="dark:text-[#E8E8ED] font-anek" style="font-size: 20px">{{ comment.user.name }}</a>
                                 </p>
                                 <p class="mb-3 text-sm font-normal mt-2">
-                                    <a href="#" class="hover:underline dark:text-[#E8E8ED] font-anek" style="font-size: 16px">{{comment.user.email}}</a>
+                                    <a href="#" class="hover:underline dark:text-[#E8E8ED] font-anek" style="font-size: 16px">{{ comment.user.email }}</a>
+                                </p>
+                                <p class="mb-3 text-sm font-bold mt-2">
+                                    <a class="hover:underline dark:text-[#E8E8ED] font-anek" style="font-size: 16px">
+                                        {{ comment.user.metaData?.position !== undefined ? comment.user.metaData.position : '' }}
+                                    </a>
                                 </p>
                             </div>
                             <div data-popper-arrow></div>

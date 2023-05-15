@@ -2,7 +2,7 @@
     <div class="notifications">
         <button @click="readNotifications" id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification" data-tooltip-target="tooltip-notification"
             type="button"
-            class="ml-2 flex relative text-gray-500 dark:bg-gray-700 dark:text-gray-400 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+            class="hidden sm:inline-block ml-2 relative text-gray-500 dark:bg-gray-700 dark:text-gray-400 bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
             <svg class="w-10 h-10" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
             <span v-if="count > 0" class="absolute inline-flex items-center justify-center w-8 h-8 text-md font-bol font-anek text-white bg-red-500 border-2 border-white rounded-full -top-1 -right-2 dark:border-gray-900">
                 {{ count }}
@@ -16,12 +16,12 @@
             <div class="tooltip-arrow" data-popper-arrow="" style="position: absolute; left: 0px; transform: translate(69px, 0px);"></div>
         </div>
 
-        <div id="dropdownNotification" class="notification-model z-20 hidden bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-800 dark:divide-gray-700" aria-labelledby="dropdownNotificationButton">
+        <div id="dropdownNotification" class="notification-model z-20 hidden bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-deep-green-900 dark:divide-gray-700" aria-labelledby="dropdownNotificationButton">
             <div class="block px-4 py-2 font-semibold font-anek text-center text-gray-700 rounded-t-lg bg-gray-50 dark:bg-gray-800 dark:text-white">
                 Notifications
             </div>
             <div class="divide-y divide-gray-100 dark:divide-gray-700">
-                <a v-for="notification in notifications" :key="notification.id" class="single-notification px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700">
+                <a v-for="notification in notifications" :key="notification.id" class="single-notification px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-deep-green-900 dark:text-gray-50">
                     <div class="flex-shrink-0">
                         <svg class="w-10 h-10 text-gray-300" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
                         <div class="absolute flex items-center justify-center w-5 h-5 ml-6 -mt-5 bg-gray-600 border border-white rounded-full dark:border-gray-800">

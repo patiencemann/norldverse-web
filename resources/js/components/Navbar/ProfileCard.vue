@@ -9,8 +9,8 @@
         <div class="profile flex items-center justify-center">
             <div class="flex items-center justify-center">
                 <img :src="authUser.avatar" class="thumbnail" :alt="authUser.name"/>
-                <input type="text" v-model="data.fullname" :placeholder="authUser.name" autocomplete="false" class="border-none bg-[#1a202c] text-green-400 font-bold font-anek rounded-lg block w-full py-2.6 text-center px-4 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white" style="font-size: 24px">
-                <input type="text" v-model="data.position" :placeholder="data.position" autocomplete="false" class="border-none bg-[#1a202c] text-yellow-300 font-semibold font-anek rounded-lg block w-full py-2.6 text-center px-4 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white" style="font-size: 20px">
+                <input type="text" v-model="data.fullname" :placeholder="authUser.name" autocomplete="false" class="border-none bg-[#1a202c] text-green-400 font-bold font-anek rounded-lg block w-full py-2.6 text-center px-4 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white" style="font-size: 24px; margin-bottom: 5px">
+                <input type="text" v-model="data.position" :placeholder="data.position" autocomplete="false" class="border-none bg-[#1a202c] text-yellow-300 font-semibold font-anek rounded-lg block w-full py-2.6 text-center px-4 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white" style="font-size: 20px; margin-bottom: 5px">
                 <textarea type="text" rows="5" v-model="data.bio" :placeholder="data.bio" autocomplete="false" class="border-none mb-3 bg-[#1a202c] text-blue-400 font-anek rounded-lg block w-full py-2.6 text-center px-4 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white" style="font-size: 18px"></textarea>
                 <input type="text" v-model="data.twitterUrl" :placeholder="data.twitter_handler" id="twitter_url" class="bg-[#1a202c] border-none mt-4 text-white font-bold font-anek text-center rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-2.6 px-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required style="font-size: 15px">
             </div>
@@ -32,9 +32,9 @@
                 userMetaData: {},
                 data: {
                     fullname: JSON.parse(this.user).name,
-                    bio: '',
-                    position: '',
-                    twitterUrl: ''
+                    bio: 'Update your bio',
+                    position: 'Your Position',
+                    twitterUrl: 'https://custom-profile-url.com'
                 }
             }
         },

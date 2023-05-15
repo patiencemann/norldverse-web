@@ -139,10 +139,11 @@
             style="position: absolute; left: 0px; transform: translate(69px, 0px);"></div>
     </div>
 
-    <!-- Notification menu -->
-    <notification-list></notification-list>
-
     @if (Auth::check())
+
+        <!-- Notification menu -->
+        <notification-list></notification-list>
+
         <button id="dropdownUserAvatarButton" data-dropdown-toggle="dropdownAvatar" class="ml-3" type="button">
             <div id="tooltip-jese" role="tooltip" style="font-size: 15px;"
                 class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
@@ -155,14 +156,14 @@
         </button>
 
         <!-- Dropdown menu -->
-        <div id="dropdownAvatar" class="z-10 hidden bg-white divide-y w-80 divide-gray-100 rounded-lg shadow dark:bg-gray-700 dark:divide-gray-600">
+        <div id="dropdownAvatar" class="z-10 hidden bg-gray-50 dark:bg-deep-green-900 divide-y w-80 divide-gray-100 rounded-lg shadow dark:divide-gray-600">
             <div class="px-4 py-3 text-md font-anek font-semibold text-gray-500 dark:text-white">
                 <div>{{ authUser()->name }}</div>
                 <div class="font-medium truncate">{{ authUser()->email }}</div>
             </div>
             <ul class="p-0 m-0 text-md text-gray-700 dark:text-gray-200" aria-labelledby="dropdownUserAvatarButton">
                 <li class="cursor-pointer">
-                    <a href="{{ route('get.dashboard') }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+                    <a href="{{ route('get.dashboard') }}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-white">
                         Stories
                     </a>
                 </li>

@@ -30,14 +30,15 @@
                             <div class="post-meta">
                                 <div class="post-authors">
                                     <div class="post-item-author global-item-author is-image global-image">
-                                        <a href="https://twitter.com/ManirabonaW" class="global-link font-bold" title="{{ $doc->user->name }}"></a>
+                                        <a href="{{ optional($doc->user->userMetaData)->twitter_handler }}" class="global-link font-bold" title="{{ $doc->user->name }}"></a>
                                         <img src="{{ $doc->user->avatar }}" loading="lazy" alt="{{ $doc->user->name }}">
                                     </div>
                                 </div>
 
-                                <div class="post-meta-content">
-                                    <a href="https://twitter.com/ManirabonaW" class="font-bold dark:text-gray-200">{{ $doc->user->name }}</a>
-                                    <time datetime="{{ $doc->created_at }}" class="dark:text-gray-400">{{ $doc->created_at->diffForHumans() }} — <read-time text="{{ $doc->contents }}" /></time>
+                                <div class="post-meta-content font-anek">
+                                    <a href="{{ optional($doc->user->userMetaData)->twitter_handler }}" class="font-bold dark:text-gray-200">{{ $doc->user->name }}</a> <br>
+                                    <span class="font-anek text-gray-500">{{ optional($doc->user->userMetaData)->position }}</span> <br />
+                                    <strong class="text-gray-600 mt-1">Published: {{ $doc->created_at->diffForHumans() }}</strong> <read-time text="{{ $doc->contents }}" /></time>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +76,10 @@
         <div class="comment-container">
             <div>
                 {{-- Comment statistics --}}
-                <comment-stats doc="{{ $doc->id }}" />
+                <comment-stats
+                    liked="{{ $doc->likes->filter(fn($value) => $value->user_id == Auth::user()->id)->isNotEmpty() ? true : false }}"
+                    likes="{{ $doc->likes->count() }}"
+                    doc="{{ $doc->id }}" />
             </div>
 
             <div>
