@@ -4,11 +4,13 @@
 
     use App\Http\Requests\StoreClientRequest;
     use App\Http\Requests\StoreUserRequest;
-    use App\Http\Requests\UserLoginRequest;
+use App\Http\Requests\UpdateUserProfileRequest;
+use App\Http\Requests\UserLoginRequest;
     use App\Http\Resources\Private\UserResource as PrivateUserResource;
     use App\Http\Resources\Public\UserResource as PublicUserResource;
     use App\Models\Role;
     use App\Models\User;
+    use App\Models\UserRequest;
     use App\Services\AuthService;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Hash;
@@ -130,5 +132,33 @@
                 "message" => "invalid email, passpord or both",
                 "data" => PublicUserResource::collection($users)
             ]);
+        }
+
+        /**
+         * Become a writter
+         *
+         * @return JsonResponse
+         */
+        public function becomeWritter() {
+            authUser()->userRequests()->create([ 'request' => UserRequest::WRITTE ]);
+            return response()->json(['message' => "Your request sent, and you'll recieve response soon or later"]);
+        }
+
+        /**
+         * Update user profile
+         *
+         * @param UpdateUserProfileRequest $request
+         * @return JsonResponse
+         */
+        public function updateProfile(UpdateUserProfileRequest $request) {
+            authUser()->update(['name' => $request->fullname]);
+
+            authUser()->userMetaData()->update([
+                'bio' => $request->bio,
+                'position' => $request->position,
+                'twitter_handler' => $request->twitter_handler
+            ]);
+
+            return response()->json(['message' => "Your profile updated"]);
         }
     }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6797652948434db0c028dc9aca2ef28",
+    "content-hash": "d0aa106f483d4594138b65cdd8f7c12e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3670,6 +3670,65 @@
                 "source": "https://github.com/manirabona-programer/filtan/tree/v1.0.3"
             },
             "time": "2022-11-18T16:35:33+00:00"
+        },
+        {
+            "name": "patienceman/notifier",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/manirabona-programer/patienceman-notifier.git",
+                "reference": "ee3a59688990903d75ad554c08e1d363a90e6178"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/manirabona-programer/patienceman-notifier/zipball/ee3a59688990903d75ad554c08e1d363a90e6178",
+                "reference": "ee3a59688990903d75ad554c08e1d363a90e6178",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Patienceman\\Notifier\\NotifierServiceProvider"
+                    ],
+                    "aliases": {
+                        "Notifier": "Patienceman\\Notifier\\Facades\\Notifier"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Patienceman\\Notifier\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "manirabona-programer",
+                    "email": "hseal419@gmail.com",
+                    "homepage": "https://github.com/manirabona-programer",
+                    "role": "Laravel/PHP Developer"
+                }
+            ],
+            "description": "Provide a convenient way to interact with Notifications, including Emails, Dbnotification, and one signal notifications, it just helps your declaration and interaction easier.",
+            "keywords": [
+                "database notification",
+                "laravel",
+                "notification",
+                "notifier",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/manirabona-programer/patienceman-notifier/issues",
+                "source": "https://github.com/manirabona-programer/patienceman-notifier/tree/v1.0.1"
+            },
+            "time": "2023-02-13T06:22:39+00:00"
         },
         {
             "name": "php-http/client-common",

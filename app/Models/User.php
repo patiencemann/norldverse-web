@@ -90,4 +90,28 @@
         public static function getById(Int $userId) {
             return User::where('id', $userId)->first();
         }
+
+        /**
+         * User has many requests
+         * @return HasMany
+         */
+        public function userRequests() {
+            return $this->hasMany(UserRequest::class);
+        }
+
+        /**
+         * User has one metadata
+         * @return HasOne
+         */
+        public function userMetaData() {
+            return $this->hasOne(UserMetaData::class);
+        }
+
+        /**
+         * User has one metadata
+         * @return HasOne
+         */
+        public function likes() {
+            return $this->hasOne(UserMetaData::class);
+        }
     }

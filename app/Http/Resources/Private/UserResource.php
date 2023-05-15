@@ -18,6 +18,7 @@
                 'email' => $this->email,
                 'avatar' => $this->avatar,
                 'provider' => $this->provider,
+                'metaData' => $this->userMetaData,
                 'created_at' => $this->created_at->diffForHumans()
             ];
         }

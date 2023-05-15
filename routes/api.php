@@ -1,8 +1,10 @@
 <?php
 
+    use App\Http\Controllers\NotificationController;
     use App\Http\Controllers\DocCommentController;
     use App\Http\Controllers\DocController;
-    use App\Http\Controllers\UserController;
+use App\Http\Controllers\DocLikeController;
+use App\Http\Controllers\UserController;
     use Illuminate\Support\Facades\Route;
 
     /*
@@ -54,6 +56,7 @@
          */
         Route::get('/docs', [DocController::class, 'index'])->name('get.docs');
         Route::get('/docs/{doc}', [DocController::class, 'show'])->name('get.doc');
+        Route::post('/docs/like/{doc}', [DocLikeController::class, 'store'])->name('doc.like');
 
         /**
          * -----------------------------------------------
@@ -70,13 +73,14 @@
          */
         Route::get('/users', [UserController::class, 'index'])->name('get.users');
         Route::get('/users/{user}', [UserController::class, 'show'])->name('get.single.user');
+        Route::post('/users/profile', [UserController::class, 'updateProfile'])->name('update.profile');
 
         /**
          * ---------------------------------------------
          * ADMIN Routes
          * ---------------------------------------------
          */
-        Route::group(['middleware' => ['hasAdminRole']], function() {
+        Route::group(['middleware' => ['hasWritterRole']], function() {
             /**
              * ---------------------------
              * Docs Routes
@@ -92,10 +96,24 @@
              * --------------------------
              */
             Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('delete.user');
+
         });
+
+        /**
+         * ----------------------------------------------------------------------
+         * Notifications routes
+         * ----------------------------------------------------------------------
+         */
+        Route::get('/notifications', [NotificationController::class, 'index']);
+        Route::post('/notifications/{notification}', [NotificationController::class, 'unRead']);
+        Route::post('/notifications/read/all', [NotificationController::class, 'readAll']);
+        Route::get('/notifications/count', [NotificationController::class, 'count']);
+        Route::delete('/notifications/{notification}', [NotificationController::class, 'destroy']);
 
         /**
          * Get client id and secret
          */
         Route::post('/clients', [UserController::class, 'storeClient'])->name('post.clients');
+
+        Route::post('/become-writter', [UserController::class, 'becomeWritter'])->name('user.become.writter');
     });

@@ -221,8 +221,6 @@
                 async createDoc() {
                     this.isLoading = true;
 
-                    console.log(this.data);
-
                     try{
                         let formData = new FormData;
                             formData.append('title', this.data.title);

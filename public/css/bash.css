@@ -548,6 +548,7 @@ body .is-partial-color:not(.is-partial-dark) {
     width: 100%;
     color: var(--color-font-one);
     background-color: rgba(245, 245, 245, 1);
+    border-top: var(--border) var(--color-border-one);
 }
 
 .post-header-container,
@@ -1714,14 +1715,15 @@ body .is-partial-color:not(.is-partial-dark) {
     box-sizing: border-box;
     width: 100%;
     color: rgba(117, 117, 117, 1) !important;
-    border-left: 4px solid var(--ghost-accent-color);
+    border-left: 5px solid #aaadb5 !important;
     font-style: italic;
     line-height: 0.8em;
-    margin: 1.1em -4em;
-    padding: 1em 2em;
+    margin: 1.1em -4em !important;
+    padding: 0.5em 1em !important;
     position: relative;
     transition: 0.2s border ease-in-out;
     z-index: 0;
+    border-radius: 10px !important;
 }
 .post-content blockquote:before {
     content: "";
@@ -1729,24 +1731,9 @@ body .is-partial-color:not(.is-partial-dark) {
     top: 50%;
     left: -4px;
     height: 2em;
-    background-color: #fff;
-    width: 5px;
+    background-color: #aaadb5;
+    width: 10px !important;
     margin-top: -1em;
-}
-.post-content blockquote:after {
-    content: "\f35f";
-    position: absolute;
-    top: 50%;
-    left: -0.5em;
-    color: #00cc8f;
-    font-family: "Ionicons";
-    font-style: normal;
-    line-height: 1em;
-    text-align: center;
-    text-indent: -2px;
-    width: 1em;
-    margin-top: -0.5em;
-    transition: 0.2s all ease-in-out, 0.4s transform ease-in-out;
 }
 .post-content blockquote.format:before,
 blockquote.format:after {
@@ -2440,7 +2427,7 @@ blockquote.format:after {
 @media (max-width: 768px) {
     .post-content {
         max-width: 100%;
-        padding: 60px 40px 30px 40px;
+        padding: 30px 10px 30px 10px;
     }
 
     .post-content p {

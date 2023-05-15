@@ -21,8 +21,12 @@ return [
             'users' => 'c,r,u,d',
             'profile' => 'r,u'
         ],
+        'writter' => [
+            'users' => 'c,r,u,d',
+            'blogs' => 'c,r,u,d'
+        ],
         'user' => [
-            'profile' => 'r,u',
+            'profile' => 'c,r,u,d',
         ],
         'role_name' => [
             'module_1_name' => 'c,r,u,d',
