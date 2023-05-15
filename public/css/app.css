@@ -11845,6 +11845,18 @@ input:checked + .toggle-bg {
 .bottom-\[60px\] {
   bottom: 60px;
 }
+.bottom-3 {
+  bottom: 0.75rem;
+}
+.bottom-4 {
+  bottom: 1rem;
+}
+.right-5 {
+  right: 1.25rem;
+}
+.bottom-5 {
+  bottom: 1.25rem;
+}
 .z-10 {
   z-index: 10;
 }
@@ -11936,6 +11948,9 @@ input:checked + .toggle-bg {
 .mb-1 {
   margin-bottom: 0.25rem;
 }
+.mt-4 {
+  margin-top: 1rem;
+}
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -11950,9 +11965,6 @@ input:checked + .toggle-bg {
 }
 .ml-9 {
   margin-left: 2.25rem;
-}
-.mt-4 {
-  margin-top: 1rem;
 }
 .ml-3 {
   margin-left: 0.75rem;
@@ -12388,13 +12400,13 @@ input:checked + .toggle-bg {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
-.border-gray-300 {
-  --tw-border-opacity: 1;
-  border-color: rgb(209 213 219 / var(--tw-border-opacity));
-}
 .border-\[\#dbe0e4\] {
   --tw-border-opacity: 1;
   border-color: rgb(219 224 228 / var(--tw-border-opacity));
+}
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
 }
 .border-gray-200 {
   --tw-border-opacity: 1;
@@ -12450,6 +12462,10 @@ input:checked + .toggle-bg {
 .bg-\[\#1a202c\] {
   --tw-bg-opacity: 1;
   background-color: rgb(26 32 44 / var(--tw-bg-opacity));
+}
+.bg-gray-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 .bg-deep-green-700 {
   --tw-bg-opacity: 1;
@@ -12513,9 +12529,13 @@ input:checked + .toggle-bg {
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
 }
-.bg-gray-800 {
+.bg-deep-text-900 {
   --tw-bg-opacity: 1;
-  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  background-color: rgb(114 172 254 / var(--tw-bg-opacity));
+}
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 100 242 / var(--tw-bg-opacity));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
@@ -12583,6 +12603,10 @@ input:checked + .toggle-bg {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+.py-2\.5 {
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+}
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -12590,10 +12614,6 @@ input:checked + .toggle-bg {
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
-}
-.py-2\.5 {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
 }
 .px-6 {
   padding-left: 1.5rem;
@@ -12647,6 +12667,9 @@ input:checked + .toggle-bg {
 }
 .align-baseline {
   vertical-align: baseline;
+}
+.align-middle {
+  vertical-align: middle;
 }
 .font-anek {
   font-family: "Anek Telugu", sans-serif;
@@ -13069,6 +13092,11 @@ a {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-gray-900:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-deep-green-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
@@ -13092,11 +13120,6 @@ a {
 .hover\:bg-green-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(1 71 55 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-gray-900:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-gray-200:hover {
@@ -13539,6 +13562,11 @@ a {
 .dark .dark\:focus\:ring-gray-800:focus {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(31 41 55 / var(--tw-ring-opacity));
+}
+
+.dark .dark\:focus\:ring-blue-800:focus {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(30 66 159 / var(--tw-ring-opacity));
 }
 
 @media (min-width: 640px) {

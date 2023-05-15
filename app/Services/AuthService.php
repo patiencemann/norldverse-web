@@ -46,6 +46,7 @@
          */
         public function createUser($role) {
             $user = User::create($this->providerUser);
+            $user->userMetaData()->create();
             $user->attachRole($role);
 
             (new Notifier())->send([

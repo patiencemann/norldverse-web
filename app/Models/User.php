@@ -106,4 +106,12 @@
         public function userMetaData() {
             return $this->hasOne(UserMetaData::class);
         }
+
+        /**
+         * User has one metadata
+         * @return HasOne
+         */
+        public function likes() {
+            return $this->hasOne(UserMetaData::class);
+        }
     }

@@ -62,4 +62,13 @@
         public function docTopic(): HasOne {
             return $this->hasOne(DocTopic::class);
         }
+
+        /**
+         * Doc has Many likes
+         *
+         * @return HasMany
+         */
+        public function likes(): HasMany {
+            return $this->hasMany(DocLike::class);
+        }
     }

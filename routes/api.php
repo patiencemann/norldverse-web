@@ -3,7 +3,8 @@
     use App\Http\Controllers\NotificationController;
     use App\Http\Controllers\DocCommentController;
     use App\Http\Controllers\DocController;
-    use App\Http\Controllers\UserController;
+use App\Http\Controllers\DocLikeController;
+use App\Http\Controllers\UserController;
     use Illuminate\Support\Facades\Route;
 
     /*
@@ -55,6 +56,7 @@
          */
         Route::get('/docs', [DocController::class, 'index'])->name('get.docs');
         Route::get('/docs/{doc}', [DocController::class, 'show'])->name('get.doc');
+        Route::post('/docs/like/{doc}', [DocLikeController::class, 'store'])->name('doc.like');
 
         /**
          * -----------------------------------------------
@@ -71,6 +73,7 @@
          */
         Route::get('/users', [UserController::class, 'index'])->name('get.users');
         Route::get('/users/{user}', [UserController::class, 'show'])->name('get.single.user');
+        Route::post('/users/profile', [UserController::class, 'updateProfile'])->name('update.profile');
 
         /**
          * ---------------------------------------------

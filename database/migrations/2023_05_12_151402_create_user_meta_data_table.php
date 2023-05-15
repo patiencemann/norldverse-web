@@ -14,9 +14,9 @@
             Schema::create('user_meta_data', function (Blueprint $table) {
                 $table->id();
                 $table->unsignedBigInteger('user_id');
-                $table->string('position');
-                $table->longText('bio');
-                $table->string('twitter_handler');
+                $table->string('position')->nullable();
+                $table->longText('bio')->nullable();
+                $table->string('twitter_handler')->nullable();
                 $table->timestamps();
             });
         }
