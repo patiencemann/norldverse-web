@@ -79,7 +79,8 @@
                 <comment-stats
                     liked="{{ $doc->likes->filter(fn($value) => $value->user_id == Auth::user()->id)->isNotEmpty() ? true : false }}"
                     likes="{{ $doc->likes->count() }}"
-                    doc="{{ $doc->id }}" />
+                    doc="{{ $doc->id }}"
+                    auth="{{ Auth::check() }}" />
             </div>
 
             <div>
