@@ -4,9 +4,6 @@
     use App\Http\Controllers\DocController;
     use App\Http\Controllers\HomeController;
     use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\UserController;
-use App\Models\Role;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
 

@@ -1,8 +1,46 @@
-@extends('layouts.guest')
+@extends('layouts.app')
 
 @section('meta-data')
-    <meta name="description" content="{{ $doc->caption }}" />
+    <meta data-rh="true" name="theme-color" content="#000000">
+
+    <meta data-rh="true" name="googlebot" content="noodp" />
+    <meta data-rh="true" name="copyright" content="{{ $doc->user->name }}" />
+    <meta data-rh="true" name="author" content="{{ $doc->user->name }}" />
+    <meta data-rh="true" name="news_keywords" content="@foreach ($doc->docTopic->topics as $topic) {{ $topic."," }} @endforeach">
+    <link data-rh="true" rel="author" href="{{ env('APP_URL') }}">
+    <meta data-rh="true" name="referrer" content="unsafe-url">
+
+    <meta data-rh="true" name="title" content="{{ $doc->title }}">
+    <meta data-rh="true" name="description" content="{{ $doc->caption }}">
     <meta name="keywords" content="@foreach ($doc->docTopic->topics as $topic) {{ $topic."," }} @endforeach" />
+    <meta data-rh="true" property="article:published_time" content="{{ $doc->created_at }}">
+    <meta data-rh="true" property="article:author" content="{{ env('APP_URL') }}">
+    <meta data-rh="true" name="robots" content="index,follow,max-image-preview:large">
+    <link data-rh="true" rel="canonical" href="{{ env('APP_URL')."/docs/".$doc->slug }}">
+
+    {{-- Twitter tags --}}
+    <meta data-rh="true" name="twitter:image:src" content="{{ $doc->docMedia->file_url }}">
+    <meta data-rh="true" name="twitter:card" content="{{ $doc->caption }}">
+    <meta data-rh="true" name="twitter:creator" content="{{ $doc->user->name }}">
+    <meta data-rh="true" name="twitter:label1" content="Reading time">
+    <meta data-rh="true" name="twitter:data1" content="10 min read">
+    <meta data-rh="true" name="twitter:tile:template:testing" content="2">
+    <meta data-rh="true" name="twitter:tile:image" content="{{ $doc->docMedia->file_url }}">
+    <meta data-rh="true" name="twitter:tile:info1:icon" content="Person">
+    <meta data-rh="true" name="twitter:tile:info1:text" content="{{ $doc->user->name }}">
+    <meta data-rh="true" name="twitter:tile:info2:icon" content="Calendar">
+    <meta data-rh="true" name="twitter:tile:info2:text" content="{{ $doc->created_at }}">
+    <meta data-rh="true" name="twitter:cta" content="Read on Patienceman">
+    <meta data-rh="true" property="twitter:title" content="{{ $doc->caption }}">
+    <meta data-rh="true" property="twitter:description" content="{{ $doc->caption }}">
+
+    {{-- Facebook tags --}}
+    <meta data-rh="true" property="og:type" content="article">
+    <meta data-rh="true" property="og:site_name" content="blog.patienceman.com">
+    <meta data-rh="true" property="og:title" content="{{ $doc->title }}">
+    <meta data-rh="true" property="og:description" content="{{ $doc->caption }}">
+    <meta data-rh="true" property="og:image" content="{{ $doc->docMedia->file_url }}">
+    <meta data-rh="true" property="og:url" content="{{ env('APP_URL')."/docs/".$doc->slug }}">
 @stop
 
 @section('title')
@@ -36,15 +74,15 @@
                                 </div>
 
                                 <div class="post-meta-content font-anek">
-                                    <a href="{{ optional($doc->user->userMetaData)->twitter_handler }}" class="font-bold dark:text-gray-200">{{ $doc->user->name }}</a> <br>
-                                    <span class="font-anek text-gray-500">{{ optional($doc->user->userMetaData)->position }}</span> <br />
+                                    <a href="{{ ($doc->user->userMetaData) ? $doc->user->userMetaData->twitter_handler : "/" }}" class="font-bold dark:text-gray-200">{{ $doc->user->name }}</a> <br>
+                                    <span class="font-anek text-gray-500">{{ ($doc->user->userMetaData) ? $doc->user->userMetaData->position : "Position" }}</span> <br />
                                     <strong class="text-gray-600 mt-1">Published: {{ $doc->created_at->diffForHumans() }}</strong> <read-time text="{{ $doc->contents }}" /></time>
                                 </div>
                             </div>
                         </div>
 
                         {{-- Share this doc --}}
-                        <social-share
+                        <social-links
                             page_description="{{ $doc->caption }}"
                             page_title="{{ $doc->title }}"
                         />
@@ -67,7 +105,7 @@
 
         <div class="post-content-container dark:bg-deep-green-900">
             <div class="post-content dark:text-gray-300" id="page_brak_post_content">
-                <render-mark-down contents="{{ $doc->contents }}" />
+                <render-mark-down-contents contents="{{ $doc->contents }}" />
             </div>
         </div>
     </div>
@@ -77,7 +115,7 @@
             <div>
                 {{-- Comment statistics --}}
                 <comment-stats
-                    liked="{{ $doc->likes->filter(fn($value) => $value->user_id == Auth::user()->id)->isNotEmpty() ? true : false }}"
+                    liked="{{ Auth::check() ? ($doc->likes->filter(fn($value) => $value->user_id == Auth::user()->id)->isNotEmpty() ? true : false) : false }}"
                     likes="{{ $doc->likes->count() }}"
                     doc="{{ $doc->id }}"
                     auth="{{ Auth::check() }}" />
@@ -112,6 +150,4 @@
             </div>
         </div>
     </section>
-
-    {{-- <x-footer /> --}}
 @endsection
