@@ -10,11 +10,13 @@
             <div class="flex items-center justify-center">
                 <img :src="authUser.avatar" class="thumbnail" :alt="authUser.name"/>
                 <input type="text" v-model="data.fullname" :placeholder="authUser.name" autocomplete="false" class="border-none bg-[#1a202c] text-green-400 font-bold font-anek rounded-lg block w-full py-2.6 text-center px-4 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white" style="font-size: 24px; margin-bottom: 5px">
-                <input type="text" v-model="data.position" :placeholder="data.position" autocomplete="false" class="border-none bg-[#1a202c] text-yellow-300 font-semibold font-anek rounded-lg block w-full py-2.6 text-center px-4 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white" style="font-size: 20px; margin-bottom: 5px">
-                <textarea type="text" rows="5" v-model="data.bio" :placeholder="data.bio" autocomplete="false" class="border-none mb-3 bg-[#1a202c] text-blue-400 font-anek rounded-lg block w-full py-2.6 text-center px-4 dark:bg-gray-700 dark:placeholder-gray-400 dark:text-white" style="font-size: 18px"></textarea>
-                <input type="text" v-model="data.twitterUrl" :placeholder="data.twitter_handler" id="twitter_url" class="bg-[#1a202c] border-none mt-4 text-white font-bold font-anek text-center rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-2.6 px-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required style="font-size: 15px">
+                <input type="text" v-model="data.position" :placeholder="data.position ? data.position : 'Your Postion'" autocomplete="false" class="border-none bg-[#1a202c] text-yellow-300 font-semibold font-anek rounded-lg block w-full py-2.6 text-center px-4 dark:bg-gray-700 dark:placeholder-yellow-300 dark:text-white" style="font-size: 20px; margin-bottom: 5px">
+                <textarea type="text" rows="5" v-model="data.bio" :placeholder="data.bio ? data.bio : 'Your Bio'" autocomplete="false" class="border-none mb-3 bg-[#1a202c] text-blue-400 font-anek rounded-lg block w-full py-2.6 text-center px-4 dark:bg-gray-700 dark:placeholder-white dark:text-blue-400" style="font-size: 18px"></textarea>
+                <input type="text" v-model="data.twitterUrl" :placeholder="data.twitter_handler ? data.twitter_handler : 'Profile url'" id="twitter_url" class="bg-[#1a202c] border-none mt-4 text-white font-bold font-anek text-center rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full py-2.6 px-4 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required style="font-size: 15px">
             </div>
-            <button @click="saveProfileChanges" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 align-middle focus:ring-gray-300 font-bold font-anek rounded-lg text-md px-5 py-2.5 mt-3 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Save Changes</button>
+            <button @click="saveProfileChanges" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 align-middle focus:ring-gray-300 font-bold font-anek rounded-lg text-md px-5 py-2.5 mt-3 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                Save Changes
+            </button>
         </div>
         <alert :hasResponse="hasResponse" :response="response" :responseType="responseType" />
     </div>
@@ -30,9 +32,11 @@
                 isLoading: false,
                 hasResponse: false,
                 userMetaData: {},
+                response: "",
+                responseType: "",
                 data: {
                     fullname: JSON.parse(this.user).name,
-                    bio: 'Update your bio',
+                    bio: "Your bio",
                     position: 'Your Position',
                     twitterUrl: 'https://custom-profile-url.com'
                 }
