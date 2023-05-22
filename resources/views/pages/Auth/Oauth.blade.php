@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title') Home @stop
+@section('title') Signup|Login @stop
 
 @section('content')
     <x-navigation-bar />
