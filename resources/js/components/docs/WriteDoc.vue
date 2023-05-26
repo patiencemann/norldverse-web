@@ -236,7 +236,7 @@
                         window.location.href = '/dashboard';
                     } catch(error) {
                         this.responseType = "error";
-                        this.response = "something went wrong";
+                        this.response = error.response.data.message;
                     }
 
                     this.isLoading = false;
