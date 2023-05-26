@@ -16,7 +16,9 @@
     <meta data-rh="true" property="article:published_time" content="{{ $doc->created_at }}">
     <meta data-rh="true" property="article:author" content="{{ env('APP_URL') }}">
     <meta data-rh="true" name="robots" content="index,follow,max-image-preview:large">
+
     <link data-rh="true" rel="canonical" href="{{ env('APP_URL')."/docs/".$doc->slug }}">
+    <link rel="alternate" type="application/rss+xml" title="Patienceman - blogs &raquo; Feed" href="{{ env('APP_URL').'/feed.xml' }}" />
 
     {{-- Twitter tags --}}
     <meta data-rh="true" name="twitter:image:src" content="{{ $doc->docMedia->file_url }}">

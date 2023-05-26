@@ -214,6 +214,7 @@
                     let response = await axios.post(`/api/docs/${this.doc_identity}`, formData);
                     this.response = response.data.message;
                     this.responseType = "success";
+                    window.location.href = '/dashboard';
                 }catch(error){
                     this.response = "Something went wrong, 😞 try again later, with image";
                     this.responseType = 'error';
@@ -221,7 +222,6 @@
 
                 this.isLoading = false;
                 this.hasResponse = true;
-                window.location.href = '/dashboard';
             },
             onFileChange(e) {
                 this.data.image = e.target.files[0];

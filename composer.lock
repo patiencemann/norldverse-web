@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0aa106f483d4594138b65cdd8f7c12e",
+    "content-hash": "0ff5ef463f6cc00ec44ed6e05b789f53",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1469,6 +1469,50 @@
             "time": "2021-10-08T21:21:46+00:00"
         },
         {
+            "name": "kakaprodo/custom-data",
+            "version": "v1.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kakaprodo/custom-data.git",
+                "reference": "a088017925a3fb64e12cf8822a1f12b029b4b6ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kakaprodo/custom-data/zipball/a088017925a3fb64e12cf8822a1f12b029b4b6ba",
+                "reference": "a088017925a3fb64e12cf8822a1f12b029b4b6ba",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Kakaprodo\\CustomData\\CustomDataServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Kakaprodo\\CustomData\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "kakaprodo",
+                    "email": "promskakaprodo45@gmail.com"
+                }
+            ],
+            "description": "A package that minimize mixed arguments of functions or methods",
+            "support": {
+                "issues": "https://github.com/kakaprodo/custom-data/issues",
+                "source": "https://github.com/kakaprodo/custom-data/tree/v1.8.1"
+            },
+            "time": "2023-03-23T07:49:26+00:00"
+        },
+        {
             "name": "kkszymanowski/traitor",
             "version": "1.0.0",
             "source": {
@@ -2228,16 +2272,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.3.8",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "c493585c130544c4e91d2e0e131e6d35cb0cbc47"
+                "reference": "d44a24690f16b8c1808bf13b1bd54ae4c63ea048"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/c493585c130544c4e91d2e0e131e6d35cb0cbc47",
-                "reference": "c493585c130544c4e91d2e0e131e6d35cb0cbc47",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/d44a24690f16b8c1808bf13b1bd54ae4c63ea048",
+                "reference": "d44a24690f16b8c1808bf13b1bd54ae4c63ea048",
                 "shasum": ""
             },
             "require": {
@@ -2273,7 +2317,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.4-dev"
+                    "dev-main": "2.5-dev"
                 }
             },
             "autoload": {
@@ -2330,7 +2374,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-12-10T16:02:17+00:00"
+            "time": "2023-03-24T15:16:10+00:00"
         },
         {
             "name": "league/config",
