@@ -13,7 +13,7 @@
     @if (Auth::check()) <meta name="user" content="{{ Auth::user() }}"> @endif
     @yield('meta-data')
 
-    <link rel="icon" type="image/x-icon" href="/img/logos/logo-no-background.svg">
+    <link rel="icon" type="image/x-icon" href="/img/logos/logo-black.png">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
