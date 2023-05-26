@@ -1,6 +1,9 @@
 /node_modules
 /public/hot
 /public/storage
+/public/feed.xml
+/public/news_sitemap.xml
+/public/sitemap.xml
 /storage/*.key
 /vendor
 .env

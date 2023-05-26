@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Patienceman Blogs</title>
+    <link><![CDATA[http://localhost]]></link>
+    <description>a web blog featuring JavaScript, PHP, vue js, Laravel, packages, and everything else for software development and also personal developments.</description>
+    <language>en</language>
+    <copyright>Copyright (C) 2023</copyright>
+    <atom:link href="https://api.phpfyi.local/rss/news" rel="self" type="application/rss+xml"/>
+    <item>
+      <guid isPermaLink="false">1-delete-files-and-folders-in-linux-command-line</guid>
+      <title>Delete Files and Folders in Linux Command Line</title>
+      <link>http://localhost/docs/1-delete-files-and-folders-in-linux-command-line</link>
+      <author>hseal419@gmail.com (Manirabona Patience)</author>
+      <category>Patienceman Blogs</category>
+      <description>The lack of trash bin makes the deletion a permanent jobs of sort. There is a dedicated rmdir command to remove directories in Linux. You can also remove multiple files in the same command: r. To remove files, you can use the rm command in the following fashion: r You won't see any output if the file is successfully deleted.</description>
+      <pubDate>Thu, 23 Mar 2023 07:59:49 +0000</pubDate>
+      <content:encoded><![CDATA[<p>The lack of trash bin makes the deletion a permanent jobs of sort. There is a dedicated rmdir command to remove directories in Linux. You can also remove multiple files in the same command: r. To remove files, you can use the rm command in the following fashion: r You won't see any output if the file is successfully deleted.</p>
+]]></content:encoded>
+      <enclosure url="https://res.cloudinary.com/dzhuhtn30/image/upload/v1679558389/patienceman-docs/private/var/folders/t7/5v834pbs0qb8rrzg11m7w10m0000gp/T/phpjrVnIA.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <guid isPermaLink="false">3-ps5-version-of-redfall-was-in-development-at-arkane</guid>
+      <title>PS5 Version of Redfall Was in Development at Arkane</title>
+      <link>http://localhost/docs/3-ps5-version-of-redfall-was-in-development-at-arkane</link>
+      <author>hseal419@gmail.com (Manirabona Patience)</author>
+      <category>Patienceman Blogs</category>
+      <description>However, it was reportedly scrapped following Microsoft's acquisition of Bethesda.</description>
+      <pubDate>Thu, 23 Mar 2023 09:37:05 +0000</pubDate>
+      <content:encoded><![CDATA[<p>It turns out that Arkane had been developing a PS5 version of&nbsp;<a href="https://80.lv/articles/arkane-s-redfall-gets-a-release-date-and-a-new-gameplay-trailer/" target="_blank" rel="noopener">Redfall</a>, however, it was suddenly canceled and the game and became exclusive to Microsoft platforms after Bethesda was acquired by Microsoft.</p>
+<p>In an interview with IGN France, creative director Harvey Smith noted that the acquisition by Microsoft resulted in a significant change for the studio. "They came in and said, 'No PlayStation 5, we're focusing on Xbox, PC, and Game Pass'," Smith recalled.</p>
+<p>Although Redfall was initially planned to be released on all platforms, Smith mentioned that the studio wasn't bothered by Microsoft's decision as having the Game Pass support and "one less platform to worry about" was beneficial for Arkane. He further added that this move could even help the studio to make Redfall the studio's "biggest game" thanks to "a ton of people" that Game Pass has.</p>
+<p>Given Arkane's history of developing games for multiple platforms and its ties to PlayStation (with&nbsp;<a href="https://80.lv/articles/deathloop-hits-5-million-players/" target="_blank" rel="noopener">Deathloop</a>&nbsp;being a timed PlayStation exclusive), it's not unexpected that the studio was working on a PS5 version of Redfall. However, it's also not surprising that Microsoft canceled the PS5 version. Previously, the company honored the PlayStation releases of Deathloop and Ghostwire: Tokyo, but it still hasn't fully utilized its ownership of Bethesda.</p>
+<p>Still, Microsoft's decision to cancel the PS5 version of Redfall may undermine its efforts to promote its vision of gaming accessibility, particularly considering that the company is trying to prove that it works to&nbsp;<a href="https://80.lv/articles/microsoft-plans-to-sign-more-call-of-duty-agreements-with-other-platforms/" target="_blank" rel="noopener">make Call of Duty more accessible</a>&nbsp;if it closes&nbsp;<a href="https://80.lv/articles/microsoft-to-buy-activision-blizzard-for-usd68-7-billion/" target="_blank" rel="noopener">the Activision Blizzard deal</a>. Sony, which&nbsp;<a href="https://80.lv/articles/sony-fears-microsoft-might-sabotage-call-of-duty-for-the-playstation/" target="_blank" rel="noopener">is actively opposing the merger</a>, could use this cancellation to argue that Microsoft is failing to deliver on its promises.</p>
+<p>You can read the full interview with Harvey Smith&nbsp;<a href="https://fr.ign.com/redfall/64224/news/oui-redfall-etait-initialement-prevu-sur-ps5" target="_blank" rel="noopener">here</a>. Also, don't forget to join our&nbsp;<a href="https://80.lv/talent" target="_blank" rel="noopener">80 Level Talent platform</a>&nbsp;and&nbsp;<a draggable="false" href="https://t.me/LevelEightyNews" target="_blank" rel="noopener">our Telegram channel</a>, follow us on&nbsp;<a draggable="false" href="https://www.instagram.com/eighty_level/" target="_blank" rel="noopener">Instagram</a>&nbsp;and&nbsp;<a draggable="false" href="https://twitter.com/80Level" target="_blank" rel="noopener">Twitter</a>, where we share breakdowns, the latest news, awesome artworks, and more.</p>
+]]></content:encoded>
+      <enclosure url="https://res.cloudinary.com/dzhuhtn30/image/upload/v1679564224/patienceman-docs/private/var/folders/t7/5v834pbs0qb8rrzg11m7w10m0000gp/T/phpls4Gkr.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <guid isPermaLink="false">4-css-nesting-is-now-available-with-vanilla-css</guid>
+      <title>CSS Nesting is now available with Vanilla CSS</title>
+      <link>http://localhost/docs/4-css-nesting-is-now-available-with-vanilla-css</link>
+      <author>hseal419@gmail.com (Manirabona Patience)</author>
+      <category>Patienceman Blogs</category>
+      <description>One of the primary benefits of the new CSS nesting feature is that it simplifies the CSS structure. With this feature, we can now nest styles within each other, reducing the clutter that comes with the traditional CSS approach. For example, instead of writing:</description>
+      <pubDate>Thu, 23 Mar 2023 09:39:18 +0000</pubDate>
+      <content:encoded><![CDATA[<div class="">
+<p id="508c" class="pw-subtitle-paragraph jj il im bd b jk jl jm jn jo jp jq jr js jt ju jv jw jx jy jz ka dk"><span style="font-size: 12pt;">CSS (Cascading Style Sheets) is a fundamental component of web development. It is responsible for styling web pages, making them look visually appealing and professional. In September 2019, the W3C (World Wide Web Consortium) introduced a new CSS nesting feature that simplifies the way we apply styles to our web pages. In this blog post, we will explore this new feature and how it can enhance the Vanilla CSS experience.</span></p>
+</div>
+<figure class="kc kd ke kf gg kg fu fv paragraph-image">
+<div class="kh ki di kj bf kk" tabindex="0" role="button">
+<div class="fu fv kb"><picture><source srcset="https://miro.medium.com/v2/resize:fit:640/format:webp/1*b8CnKPoaPbpwjnKlTS7MTA.png 640w, https://miro.medium.com/v2/resize:fit:720/format:webp/1*b8CnKPoaPbpwjnKlTS7MTA.png 720w, https://miro.medium.com/v2/resize:fit:750/format:webp/1*b8CnKPoaPbpwjnKlTS7MTA.png 750w, https://miro.medium.com/v2/resize:fit:786/format:webp/1*b8CnKPoaPbpwjnKlTS7MTA.png 786w, https://miro.medium.com/v2/resize:fit:828/format:webp/1*b8CnKPoaPbpwjnKlTS7MTA.png 828w, https://miro.medium.com/v2/resize:fit:1100/format:webp/1*b8CnKPoaPbpwjnKlTS7MTA.png 1100w, https://miro.medium.com/v2/resize:fit:1400/format:webp/1*b8CnKPoaPbpwjnKlTS7MTA.png 1400w" type="image/webp" sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px"><source srcset="https://miro.medium.com/v2/resize:fit:640/1*b8CnKPoaPbpwjnKlTS7MTA.png 640w, https://miro.medium.com/v2/resize:fit:720/1*b8CnKPoaPbpwjnKlTS7MTA.png 720w, https://miro.medium.com/v2/resize:fit:750/1*b8CnKPoaPbpwjnKlTS7MTA.png 750w, https://miro.medium.com/v2/resize:fit:786/1*b8CnKPoaPbpwjnKlTS7MTA.png 786w, https://miro.medium.com/v2/resize:fit:828/1*b8CnKPoaPbpwjnKlTS7MTA.png 828w, https://miro.medium.com/v2/resize:fit:1100/1*b8CnKPoaPbpwjnKlTS7MTA.png 1100w, https://miro.medium.com/v2/resize:fit:1400/1*b8CnKPoaPbpwjnKlTS7MTA.png 1400w" sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px" data-testid="og"><img class="bf kl km c" role="presentation" src="https://miro.medium.com/v2/resize:fit:1400/1*b8CnKPoaPbpwjnKlTS7MTA.png" alt="" width="700" height="465" loading="eager"></picture></div>
+</div>
+</figure>
+<h2 id="7827" class="kn ko im bd kp kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk bi" data-selectable-paragraph="">Simplified CSS Structure</h2>
+<p id="f724" class="pw-post-body-paragraph ll lm im ln b lo lp jn lq lr ls jq lt ky lu lv lw lc lx ly lz lg ma mb mc md if bi" data-selectable-paragraph="">One of the primary benefits of the new CSS nesting feature is that it simplifies the CSS structure. With this feature, we can now nest styles within each other, reducing the clutter that comes with the traditional CSS approach. For example, instead of writing:</p>
+<pre class="kc kd ke kf gg me mf mg bn mh mi bi"><span id="8191" class="mj ko im mf b be mk ml l mm mn" data-selectable-paragraph=""><span class="hljs-selector-class">.navbar</span> {<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#333</span>;<br>}<br><br><span class="hljs-selector-class">.navbar</span> <span class="hljs-selector-tag">ul</span> {<br>  <span class="hljs-attribute">list-style</span>: none;<br>}<br><br><span class="hljs-selector-class">.navbar</span> <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> {<br>  <span class="hljs-attribute">display</span>: inline-block;<br>}<br><br><span class="hljs-selector-class">.navbar</span> <span class="hljs-selector-tag">ul</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span> {<br>  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>  <span class="hljs-attribute">text-decoration</span>: none;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;<br>}</span></pre>
+<p id="2ce1" class="pw-post-body-paragraph ll lm im ln b lo mo jn lq lr mp jq lt ky mq lv lw lc mr ly lz lg ms mb mc md if bi" data-selectable-paragraph="">We can now write:</p>
+<pre class="kc kd ke kf gg me mf mg bn mh mi bi"><span id="8b3c" class="mj ko im mf b be mk ml l mm mn" data-selectable-paragraph=""><span class="hljs-selector-class">.navbar</span> {<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#333</span>;<br><br>  <span class="hljs-selector-tag">ul</span> {<br>    <span class="hljs-attribute">list-style</span>: none;<br><br>    <span class="hljs-selector-tag">li</span> {<br>      <span class="hljs-attribute">display</span>: inline-block;<br><br>      <span class="hljs-selector-tag">a</span> {<br>        <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;<br>        <span class="hljs-attribute">text-decoration</span>: none;<br>        <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span>;<br>      }<br>    }<br>  }<br>}</span></pre>
+<p id="7390" class="pw-post-body-paragraph ll lm im ln b lo mo jn lq lr mp jq lt ky mq lv lw lc mr ly lz lg ms mb mc md if bi" data-selectable-paragraph="">As you can see, the nesting feature allows us to group related styles together, making the code cleaner and more organized.</p>
+<h2 id="4b72" class="kn ko im bd kp kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk bi" data-selectable-paragraph="">Improved Readability</h2>
+<figure class="kc kd ke kf gg kg fu fv paragraph-image">
+<div class="kh ki di kj bf kk" tabindex="0" role="button">
+<div class="fu fv mt"><picture><source srcset="https://miro.medium.com/v2/resize:fit:640/format:webp/1*5kjDFhoSy4ILjfGVYu3YsA.png 640w, https://miro.medium.com/v2/resize:fit:720/format:webp/1*5kjDFhoSy4ILjfGVYu3YsA.png 720w, https://miro.medium.com/v2/resize:fit:750/format:webp/1*5kjDFhoSy4ILjfGVYu3YsA.png 750w, https://miro.medium.com/v2/resize:fit:786/format:webp/1*5kjDFhoSy4ILjfGVYu3YsA.png 786w, https://miro.medium.com/v2/resize:fit:828/format:webp/1*5kjDFhoSy4ILjfGVYu3YsA.png 828w, https://miro.medium.com/v2/resize:fit:1100/format:webp/1*5kjDFhoSy4ILjfGVYu3YsA.png 1100w, https://miro.medium.com/v2/resize:fit:1400/format:webp/1*5kjDFhoSy4ILjfGVYu3YsA.png 1400w" type="image/webp" sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px"><source srcset="https://miro.medium.com/v2/resize:fit:640/1*5kjDFhoSy4ILjfGVYu3YsA.png 640w, https://miro.medium.com/v2/resize:fit:720/1*5kjDFhoSy4ILjfGVYu3YsA.png 720w, https://miro.medium.com/v2/resize:fit:750/1*5kjDFhoSy4ILjfGVYu3YsA.png 750w, https://miro.medium.com/v2/resize:fit:786/1*5kjDFhoSy4ILjfGVYu3YsA.png 786w, https://miro.medium.com/v2/resize:fit:828/1*5kjDFhoSy4ILjfGVYu3YsA.png 828w, https://miro.medium.com/v2/resize:fit:1100/1*5kjDFhoSy4ILjfGVYu3YsA.png 1100w, https://miro.medium.com/v2/resize:fit:1400/1*5kjDFhoSy4ILjfGVYu3YsA.png 1400w" sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px" data-testid="og"><img class="bf kl km c" role="presentation" src="https://miro.medium.com/v2/resize:fit:1400/1*5kjDFhoSy4ILjfGVYu3YsA.png" alt="" width="700" height="299" loading="lazy"></picture></div>
+</div>
+</figure>
+<p id="560f" class="pw-post-body-paragraph ll lm im ln b lo mo jn lq lr mp jq lt ky mq lv lw lc mr ly lz lg ms mb mc md if bi" data-selectable-paragraph="">The new CSS nesting feature also improves code readability. Nesting allows developers to easily understand the relationship between different styles. It is easier to see which styles apply to which element, making it easier to maintain and update the code. It also reduces the likelihood of errors in the code because styles are grouped together in a logical manner.</p>
+<h2 id="02ba" class="kn ko im bd kp kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk bi" data-selectable-paragraph="">Compatibility with Vanilla CSS</h2>
+<p id="1e51" class="pw-post-body-paragraph ll lm im ln b lo lp jn lq lr ls jq lt ky lu lv lw lc lx ly lz lg ma mb mc md if bi" data-selectable-paragraph="">The new CSS nesting feature is compatible with Vanilla CSS, which means that we don&rsquo;t need to use preprocessors such as Sass or Less to take advantage of this feature. We can now write nested CSS in Vanilla CSS, making it easier and more accessible for developers who are just starting with web development.</p>
+<h2 id="9e2c" class="kn ko im bd kp kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk bi" data-selectable-paragraph="">Is CSS Nesting Ready to Use?</h2>
+<figure class="kc kd ke kf gg kg fu fv paragraph-image">
+<div class="kh ki di kj bf kk" tabindex="0" role="button">
+<div class="fu fv mu"><picture><source srcset="https://miro.medium.com/v2/resize:fit:640/format:webp/1*YKPWpfSAUqJWTqcuwQ7ygA.png 640w, https://miro.medium.com/v2/resize:fit:720/format:webp/1*YKPWpfSAUqJWTqcuwQ7ygA.png 720w, https://miro.medium.com/v2/resize:fit:750/format:webp/1*YKPWpfSAUqJWTqcuwQ7ygA.png 750w, https://miro.medium.com/v2/resize:fit:786/format:webp/1*YKPWpfSAUqJWTqcuwQ7ygA.png 786w, https://miro.medium.com/v2/resize:fit:828/format:webp/1*YKPWpfSAUqJWTqcuwQ7ygA.png 828w, https://miro.medium.com/v2/resize:fit:1100/format:webp/1*YKPWpfSAUqJWTqcuwQ7ygA.png 1100w, https://miro.medium.com/v2/resize:fit:1400/format:webp/1*YKPWpfSAUqJWTqcuwQ7ygA.png 1400w" type="image/webp" sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px"><source srcset="https://miro.medium.com/v2/resize:fit:640/1*YKPWpfSAUqJWTqcuwQ7ygA.png 640w, https://miro.medium.com/v2/resize:fit:720/1*YKPWpfSAUqJWTqcuwQ7ygA.png 720w, https://miro.medium.com/v2/resize:fit:750/1*YKPWpfSAUqJWTqcuwQ7ygA.png 750w, https://miro.medium.com/v2/resize:fit:786/1*YKPWpfSAUqJWTqcuwQ7ygA.png 786w, https://miro.medium.com/v2/resize:fit:828/1*YKPWpfSAUqJWTqcuwQ7ygA.png 828w, https://miro.medium.com/v2/resize:fit:1100/1*YKPWpfSAUqJWTqcuwQ7ygA.png 1100w, https://miro.medium.com/v2/resize:fit:1400/1*YKPWpfSAUqJWTqcuwQ7ygA.png 1400w" sizes="(min-resolution: 4dppx) and (max-width: 700px) 50vw, (-webkit-min-device-pixel-ratio: 4) and (max-width: 700px) 50vw, (min-resolution: 3dppx) and (max-width: 700px) 67vw, (-webkit-min-device-pixel-ratio: 3) and (max-width: 700px) 65vw, (min-resolution: 2.5dppx) and (max-width: 700px) 80vw, (-webkit-min-device-pixel-ratio: 2.5) and (max-width: 700px) 80vw, (min-resolution: 2dppx) and (max-width: 700px) 100vw, (-webkit-min-device-pixel-ratio: 2) and (max-width: 700px) 100vw, 700px" data-testid="og"><img class="bf kl km c" role="presentation" src="https://miro.medium.com/v2/resize:fit:1400/1*YKPWpfSAUqJWTqcuwQ7ygA.png" alt="" width="700" height="236" loading="lazy"></picture></div>
+</div>
+<figcaption class="mv dm fw fu fv mw mx bd b be z dk" data-selectable-paragraph=""><a class="ae my" href="https://caniuse.com/?search=css%20nesting" target="_blank" rel="noopener ugc nofollow">CSS Nesting Can I Use?</a></figcaption>
+</figure>
+<p id="8b57" class="pw-post-body-paragraph ll lm im ln b lo mo jn lq lr mp jq lt ky mq lv lw lc mr ly lz lg ms mb mc md if bi" data-selectable-paragraph="">However, CSS Nesting is a great improvment for Vanilla CSS, it&rsquo;s not compatible yet with all browsers. So, don&rsquo;t forget to check Can I Use website before using it on your next project!</p>
+<h2 id="9f6d" class="kn ko im bd kp kq kr ks kt ku kv kw kx ky kz la lb lc ld le lf lg lh li lj lk bi" data-selectable-paragraph="">Conclusion</h2>
+<p id="26a6" class="pw-post-body-paragraph ll lm im ln b lo lp jn lq lr ls jq lt ky lu lv lw lc lx ly lz lg ma mb mc md if bi" data-selectable-paragraph="">The new CSS nesting feature simplifies the CSS structure, improves code readability, and is compatible with Vanilla CSS. It is a welcome addition to the web development community, and we can expect to see it being used more often in the future. As developers, it is important to stay up to date with new features and technologies, and the new CSS nesting feature is an excellent example of how we can improve our development workflow.</p>
+<p id="c31b" class="pw-post-body-paragraph ll lm im ln b lo mo jn lq lr mp jq lt ky mq lv lw lc mr ly lz lg ms mb mc md if bi" data-selectable-paragraph=""><strong class="ln in">NOTE:&nbsp;</strong>Notion AI wrote this article except for the &lsquo;Is CSS Nesting Ready to Use?&rsquo; section. Please share your comments on the outcome.</p>
+]]></content:encoded>
+      <enclosure url="https://res.cloudinary.com/dzhuhtn30/image/upload/v1679564356/patienceman-docs/private/var/folders/t7/5v834pbs0qb8rrzg11m7w10m0000gp/T/phpszFe0C.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <guid isPermaLink="false">6-build-credibility-at-work</guid>
+      <title>Build Credibility at Work</title>
+      <link>http://localhost/docs/6-build-credibility-at-work</link>
+      <author>hseal419@gmail.com (Manirabona Patience)</author>
+      <category>Patienceman Blogs</category>
+      <description>Most employees don’t think about credibility consciously which prevents them from taking the right steps to build it.</description>
+      <pubDate>Thu, 20 Apr 2023 11:06:44 +0000</pubDate>
+      <content:encoded><![CDATA[<p><span data-preserver-spaces="true">Most employees don&rsquo;t think about credibility consciously which prevents them from taking the right steps to build it.</span></p>
+<p><span data-preserver-spaces="true">They think that if they keep their heads down and keep doing good work, someone will take notice and good opportunities will land their way. But workplaces aren&rsquo;t designed to lift people with good intentions and good skills. Working hard doesn&rsquo;t necessarily translate into recognition and promotions.</span></p>
+<p><span data-preserver-spaces="true">This mismatch between what employees expect and what they get is often the biggest root cause of disappointment, dissatisfaction, and&nbsp;</span><a class="editor-rtfLink" href="https://medium-a7e301761373.intercom-clicks.com/via/e?ob=55kLDRf76P%2B9lWOCA5ap62RwTEUlFoQepTbocRkGx8b%2B1Hy2IVUX2evK67gRon5f&amp;h=96c14d1122f68e3281aa661afe3c7380bf46f55d-zp3ii0g5_56626059343032&amp;l=5412bf81c87397ee507e32a4441924a47650b1cc-65844621" target="_blank" rel="noopener"><span data-preserver-spaces="true">frustration</span></a><span data-preserver-spaces="true"> at work. But it doesn&rsquo;t have to be this way.&nbsp;</span></p>
+<p><span data-preserver-spaces="true">Building credibility requires earning the trust of people who work with you &mdash; your colleagues, manager, stakeholders, and others. It requires more than just competence and knowledge. Being an expert in your domain or having enthusiasm and motivation about your job can only take you so far when you lack credibility with your team and others.</span></p>
+<p><span data-preserver-spaces="true">Few practical strategies that I have used throughout my career to become a more credible team member and employee:</span></p>
+<p><strong><span data-preserver-spaces="true">Do things without being asked:</span></strong></p>
+<p><span data-preserver-spaces="true">Completing assigned tasks, delivering good quality code, and meeting deadlines and expectations establish you as a sincere employee &mdash; someone who will do the job they&rsquo;ve been asked to do. But waiting for tasks to be assigned doesn&rsquo;t make you credible.</span></p>
+<p><span data-preserver-spaces="true">Identify your stakeholders and customers&rsquo; unmet needs. Which areas will deliver the biggest impact? What important things have been pushed aside that need time and attention? How can you contribute?</span></p>
+<blockquote>
+<p><strong><span data-preserver-spaces="true">Credibility comes with doing work that no one is paying attention to, not by simply meeting expectations.</span></strong></p>
+</blockquote>
+<p><strong><span data-preserver-spaces="true">Never say it&rsquo;s not your job:</span></strong></p>
+<p><span data-preserver-spaces="true">Showing resistance towards certain kinds of work and preference towards others makes you inflexible. Others can&rsquo;t judge what you&rsquo;ll accept and what you&rsquo;ll deny which makes it hard for them to consider you when a new opportunity opens up.</span></p>
+<p><span data-preserver-spaces="true">Credibility isn&rsquo;t built by working on fun stuff or doing work that always matches your interests. It&rsquo;s built by&nbsp;</span><a class="editor-rtfLink" href="https://www.techtello.com/impact-players/" target="_blank" rel="noopener"><span data-preserver-spaces="true">gauging the need of the hour</span></a><span data-preserver-spaces="true">&nbsp;and making yourself available to contribute where your presence will matter.</span></p>
+<p><strong><span data-preserver-spaces="true">Have a strong sense of agency</span></strong></p>
+<p><span data-preserver-spaces="true">When you blame, complain, and sob and pass the responsibility to people above you, you may feel that you&rsquo;ve done the job by informing the right people, but absolving yourself from responsibility does not build credibility.</span></p>
+<p><span data-preserver-spaces="true">Others find you credible when you approach problems with the&nbsp;</span><a class="editor-rtfLink" href="https://techtello.thinkific.com/courses/high-agency" target="_blank" rel="noopener"><span data-preserver-spaces="true">high agency</span></a><span data-preserver-spaces="true">. When you push through in the face of adversity and find a way to get what you want without waiting for the conditions to be perfect or otherwise blaming the circumstances, others come to rely on you for problems with unknowns and uncertainties.</span></p>
+<blockquote>
+<p><strong><span data-preserver-spaces="true">Challenges and adversity are meant to help you know who you are. Storms hit your weakness, but unlock your true strength ― Roy T. Bennett, The Light in the Heart</span></strong></p>
+</blockquote>
+<p><strong><span data-preserver-spaces="true">Identify problems then create a plan to tackle them up front:</span></strong></p>
+<p><span data-preserver-spaces="true">People who build credibility at work aren&rsquo;t reactive. They proactively anticipate what might get in the way. Thinking through the risks and problems upfront mentally prepares them to deal with the challenges as they arise &mdash; even if it&rsquo;s something unexpected they aren&rsquo;t surprised.</span></p>
+<p><span data-preserver-spaces="true">To build credibility, use the premortem technique &mdash; place yourself into the future and look back. Visualize the project, task or whatever you intend to do has gone horribly wrong. Work backward to identify what mistakes might cause it to fail. Create a plan to solve these issues &mdash; address the risks and obstacles thereby increasing your chances of success.</span></p>
+<blockquote>
+<p><strong><span data-preserver-spaces="true">The only guarantee, ever, is that things will go wrong. The only thing we can use to mitigate this is anticipation. Because the only variable we control completely is ourselves &mdash; Ryan Holiday, The Obstacle Is the Way</span></strong></p>
+</blockquote>
+<p><strong><span data-preserver-spaces="true">Be a problem solver</span></strong></p>
+<p><span data-preserver-spaces="true">When something catches your attention, do you simply state the problem or do you also suggest a few ways in which it can be solved?</span></p>
+<p><span data-preserver-spaces="true">Credible employees don't Reject ideas, pointing out flaws, and stating what wouldn&rsquo;t work is easy. They&rsquo;re experimenters, strategists, and solutionists who look for different ways in which a problem can be solved. Instead of simply stating the problem, they also do their homework and come prepared with solutions.</span></p>
+<p><span data-preserver-spaces="true">Approaching problems with a solution mindset helps them draw valuable insights. They&rsquo;re able to think creatively and find unique ways to address concerns. They build credibility by solving hard problems.</span></p>
+<p><strong><span data-preserver-spaces="true">Take responsibility and Accountability:</span></strong></p>
+<p><span data-preserver-spaces="true">When you don&rsquo;t feel in control of your outcomes, your mind switches to problem mode. You obsess about the problem and fail to take action when it&rsquo;s needed the most.</span></p>
+<p><span data-preserver-spaces="true">Employees who build credibility operate from an&nbsp;</span><a class="editor-rtfLink" href="https://www.techtello.com/how-to-take-control-of-your-life/" target="_blank" rel="noopener"><span data-preserver-spaces="true">internal locus of control</span></a><span data-preserver-spaces="true">. They think about what they&rsquo;re capable of doing instead of wasting time worrying about things outside their control.</span></p>
+<p><span data-preserver-spaces="true">Stepping up and taking charge kicks off the solution region of their brain. They&rsquo;re able to evaluate the situation from an objective point of view, consider different possibilities, and think creatively about the steps to take.</span></p>
+<blockquote>
+<p><span data-preserver-spaces="true">Once people stop making excuses, stop blaming others, and take ownership of everything in their lives, they are compelled to take action to solve their problems. They are better leaders, better followers, more dependable and actively contributing team members, and more skilled in aggressively driving toward mission accomplishment. But they&rsquo;re also humble &mdash; able to keep their egos from damaging relationships and adversely impacting the mission and the team &mdash; Jocko Willink, Extreme Ownership</span></p>
+</blockquote>
+<p><strong><span data-preserver-spaces="true">Don't fly solo, Be a team player:</span></strong></p>
+<p><span data-preserver-spaces="true">When you think only about yourself, you make decisions that benefit you while ignoring how they may harm others. You act based on what you like and dislike without considering how your actions add value to the organization or its people.</span></p>
+<p><span data-preserver-spaces="true">Credible employees don&rsquo;t act solo. They&rsquo;re team players. They work based on what their team needs or where their contribution will matter the most. Not trying to personally gain from every situation helps them keep a balanced perspective &mdash; they do work that matters to the organization while also contributing to their learning and growth.</span></p>
+<p><strong><span data-preserver-spaces="true">Adapt to the future needs and Be willing to change:</span></strong></p>
+<p><span data-preserver-spaces="true">Things change at a very fast pace in our work environments. When you stick to things you&rsquo;ve always done before or choose a safe path, you may get the job done, but staying within your comfort zone also limits your growth.</span></p>
+<p><span data-preserver-spaces="true">Ignoring future needs or not adapting to them makes your skills obsolete. You keep getting lower-level responsibilities that keep you busy but do not lead to growth.</span></p>
+<p><span data-preserver-spaces="true">Employees who build credibility don&rsquo;t lose sight of the future. They analyze what the future demands and constantly invest time in keeping up with it. Adopting a learning attitude helps them build new skills which keep them prepared to tackle whatever comes their way.</span></p>
+<blockquote>
+<p><span data-preserver-spaces="true">Efficiency remains important, but the ability to adapt to complexity and continual change has become an imperative &mdash; Stanley McChrystal</span></p>
+</blockquote>
+<p><strong><span data-preserver-spaces="true">Be very conscious about time and show up on time:</span></strong></p>
+<p><span data-preserver-spaces="true">When you&rsquo;re invited for a discussion or a meeting, are you most likely to be late? Do you even miss the clock when it&rsquo;s you who invited others?</span></p>
+<p><span data-preserver-spaces="true">You may think that a few minutes here and there don&rsquo;t matter, but they do. Coming late makes others feel that you&rsquo;re taking them for granted. Every additional second of waiting adds to their frustration and anxiety.</span></p>
+<p><span data-preserver-spaces="true">People who build credibility are very conscious of time. They not only utilize their time well but also care for others&rsquo; time as well. They don&rsquo;t waste time in pointless debates,&nbsp;</span><a class="editor-rtfLink" href="https://www.techtello.com/too-many-meetings-at-work/" target="_blank" rel="noopener"><span data-preserver-spaces="true">unnecessary meetings</span></a><span data-preserver-spaces="true">, or by making others wait. Respecting other people&rsquo;s time is what builds trust and respect.</span></p>
+<p><strong><span data-preserver-spaces="true">Conclusion</span></strong></p>
+<ol>
+<li><span data-preserver-spaces="true">Credibility isn&rsquo;t built by fulfilling your job role and description. It requires mastering simple habits and incorporating them into your daily work and life.</span></li>
+<li><span data-preserver-spaces="true">Doing a good job of the assigned tasks makes you sincere, not credible. To build credibility, do important work without being asked.</span></li>
+<li><span data-preserver-spaces="true">Saying yes to only certain kinds of work and no to others makes you inflexible. You can&rsquo;t be inflexible and credible at the same time.</span></li>
+<li><span data-preserver-spaces="true">Pushing responsibility up the chain of command prevents you from taking control. Relying on others to fix the situation does not build credibility.</span></li>
+<li><span data-preserver-spaces="true">Instead of waiting for things to go wrong and then reacting to them, credible employees proactively identify risks and make plans to address them.</span></li>
+<li><span data-preserver-spaces="true">Credible employees simply don&rsquo;t state problems. They also think through multiple ways to solve it.</span></li>
+<li><span data-preserver-spaces="true">While most employees waste time worrying about things outside their control, credible employees look internally at their own behaviors and actions.</span></li>
+<li><span data-preserver-spaces="true">Credible employees prioritize their team over their personal interests. They seek a balance between interests, opportunities, and doing work that matters.</span></li>
+<li><span data-preserver-spaces="true">Instead of withholding knowledge, credible employees share it with others. Helping others do well lifts them up as well.</span></li>
+<li><span data-preserver-spaces="true">Sticking to old methods feels safe, but it also limits your growth. Build credibility by expanding your comfort zone and taking a step outside it.</span></li>
+<li><span data-preserver-spaces="true">Turning up late to meetings kills credibility. How can others respect you when you don&rsquo;t respect their time?</span></li>
+</ol>
+]]></content:encoded>
+      <enclosure url="https://res.cloudinary.com/dzhuhtn30/image/upload/v1681988804/patienceman-docs/private/var/folders/t7/5v834pbs0qb8rrzg11m7w10m0000gp/T/php9M5uwL.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <guid isPermaLink="false">9-8-strategies-for-completing-the-idea-apprenticeships</guid>
+      <title>8 Strategies For Completing The Idea Apprenticeships.</title>
+      <link>http://localhost/docs/9-8-strategies-for-completing-the-idea-apprenticeships</link>
+      <author>hseal419@gmail.com (Manirabona Patience)</author>
+      <category>Patienceman Blogs</category>
+      <description>Throughout history, Masters in all fields have devised for themselves various strategies to help them pursue and complete an Ideal Apprenticeship. The following are eight classNameic strategies, distilled from the stories of their lives and illustrated with examples.</description>
+      <pubDate>Thu, 20 Apr 2023 11:51:20 +0000</pubDate>
+      <content:encoded><![CDATA[<p>Throughout history, Masters in all fields have devised for themselves various strategies to help them pursue and complete an Ideal Apprenticeship. The following are eight classNameic strategies, distilled from the stories of their lives and illustrated with examples. Although some might seem more relevant than others to your circumstances, each of them relates fundamental truths about the learning process itself that you would be wise to internalize.</p>
+<h2 id="7774" class="pw-post-body-paragraph vj vk ui ne b vl vm gp vn vo vp gt vq vr vs vt vu vv vw vx vy vz wa wb wc wd fr bi"><strong class="ne gn">I. Value Learning Over Money</strong></h2>
+<p>It is a simple law of human psychology that your thoughts will tend to revolve around what you value most. If it is money, you will choose a place for your apprenticeship that offers the biggest paycheck. Inevitably, in such a place you will feel greater pressures to prove yourself worthy of such pay, often before you are ready. You will be focused on yourself, your insecurities, the need to please and impress the right people, and not on acquiring skills. It will be too costly for you to make mistakes and learn from them, so you will develop a cautious, conservative approach. As you progress in life, you will become addicted to the fat paycheck and it will determine where you go, how you think, and what you do. Eventually, the time that was not spent on learning skills will catch up with you, and the fall will be painful.</p>
+<p>You must value learning above everything else. This will lead you to all Of the right choices. You will opt for the situation that will give you the most opportunities to learn, particularly with hands-on work. You, Will, choose a place that has people and mentors who can inspire and teach you.</p>
+<h2 id="4142" class="pw-post-body-paragraph vj vk ui ne b vl vm gp vn vo vp gt vq vr vs vt vu vv vw vx vy vz wa wb wc wd fr bi"><strong class="ne gn">2. Keep Expanding Your Horizons</strong></h2>
+<p>The people in your field, in your immediate circle, are like worlds unto themselves &mdash; their stories and viewpoints will naturally expand your horizons and build up your social skills. Mingle with as many different types of people as possible. Those circles will slowly widen. Any kind of outside schooling will add to the dynamic. Be relentless in your pursuit of expansion. Whenever you feel like you are settling into some circle, force yourself to shake things up and look for new challenges, as Hurston did when she left Howard for Harlem. With your mind-expanding, you will redefine the limits of your apparent world. Soon, ideas and opportunities will come to you and your apprenticeship will naturally complete itself.</p>
+<h2><strong class="ne gn">3. Revert To A Feeling Of Inferiority</strong></h2>
+<p><strong class="ne gn">Understand:</strong>&nbsp;when you enter a new environment, your task is to learn and absorb as much as possible. For that purpose, you must try to revert to a childlike feeling of inferiority &mdash; the feeling that others know much more than you and that you are dependent upon them to learn and safely navigate your apprenticeship. You drop all of your preconceptions about an environment or field and any lingering feelings of smugness. You have no fears. You interact with people and participate in the culture as deeply as possible. You are full of curiosity. Assuming this sensation Of inferiority, your mind will open up and you will have a hunger to learn. This position is of course only temporary. You are reverting to a feeling of dependence so that within five to ten years you can learn enough to finally declare your independence and enter full adulthood.</p>
+<h2 id="2c4f" class="pw-post-body-paragraph vj vk ui ne b vl vm gp vn vo vp gt vq vr vs vt vu vv vw vx vy vz wa wb wc wd fr bi"><strong class="ne gn">4. Trust The Process</strong></h2>
+<p>What separates the master from others is often something surprisingly simple. Whenever we learn a skill, we frequently reach a point of frustration &mdash; what we are learning seems beyond our capabilities. Giving in to these feelings, we unconsciously quit on ourselves before we give up. The difference is not simply a matter of determination, but more of trust and faith. Many of those who succeed in life have had the experience in their youth of having mastered some skill &mdash; a sport or game, a musical instrument, a foreign language, and so on. Buried in their minds is the sensation of overcoming their frustrations and entering the cycle of accelerated returns. In moments of doubt in the present, the memory of the experience rises to the surface. Filled with trust in the process, they trudge on well past the point at which others slow down or mentally quit.</p>
+<p>When it comes to mastering a skill, time is the magic ingredient. Assum- ing your practice proceeds at a steady level, over days and weeks certain elements of the skill become hardwired. Slowly, the entire skill becomes internalized, part of your nervous system. The mind is no longer mired in the details but can see the larger picture. It is a miraculous sensation and practice will lead you to that point, no matter the talent level you are born with. The only real impediment to this is yourself and your emotions &mdash; boredom, panic, frustration, insecurity. You cannot suppress such emotions &mdash; they are normal to the process and are experienced by everyone, including Masters. What you can do is have faith in the process. The boredom will go away once you enter the cycle. The panic disappears after repeated exposure. The frustration is a sign of progress &mdash; a signal that your mind is processing complexity and requires more practice. The insecurities will transform into their opposites when you gain mastery. Trusting this will all happen, you Will allow the natural learning process to move forward, and everything else will fall into place.</p>
+]]></content:encoded>
+      <enclosure url="https://res.cloudinary.com/dzhuhtn30/image/upload/v1681991480/patienceman-docs/private/var/folders/t7/5v834pbs0qb8rrzg11m7w10m0000gp/T/phpmVPwuE.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <guid isPermaLink="false">10-making-a-chatgpt-bot-in-20-lines-of-code</guid>
+      <title>Making a ChatGPT Bot in 20 Lines of Code</title>
+      <link>http://localhost/docs/10-making-a-chatgpt-bot-in-20-lines-of-code</link>
+      <author>hseal419@gmail.com (Manirabona Patience)</author>
+      <category>Patienceman Blogs</category>
+      <description>ChatGPT has quickly become one of the most popular artificial intelligence applications in the world. Let’s make our own ChatGPT bot!</description>
+      <pubDate>Tue, 25 Apr 2023 12:35:46 +0000</pubDate>
+      <content:encoded><![CDATA[<h2 id="89e0" class="la lb iq be lc ld le lf lg lh li lj lk ll lm ln lo lp lq lr ls lt lu lv lw lx bj">Creating the Bot</h2>
+<p id="8298" class="pw-post-body-paragraph kc kd iq ke b kf ly kh ki kj lz kl km kn ma kp kq kr mb kt ku kv mc kx ky kz ij bj" data-selectable-paragraph="">The first step towards creating our own version of the ChatGPT bot is obtaining an API key from the&nbsp;<a class="af kb" href="https://openai.com/api/" target="_blank" rel="noopener ugc nofollow">OpenAI API</a>.</p>
+<p id="1a10" class="pw-post-body-paragraph kc kd iq ke b kf kg kh ki kj kk kl km kn ko kp kq kr ks kt ku kv kw kx ky kz ij bj" data-selectable-paragraph="">The OpenAI API has three options for developers to use: GPT-3 for natural language tasks, Codex to translate natural language to code, and DALL&middot;E to create and edit original images. In this article, I&rsquo;ll show you how to implement the GPT-3 model in Python.</p>
+<p id="c608" class="pw-post-body-paragraph kc kd iq ke b kf kg kh ki kj kk kl km kn ko kp kq kr ks kt ku kv kw kx ky kz ij bj" data-selectable-paragraph="">After creating an account on OpenAI&rsquo;s website and obtaining an API key, install the OpenAI Python library.</p>
+<pre class="md me mf mg gh mh mi mj bo mk ml mm"><code><span id="a89f" class="mn lb iq mi b bf mo mp l mq mr" data-selectable-paragraph="">pip install openai</span></code></pre>
+<p id="c35e" class="pw-post-body-paragraph kc kd iq ke b kf kg kh ki kj kk kl km kn ko kp kq kr ks kt ku kv kw kx ky kz ij bj" data-selectable-paragraph="">Next, import the OpenAPI library and initialize your API key.</p>
+<pre class="md me mf mg gh mh mi mj bo mk ml mm"><code><span id="645a" class="mn lb iq mi b bf mo mp l mq mr" data-selectable-paragraph=""><span class="hljs-keyword">import</span> openai<br>openai.api_key = <span class="hljs-string">"YOUR_API_KEY"</span></span></code></pre>
+<p id="075e" class="pw-post-body-paragraph kc kd iq ke b kf kg kh ki kj kk kl km kn ko kp kq kr ks kt ku kv kw kx ky kz ij bj" data-selectable-paragraph="">Once this is complete, we can create a function that will use the GPT-3 model to generate a response given a prompt.</p>
+<pre class="md me mf mg gh mh mi mj bo mk ml mm"><code><span id="8864" class="mn lb iq mi b bf mo mp l mq mr" data-selectable-paragraph=""><span class="hljs-keyword">def</span> <span class="hljs-title.function">generate_response</span>(<span class="hljs-params">prompt</span>):<br>    response = openai.Completion.create(<br>        engine=<span class="hljs-string">"text-davinci-002"</span>,<br>        prompt=prompt,<br>        max_tokens=<span class="hljs-number">1024</span>,<br>        n=<span class="hljs-number">1</span>,<br>        stop=<span class="hljs-literal">None</span>,<br>        temperature=<span class="hljs-number">0.5</span>,<br>    ).choices[<span class="hljs-number">0</span>].text<br>    <span class="hljs-keyword">return</span> response</span></code></pre>
+<p id="13e7" class="pw-post-body-paragraph kc kd iq ke b kf kg kh ki kj kk kl km kn ko kp kq kr ks kt ku kv kw kx ky kz ij bj" data-selectable-paragraph="">Finally, we can use a while loop to ask the chatbot questions similar to a conversation.</p>
+<pre class="md me mf mg gh mh mi mj bo mk ml mm"><code><span id="8b18" class="mn lb iq mi b bf mo mp l mq mr" data-selectable-paragraph=""><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    user_input = <span class="hljs-built_in">input</span>(<span class="hljs-string">"Prompt: "</span>)<br>    <span class="hljs-keyword">if</span> user_input == <span class="hljs-string">"stop"</span>:<br>        <span class="hljs-keyword">break</span><br>    response = generate_response(user_input)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Response: "</span> + response)</span></code></pre>
+<h2 id="5291" class="la lb iq be lc ld le lf lg lh li lj lk ll lm ln lo lp lq lr ls lt lu lv lw lx bj">Pricing</h2>
+<p id="0392" class="pw-post-body-paragraph kc kd iq ke b kf ly kh ki kj lz kl km kn ma kp kq kr mb kt ku kv mc kx ky kz ij bj" data-selectable-paragraph="">For their GPT-3 model, OpenAI offers four different options, with Ada being the fastest and Davinci being the most powerful. The company offers developers $18 in free credit that can be used during their first 3 months. After that, the Ada model costs $0.0004 for 1,000 tokens (~750 words), and the Davinci model costs $0.02 for 1,000 tokens.</p>
+<h2 id="ae79" class="la lb iq be lc ld le lf lg lh li lj lk ll lm ln lo lp lq lr ls lt lu lv lw lx bj">Code</h2>
+<p id="e24b" class="pw-post-body-paragraph kc kd iq ke b kf ly kh ki kj lz kl km kn ma kp kq kr mb kt ku kv mc kx ky kz ij bj" data-selectable-paragraph="">Here is the complete code to create your own version of ChatGPT:</p>
+<pre class="md me mf mg gh mh mi mj bo mk ml mm"><code><span id="515b" class="mn lb iq mi b bf mo mp l mq mr" data-selectable-paragraph=""><span class="hljs-keyword">import</span> openai<br>openai.api_key = <span class="hljs-string">"YOUR_API_KEY"</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title.function">generate_response</span>(<span class="hljs-params">prompt</span>):<br>    response = openai.Completion.create(<br>        engine=<span class="hljs-string">"text-davinci-002"</span>,<br>        prompt=prompt,<br>        max_tokens=<span class="hljs-number">1024</span>,<br>        n=<span class="hljs-number">1</span>,<br>        stop=<span class="hljs-literal">None</span>,<br>        temperature=<span class="hljs-number">0.5</span>,<br>    ).choices[<span class="hljs-number">0</span>].text<br>    <span class="hljs-keyword">return</span> response<br><br><span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>    user_input = <span class="hljs-built_in">input</span>(<span class="hljs-string">"Prompt: "</span>)<br>    <span class="hljs-keyword">if</span> user_input == <span class="hljs-string">"stop"</span>:<br>        <span class="hljs-keyword">break</span><br>    response = generate_response(user_input)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">"Response: "</span> + response)</span></code></pre>
+<p id="6a65" class="pw-post-body-paragraph kc kd iq ke b kf kg kh ki kj kk kl km kn ko kp kq kr ks kt ku kv kw kx ky kz ij bj" data-selectable-paragraph="">As you can see, the code fits in just 20 lines! If you have any questions, I&rsquo;m here to help, waiting for you in the comments section!</p>
+]]></content:encoded>
+      <enclosure url="https://res.cloudinary.com/dzhuhtn30/image/upload/v1682426146/patienceman-docs/private/var/folders/t7/5v834pbs0qb8rrzg11m7w10m0000gp/T/phpI2KPNF.jpg" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <guid isPermaLink="false">11-how-to-customize-checkboxes-with-css</guid>
+      <title>How To Customize Checkboxes With CSS</title>
+      <link>http://localhost/docs/11-how-to-customize-checkboxes-with-css</link>
+      <author>hseal419@gmail.com (Manirabona Patience)</author>
+      <category>Patienceman Blogs</category>
+      <description>Customizing the appearance of checkboxes can significantly improve the user experience of your website or application.</description>
+      <pubDate>Tue, 25 Apr 2023 13:08:43 +0000</pubDate>
+      <content:encoded><![CDATA[<p>Customizing the appearance of checkboxes can significantly improve the user experience of your website or application. It allows you to create a cohesive, visually appealing design that aligns with your brand. However, it is equally important to consider the accessibility of your checkboxes, as all users, regardless of their ability, should be able to use and understand them. You can customize the look of your checkboxes and produce a more aesthetically pleasing and seamless user experience with a basic understanding of CSS. And beyond aesthetics, make it inclusive and accessible for types of web users.</p>
+<p>This article will go through the fundamentals of customizing checkboxes and making them more accessible. We first cover the necessary knowledge needed to build a custom checkbox; we&rsquo;ll discuss styling, the size and shape of the checkboxes, and some pointers for making your checkboxes more web inclusive and accessible. By the end of this tutorial, you&rsquo;ll have all the skills and knowledge you need to build customized checkboxes with CSS properties and improve their web accessibility to build a more inclusive website. So, let&rsquo;s get started!</p>
+<h2>Basics of building a custom checkbox</h2>
+<p>Before you can customize your checkboxes, it&rsquo;s important to understand how they&rsquo;re built. Checkboxes are typically created using the HTML&nbsp;<code>&lt;input&gt;</code>&nbsp;element with a&nbsp;<code>type</code>&nbsp;attribute set to&nbsp;<code>"checkbox"</code>. This element can be styled using CSS properties, just like any other HTML element. Some common CSS properties that can be used to customize checkboxes include:</p>
+<ul>
+<li><code>background-color</code>: sets the background color of the checkbox.</li>
+<li><code>border</code>: sets the border properties of the checkbox, such as thickness and color.</li>
+<li><code>border-radius</code>: sets the rounded corners of the checkbox.</li>
+<li><code>box-shadow</code>: adds a shadow to the checkbox.</li>
+<li><code>width</code>&nbsp;and&nbsp;<code>height</code>: sets the checkbox size.</li>
+</ul>
+<p>The HTML element for a checkbox is the input element with a type attribute of checkbox. For example,</p>
+<p><span class="line">&lt;code langauge-html&gt;&lt;label class="checkbox"&gt;</span> <span class="line"> A = Hungry</span> <span class="line"> &lt;input type="checkbox" checked="checked" /&gt;</span> <span class="line"> &lt;span class="checkmark"&gt;&lt;/span&gt;</span> <span class="line">&lt;/label&gt;</span> <span class="line">&lt;label class="checkbox"&gt;</span> <span class="line"> B = Thirsty</span> <span class="line"> &lt;input type="checkbox" /&gt;</span> <span class="line"> &lt;span class="checkmark"&gt;&lt;/span&gt;</span> <span class="line">&lt;/label&gt;</span> <span class="line">&lt;label class="checkbox"&gt;</span> <span class="line"> C = Both</span> <span class="line"> &lt;input type="checkbox" /&gt;</span> <span class="line"> &lt;span class="checkmark"&gt;&lt;/span&gt;</span> <span class="line">&lt;/label&gt;&lt;/code&gt;</span></p>
+]]></content:encoded>
+      <enclosure url="https://res.cloudinary.com/dzhuhtn30/image/upload/v1682428122/patienceman-docs/private/var/folders/t7/5v834pbs0qb8rrzg11m7w10m0000gp/T/phpYj4ewU.png" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <guid isPermaLink="false">12-how-to-customize-checkboxes-with-css</guid>
+      <title>How To Customize Checkboxes With CSS</title>
+      <link>http://localhost/docs/12-how-to-customize-checkboxes-with-css</link>
+      <author>hseal419@gmail.com (Manirabona Patience)</author>
+      <category>Patienceman Blogs</category>
+      <description>Checkboxes are a common element of web design that allows users to select from a list of options. While they may seem simple, much goes into making checkboxes visually appealing and accessible to all users. This article explores the importance of customizing and improving the accessibility of checkboxes, the basics of building custom checkboxes, and advanced techniques for further customization.</description>
+      <pubDate>Tue, 25 Apr 2023 13:11:27 +0000</pubDate>
+      <content:encoded><![CDATA[<p>Customizing the appearance of checkboxes can significantly improve the user experience of your website or application. It allows you to create a cohesive, visually appealing design that aligns with your brand. However, it is equally important to consider the accessibility of your checkboxes, as all users, regardless of their ability, should be able to use and understand them. You can customize the look of your checkboxes and produce a more aesthetically pleasing and seamless user experience with a basic understanding of CSS. And beyond aesthetics, make it inclusive and accessible for types of web users.</p>
+<p>This article will go through the fundamentals of customizing checkboxes and making them more accessible. We first cover the necessary knowledge needed to build a custom checkbox; we&rsquo;ll discuss styling, the size and shape of the checkboxes, and some pointers for making your checkboxes more web inclusive and accessible. By the end of this tutorial, you&rsquo;ll have all the skills and knowledge you need to build customized checkboxes with CSS properties and improve their web accessibility to build a more inclusive website. So, let&rsquo;s get started!</p>
+<h2 id="basics-of-building-a-custom-checkbox">Basics of building a custom checkbox</h2>
+<p>Before you can customize your checkboxes, it&rsquo;s important to understand how they&rsquo;re built. Checkboxes are typically created using the HTML&nbsp;<code>&lt;input&gt;</code>&nbsp;element with a&nbsp;<code>type</code>&nbsp;attribute set to&nbsp;<code>"checkbox"</code>. This element can be styled using CSS properties, just like any other HTML element. Some common CSS properties that can be used to customize checkboxes include:</p>
+<ul>
+<li><code>background-color</code>: sets the background color of the checkbox.</li>
+<li><code>border</code>: sets the border properties of the checkbox, such as thickness and color.</li>
+<li><code>border-radius</code>: sets the rounded corners of the checkbox.</li>
+<li><code>box-shadow</code>: adds a shadow to the checkbox.</li>
+<li><code>width</code>&nbsp;and&nbsp;<code>height</code>: sets the checkbox size.</li>
+</ul>
+<p>The HTML element for a checkbox is the input element with a type attribute of checkbox. For example,</p>
+<p><span class="line">&lt;code class="language-css"&gt;&lt;label class="checkbox"&gt;</span> <span class="line"> A = Hungry</span> <span class="line"> &lt;input type="checkbox" checked="checked" /&gt;</span> <span class="line"> &lt;span class="checkmark"&gt;&lt;/span&gt;</span> <span class="line">&lt;/label&gt;</span> <span class="line">&lt;label class="checkbox"&gt;</span> <span class="line"> B = Thirsty</span> <span class="line"> &lt;input type="checkbox" /&gt;</span> <span class="line"> &lt;span class="checkmark"&gt;&lt;/span&gt;</span> <span class="line">&lt;/label&gt;</span> <span class="line">&lt;label class="checkbox"&gt;</span> <span class="line"> C = Both</span> <span class="line"> &lt;input type="checkbox" /&gt;</span> <span class="line"> &lt;span class="checkmark"&gt;&lt;/span&gt;</span> <span class="line">&lt;/label&gt;&lt;/code&gt;</span></p>
+]]></content:encoded>
+      <enclosure url="https://res.cloudinary.com/dzhuhtn30/image/upload/v1682428285/patienceman-docs/private/var/folders/t7/5v834pbs0qb8rrzg11m7w10m0000gp/T/php1d06fV.png" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <guid isPermaLink="false">13-some-testing-querirs</guid>
+      <title>some testing queries</title>
+      <link>http://localhost/docs/13-some-testing-querirs</link>
+      <author>hseal419@gmail.com (Manirabona Patience)</author>
+      <category>Patienceman Blogs</category>
+      <description>and another testing and merge</description>
+      <pubDate>Mon, 08 May 2023 13:11:18 +0000</pubDate>
+      <content:encoded><![CDATA[<h1>Laravel</h1>
+<p>Flltan is fast and reusable laravel package for custom model query filters</p>
+<h2>Installation</h2>
+<blockquote>
+<p>To install the package don't require much requirement except to paste the following compand in laravel terminal,  and the you're good to go.</p>
+</blockquote>
+<pre><code class="language-json">{
+  &quot;key&quot;: &quot;value&quot;
+}
+</code></pre>
+<h2>Usage</h2>
+<p>We all like automated stuff like</p>
+<pre><code class="language-bash">php artisan make:cake BananaCake nam
+</code></pre>
+<p>that what I was doing for you, so you don't have always to create files for filter traditional. :firecracker:</p>
+<p>Just one command :tada:
+Let us use our example of the AirPlane Model and create a new filter:</p>
+<pre><code class="language-bash">php artisan make:filter AirPlaneFilter
+</code></pre>
+<p>so it will create the filter file for u, Just in
+<code>bash App\Services\Filters </code></p>
+<pre><code class="language-PHP">  namespace App\Services\Filters;
+
+  use Patienceman\Filtan\QueryFilter;
+
+  class AirPlaneFilter extends QueryFilter {
+      /**
+       * public function query($query) {
+       *     $this-&gt;builder-&gt;where('name', 'LIKE', '%' .  . '%')
+       * }
+       */
+  }
+</code></pre>
+<p>:fire: :fire: What best move we make: in the world?</p>
+<p>So you may want even to specify the custom path for your filter, Just relax and add it in front of your filter name.
+Let's take again our current example.</p>
+<pre><code class="language-bash">php artisan make:filter Model/AirPlaneFilter
+</code></pre>
+<p>:wave: :wave: That is just what magic can make, awesome right?</p>
+<p>In your App/Services/Filters directory, Where you gonna put all of your model filter files.</p>
+<pre><code class="language-PHP">    namespace App\Services\Filters;
+    
+    use Patienceman\Filtan\QueryFilter;
+
+    class AirplaneFilter extends QueryFilter {
+
+        public function query(string $query){
+            $this-&gt;builder-&gt;where('name', 'LIKE', '%' . $query . '%');
+        }
+
+    }
+</code></pre>
+<p>So now you have your filters function to be applied when new AirplaneModel query called!,</p>
+<p>We need to communicate to model and tell that we have it filters, so that we can call it anytime!!,
+So let use filterable trait to enable filter builder.</p>
+<pre><code class="language-PHP">    namespace App\Models;
+
+    use Illuminate\Database\Eloquent\Factories\HasFactory;
+    use Illuminate\Database\Eloquent\Model;
+    use Patienceman\Filtan\Filterable;
+
+    class Airplane extends Model {
+        use HasFactory, Filterable;
+    }
+</code></pre>
+<p>Boom Boom, from now on, we are able call our fiter anytime, any place that need Airplane model, so let see how we can use this in our controller</p>
+<pre><code class="language-PHP">    namespace App\Http\Controllers\ApiControllers;
+
+    use App\Http\Controllers\Controller;
+    use App\Models\User;
+    use App\Services\Filters\CompanyFilter;
+    use Illuminate\Http\JsonResponse;
+    use Illuminate\Http\Request;
+
+    class AirplaneController extends Controller {
+        /**
+         * Display a listing of the resource.
+         *
+         * @return JsonResponse
+         */
+        public function index(CompanyFilter $filter): JsonResponse {
+            $planes = Airplane::allPlanes()-&gt;filter($filter)-&gt;get();
+
+            return successResponse(
+                AirplaneResource::collection($planes),
+                AirplaneAlert::DISPLAY_MESSAGE
+            );
+        }
+    }
+</code></pre>
+<h2>Contributing</h2>
+<p>Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.</p>
+<p>Please make sure to update tests as appropriate.</p>
+<h2>License</h2>
+<p><a href="https://choosealicense.com/licenses/mit/">MIT</a></p>
+]]></content:encoded>
+      <enclosure url="https://res.cloudinary.com/dzhuhtn30/image/upload/v1683900765/patienceman-docs/private/var/folders/t7/5v834pbs0qb8rrzg11m7w10m0000gp/T/phpRifUCL.png" type="image/jpeg" length="0"/>
+    </item>
+    <item>
+      <guid isPermaLink="false">14-something</guid>
+      <title>something</title>
+      <link>http://localhost/docs/14-something</link>
+      <author>hseal419@gmail.com (Manirabona Patience)</author>
+      <category>Patienceman Blogs</category>
+      <description>electean ffdnsf</description>
+      <pubDate>Wed, 10 May 2023 07:31:19 +0000</pubDate>
+      <content:encoded><![CDATA[<p>mijfdjhfjdhf</p>
+]]></content:encoded>
+      <enclosure url="https://res.cloudinary.com/dzhuhtn30/image/upload/v1685115891/patienceman-docs/private/var/folders/t7/5v834pbs0qb8rrzg11m7w10m0000gp/T/phpFjEcPq.png" type="image/jpeg" length="0"/>
+    </item>
+  </channel>
+</rss>

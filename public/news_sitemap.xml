@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+  <url>
+    <loc>http://localhost/docs/1-delete-files-and-folders-in-linux-command-line</loc>
+    <news:news>
+      <news:publication>
+        <news:name>http://localhost/docs/1-delete-files-and-folders-in-linux-command-line</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2023-03-23T07:59:49+00:00</news:publication_date>
+      <news:title>Delete Files and Folders in Linux Command Line</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>http://localhost/docs/3-ps5-version-of-redfall-was-in-development-at-arkane</loc>
+    <news:news>
+      <news:publication>
+        <news:name>http://localhost/docs/3-ps5-version-of-redfall-was-in-development-at-arkane</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2023-03-23T09:37:05+00:00</news:publication_date>
+      <news:title>PS5 Version of Redfall Was in Development at Arkane</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>http://localhost/docs/4-css-nesting-is-now-available-with-vanilla-css</loc>
+    <news:news>
+      <news:publication>
+        <news:name>http://localhost/docs/4-css-nesting-is-now-available-with-vanilla-css</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2023-03-23T09:39:18+00:00</news:publication_date>
+      <news:title>CSS Nesting is now available with Vanilla CSS</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>http://localhost/docs/6-build-credibility-at-work</loc>
+    <news:news>
+      <news:publication>
+        <news:name>http://localhost/docs/6-build-credibility-at-work</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2023-04-20T11:06:44+00:00</news:publication_date>
+      <news:title>Build Credibility at Work</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>http://localhost/docs/9-8-strategies-for-completing-the-idea-apprenticeships</loc>
+    <news:news>
+      <news:publication>
+        <news:name>http://localhost/docs/9-8-strategies-for-completing-the-idea-apprenticeships</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2023-04-20T11:51:20+00:00</news:publication_date>
+      <news:title>8 Strategies For Completing The Idea Apprenticeships.</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>http://localhost/docs/10-making-a-chatgpt-bot-in-20-lines-of-code</loc>
+    <news:news>
+      <news:publication>
+        <news:name>http://localhost/docs/10-making-a-chatgpt-bot-in-20-lines-of-code</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2023-04-25T12:35:46+00:00</news:publication_date>
+      <news:title>Making a ChatGPT Bot in 20 Lines of Code</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>http://localhost/docs/11-how-to-customize-checkboxes-with-css</loc>
+    <news:news>
+      <news:publication>
+        <news:name>http://localhost/docs/11-how-to-customize-checkboxes-with-css</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2023-04-25T13:08:43+00:00</news:publication_date>
+      <news:title>How To Customize Checkboxes With CSS</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>http://localhost/docs/12-how-to-customize-checkboxes-with-css</loc>
+    <news:news>
+      <news:publication>
+        <news:name>http://localhost/docs/12-how-to-customize-checkboxes-with-css</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2023-04-25T13:11:27+00:00</news:publication_date>
+      <news:title>How To Customize Checkboxes With CSS</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>http://localhost/docs/13-some-testing-querirs</loc>
+    <news:news>
+      <news:publication>
+        <news:name>http://localhost/docs/13-some-testing-querirs</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2023-05-08T13:11:18+00:00</news:publication_date>
+      <news:title>some testing queries</news:title>
+    </news:news>
+  </url>
+  <url>
+    <loc>http://localhost/docs/14-something</loc>
+    <news:news>
+      <news:publication>
+        <news:name>http://localhost/docs/14-something</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2023-05-10T07:31:19+00:00</news:publication_date>
+      <news:title>something</news:title>
+    </news:news>
+  </url>
+</urlset>
