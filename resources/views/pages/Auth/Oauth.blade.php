@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('meta-data')
+    <meta data-rh="true" name="robots" content="index,follow,max-image-preview:large">
+@endsection
+
 @section('title') Signup|Login @stop
 
 @section('content')

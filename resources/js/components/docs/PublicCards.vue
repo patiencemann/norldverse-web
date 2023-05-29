@@ -15,7 +15,7 @@
                         <div class="item-authors global-authors flex justify-between items-center">
                             <div>
                                 <div class="item-author global-item-author is-image global-image" v-for="comment in doc.comments.slice(0, 4)" :key="comment.id">
-                                    <a href="/author/nichole/" class="global-link" :title="comment.user.name"></a>
+                                    <a class="global-link" :title="comment.user.name"></a>
                                     <img :src="comment.user.avatar" loading="lazy" :alt="comment.user.name">
                                 </div>
                             </div>
