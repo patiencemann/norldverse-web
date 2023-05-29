@@ -43,6 +43,16 @@
     <meta data-rh="true" property="og:description" content="{{ $doc->caption }}">
     <meta data-rh="true" property="og:image" content="{{ $doc->docMedia->file_url }}">
     <meta data-rh="true" property="og:url" content="{{ env('APP_URL')."/docs/".$doc->slug }}">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHRK59S1F7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BHRK59S1F7');
+    </script>
 @stop
 
 @section('title')

@@ -43,6 +43,16 @@
     <meta data-rh="true" property="og:description" content="Patienceman-blogs is a web blog featuring JavaScript, PHP, vue js, Laravel, packages, and everything else for software development and also personal developments.">
     <meta data-rh="true" property="og:image" content="/img/logos/logo-black.png">
     <meta data-rh="true" property="og:url" content="{{ env('APP_URL') }}">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHRK59S1F7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BHRK59S1F7');
+    </script>
 @stop
 
 @section('title')
