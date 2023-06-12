@@ -1,7 +1,7 @@
 <template>
     <div class="loop-subtitle">
         <small class="loop-subtitle-title global-title dark:text-gray-200 font-anek">
-            See what I’ve <br>
+            See what has been<br>
             <span>Written lately</span>
         </small>
         <div class="global-authors" v-if="Object.keys(uniqueUser).length > 3">

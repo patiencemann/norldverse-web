@@ -1,48 +1,113 @@
 @extends('layouts.app')
 
 @section('meta-data')
-    <meta data-rh="true" name="theme-color" content="#000000">
+    <meta name="theme-color" content="#1e2a3b">
 
-    <meta data-rh="true" name="googlebot" content="noodp" />
-    <meta data-rh="true" name="copyright" content="{{ $doc->user->name }}" />
-    <meta data-rh="true" name="author" content="{{ $doc->user->name }}" />
-    <meta data-rh="true" name="news_keywords" content="@foreach ($doc->docTopic->topics as $topic) {{ $topic."," }} @endforeach">
-    <link data-rh="true" rel="author" href="{{ env('APP_URL') }}">
-    <meta data-rh="true" name="referrer" content="unsafe-url">
+    <!-- Basic HTML Meta Tags -->
+    <meta charset='UTF-8'>
+    <meta name="googlebot" content="noodp" />
+    <meta property="article:published_time" content="{{ $doc->created_at }}">
+    <meta property="article:author" content="{{ env('APP_URL') }}">
+    <meta name="robots" content="index,follow,max-image-preview:large">
+    <meta name="description" content="{{ $doc->caption }}">
+    <meta name='keywords' content='@foreach ($doc->docTopic->topics as $topic) {{ $topic."," }} @endforeach'>
+    <meta name='subject' content=''>
+    <meta name='copyright' content='Patienceman Blogs'>
+    <meta name='language' content='ES'>
+    <meta name='robots' content='index,follow'>
+    <meta name='revised' content='Sunday, June 12th, 2023'>
+    <meta name='abstract' content=''>
+    <meta name='topic' content="{{ $doc->title }}">
+    <meta name='summary' content="{{ $doc->caption }}">
+    <meta name='Classification' content='Personal Blogs'>
+    <meta name='author' content='{{ $doc->user->name }}, {{ $doc->user->email }}'>
+    <meta name='designer' content='{{ $doc->user->name }}'>
+    <meta name='reply-to' content='{{ $doc->user->email }}'>
+    <meta name='owner' content='{{ $doc->user->name }}'>
+    <meta name='url' content='{{ env('APP_URL')."/docs/".$doc->slug }}'>
+    <meta name='identifier-URL' content='{{ env('APP_URL')."/docs/".$doc->slug }}'>
+    <meta name='directory' content='submission'>
+    <meta name='pagename' content='{{ $doc->title }}'>
+    <meta name='category' content=''>
+    <meta name='coverage' content='Worldwide'>
+    <meta name='distribution' content='Global'>
+    <meta name='rating' content='General'>
+    <meta name='revisit-after' content='7 days'>
+    <meta name='subtitle' content='{{ $doc->caption }}'>
+    <meta name='target' content='all'>
+    <meta name='HandheldFriendly' content='True'>
+    <meta name='MobileOptimized' content='320'>
+    <meta name='date' content='June. 12, 2023'>
+    <meta name='search_date' content='2023-06-12'>
+    <meta name='DC.title' content='{{ $doc->title }}'>
+    <meta name='ResourceLoaderDynamicStyles' content=''>
+    <meta name='medium' content='blog'>
+    <meta name='pageKey' content='single-blog'>
+    <meta http-equiv='Expires' content='0'>
+    <meta http-equiv='Pragma' content='no-cache'>
+    <meta http-equiv='Cache-Control' content='no-cache'>
+    <meta http-equiv='imagetoolbar' content='no'>
+    <meta http-equiv='x-dns-prefetch-control' content='off'>
 
-    <meta data-rh="true" name="title" content="{{ $doc->title }}">
-    <meta data-rh="true" name="description" content="{{ $doc->caption }}">
-    <meta name="keywords" content="@foreach ($doc->docTopic->topics as $topic) {{ $topic."," }} @endforeach" />
-    <meta data-rh="true" property="article:published_time" content="{{ $doc->created_at }}">
-    <meta data-rh="true" property="article:author" content="{{ env('APP_URL') }}">
-    <meta data-rh="true" name="robots" content="index,follow,max-image-preview:large">
+    <!-- OpenGraph Meta Tags -->
+    <meta property='og:title' content='{{ $doc->title }}'>
+    <meta property='og:type' content='article'>
+    <meta property='og:url' content='{{ env('APP_URL')."/docs/".$doc->slug }}'>
+    <meta property='og:image' content='{{ $doc->docMedia->file_url }}'>
+    <meta property='og:site_name' content='Patienceman-blogs'>
+    <meta property='og:description' content='{{ $doc->caption }}'>
+
+    <meta property='fb:page_id' content='43929265776'>
+    <meta property='application-name' content='Patienceman-blogs'>
+    <meta property='og:email' content='{{ $doc->user->email }}'>
+
+    <meta property='og:latitude' content='-1.9584038'>
+    <meta property='og:longitude' content='30.0694946'>
+    <meta property='og:street-address' content='34 KN 41 Street'>
+    <meta property='og:locality' content='Nyarugenge'>
+    <meta property='og:region' content='NY'>
+    <meta property='og:postal-code' content='5748'>
+    <meta property='og:country-name' content='RW'>
+
+    <meta property='twitter:card' content='{{ env('APP_URL')."/docs/".$doc->slug }}'>
+    <meta property='twitter:site' content='Patienceman-blogs'>
+    <meta property='twitter:creator' content='{{ $doc->user->name }}'>
+    <meta property='twitter:description' content='{{ $doc->caption }}'>
+    <meta property='twitter:title' content='{{ $doc->title }}'>
+    <meta property='twitter:image' content='{{ $doc->docMedia->file_url }}'>
+    <meta property='twitter:image:alt' content='{{ $doc->title }}'>
+    <meta property="twitter:image:src" content="{{ $doc->docMedia->file_url }}">
+
+    <!-- App meta tags -->
+    <meta name="apple-mobile-web-app-title" content="{{ $doc->title }}">
+    <meta name='apple-mobile-web-app-capable' content='yes'>
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name='apple-mobile-web-app-status-bar-style' content='black'>
+    <meta name='format-detection' content='telephone=no'>
+    <meta name='viewport' content='width=device-width; content='width = 320; initial-scale=1.0; maximum-scale=1.0; user-scalable=yes; target-densitydpi=160dpi'>
+
+    <!-- Internet Explore -->
+    <meta http-equiv='Page-Enter' content='RevealTrans(Duration=2.0,Transition=2)'>
+    <meta http-equiv='Page-Exit' content='RevealTrans(Duration=3.0,Transition=12)'>
+    <meta name='mssmarttagspreventparsing' content='true'>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+    <meta name='msapplication-starturl' content='{{ env('APP_URL')."/docs/".$doc->slug }}'>
+    <meta name='msapplication-window' content='width=800;height=600'>
+    <meta name='msapplication-navbutton-color' content='red'>
+    <meta name='application-name' content='{{ $doc->title }}'>
+    <meta name='msapplication-tooltip' content='{{ $doc->user->name }}'s Blog'>
+    <meta name='msvalidate.01' content='6E3AD52DC176461A3C81DD6E98003BC9'>
+    <meta http-equiv='cleartype' content='on'>
+
+    <!-- Google meta tags -->
+    <meta name="news_keywords" content="{{ $doc->title }}">
+
+    <!-- TweetMeme -->
+    <meta name='tweetmeme-title' content='{{ $doc->title }}'>
+    <meta data-rh="true" name="referrer" content="safe-url">
 
     <link data-rh="true" rel="canonical" href="{{ env('APP_URL')."/docs/".$doc->slug }}">
     <link rel="alternate" type="application/rss+xml" title="Patienceman - blogs &raquo; Feed" href="{{ env('APP_URL').'/feed.xml' }}" />
-
-    {{-- Twitter tags --}}
-    <meta data-rh="true" name="twitter:image:src" content="{{ $doc->docMedia->file_url }}">
-    <meta data-rh="true" name="twitter:card" content="{{ $doc->caption }}">
-    <meta data-rh="true" name="twitter:creator" content="{{ $doc->user->name }}">
-    <meta data-rh="true" name="twitter:label1" content="Reading time">
-    <meta data-rh="true" name="twitter:data1" content="10 min read">
-    <meta data-rh="true" name="twitter:tile:template:testing" content="2">
-    <meta data-rh="true" name="twitter:tile:image" content="{{ $doc->docMedia->file_url }}">
-    <meta data-rh="true" name="twitter:tile:info1:icon" content="Person">
-    <meta data-rh="true" name="twitter:tile:info1:text" content="{{ $doc->user->name }}">
-    <meta data-rh="true" name="twitter:tile:info2:icon" content="Calendar">
-    <meta data-rh="true" name="twitter:tile:info2:text" content="{{ $doc->created_at }}">
-    <meta data-rh="true" name="twitter:cta" content="Read on Patienceman">
-    <meta data-rh="true" property="twitter:title" content="{{ $doc->caption }}">
-    <meta data-rh="true" property="twitter:description" content="{{ $doc->caption }}">
-
-    {{-- Facebook tags --}}
-    <meta data-rh="true" property="og:type" content="article">
-    <meta data-rh="true" property="og:site_name" content="blog.patienceman.com">
-    <meta data-rh="true" property="og:title" content="{{ $doc->title }}">
-    <meta data-rh="true" property="og:description" content="{{ $doc->caption }}">
-    <meta data-rh="true" property="og:image" content="{{ $doc->docMedia->file_url }}">
-    <meta data-rh="true" property="og:url" content="{{ env('APP_URL')."/docs/".$doc->slug }}">
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHRK59S1F7"></script>

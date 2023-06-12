@@ -3,8 +3,8 @@
     use App\Http\Controllers\NotificationController;
     use App\Http\Controllers\DocCommentController;
     use App\Http\Controllers\DocController;
-use App\Http\Controllers\DocLikeController;
-use App\Http\Controllers\UserController;
+    use App\Http\Controllers\DocLikeController;
+    use App\Http\Controllers\UserController;
     use Illuminate\Support\Facades\Route;
 
     /*
