@@ -69,7 +69,7 @@
     <meta property='og:postal-code' content='5748'>
     <meta property='og:country-name' content='RW'>
 
-    <meta property='twitter:card' content='{{ $doc->title }}'>
+    <meta property='twitter:card' content='summary_large_image'>
     <meta property='twitter:site' content='Patienceman-blogs'>
     <meta property='twitter:creator' content='{{ $doc->user->name }}'>
     <meta property='twitter:description' content='{{ $doc->caption }}'>
