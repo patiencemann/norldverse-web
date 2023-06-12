@@ -1,5 +1,5 @@
 <div> @if (Auth::check() && !hasWritterRequest()) <become-writter /> @endif </div>
-<header class="site-header" style="background-image: url('/img/space-guy.jpg')">
+<header class="site-header border border-x-0 border-t-0 border-gray-200" style="background-image: url('/img/space-guy.jpg')">
     <div class="container">
         <div class="header-inner flex justify-space-between dark:bg-deep-green-800">
             <div class="flex items-center">
@@ -13,10 +13,9 @@
                             <img src="/img/logos/logo-no-background.svg"
                                 alt="patienceman logo">
                         </div>
-                        <span class="self-center text-3xl mt-2 font-semibold whitespace-nowrap dark:text-white ml-4"
-                            style="font-family: 'Anek Telugu', sans-serif; font-weight: 700; font-size: 3rem">
+                        <div class="app-logo self-center text-gray-600 text-3xl font-bold whitespace-nowrap dark:text-white ml-4">
                             Patienceman
-                        </span>
+                        </div>
                     </a>
                     <div id="tooltip-logo-1" role="tooltip"
                         class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
@@ -28,6 +27,9 @@
                     </div>
                 </div>
             </div>
+
+            {{-- Search bar --}}
+            <div><search-bar /></div>
 
             {{-- Large screen navbar --}}
             <x-navbar.large-navbar />

@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 html {
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 body {
     margin: 0;
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 article,
 aside,
@@ -4881,35 +4882,35 @@ figcaption {
     font-size: 56px;
     line-height: 1.1;
     font-weight: 700;
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .heading-medium {
     font-size: 40px;
     line-height: 1.1;
     font-weight: 700;
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .heading-small {
     font-size: 32px;
     line-height: 1.1;
     font-weight: 700;
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .heading-xlarge {
     font-size: 80px;
     line-height: 1.1;
     font-weight: 700;
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .heading-xsmall {
     font-size: 24px;
     line-height: 1.1;
     font-weight: 700;
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .grid-thirds {
@@ -5003,7 +5004,7 @@ figcaption {
     margin-bottom: 32px;
     margin-left: auto;
     font-size: 30px;
-    font-family: 'Anek Telugu', sans-serif !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-weight: 700 !important;
 }
 
@@ -5013,7 +5014,7 @@ figcaption {
     margin-bottom: 32px;
     margin-left: auto;
     font-size: 26px !important;
-    font-family: 'Anek Telugu', sans-serif !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-weight: 700 !important;
 }
 
@@ -5023,7 +5024,7 @@ figcaption {
     margin-bottom: 24px;
     margin-left: auto;
     font-size: 22px;
-    font-family: 'Anek Telugu', sans-serif !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-weight: 700 !important;
 }
 
@@ -5033,7 +5034,7 @@ figcaption {
     margin-bottom: 24px;
     margin-left: auto;
     font-size: 20px;
-    font-family: 'Anek Telugu', sans-serif !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-weight: 700 !important;
 }
 
@@ -5043,7 +5044,7 @@ figcaption {
     margin-bottom: 20px;
     margin-left: auto;
     font-size: 18px;
-    font-family: 'Anek Telugu', sans-serif !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
     font-weight: 700 !important;
 }
 
@@ -5053,7 +5054,7 @@ figcaption {
     margin-bottom: 20px;
     margin-left: auto;
     font-size: 16px;
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700 !important;
 }
 
@@ -5061,7 +5062,7 @@ figcaption {
     max-width: 730px;
     margin-bottom: 32px;
     margin-left: auto;
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
     margin-top: 0;
     line-height: 1.62;
@@ -5078,7 +5079,7 @@ figcaption {
     margin-bottom: 20px;
     margin-left: auto;
     padding-left: 20px;
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
 }
 
@@ -5088,7 +5089,7 @@ figcaption {
     margin-right: auto;
     margin-bottom: 32px;
     margin-left: auto;
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
 }
 
@@ -5698,7 +5699,7 @@ figcaption {
     align-items: center;
     -webkit-transition: color 400ms cubic-bezier(0.23, 1, 0.32, 1);
     transition: color 400ms cubic-bezier(0.23, 1, 0.32, 1);
-    font-family: 'Anek Telugu', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 500;
 }
 

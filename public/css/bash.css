@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@300;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 :root {
     --height-logo-header: 40px;
@@ -10,7 +11,7 @@
     --grid-gap: 16px;
     --border-radius: 26px;
     --margin-wrap-left-right: 5vw;
-    --font-family-system: "Anek Telugu", sans-serif;
+    --font-family-system: 'Plus Jakarta Sans', sans-serif;
     --font-family-one: var(--font-family-system);
     --font-weight-one-light: 300;
     --font-weight-one-bold: 700;
@@ -180,8 +181,7 @@ body .is-partial-color:not(.is-partial-dark) {
     DOCS SECTION
     ---------------------------------------- */
 .loop-section {
-    background-color: rgba(245, 245, 245, 1);
-    border-top: var(--border) var(--color-border-one);
+    background-color: #f8fafc;
 }
 .loop-wrap {
     -webkit-animation: slideTop 0.8s ease;
@@ -202,7 +202,7 @@ body .is-partial-color:not(.is-partial-dark) {
 }
 .loop-subtitle {
     display: flex;
-    margin-bottom: 4.5vh;
+    margin-bottom: 10.5vh;
     padding-top: 4vh;
 }
 .loop-subtitle-title {
@@ -211,6 +211,7 @@ body .is-partial-color:not(.is-partial-dark) {
     flex: 1 0 50%;
     margin: 0;
     letter-spacing: var(--letter-spacing, normal);
+    font-weight: bold;
 }
 .loop-subtitle span {
     font-weight: var(--font-weight-one-bold);
@@ -277,7 +278,6 @@ body .is-partial-color:not(.is-partial-dark) {
 }
 
 .title-tags {
-    margin-top: 20px;
     margin-bottom: 20px;
     line-height: 0;
     display: flex;
@@ -291,7 +291,7 @@ body .is-partial-color:not(.is-partial-dark) {
 }
 .title-tags span {
     position: absolute;
-    top: -45px;
+    top: -25px;
     width: 100%;
     height: 50px;
     overflow: hidden;
@@ -300,10 +300,10 @@ body .is-partial-color:not(.is-partial-dark) {
 .title-tags a {
     font-family: var(--font-family-three);
     font-size: 1.7rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1;
     display: inline-block;
-    margin: 0 5px 5px 0;
+    margin: 0 5px 10px 0;
     padding: 10px 15px;
     transition: background-color 0.2s ease;
     background-color: white;
@@ -548,7 +548,6 @@ body .is-partial-color:not(.is-partial-dark) {
     width: 100%;
     color: var(--color-font-one);
     background-color: rgba(245, 245, 245, 1);
-    border-top: var(--border) var(--color-border-one);
 }
 
 .post-header-container,
@@ -559,7 +558,7 @@ body .is-partial-color:not(.is-partial-dark) {
 
 .post-header-container {
     align-items: flex-start;
-    padding: 4vh 8px 8vh 8px;
+    padding: 10vh 8px 8vh 8px;
 }
 
 .post-header-content {
@@ -587,16 +586,24 @@ body .is-partial-color:not(.is-partial-dark) {
 
 .post-title {
     letter-spacing: var(--letter-spacing, normal);
+    font-family: var(--font-family-system) !important;
+    font-weight: 700;
+    color: white;
+    line-height: 100%;
+}
+
+.post-excerpt {
+    letter-spacing: var(--letter-spacing, normal);
     font-family: var(--font-family-system);
     font-weight: 600;
-    color: #2f1c6a;
+    color: white;
     line-height: 110%;
 }
 
 .post-meta {
     font-size: 1.3rem;
     line-height: 1.35;
-    margin-top: 4vh;
+    margin-top: 3vh;
 }
 
 .post-meta > div {
@@ -610,6 +617,7 @@ body .is-partial-color:not(.is-partial-dark) {
 
 .post-meta-content a {
     font-size: 1.9rem;
+    color: white !important;
 }
 
 .post-meta time {
@@ -636,6 +644,7 @@ body .is-partial-color:not(.is-partial-dark) {
     height: 60px !important;
     border-width: 5px;
     background-color: var(--color-body-partial);
+    color: white;
 }
 
 .post-socials {
@@ -1149,9 +1158,11 @@ body .is-partial-color:not(.is-partial-dark) {
     line-height: 1;
     display: inline-block;
     margin: 0 5px 5px 0;
-    padding: 7px 10px;
+    padding: 7px 15px;
     transition: background-color 0.2s ease;
     background-color: var(--color-one);
+    border: 1px solid #efeef0;
+    font-weight: 600;
 }
 .global-tags a:hover {
     background-color: var(--color-two);
@@ -1653,7 +1664,7 @@ body .is-partial-color:not(.is-partial-dark) {
 }
 
 .post-content p {
-    line-height: 1.50 !important;
+    line-height: 1.70 !important;
     position: relative;
     font-weight: 500 !important;
     font-size: 18px !important;

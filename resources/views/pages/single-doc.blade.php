@@ -141,8 +141,8 @@
     <x-navigation-bar />
 
     <div id="downloadable">
-        <div class="post-header dark:bg-deep-green-800">
-            <div class="post-header-wrap global-padding">
+        <div class="post-header dark:bg-deep-green-800" style="">
+            <div class="post-header-wrap global-padding bg-[#10172a]">
                 <div class="post-header-container">
                     <div class="post-header-content">
                         <div>
@@ -158,15 +158,15 @@
                             <div class="post-meta">
                                 <div class="post-authors">
                                     <div class="post-item-author global-item-author is-image global-image">
-                                        <a href="{{ optional($doc->user->userMetaData)->twitter_handler }}" class="global-link font-bold" title="{{ $doc->user->name }}"></a>
+                                        <a href="{{ optional($doc->user->userMetaData)->twitter_handler }}" class="global-link font-bold text-gray-50" title="{{ $doc->user->name }}"></a>
                                         <img src="{{ $doc->user->avatar }}" loading="lazy" alt="{{ $doc->user->name }}">
                                     </div>
                                 </div>
 
-                                <div class="post-meta-content font-anek">
-                                    <a href="{{ ($doc->user->userMetaData) ? $doc->user->userMetaData->twitter_handler : "/" }}" class="font-bold dark:text-gray-200">{{ $doc->user->name }}</a> <br>
-                                    <span class="font-anek text-gray-500">{{ ($doc->user->userMetaData) ? $doc->user->userMetaData->position : "Position" }}</span> <br />
-                                    <strong class="text-gray-600 mt-1">Published: {{ $doc->created_at->diffForHumans() }}</strong> <read-time text="{{ $doc->contents }}" /></time>
+                                <div class="post-meta-content ml-4">
+                                    <a href="{{ ($doc->user->userMetaData) ? $doc->user->userMetaData->twitter_handler : "/" }}" class="font-bold dark:text-gray-50">{{ $doc->user->name }}</a> <br>
+                                    <span class="font-anek font-semibold text-gray-200">{{ ($doc->user->userMetaData) ? $doc->user->userMetaData->position : "Position" }}</span> <br />
+                                    <strong class="text-gray-300 font-bold mt-1">Published: {{ $doc->created_at->diffForHumans() }}</strong> <read-time text="{{ $doc->contents }}" /></time>
                                 </div>
                             </div>
                         </div>
@@ -187,7 +187,6 @@
                                     src="{{ $doc->docMedia->file_url }}" alt="{{ $doc->title }}" id="global-image-picker">
                             </div>
                         </figure>
-                        <div class="gradient-overlay"></div>
                     </div>
                 </div>
             </div>

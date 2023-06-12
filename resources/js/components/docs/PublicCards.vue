@@ -47,7 +47,14 @@
                         </span>
                     </div>
                     <h2 class="item-title" style="margin-top: 1.3rem"><a :href="'/docs/'+doc.slug" class="dark:text-gray-200">{{ doc.title }}</a></h2>
-                    <p class="item-excerpt dark:text-gray-200">{{ doc.caption }}</p>
+                    <div class="flex items-center space-x-4 mt-4 rounded-[10px] border border-gray-200 py-3 px-4">
+                        <img class="w-12 h-12 rounded ring-2 ring-gray-300 dark:ring-gray-500" :src="doc.user.avatar" :alt="doc.user.name+' blog'">
+                        <div class="font-medium dark:text-white ml-3">
+                            <div class="font-bold leading-5" style="font-size: 15px !important">{{ doc.user.name }}</div>
+                            <div class="text-gray-500 font-semibold dark:text-gray-400" style="font-size: 14px !important">{{ doc.created_at }}</div>
+                        </div>
+                    </div>
+                    <p class="item-excerpt text-gray-600 dark:text-gray-200">{{ doc.caption }}</p>
                 </div>
             </article>
         </div>

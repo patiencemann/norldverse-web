@@ -1,14 +1,13 @@
 <template>
     <div id="social-platforms">
         <div class="share">
-            <h4 class="share__text">Share on</h4>
+            <h4 class="share__text text-gray-500">Share on</h4>
             <div class="novashare-buttons novashare-floating novashare-no-print">
                 <vue-goodshare-twitter
                     :page_url="page_url"
                     :page_title="page_title"
                     :page-description="page_description"
                     has_icon
-                    has_counter
                 >
                 </vue-goodshare-twitter>
                 <vue-goodshare-facebook
@@ -16,7 +15,6 @@
                     :page_title="page_title"
                     :page-description="page_description"
                     has_icon
-                    has_counter
                 >
                 </vue-goodshare-facebook>
                 <vue-goodshare-linkedIn
@@ -24,7 +22,6 @@
                     :page_title="page_title"
                     :page-description="page_description"
                     has_icon
-                    has_counter
                 >
                 </vue-goodshare-linkedIn>
                 <vue-goodshare-pinterest
@@ -32,7 +29,6 @@
                     :page_title="page_title"
                     :page-description="page_description"
                     has_icon
-                    has_counter
                 >
                 </vue-goodshare-pinterest>
                 <vue-goodshare-reddit
@@ -40,7 +36,6 @@
                     :page_title="page_title"
                     :page-description="page_description"
                     has_icon
-                    has_counter
                 >
                 </vue-goodshare-reddit>
             </div>
@@ -111,12 +106,12 @@
     .button-social {
         padding: 7px 10px;
         border-radius: 10px !important;
-        font-family: "Anek Telugu", sans-serif;
+        font-family: 'Plus Jakarta Sans', sans-serif;
         font-size: 1.4rem;
         font-weight: 600;
         line-height: 1;
         display: inline-block;
-        margin: 0 5px 5px 0;
+        margin: 0 5px 0px 0;
         transition: background-color 0.2s ease;
         text-align: center;
         align-items: center;
@@ -133,7 +128,7 @@
         grid-gap: 1rem;
         align-items: center;
         background-color: white;
-        border-radius: .5rem;
+        border-radius: 999px;
         color: #44414e;
         display: flex;
         flex-direction: column;
@@ -143,6 +138,10 @@
         padding: 1rem 2rem;
         text-align: center;
         border: 1px solid #dbe0e4;
+        position: fixed;
+        bottom: 30px;
+        right: 40px;
+        z-index: 20;
     }
 
     @media(min-width: 64em) {
@@ -156,10 +155,9 @@
     .share__text {
         color: inherit;
         flex-shrink: 1;
-        font-family: "Anek Telugu", sans-serif;
+        font-family: 'Plus Jakarta Sans', sans-serif;
         font-size: 1.4rem !important;
-        font-weight: 600;
-        line-height: 1.2;
+        font-weight: 700;
         margin: 0
     }
 
@@ -237,7 +235,7 @@
 
     .yogurt-w1ph0e {
         -webkit-tap-highlight-color: transparent;
-        font-family: "Anek Telugu", sans-serif;
+        font-family: 'Plus Jakarta Sans', sans-serif;
         appearance: none;
         box-sizing: border-box;
         cursor: pointer;
@@ -249,7 +247,7 @@
         line-height: 1;
         text-align: center;
         display: inline-block;
-        color: white;
+        color: rgb(83, 68, 68);
         border: 2px solid transparent;
         padding: 0.3em 1em;
         height: auto;

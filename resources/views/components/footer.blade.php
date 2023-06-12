@@ -7,7 +7,7 @@
                         <img src="/img/logos/logo-no-background.svg" alt="patienceman logo">
                     </a>
                     <span class="self-center mt-2 font-semibold whitespace-nowrap dark:text-white ml-4"
-                        style="font-family: 'Anek Telugu', sans-serif; font-weight: 700; font-size: 30px">
+                        style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 30px">
                         Patienceman
                     </span>
                 </div>

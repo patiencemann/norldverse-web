@@ -1,12 +1,8 @@
 <template>
     <div class="title-tags ml-5">
-        <span>
+        <span class="font-semibold">
             <a @click="findByTag('all')" class="dark:bg-deep-green-800 dark:text-gray-200 dark:hover:text-gray-900">All</a>
-            <div class="search-box">
-                <input type="text" class="dark:bg-deep-green-800 dark:text-gray-200" placeholder="  Search Everything..." v-model="search" @keyup="searchDoc" />
-                <button type="reset"></button>
-            </div>
-            <a v-for="tag in tags" :key="tag" @click="findByTag(tag)" class="dark:bg-deep-green-800 dark:text-gray-200 dark:hover:text-gray-900">
+            <a v-for="tag in tags" :key="tag" @click="findByTag(tag)" class="dark:bg-deep-green-800 font-semibold dark:text-gray-200 dark:hover:text-gray-900">
                 {{ tag }}
             </a>
         </span>
@@ -23,7 +19,6 @@ export default {
     data() {
         return {
             tags: [],
-            search: '',
             isLoading: false
         };
     },
@@ -37,9 +32,6 @@ export default {
         findByTag(tag) {
             this.$root.$emit("loadedDoc", tag);
         },
-        searchDoc() {
-            this.$root.$emit("searchDoc", this.search);
-        }
     },
     mounted() {
         this.getTags();
