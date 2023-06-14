@@ -1,8 +1,8 @@
 <template>
-    <div class="title-tags ml-5">
+    <div class="title-tags ml-5 z-20">
         <span class="font-semibold">
             <a @click="findByTag('all')" class="dark:bg-[#1e293b] dark:text-gray-200 dark:ring-1 dark:ring-[#1e293b] hover:text-[#00bfff]">All</a>
-            <a v-for="tag in tags" :key="tag" @click="findByTag(tag)" class="dark:bg-[#1e293b] dark:text-gray-200 dark:ring-1 dark:ring-[#1e293b] hover:text-[#00bfff]">
+            <a v-for="tag in tags.slice(0, 10)" :key="tag" @click="findByTag(tag)" class="dark:bg-[#1e293b] dark:text-gray-200 dark:ring-1 dark:ring-[#1e293b] hover:text-[#00bfff]">
                 {{ tag }}
             </a>
         </span>
