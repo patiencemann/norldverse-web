@@ -20,7 +20,7 @@
     @endif
 
     <button id="theme-toggle" onclick="toggleDarkMode()" data-tooltip-target="tooltip-toggle" type="button"
-        class="flex mr-4 text-gray-500 dark:bg-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+        class="theme-toggle flex mr-4 text-gray-500 dark:bg-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
         <svg id="theme-toggle-dark-icon" class="w-12 h-12 hidden"
             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="w-12 h-12">
@@ -60,7 +60,7 @@
         </button>
 
         <!-- Dropdown menu -->
-        <div id="dropdownAvatar" class="z-10 hidden bg-gray-50 dark:bg-deep-green-900 divide-y w-80 divide-gray-100 rounded-lg shadow dark:divide-gray-600">
+        <div id="dropdownAvatar" class="z-10 hidden bg-gray-50 dark:bg-deep-green-900 divide-y w-96 divide-gray-100 rounded-lg shadow dark:divide-gray-600">
             <div class="px-4 py-3 text-md font-anek font-semibold text-gray-500 dark:text-white">
                 <div>{{ authUser()->name }}</div>
                 <div class="font-medium truncate">{{ authUser()->email }}</div>

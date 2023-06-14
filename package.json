@@ -29,6 +29,7 @@
     "dependencies": {
         "@kangc/v-md-editor": "^1.7.11",
         "@toast-ui/editor": "^3.2.1",
+        "@vavt/md-editor-extension": "^3.0.0",
         "babel-plugin-prismjs": "^2.1.0",
         "codemirror": "^5.65.13",
         "html2pdf.js": "^0.10.1",

@@ -1,27 +1,19 @@
-<footer class="footer-section global-footer">
-    <div class="footer-wrap global-padding">
-        <div class="footer-container">
-            <div class="footer-content">
-                <div class="footer-logo flex items-center">
-                    <a href="https://blog.patienceman.com" class="is-logo">
-                        <img src="/img/logos/logo-no-background.svg" alt="patienceman logo">
-                    </a>
-                    <span class="self-center mt-2 font-semibold whitespace-nowrap dark:text-white ml-4"
-                        style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 30px">
-                        Patienceman
-                    </span>
+<footer class="footer-section global-footer bg-gray-50 dark:bg-gray-800">
+    <footer class="p-4 bg-gray-50 md:p-8 lg:p-10 dark:bg-gray-800">
+        <div class="mx-auto max-w-screen-xl text-center">
+            <a href="/" data-tooltip-target="tooltip-logo-1" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
+                <div class="cursor-pointer w-20">
+                    <img src="/img/logos/logo-no-background.svg"
+                        alt="patienceman logo">
                 </div>
-                <p class="footer-description ml-4">
-                    When you believe in something so strongly and keep on pushing it so persistently,
-                    somehow you can make the impossible possible. and Ideas in different topics or
-                    fields can often inspire new ideas and broaden the potential solution space.
-                </p>
-            </div>
-
-            <div class="footer-copyright">
-                © <a href="https://blog.patienceman.com">Patienceman</a> 2023. Created and Published by
-                <a href="https://patienceman.com" target="_blank" rel="noopener noreferrer">Manirabona Patience</a>.
-            </div>
+                <div class="app-logo self-center text-gray-600 text-3xl font-bold whitespace-nowrap dark:text-white ml-4">
+                    PATIENCEMAN
+                </div>
+            </a>
+            <p class="my-6 text-gray-500 dark:text-gray-400">
+                Source of dynamic thinking, experiences, or creative work and share your thoughts <br /> with an audience, including technology, tips, personal development, and much more.
+            </p>
+            <span class="text-md text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline dark:text-gray-200 font-semibold">patienceman</a>. All Rights Reserved.</span>
         </div>
-    </div>
+    </footer>
 </footer>

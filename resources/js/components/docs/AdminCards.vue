@@ -30,8 +30,8 @@
                             <a @click="deleteDoc(doc.id)" class="cursor-pointer">Delete</a>
                         </span>
                     </div>
-                    <h2 class="item-title"><a :href="'/docs/'+doc.slug">{{ doc.title }}</a></h2>
-                    <p class="item-excerpt">{{ doc.caption }}</p>
+                    <h2 class="item-title !dark:text-white"><a :href="'/docs/'+doc.slug" class="dark:text-white">{{ doc.title }}</a></h2>
+                    <p class="item-excerpt dark:text-white">{{ doc.caption }}</p>
                 </div>
             </article>
 

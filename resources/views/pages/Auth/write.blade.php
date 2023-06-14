@@ -9,7 +9,7 @@
 @section('content')
     <x-navigation-bar />
 
-    <div class="relative bg-gray-50 overflow-hidden max-h-screen border-t-2">
+    <div class="relative bg-gray-50 overflow-hidden max-h-screen">
         <main class="ml-50 pt-10 max-h-screen overflow-auto dark:bg-gray-900">
             <div class="px-6 py-8">
                 <div class="w-full mx-auto px-24">

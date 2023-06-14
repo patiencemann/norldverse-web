@@ -134,13 +134,13 @@
         flex-direction: column;
         gap: 1rem;
         justify-content: center;
-        max-width: 60rem;
+        width: 50rem;
         padding: 1rem 2rem;
         text-align: center;
         border: 1px solid #dbe0e4;
         position: fixed;
         bottom: 30px;
-        right: 40px;
+        right: 4.5vw;
         z-index: 20;
     }
 
@@ -149,6 +149,35 @@
             flex-direction:row;
             justify-content: flex-start;
             text-align: left
+        }
+    }
+
+    @media (max-width: 1013px) {
+        .share {
+            width: 7rem !important;
+            padding: 3rem 1rem;
+            display: flex;
+        }
+        .share__text {
+            display: none !important;
+        }
+        .share__action {
+            display: none;
+        }
+    }
+
+    @media (max-width: 530px) {
+        .share {
+            width: 30rem !important;
+            padding: 1rem 2rem;
+            display: flex
+        }
+        .yogurt-qo1k2 {
+            display: none !important;
+        }
+        .yogurt-qdsa8 {
+            margin: none !important;
+            color: white !important;
         }
     }
 

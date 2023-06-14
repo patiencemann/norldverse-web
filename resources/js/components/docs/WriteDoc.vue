@@ -1,26 +1,46 @@
     <template>
-        <div class="bg-gray-50 dark:bg-gray-700 rounded-3xl p-10 mb-5">
+        <div class="bg-gray-50 dark:bg-[#10172a] rounded-3xl p-10 mb-5 border border-gray-200 dark:border-gray-400">
             <form @submit.prevent="createDoc()" @keypress.enter.prevent="" enctype="multipart/form-data">
 
                 <!-- Title -->
                 <div class="mb-6 mt-2">
-                    <label for="helper-text" class="block mb-4 text-sm font-anek text-gray-900 dark:text-white font-bold" style="font-size: 20px">Your Title </label>
-                    <input  style="font-size: 22px" type="text" id="helper-text" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="data.title" placeholder="Title">
-                    <p style="font-size: 18px" id="helper-text-explanation" class="mt-4 text-sm text-gray-500 dark:text-gray-400">Add your Blog/doc title</p>
+                    <div class="inline-flex mb-3 shadow-sm items-center justify-between pl-3 py-2 pr-4 text-md text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white" aria-label="Component requires Tailwind v3.0">
+                        <span class="text-xs bg-white dark:bg-gray-900 rounded-full text-gray-900 px-3 py-1.5 mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                            </svg>
+                        </span>
+                        <span class="text-md font-bold">Title</span>
+                    </div>
+                    <input  style="font-size: 18px" type="text" class="bg-gray-50 border border-gray-200 text-gray-900 text-sm rounded-[0.7rem] focus:ring-blue-500 focus:border-blue-500 block w-full py-[1rem] px-[1.5rem] leading-[1.5rem] text-[1rem] dark:bg-[#10172a] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="data.title" placeholder="Add Title">
+                    <p style="font-size: 14px !important" class="mt-3 font-semibold text-sm text-gray-400 dark:text-gray-400">Add your Blog/doc title</p>
                 </div>
 
                 <!-- Caption -->
                 <div class="mb-6 mt-5">
-                    <label for="helper-text" class="block mb-4 text-sm font-anek font-bold text-gray-900 dark:text-white" style="font-size: 19px">Your Caption</label>
-                    <input  style="font-size: 22px" type="text" id="helper-text" aria-describedby="helper-text-explanation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="data.caption" placeholder="Descriptive Caption">
-                    <p style="font-size: 18px" id="helper-text-explanation" class="mt-4 text-sm text-gray-500 dark:text-gray-400">Short description about the blog</p>
+                    <div class="inline-flex mb-3 shadow-sm items-center justify-between pl-3 py-2 pr-4 text-md text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white" aria-label="Component requires Tailwind v3.0">
+                        <span class="text-xs bg-white dark:bg-gray-900 rounded-full text-gray-900 px-3 py-1.5 mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                            </svg>
+                        </span>
+                        <span class="text-md font-bold">Description / Caption</span>
+                    </div>
+                    <input style="font-size: 18px" type="text" id="helper-text"  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-[0.7rem] focus:ring-blue-500 focus:border-blue-500 block w-full py-[1rem] px-[1.5rem] leading-[1.5rem] text-[1rem] dark:bg-[#10172a] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" v-model="data.caption" placeholder="Descriptive Caption">
+                    <p style="font-size: 14px !important" class="mt-4 text-sm text-gray-400 font-semibold dark:text-gray-400">Short description about the blog</p>
                 </div>
 
-                <hr class="w-full h-1 mx-auto my-6 bg-gray-500 border-0 rounded md:my-10 dark:bg-gray-700">
-
                 <!-- File input -->
-                <div class="flex items-center justify-center w-full">
-                    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                <div class="mt-5 mb-6">
+                    <div class="inline-flex mb-3 shadow-sm items-center justify-between pl-3 py-2 pr-4 text-md text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white" aria-label="Component requires Tailwind v3.0">
+                        <span class="text-xs bg-white dark:bg-gray-900 rounded-full text-gray-900 px-3 py-1.5 mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                            </svg>
+                        </span>
+                        <span class="text-md font-bold">Cover image</span>
+                    </div>
+                    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-[#10172a] hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                         <div class="flex flex-col items-center justify-center pt-5 pb-6">
                             <svg
                                 aria-hidden="true"
@@ -54,11 +74,16 @@
                     </label>
                 </div>
 
-                <hr class="w-full h-1 mx-auto my-6 bg-gray-500 border-0 rounded md:my-10 dark:bg-gray-700">
-
                 <!-- Topics -->
-                <label for="helper-text" class="block mb-4 text-sm font-anek font-bold text-gray-900 dark:text-white" style="font-size: 19px">Add Related topics</label>
-                <div class="mt-3 mb-3">
+                <div class="mt-5 mb-6">
+                    <div class="inline-flex mb-3 shadow-sm items-center justify-between pl-3 py-2 pr-4 text-md text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white" aria-label="Component requires Tailwind v3.0">
+                        <span class="text-xs bg-white dark:bg-gray-900 rounded-full text-gray-900 px-3 py-1.5 mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                            </svg>
+                        </span>
+                        <span class="text-md font-bold">Story Tags</span>
+                    </div>
                     <span v-for="topic in data.selectedTopics" :key="topic" id="badge-dismiss-default" class="inline-flex items-center px-4 py-2 mr-2 font-bold text-1xl text-blue-800 bg-blue-100 rounded dark:bg-blue-900 dark:text-blue-300">
                         {{ topic }}
                         <button type="button" @click="removeTopic(topic)" class="inline-flex items-center p-0.5 ml-2 text-sm text-blue-400 bg-transparent rounded-sm hover:bg-blue-200 hover:text-blue-900 dark:hover:bg-blue-800 dark:hover:text-blue-300" data-dismiss-target="#badge-dismiss-default" aria-label="Remove">
@@ -66,34 +91,43 @@
                             <span class="sr-only">Remove topic</span>
                         </button>
                     </span>
-                </div>
-                <div class="mb-6 mt-2">
                     <input
                         type="text"
                         style="font-size: 17px"
-                        class="bg-gray-50 border border-none text-gray-900 text-md rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        class="bg-gray-50 border border-none text-gray-900 text-md rounded-[0.7rem] focus:ring-green-500 focus:border-green-500 block w-full py-[1rem] px-[1.5rem] leading-[1.5rem] text-[1rem] dark:bg-[#10172a] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Ex: economics"
                         v-model="data.topic"
                         @keyup.space="onNewTopicEnter"
                         @focus="cleanTopicPlaceholder"
                         @keypress.enter="onNewTopicEnter"
                     />
-                    <p style="font-size: 18px" id="helper-text-explanation" class="mt-4 text-sm text-gray-500 dark:text-gray-400">Ex: economic, applications, etc...</p>
+                    <p style="font-size: 14px !important" class="mt-3 text-sm text-gray-400 font-semibold dark:text-gray-400">Ex: economic, applications, etc...</p>
                 </div>
 
                 <!-- Rich text area -->
-                <div class="mb-6 mt-6">
+                <div class="mb-6 mt-5">
+                    <div class="inline-flex mb-3 shadow-sm items-center justify-between pl-3 py-2 pr-4 text-md text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white" aria-label="Component requires Tailwind v3.0">
+                        <span class="text-xs bg-white dark:bg-gray-900 rounded-full text-gray-900 px-3 py-1.5 mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+                            </svg>
+                        </span>
+                        <span class="text-md font-bold">Write Your story</span>
+                    </div>
                     <v-md-editor
                         height="600px"
-                        v-model="data.contents">
+                        v-model="data.contents"
+                        placeholder="Support Markdown"
+                        :include-level="[3, 4]"
+                        left-toolbar=""
+                        right-toolbar=""
+                        :toolbar="null">
                     </v-md-editor>
                 </div>
 
-                <hr class="w-full h-1 mx-auto my-4 bg-gray-500 border-0 rounded md:my-10 dark:bg-gray-700" />
-
                 <div class="mt-5 flex justify-between items-center">
-                    <button type="submit" id="submit-doc-btn" class="text-white text-center border border-none bg-green-800 hover:bg-green-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-bold rounded-full text-md px-4 py-3 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
-                        Publish Now
+                    <button type="submit" id="submit-doc-btn" class="text-white text-center border border-none bg-green-800 hover:bg-green-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-bold rounded-full text-md px-5 py-3 mr-2 mb-2 dark:bg-indigo-700 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+                        Publish
                     </button>
                     <button type="button" @click="saveInDraft" class="text-white text-center border border-none bg-gray-400 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-bold rounded-full text-md px-4 py-3 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
                         Save as draft
@@ -108,6 +142,26 @@
             <alert :hasResponse="hasResponse" :response="response" :responseType="responseType" />
         </div>
     </template>
+
+    <style>
+        .v-md-editor {
+            box-shadow: none !important;
+            border: 1px solid #dee2e6;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .v-md-editor__toolbar {
+            padding: 6px 10px !important;
+        }
+
+        .v-md-editor__toolbar {
+            display: none !important;
+        }
+
+        .v-md-editor__editor-wrapper {
+            border: none !important;
+            border-right: none !important;
+        }
+    </style>
 
     <script>
         import axios from "axios";
@@ -176,7 +230,7 @@
                     data: {
                         title: "",
                         caption: "",
-                        contents: "",
+                        contents: "## Start writing",
                         image: '',
                         selectedTopics: [],
                         topic: ''

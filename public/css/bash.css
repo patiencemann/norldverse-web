@@ -314,7 +314,7 @@ body .is-partial-color:not(.is-partial-dark) {
     text-transform: capitalize;
 }
 .title-tags a:hover {
-    background-color: var(--color-two);
+    color: #00bfff;
 }
 .title-tags a,
 .title-tags > svg {
@@ -1386,9 +1386,8 @@ body .is-partial-color:not(.is-partial-dark) {
 .footer-section {
     width: 100%;
     color: var(--color-font-one);
-    background-color: #fff;
     margin-top: 0px !important;
-    border-top: var(--border) var(--color-border-one);
+    border-top: var(--border) #dee2e6;
     padding: 30px 0px 10px 0px;
 }
 .footer-wrap {
@@ -1782,26 +1781,8 @@ blockquote.format:after {
         border-top: 2px solid #00cc8f;
         border-bottom: 2px solid #00cc8f;
         border-left: none;
-        margin: 1.5em 0;
+        margin: 10px 0px !important;
         padding: 1.5em 1em;
-    }
-    .post-content blockquote:before {
-        left: 50%;
-        top: 0;
-        height: 4px;
-        margin-top: -3px;
-        margin-left: -1em;
-        width: 2em;
-    }
-    .post-content blockquote:after {
-        font-size: 0.75em;
-        left: 50%;
-        top: 0;
-        margin-top: -0.5em;
-        margin-left: -0.5em;
-    }
-    .post-content blockquote cite {
-        text-align: right;
     }
 }
 

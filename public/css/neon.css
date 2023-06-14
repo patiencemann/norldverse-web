@@ -35,13 +35,13 @@
 .header-inner {
     background-color: var(--card-background-color);
     padding: 2rem 2.5rem;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: var(--shadow);
     align-items: center;
 }
 
 .header-inner .app-logo {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 800;
     margin-left: 2rem;
 }
@@ -99,4 +99,17 @@
 }
 [data-nav="sticky-hide"] .js-mobile-menu-opened .site-header.hide {
     transform: none;
+}
+
+
+@media (max-width: 1013px) {
+    .search-wrapper {
+        display: none !important;
+    }
+}
+
+@media (max-width: 530px) {
+    .theme-toggle {
+        display: none !important;
+    }
 }

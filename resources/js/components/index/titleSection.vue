@@ -2,7 +2,7 @@
     <div class="loop-subtitle">
         <small class="loop-subtitle-title global-title dark:text-gray-200 font-anek">
             See what has been<br>
-            <span class="text-[#50217b] font-semibold">Written Lately</span>
+            <span class="text-[#50217b] dark:text-[#7123bb] font-semibold">Written Lately</span>
         </small>
         <div class="global-authors" v-if="Object.keys(uniqueUser).length > 3">
             <div>

@@ -9,10 +9,10 @@
 @section('content')
     <x-navigation-bar />
 
-    <div class="relative py-16 bg-gradient-to-br  dark:bg-gray-900">
+    <div class="relative py-16 dark:bg-gray-900">
         <div class="relative container m-auto px-6 text-gray-500 md:px-12 xl:px-40">
             <div class="m-auto md:w-8/12 lg:w-6/12 xl:w-6/12">
-                <div class="rounded-xl  shadow-xl dark:bg-gray-700">
+                <div class="rounded-xl shadow-md dark:bg-gray-700 ">
 
                     <div class="p-6 sm:p-16">
                         <div class="space-y-4 text-center">
