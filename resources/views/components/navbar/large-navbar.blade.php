@@ -60,7 +60,7 @@
         </button>
 
         <!-- Dropdown menu -->
-        <div id="dropdownAvatar" class="z-10 hidden bg-gray-50 dark:bg-deep-green-900 divide-y w-96 divide-gray-100 rounded-lg shadow dark:divide-gray-600">
+        <div id="dropdownAvatar" class="z-50 hidden bg-gray-50 dark:bg-deep-green-900 divide-y w-96 divide-gray-100 rounded-lg shadow dark:divide-gray-600">
             <div class="px-4 py-3 text-md font-anek font-semibold text-gray-500 dark:text-white">
                 <div>{{ authUser()->name }}</div>
                 <div class="font-medium truncate">{{ authUser()->email }}</div>
