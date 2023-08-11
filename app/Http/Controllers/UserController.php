@@ -2,18 +2,22 @@
 
     namespace App\Http\Controllers;
 
+    use App\Http\Requests\NewsletterRequest;
     use App\Http\Requests\StoreClientRequest;
     use App\Http\Requests\StoreUserRequest;
-use App\Http\Requests\UpdateUserProfileRequest;
-use App\Http\Requests\UserLoginRequest;
+    use App\Http\Requests\UpdateUserProfileRequest;
+    use App\Http\Requests\UserLoginRequest;
     use App\Http\Resources\Private\UserResource as PrivateUserResource;
     use App\Http\Resources\Public\UserResource as PublicUserResource;
+use App\Mail\NewsletterEmail;
+use App\Models\Newsletter;
     use App\Models\Role;
     use App\Models\User;
     use App\Models\UserRequest;
     use App\Services\AuthService;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Hash;
+    use Illuminate\Support\Facades\Mail;
     use Laravel\Passport\ClientRepository;
 
     class UserController extends Controller {
@@ -75,7 +79,7 @@ use App\Http\Requests\UserLoginRequest;
         }
 
         /**
-         * Create user
+         * register newly user
          *
          * @param ClientRepository $clients
          * @param StoreClientRequest $request
@@ -98,6 +102,29 @@ use App\Http\Requests\UserLoginRequest;
                 "data" => PrivateUserResource::make($user),
                 "access_token" => AuthService::accessToken($user)
             ], 200);
+        }
+
+        /**
+         * Register new newsletter
+         *
+         * @param NewsletterRequest $request
+         * @return JsonResponse
+         */
+        public function newsletters(NewsletterRequest $request) {
+            if(Newsletter::where('email', $request->email)->exists()){
+                return response()->json([
+                    'message' => "You've already subscribed"
+                ], 400);
+            }
+
+            $newsletter = Newsletter::create($request->validated());
+
+            $emailData = ['title' => 'Stay in the know with Patienceman Newsletter!'];
+            Mail::to($newsletter->email)->send(new NewsletterEmail($emailData));
+
+            return response()->json([
+                'message' => "Thank for subscribe to our newsletter"
+            ], 201);
         }
 
         /**

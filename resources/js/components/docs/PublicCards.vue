@@ -5,7 +5,7 @@
         </div>
         <div class="loop-wrap">
             <article class="item is-loop is-image" v-for="doc in docs" :key="doc.id">
-                <div class="item-image global-image global-image-orientation global-radius is-landscape bg-gray-300">
+                <div :class="'item-image global-image global-image-orientation global-radius is-landscape bg-gray-300'">
                     <a :href="'/docs/'+doc.slug" class="global-link" :aria-label="doc.title"></a>
                     <img v-lazy="doc.media.file_url" :src="doc.media.file_url" loading="lazy" :alt="doc.title"
                         :srcset="doc.media.file_url+' 300w,'+ doc.media.file_url+' 600w,'+ doc.media.file_url+' 1200w'"
@@ -27,6 +27,10 @@
                                 </svg>
                                 <span class="sr-only">Like this</span>
                             </button>
+                            <button type="button" :class="'bg-white font-bold text-black animate-pulse z-10 hover:bg-blue-200 shadow-sm ring-4 ring-gray-300 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-sm p-2.5 inline-flex items-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'">
+                                {{ doc.likes }}
+                                <span class="sr-only">Like this</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -39,7 +43,6 @@
                                 <read-time :text="doc.contents" />
                             </a>
 
-                            <a data-tooltip-placement="top" data-tooltip-target="tooltip-likes" class="font-anek cursor-pointer font-bold text-gray-500">{{ doc.likes }} likes</a>
                             <div id="tooltip-likes" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
                                 Login in and likes
                                 <div class="tooltip-arrow" data-popper-arrow></div>

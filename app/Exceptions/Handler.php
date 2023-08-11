@@ -3,7 +3,8 @@
     namespace App\Exceptions;
 
     use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-    use Throwable;
+use Illuminate\Support\Facades\App;
+use Throwable;
 
     class Handler extends ExceptionHandler {
         /**
@@ -32,10 +33,12 @@
          * @return void
          */
         public function register() {
-            $this->reportable(function (Throwable $e) {
-                if (app()->bound('sentry')) {
-                    app('sentry')->captureException($e);
-                }
-            });
+            if (!App::environment(['local', 'staging'])) {
+                $this->reportable(function (Throwable $e) {
+                    if (app()->bound('sentry')) {
+                        app('sentry')->captureException($e);
+                    }
+                });
+            }
         }
     }

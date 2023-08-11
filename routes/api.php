@@ -25,6 +25,7 @@
      */
     Route::post('/users/login', [UserController::class, 'login'])->name('post.login.user');
     Route::post('/users/create', [UserController::class, 'createUser'])->name('post.create.user');
+    Route::post('/newsletters', [UserController::class, 'newsletters'])->name('post.create.newsletters');
     Route::get('/vistors', [UserController::class, 'trustedUser'])->name('get.v.users');
 
     /**
@@ -33,6 +34,7 @@
      * ---------------------------
      */
     Route::get('/public/docs', [DocController::class, 'public'])->name('get.docs');
+    Route::get('/public/related/docs/{doc}', [DocController::class, 'relatedStories'])->name('get.related.docs');
     Route::get('/public/doc-tags', [DocController::class, 'tags'])->name('get.tags');
 
     /**

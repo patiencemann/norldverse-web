@@ -309,4 +309,7 @@
             </div>
         </div>
     </section>
+
+    <div><newsletter-card /></div>
+    <div><card-slider story_id="{{ $doc->id }}" /></div>
 @endsection

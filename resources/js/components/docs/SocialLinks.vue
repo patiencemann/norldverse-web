@@ -270,13 +270,13 @@
         cursor: pointer;
         font-size: 16px;
         text-decoration: none;
-        background: #c2bfca;
+        background: #24292F;
         border-radius: 80px;
         font-weight: 600;
         line-height: 1;
         text-align: center;
         display: inline-block;
-        color: rgb(83, 68, 68);
+        color: white !important;
         border: 2px solid transparent;
         padding: 0.3em 1em;
         height: auto;

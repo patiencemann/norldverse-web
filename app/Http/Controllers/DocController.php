@@ -6,13 +6,19 @@
     use App\Http\Requests\StoreDocRequest;
     use App\Http\Resources\Public\DocResource as PublicDocResource;
     use App\Http\Resources\Private\DocResource as PrivateDocResource;
+    use App\Jobs\ProcessNewDocEmails;
     use App\Models\Doc;
     use App\Models\DocTopic;
     use App\Notifications\DatabaseNotification;
+    use App\Traits\FileStorage;
     use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
+    use Illuminate\Support\Facades\App;
+    use Illuminate\Support\Facades\Mail;
     use Patienceman\Notifier\Notifier;
 
     class DocController extends Controller {
+        use FileStorage;
+
         /**
          * Display a listing of the resource.
          *
@@ -24,7 +30,7 @@
             );
         }
 
-         /**
+        /**
          * Display a listing of the resource.
          *
          * @return \Illuminate\Http\Response
@@ -40,6 +46,21 @@
         }
 
         /**
+         * Display a related of the resource.
+         *
+         * @return \Illuminate\Http\Response
+         */
+        public function relatedStories(Doc $doc) {
+            $tagNames = $doc->docTopic->topics;
+
+            $relatedDocs = Doc::whereHas('docTopic', function ($query) use ($tagNames) {
+                $query->orWhereJsonContains('topics', $tagNames);
+            })->where('id', '!=', $doc->id)->get();
+
+            return PublicDocResource::collection($relatedDocs);
+        }
+
+        /**
          * Store a newly created resource in storage.
          *
          * @param  StoreDocRequest $request
@@ -48,8 +69,10 @@
         public function store(StoreDocRequest $request) {
             $imageFile = Cloudinary::uploadFile(
                 $request->file('image')->getRealPath(),
-                $options = array('public_id' => 'patienceman-docs/' . $request->image)
-            )->getSecurePath();
+                $options = array(
+                    'public_id' => 'patienceman-docs/' . $request->image,
+                    'folder' => (!App::environment(['local', 'staging'])) ? 'patienceman-docs-prod' : 'patienceman-docs-test'
+            ))->getSecurePath();
 
             $doc = authUser()->docs()->create($request->validated());
             $doc->docMedia()->create(['file_url' => $imageFile]);
@@ -63,10 +86,12 @@
                 ])->to(authUser())
             ]);
 
+            ProcessNewDocEmails::dispatch($doc);
+
             return response()->json([
                 'data' => PrivateDocResource::make($doc),
-                'message' => "Doc Created/Posted successfully"
-            ], 200);
+                'message' => "Doc published successfully"
+            ], 201);
         }
 
         /**
@@ -99,8 +124,10 @@
         public function update(StoreDocRequest $request, Doc $doc) {
             $imageFile = Cloudinary::uploadFile(
                 $request->file('image')->getRealPath(),
-                $options = array('public_id' => 'patienceman-docs/' . $request->image)
-            )->getSecurePath();
+                $options = array(
+                    'public_id' => 'patienceman-docs/' . $request->image,
+                    'folder' => (!App::environment(['local', 'staging'])) ? 'patienceman-docs-prod' : 'patienceman-docs-test'
+            ))->getSecurePath();
 
             $doc->update($request->validated());
             $doc->docMedia()->update([ 'file_url' => $imageFile ]);
