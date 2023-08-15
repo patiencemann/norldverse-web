@@ -13,7 +13,6 @@
     use App\Traits\FileStorage;
     use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
     use Illuminate\Support\Facades\App;
-    use Illuminate\Support\Facades\Mail;
     use Patienceman\Notifier\Notifier;
 
     class DocController extends Controller {

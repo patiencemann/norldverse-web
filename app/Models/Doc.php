@@ -28,6 +28,13 @@
             'status'
         ];
 
+        protected $with = [
+            'docComments',
+            'docMedia',
+            'docTopic',
+            'likes'
+        ];
+
         /**
          * Doc belongs to user
          *

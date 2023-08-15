@@ -1,14 +1,11 @@
 <template>
     <div class="notifications">
-        <button @click="readNotifications" id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification" data-tooltip-target="tooltip-notification"
-            type="button"
-            class="hidden sm:inline-block mr-4 relative text-gray-500 dark:bg-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
-
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+        <button @click="readNotifications" id="dropdownNotificationButton" data-dropdown-toggle="dropdownNotification" data-tooltip-target="tooltip-notification" type="button" class="hidden sm:inline-block mr-4 relative text-gray-500 dark:bg-gray-700 dark:text-gray-400 bg-gray-100 hover:bg-gray-200 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-full text-sm p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-9 h-9">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
             </svg>
 
-            <span v-if="count > 0" class="absolute inline-flex items-center justify-center w-8 h-8 text-md font-bol font-anek text-white bg-red-500 border-2 border-white rounded-full -top-1 -right-2 dark:border-gray-900">
+            <span v-if="count > 0" class="absolute inline-flex items-center justify-center w-8 h-8 text-md font-bol font-calistoga text-white bg-red-500 border-2 border-white rounded-full -top-1 -right-2 dark:border-gray-900">
                 {{ count }}
             </span>
         </button>
@@ -21,7 +18,7 @@
         </div>
 
         <div id="dropdownNotification" class="notification-model z-20 hidden bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-deep-green-900 dark:divide-gray-700" aria-labelledby="dropdownNotificationButton">
-            <div class="block px-4 py-2 font-semibold font-anek text-center text-gray-700 rounded-t-lg bg-gray-50 dark:bg-gray-800 dark:text-white">
+            <div class="block px-4 py-2 font-calistoga font-semibold text-center text-gray-700 rounded-t-lg bg-gray-50 dark:bg-gray-800 dark:text-white">
                 Notifications
             </div>
             <div class="divide-y divide-gray-100 dark:divide-gray-700">
@@ -33,8 +30,8 @@
                         </div>
                     </div>
                     <div class="pl-3">
-                        <div class="notification-message text-gray-500 text-md font-anek mb-1.5 dark:text-gray-400"><strong>{{ notification.header }}</strong>: {{ notification.message }}</div>
-                        <div class="text-sm font-anek text-gray-600 dark:text-blue-500">{{ notification.created_at }}</div>
+                        <div class="notification-message text-gray-500 text-md mb-1.5 dark:text-gray-400 font-calistoga"><strong>{{ notification.header }}</strong>: {{ notification.message }}</div>
+                        <div class="text-sm font-calistoga text-gray-600 dark:text-blue-500">{{ notification.created_at }}</div>
                     </div>
                 </a>
                 <div v-if="isLoading" class="absolute top-0 right-0 left-0 bottom-0 w-full h-full bg-gray-50 flex items-center justify-center">

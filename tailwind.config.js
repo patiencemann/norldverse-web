@@ -26,7 +26,8 @@ module.exports = {
     theme: {
         extend: {},
         fontFamily: {
-            'anek': ['"Anek Telugu"', 'sans-serif']
+            'anek': ['"Anek Telugu"', 'sans-serif'],
+            'calistoga': ['"Calistoga"', 'cursive']
         },
         "colors": colors
     },

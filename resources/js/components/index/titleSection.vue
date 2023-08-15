@@ -1,8 +1,8 @@
 <template>
     <div class="loop-subtitle relative">
-        <small class="loop-subtitle-title global-title text-gray-700 dark:text-gray-200">
-            See what has been<br />
-            <span class="text-[#50217b]/90 dark:text-[#7123bb]">Written Lately</span>
+        <small class="loop-subtitle-title text-center global-title text-gray-700 dark:text-gray-200">
+            See what has been found 🔭<br /> and 📚
+            <span class="text-[#50217b]/90 dark:text-[#7123bb]">Written Lately.</span>
         </small>
         <div class="global-authors" v-if="Object.keys(uniqueUser).length > 3">
             <div>

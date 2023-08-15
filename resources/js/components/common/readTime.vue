@@ -1,7 +1,5 @@
 <template>
-    <div id="w-node-_50a8a0ce-14cc-e732-021c-a2cc147308a1-fdadf31b" class="text-size-xsmall text-color-primary-2 text-style-allcaps">
-        {{ timeToRead }} minute read
-    </div>
+    <span>{{ timeToRead }} minute read</span>
 </template>
 
 <script>

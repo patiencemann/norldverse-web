@@ -1,9 +1,9 @@
 <template>
     <div id="slide-wrapper">
-        <div class="featured-section">
-            <div class="global-padding">
+        <div class="featured-section dark:bg-[#10172a]">
+            <div class="global-padding dark:bg-[#10172a]">
               <div class="featured-subtitle global-subtitle">
-                <small class="global-subtitle-title">Explore more related <span>best stories</span></small>
+                <small class="global-subtitle-title font-calistoga dark:text-gray-200">Explore more related <span>best stories</span></small>
               </div>
               <div class="featured-wrap flickity-enabled is-draggable" tabindex="0">
                 <div class="flickity-viewport" style="height: 468.93px; touch-action: pan-y">
@@ -44,12 +44,12 @@
                                         <div class="item-tags global-tags">
                                             <span><a v-for="topic in item.topics.topics.slice(0, 2)" :key="topic">{{ topic }}</a></span>
                                         </div>
-                                        <h2 class="item-title">
-                                            <a :href="'/docs/'+item.slug">
+                                        <h2 class="item-title dark:text-gray-200">
+                                            <a :href="'/docs/'+item.slug" class="dark:text-gray-200">
                                                {{ item.title }}
                                             </a>
                                         </h2>
-                                        <p class="item-excerpt">{{ item.caption }}</p>
+                                        <p class="item-excerpt dark:text-gray-200">{{ item.caption }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
         max-width: 1400px;
         margin-left: auto;
         margin-right: auto;
-        padding: 80px 24px;
+        padding: 20px 24px 80px 24px;
     }
 
     @media (min-width: 1200px) {

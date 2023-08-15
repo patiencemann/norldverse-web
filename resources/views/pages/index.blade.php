@@ -13,9 +13,9 @@
 
     <meta data-rh="true" name="title" content="Patienceman">
     <meta data-rh="true" name="description"
-        content="Patienceman blogs are online platform where you can find dynamic thinking, experiences, or creative work and share your thoughts with an audience, including technology, tips, personal development, and much more.">
+        content="Patienceman-blogs: online website where you can find dynamic thinking, experiences, or creative work including technology, tips, personal development, and much more.">
     <meta data-rh="true" name="keywords"
-        content="manirabona, patience, manirabona patience, patienceman, personal blog, blogs, docs" />
+        content="manirabona, patience, manirabona patience, patienceman, personal blog, blogs, docs, patienceman blogs, blogs" />
     <meta data-rh="true" property="article:published_time" content="May 01 2023">
     <meta data-rh="true" property="article:author" content="{{ env('APP_URL') }}">
     <meta data-rh="true" name="robots" content="index,follow,max-image-preview:large">

@@ -10,7 +10,7 @@
                 <div class="flex justify-between items-center">
                     <a href="/" class="flex" data-tooltip-target="tooltip-logo-1">
                         <div class="cursor-pointer w-20">
-                            <img src="/img/logos/logo-no-background.svg"
+                            <img src="/img/logos/logo-black.png"
                                 alt="patienceman logo">
                         </div>
                         <div class="app-logo self-center text-gray-600 text-3xl font-bold whitespace-nowrap dark:text-white ml-4">
