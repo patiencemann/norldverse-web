@@ -2585,7 +2585,7 @@ body .is-partial-color:not(.is-partial-dark) {
 .comment-container {
     max-width: var(--max-width-post-wrap);
     margin: 0 auto 14vh;
-    padding: 30px 0px 10px 0px;
+    padding: 30px 0px 30px 0px;
     font-family: var(--font-family-system);
 }
 .comments-section {
