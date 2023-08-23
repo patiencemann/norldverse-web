@@ -1,5 +1,7 @@
-## [Blog | Patienceman](https://blog.patienceman.com/)
-Patienceman blogs are online platform where you can find dynamic thinking, experiences, or creative work and share your thoughts with an audience, including technology, tips, personal development, and much more.
+## [Norldverse | Patienceman](https://blog.patienceman.com/)
+<img width="1433" alt="Screenshot 2023-08-23 at 4 10 05 PM" src="https://github.com/patiencemann/norldverse-web/assets/55847682/fdee7f97-01c7-4f4d-b199-06c8dd11519f">
+Patienceman blogs are online platform where you can find dynamic thinking, experiences, or creative work and share your thoughts with an audience, including technology, tips, personal developmen
+t, and much more.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
