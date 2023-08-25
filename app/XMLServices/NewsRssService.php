@@ -15,7 +15,7 @@
             ]);
 
             $this->element($this->root, 'channel', '', fn($node) => $this
-                ->element($node, 'title', 'Patienceman Blogs')
+                ->element($node, 'title', 'Norldverse')
                 ->element($node, 'link', '', fn($node) => $node->appendChild(new DOMCdataSection(env('APP_URL'))))
                 ->element($node, 'description', 'a web blog featuring JavaScript, PHP, vue js, Laravel, packages, and everything else for software development and also personal developments.')
                 ->element($node, 'language', 'en')

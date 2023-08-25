@@ -35,7 +35,7 @@
         props: {
             contents: {
                 type: String,
-                default: '### patienceman shared content loading',
+                default: '### Norldverse shared content loading',
             },
         }
     };

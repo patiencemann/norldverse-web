@@ -75,7 +75,7 @@
                         'image_url' => $doc->docMedia->file_url,
                         'html' => $converter->convert($doc->contents)->getContent(),
                         'author' => $doc->user->email.' ('.$doc->user->name.')',
-                        'category' => 'Patienceman Blogs'
+                        'category' => 'Norldverse'
                     ]));
                 }
 

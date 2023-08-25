@@ -21,7 +21,7 @@
     tabindex="-1" aria-labelledby="drawer-navigation-label">
     <a href="/" class="flex mt-5" data-tooltip-target="tooltip-logo-1">
         <div class="cursor-pointer w-20">
-            <img src="/img/logos/logo-no-background.svg" alt="Patienceman Logo">
+            <img src="/img/logos/logo-no-background.svg" alt="Norldverse Logo">
         </div>
     </a>
     <div class="py-4 overflow-y-auto">

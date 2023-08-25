@@ -91,7 +91,7 @@
                     enableLinks: true,
                     pagebreak: { mode: 'avoid-all', before: '#page_brak_post_content' },
                     image: { type: 'jpeg', quality: 0.98 },
-                    filename: this.page_title+'-from-patienceman.com.pdf',
+                    filename: this.page_title+'-from-norldverse.pdf',
                 };
 
                 html2pdf(document.getElementById("downloadable"), options);

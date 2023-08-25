@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Auth;
         function defaultProvider() {
             return (Object) [
                 'id' => rand(1, 999999),
-                'name' => 'patienceman',
+                'name' => 'norldverse',
                 'token' => Hash::make(Str::random(10)),
                 'remember_token' => Hash::make(Str::random(10)),
             ];

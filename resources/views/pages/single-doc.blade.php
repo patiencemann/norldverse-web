@@ -12,14 +12,14 @@
     <meta name="description" content="{{ $doc->caption }}">
     <meta name='keywords' content='@foreach ($doc->docTopic->topics as $topic) {{ $topic."," }} @endforeach'>
     <meta name='subject' content=''>
-    <meta name='copyright' content='Patienceman Blogs'>
+    <meta name='copyright' content='Norldverse'>
     <meta name='language' content='ES'>
     <meta name='robots' content='index,follow'>
     <meta name='revised' content='Sunday, June 12th, 2023'>
     <meta name='abstract' content=''>
     <meta name='topic' content="{{ $doc->title }}">
     <meta name='summary' content="{{ $doc->caption }}">
-    <meta name='Classification' content='Personal Blogs'>
+    <meta name='Classification' content='blogging'>
     <meta name='author' content='{{ $doc->user->name }}, {{ $doc->user->email }}'>
     <meta name='designer' content='{{ $doc->user->name }}'>
     <meta name='reply-to' content='{{ $doc->user->email }}'>
@@ -54,11 +54,11 @@
     <meta property='og:type' content='article'>
     <meta property='og:url' content='{{ env('APP_URL')."/docs/".$doc->slug }}'>
     <meta property='og:image' content='{{ $doc->docMedia->file_url }}'>
-    <meta property='og:site_name' content='Patienceman-blogs'>
+    <meta property='og:site_name' content='Norldverse'>
     <meta property='og:description' content='{{ $doc->caption }}'>
 
     <meta property='fb:page_id' content='43929265776'>
-    <meta property='application-name' content='Patienceman-blogs'>
+    <meta property='application-name' content='Norldverse'>
     <meta property='og:email' content='{{ $doc->user->email }}'>
 
     <meta property='og:latitude' content='-1.9584038'>
@@ -70,7 +70,7 @@
     <meta property='og:country-name' content='RW'>
 
     <meta property='twitter:card' content='summary_large_image'>
-    <meta property='twitter:site' content='Patienceman-blogs'>
+    <meta property='twitter:site' content='Norldverse'>
     <meta property='twitter:creator' content='{{ $doc->user->name }}'>
     <meta property='twitter:description' content='{{ $doc->caption }}'>
     <meta property='twitter:title' content='{{ $doc->title }}'>
@@ -107,7 +107,7 @@
     <meta data-rh="true" name="referrer" content="safe-url">
 
     <link data-rh="true" rel="canonical" href="{{ env('APP_URL')."/docs/".$doc->slug }}">
-    <link rel="alternate" type="application/rss+xml" title="Patienceman - blogs &raquo; Feed" href="{{ env('APP_URL').'/feed.xml' }}" />
+    <link rel="alternate" type="application/rss+xml" title="Norldverse - blogs &raquo; Feed" href="{{ env('APP_URL').'/feed.xml' }}" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHRK59S1F7"></script>

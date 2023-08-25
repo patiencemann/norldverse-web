@@ -51,7 +51,7 @@
 
             (new Notifier())->send([
                 DatabaseNotification::process([
-                    "subject" => "Welcome to patienceman - blogs",
+                    "subject" => "Welcome to Norldverse - blogs",
                     "message" => "You account have been created, you can view different written stories or request to become a writter",
                     'action' => "/"
                 ])->to($user)

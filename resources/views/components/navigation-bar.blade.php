@@ -11,17 +11,17 @@
                     <a href="/" class="flex" data-tooltip-target="tooltip-logo-1">
                         <div class="cursor-pointer w-20">
                             <img src="/img/logos/logo-black.png"
-                                alt="patienceman logo">
+                                alt="Norldverse logo">
                         </div>
                         <div class="app-logo self-center text-gray-600 text-3xl font-bold whitespace-nowrap dark:text-white ml-4">
-                            PATIENCEMAN
+                            NORLDVERSE
                         </div>
                     </a>
                     <div id="tooltip-logo-1" role="tooltip"
                         class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip"
                         data-popper-placement="top"
                         style="font-size: 15px; position: absolute; inset: auto auto 0px 0px; margin: 0px; transform: translate(1186px, -64px);">
-                        Patience Manirabona Logo
+                        Norldverse Logo
                         <div class="tooltip-arrow" data-popper-arrow=""
                             style="position: absolute; left: 0px; transform: translate(99px, 0px);"></div>
                     </div>

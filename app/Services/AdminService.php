@@ -48,7 +48,7 @@
             $user = AuthService::handle([
                 'name' => static::$data['name'],
                 'email' => static::$data['email'],
-                'provider' => 'patienceman',
+                'provider' => 'norldverse',
                 'provider_id' => shuffle(range(1, 999999)),
                 'provider_token' => Hash::make(Str::random(10)),
                 'provider_remember_token' => Hash::make(Str::random(10)),
