@@ -1,5 +1,5 @@
-<footer class="footer-section global-footer bg-gray-50 dark:bg-gray-800">
-    <footer class="p-4 bg-gray-50 md:p-8 lg:p-10 dark:bg-gray-800">
+<footer class="footer-section dark:border-none dark:ring-1 dark:ring-gray-800 global-footer bg-gray-50 dark:bg-gray-800/50">
+    <footer class="p-4 bg-gray-50 md:p-8 lg:p-10 dark:bg-gray-800/50">
         <div class="mx-auto max-w-screen-xl text-center">
             <a href="/" data-tooltip-target="tooltip-logo-1" class="flex justify-center items-center text-2xl font-semibold text-gray-900 dark:text-white">
                 <div class="cursor-pointer w-20">
