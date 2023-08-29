@@ -339,6 +339,13 @@ body .is-partial-color:not(.is-partial-dark) {
     background-color: var(--color-one);
     fill: var(--color-font-one);
 }
+
+@media (max-width: 450px) {
+    .title-tags {
+        display: none;
+    }
+}
+
 .item-excerpt {
     font-size: 1.8rem !important;
     line-height: 1.4 !important;

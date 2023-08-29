@@ -11,6 +11,7 @@
     <meta name="rating" content="RTA-5042-1996-1400-1577-RTA" />
 
     @if (Auth::check()) <meta name="user" content="{{ Auth::user() }}"> @endif
+
     @yield('meta-data')
 
     <link rel="icon" type="image/x-icon" href="/img/logos/logo-black.png">
@@ -18,8 +19,6 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="color-scheme" content="light dark">
-
-    {{-- Extenral dynamics links --}}
 
     {{-- Anek Terugo Font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +31,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css">
 
     {{-- Custom style links --}}
     <link rel="stylesheet" href="/css/app.css">
@@ -40,8 +38,41 @@
     <link rel="stylesheet" href="/css/neon.css">
     <link rel="stylesheet" href="/css/bash.css">
     <link rel="stylesheet" href="/css/section.css">
+    <link rel="stylesheet" href="/css/preloader.css">
 
     @yield('style')
+
+     <!-- Google tag (gtag.js) -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHRK59S1F7"></script>
+     <script>
+         window.dataLayer = window.dataLayer || [];
+
+         function gtag() {
+             dataLayer.push(arguments);
+         }
+         gtag('js', new Date());
+
+         gtag('config', 'G-BHRK59S1F7');
+     </script>
+
+     <!-- Google Tag Manager -->
+     <script>
+         (function(w, d, s, l, i) {
+             w[l] = w[l] || [];
+             w[l].push({
+                 'gtm.start': new Date().getTime(),
+                 event: 'gtm.js'
+             });
+             var f = d.getElementsByTagName(s)[0],
+                 j = d.createElement(s),
+                 dl = l != 'dataLayer' ? '&l=' + l : '';
+             j.async = true;
+             j.src =
+                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+             f.parentNode.insertBefore(j, f);
+         })(window, document, 'script', 'dataLayer', 'GTM-N96KD8Q');
+     </script>
+     <!-- End Google Tag Manager -->
 
     {{-- Dark theme switche --}}
     <script>
@@ -55,9 +86,28 @@
 </head>
 <body class="dark:bg-deep-green-800">
     <div id="app">
+
+        <!-- preloader
+        ================================================== -->
+        <div id="preloader">
+            <div id="loader" class="dots-fade">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N96KD8Q"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
         @yield('content')
     </div>
 
+    <script src="/js/preloader.js"></script>
     <script src="{{ mix('js/app.js') }}" defer></script>
     <script src="https://unpkg.com/flowbite@1.5.5/dist/flowbite.js"></script>
     <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>

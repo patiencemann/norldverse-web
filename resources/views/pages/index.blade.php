@@ -7,7 +7,7 @@
     <meta data-rh="true" name="copyright" content="Manirabona Patience" />
     <meta data-rh="true" name="author" content="Manirabona Patience" />
     <meta data-rh="true" name="news_keywords"
-        content="manirabona, patience, manirabona patience, norldverse, personal blog, blogs, docs">
+        content="manirabona, patience, manirabona patience, norldverse, personal blog, blogs, docs, patienceman">
     <link data-rh="true" rel="author" href="https://twitter.com/manirabonaW">
     <meta data-rh="true" name="referrer" content="unsafe-url">
 
@@ -52,38 +52,6 @@
     <meta data-rh="true" property="og:image" content="/img/logos/logo-black.png">
     <meta data-rh="true" property="og:url" content="{{ env('APP_URL') }}">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHRK59S1F7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-BHRK59S1F7');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>
-        (function(w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start': new Date().getTime(),
-                event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s),
-                dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-N96KD8Q');
-    </script>
-    <!-- End Google Tag Manager -->
-
     <link rel="stylesheet" href="/css/temp.css">
 @stop
 
@@ -92,11 +60,6 @@
 @stop
 
 @section('content')
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N96KD8Q" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <x-navigation-bar />
 
     <main>

@@ -36,7 +36,6 @@
     <meta name='subtitle' content='{{ $doc->caption }}'>
     <meta name='target' content='all'>
     <meta name='HandheldFriendly' content='True'>
-    <meta name='MobileOptimized' content='320'>
     <meta name='date' content='June. 12, 2023'>
     <meta name='search_date' content='2023-06-12'>
     <meta name='DC.title' content='{{ $doc->title }}'>
@@ -84,7 +83,6 @@
     <meta name='apple-touch-fullscreen' content='yes'>
     <meta name='apple-mobile-web-app-status-bar-style' content='black'>
     <meta name='format-detection' content='telephone=no'>
-    <meta name='viewport' content='width=device-width; content='width = 320; initial-scale=1.0; maximum-scale=1.0; user-scalable=yes; target-densitydpi=160dpi'>
 
     <!-- Internet Explore -->
     <meta http-equiv='Page-Enter' content='RevealTrans(Duration=2.0,Transition=2)'>
@@ -92,7 +90,6 @@
     <meta name='mssmarttagspreventparsing' content='true'>
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
     <meta name='msapplication-starturl' content='{{ env('APP_URL')."/docs/".$doc->slug }}'>
-    <meta name='msapplication-window' content='width=800;height=600'>
     <meta name='msapplication-navbutton-color' content='red'>
     <meta name='application-name' content='{{ $doc->title }}'>
     <meta name='msapplication-tooltip' content='{{ $doc->user->name }}'s Blog'>
@@ -109,24 +106,6 @@
     <link data-rh="true" rel="canonical" href="{{ env('APP_URL')."/docs/".$doc->slug }}">
     <link rel="alternate" type="application/rss+xml" title="Norldverse - blogs &raquo; Feed" href="{{ env('APP_URL').'/feed.xml' }}" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHRK59S1F7"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-BHRK59S1F7');
-    </script>
-
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-N96KD8Q');</script>
-    <!-- End Google Tag Manager -->
-
     <link rel="stylesheet" href="/css/temp.css">
 @stop
 
@@ -135,11 +114,6 @@
 @stop
 
 @section('content')
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N96KD8Q"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <x-navigation-bar />
 
     <div id="downloadable">
