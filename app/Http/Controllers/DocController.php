@@ -104,6 +104,16 @@
         }
 
         /**
+         * Display the specified resource.
+         *
+         * @param  \App\Models\Doc  $doc
+         * @return \Illuminate\Http\Response
+         */
+        public function publicDoc(Doc $doc) {
+            return PublicDocResource::make($doc);
+        }
+
+        /**
          * Show the form for editing the specified resource.
          *
          * @param  \App\Models\Doc  $doc
