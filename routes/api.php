@@ -1,5 +1,7 @@
 <?php
 
+    use App\Http\Controllers\Api\ThirdPartyAuthController;
+    use App\Http\Controllers\Api\UserAuthController;
     use App\Http\Controllers\NotificationController;
     use App\Http\Controllers\DocCommentController;
     use App\Http\Controllers\DocController;
@@ -23,8 +25,15 @@
      * User authentication
      * -------------------------
      */
-    Route::post('/users/login', [UserController::class, 'login'])->name('post.login.user');
-    Route::post('/users/create', [UserController::class, 'createUser'])->name('post.create.user');
+    Route::group(['prefix' => '/users'], function() {
+        Route::post('/login', [UserAuthController::class, 'login'])->name('post.login.user');
+        Route::post('/create', [UserAuthController::class, 'createUser'])->name('post.create.user');
+    });
+
+    Route::group(['prefix' => '/third-party'], function() {
+        Route::post('/auth', [ThirdPartyAuthController::class, 'authenticateUser'])->name('thirdparty.auth');
+    });
+
     Route::post('/newsletters', [UserController::class, 'newsletters'])->name('post.create.newsletters');
     Route::get('/vistors', [UserController::class, 'trustedUser'])->name('get.v.users');
 
@@ -117,6 +126,9 @@
          * Get client id and secret
          */
         Route::post('/clients', [UserController::class, 'storeClient'])->name('post.clients');
-
         Route::post('/become-writter', [UserController::class, 'becomeWritter'])->name('user.become.writter');
+
+        Route::group(['prefix' => '/third-party'], function() {
+            Route::post('/logout', [ThirdPartyAuthController::class, 'logout'])->name('thirdparty.logout');
+        });
     });

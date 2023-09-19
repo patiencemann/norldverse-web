@@ -14,7 +14,8 @@
             return [
                 'name' => ['required', 'string'],
                 'email' => ['required', 'string'],
-                'password' => ['required', 'string']
+                'password' => ['required', 'string'],
+                'provider' => ['nullable', 'string']
             ];
         }
     }
