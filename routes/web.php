@@ -4,8 +4,10 @@
     use App\Http\Controllers\DocController;
     use App\Http\Controllers\HomeController;
     use App\Http\Controllers\LoginController;
-    use Illuminate\Support\Facades\Auth;
+use App\Notifications\CloudNotification;
+use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
+    use Patienceman\Notifier\Notifier;
 
     /*
     |--------------------------------------------------------------------------
@@ -17,6 +19,19 @@
     | contains the "web" middleware group. Now create something great!
     |
     */
+
+    Route::get("/test", function () {
+        $notificationPayload = [
+            "subject" => "New published blog",
+            "message" => " have been published and ready",
+            'action' => "/dashboard",
+            "topic" => "sales"
+        ];
+
+        (new Notifier())->send([
+            CloudNotification::process($notificationPayload),
+        ]);
+    });
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::get('/docs/{doc}', [HomeController::class, 'singleDoc'])->name('get.doc');

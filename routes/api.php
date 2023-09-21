@@ -32,6 +32,7 @@
 
     Route::group(['prefix' => '/third-party'], function() {
         Route::post('/auth', [ThirdPartyAuthController::class, 'authenticateUser'])->name('thirdparty.auth');
+        Route::post('/active-device', [ThirdPartyAuthController::class, 'activeDevice'])->name('thirdparty.active_device');
     });
 
     Route::post('/newsletters', [UserController::class, 'newsletters'])->name('post.create.newsletters');

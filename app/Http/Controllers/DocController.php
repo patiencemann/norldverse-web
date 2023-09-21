@@ -9,6 +9,7 @@
     use App\Jobs\ProcessNewDocEmails;
     use App\Models\Doc;
     use App\Models\DocTopic;
+    use App\Notifications\CloudNotification;
     use App\Notifications\DatabaseNotification;
     use App\Traits\FileStorage;
     use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
@@ -77,12 +78,16 @@
             $doc->docMedia()->create(['file_url' => $imageFile]);
             $doc->docTopic()->create(['topics' => array_map('trim', array_map('strtolower', $request->topics))]);
 
+            $notificationPayload = [
+                "subject" => "New published blog",
+                "message" => $doc->title." have been published and ready",
+                'action' => "/dashboard",
+                "topic" => "newBlogs"
+            ];
+
             (new Notifier())->send([
-                DatabaseNotification::process([
-                    "subject" => "New published blog",
-                    "message" => $doc->title." have been published and ready",
-                    'action' => "/dashboard"
-                ])->to(authUser())
+                DatabaseNotification::process($notificationPayload)->to(authUser()),
+                // CloudNotification::process($notificationPayload),
             ]);
 
             ProcessNewDocEmails::dispatch($doc);

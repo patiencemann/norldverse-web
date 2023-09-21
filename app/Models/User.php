@@ -30,7 +30,8 @@
             'provider_token',
             'provider_remember_token',
             'email_verified_at',
-            'avatar'
+            'avatar',
+            'device_token'
         ];
 
         /**

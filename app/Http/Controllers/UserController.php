@@ -103,7 +103,11 @@
          * @return JsonResponse
          */
         public function trustedUser() {
-            $users = User::withCount('docComments')->orderBy('doc_comments_count', 'desc')->get();
+            $users = User::join('doc_comments', 'users.id', '=', 'doc_comments.user_id')
+                        ->select('users.*')
+                        ->distinct()
+                        ->get()
+                        ->unique('email');
 
             return response()->json([
                 "message" => "invalid email, passpord or both",

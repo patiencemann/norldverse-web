@@ -17,7 +17,7 @@
                     <img :src="user.avatar" loading="lazy" :alt="user.name" />
                 </div>
             </div>
-            <small class="dark:text-gray-200">Meet our top Vistors</small>
+            <small class="dark:text-gray-200 font-calistoga">Meet our top Vistors</small>
         </div>
     </div>
 </template>

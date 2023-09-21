@@ -11,6 +11,7 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "kakaprodo/custom-data": "^1.8",
+        "kreait/laravel-firebase": "^4.1",
         "laravel/framework": "^8.75",
         "laravel/passport": "~10.0",
         "laravel/sanctum": "^2.11",

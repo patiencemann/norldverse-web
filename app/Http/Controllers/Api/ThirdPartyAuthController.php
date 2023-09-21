@@ -8,6 +8,7 @@
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Hash;
     use App\Http\Resources\Private\UserResource as PrivateUserResource;
+use App\Models\ActiveDevice;
 
     class ThirdPartyAuthController extends Controller {
         /**
@@ -39,5 +40,13 @@
         public function logout() {
             AuthService::logout();
             return response()->json(['message' => 'Logged out successfully']);
+        }
+
+        public function activeDevice(Request $request) {
+            $currentToken = ActiveDevice::where('device_token', $request->token)->first();
+
+            if($currentToken) return $currentToken;
+
+            return ActiveDevice::create([ 'device_token' => $request->token ]);
         }
     }

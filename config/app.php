@@ -234,6 +234,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'Cloudinary' => CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class,
+        'FirebaseMessaging' => App\Facades\FirebaseMessaging::class,
     ],
 
 ];
