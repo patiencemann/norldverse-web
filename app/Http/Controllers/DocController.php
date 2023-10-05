@@ -4,16 +4,21 @@
 
     use App\Filters\DocFilter;
     use App\Http\Requests\StoreDocRequest;
-    use App\Http\Resources\Public\DocResource as PublicDocResource;
+use App\Http\Resources\BlogCategoryResource;
+use App\Http\Resources\BlogCategoryWithDocs;
+use App\Http\Resources\Public\DocResource as PublicDocResource;
     use App\Http\Resources\Private\DocResource as PrivateDocResource;
     use App\Jobs\ProcessNewDocEmails;
-    use App\Models\Doc;
+use App\Models\BlogCategory;
+use App\Models\Doc;
     use App\Models\DocTopic;
-    use App\Notifications\CloudNotification;
+use App\Models\DocView;
+use App\Notifications\CloudNotification;
     use App\Notifications\DatabaseNotification;
     use App\Traits\FileStorage;
     use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
-    use Illuminate\Support\Facades\App;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
     use Patienceman\Notifier\Notifier;
 
     class DocController extends Controller {
@@ -35,7 +40,27 @@
          *
          * @return \Illuminate\Http\Response
          */
-        public function public(DocFilter $filters) {
+        public function public(Request $request, DocFilter $filters) {
+            if($request->categorize) {
+                $categories = BlogCategory::all();
+
+                $docs = Doc::withCount('docComments')
+                    ->filter($filters)
+                    ->where('status', true)
+                    ->orderBy('created_at', 'desc')
+                    ->get()
+                    ->groupBy('blog_category_id');
+
+                $categoriesWithBlogs = $categories->map(function ($category) use ($docs) {
+                    return [
+                        'category' => $category,
+                        'blogs' => PublicDocResource::collection($docs->get($category->id, [])),
+                    ];
+                });
+
+                return response()->json([ 'data' => $categoriesWithBlogs ]);
+            }
+
             return PublicDocResource::collection(
                 Doc::withCount('docComments')
                     ->filter($filters)
@@ -98,6 +123,14 @@
             ], 201);
         }
 
+        public function categories(Request $request) {
+            BlogCategory::create([
+                'name' => $request->name
+            ]);
+
+            return response()->json(['message' => "category created"], 201);
+        }
+
         /**
          * Display the specified resource.
          *
@@ -116,6 +149,16 @@
          */
         public function publicDoc(Doc $doc) {
             return PublicDocResource::make($doc);
+        }
+        /**
+         * Display the specified resource.
+         *
+         * @param  \App\Models\Doc  $doc
+         * @return \Illuminate\Http\Response
+         */
+        public function publicCategories() {
+            $categories = BlogCategory::where('active_status', true)->orderBy('created_at', 'desc')->get();
+            return BlogCategoryResource::collection($categories);
         }
 
         /**
@@ -202,6 +245,15 @@
             return response()->json([
                 'tags' => $tags,
                 'message' => 'tags listed'
+            ]);
+        }
+
+        public function blogView(Doc $doc, Request $request) {
+            $address = $request->ip();
+            $view = DocView::where('doc_id', $doc->id)->where('ip_address', $address)->exists();
+            
+            $view ?? $doc->views()->create([
+                'ip_address' => $request->ip()
             ]);
         }
     }

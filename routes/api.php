@@ -37,6 +37,7 @@
 
     Route::post('/newsletters', [UserController::class, 'newsletters'])->name('post.create.newsletters');
     Route::get('/vistors', [UserController::class, 'trustedUser'])->name('get.v.users');
+    Route::post('/doc/views/{doc}', [DocController::class, 'blogView'])->name('post.view');
 
     /**
      * -------------------------
@@ -47,6 +48,7 @@
     Route::get('/public/related/docs/{doc}', [DocController::class, 'relatedStories'])->name('get.related.docs');
     Route::get('/public/doc-tags', [DocController::class, 'tags'])->name('get.tags');
     Route::get('/public/docs/{doc}', [DocController::class, 'publicDoc'])->name('public.doc');
+    Route::get('/public/categories', [DocController::class, 'publicCategories'])->name('public.categories');
 
     /**
      * -------------------------
@@ -100,6 +102,7 @@
              * ---------------------------
              */
             Route::post('/docs', [DocController::class, 'store'])->name('post.docs');
+            Route::post('/docs/categories', [DocController::class, 'categories'])->name('post.categories');
             Route::post('/docs/{doc}', [DocController::class, 'update'])->name('update.docs');
             Route::delete('/docs/{doc}', [DocController::class, 'destroy'])->name('delete.docs');
 

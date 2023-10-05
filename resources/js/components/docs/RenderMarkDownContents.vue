@@ -37,6 +37,12 @@
                 type: String,
                 default: '### Norldverse shared content loading',
             },
+            doc_id: {
+                type: String,
+            }
+        },
+        mounted() {
+            axios.post(`/api/doc/views/${this.doc_id}`);
         }
     };
 </script>

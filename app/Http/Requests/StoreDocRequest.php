@@ -17,7 +17,8 @@
                 'contents' => ['required', 'string'],
                 'image' => ['required', 'image', 'mimes:jpeg,png,jpg,gif'],
                 'topics' => ['required', 'array'],
-                'topics.*' => ['string']
+                'topics.*' => ['string'],
+                'blog_category_id' => ['required']
             ];
         }
 

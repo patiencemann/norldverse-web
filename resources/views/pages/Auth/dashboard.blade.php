@@ -14,7 +14,6 @@
             <div class="px-6 py-8">
                 <div class="w-full mx-auto px-24">
                     <div class="bg-gray-50 rounded-3xl p-8 mb-5 dark:bg-gray-700 border border-gray-200">
-                        {{-- <h1 class="text-3xl font-bold mb-10">{{ authUser()->name }}'s Documents</h1> --}}
                         <div class="flex items-center justify-between">
                             <div class="flex items-center gap-x-2">
                                 <a href="{{ route('get.writable-doc') }}" class="text-white flex items-center bg-[#1E40AF] hover:bg-[#1E40AF]/75 focus:outline-none focus:ring-4 focus:ring-blue-300 font-bold capitalize rounded-full px-5 py-3 text-center dark:bg-blue-600 dark:hover:bg-[#1E40AF] dark:focus:ring-blue-800">
@@ -39,11 +38,17 @@
                                         Drafts
                                     </button>
                                 </li>
+                                <li class="mr-2" role="presentation">
+                                    <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="categories-tab" data-tabs-target="#categories" type="button" role="tab" aria-controls="categories" aria-selected="false">
+                                        Categories
+                                    </button>
+                                </li>
                             </ul>
                         </div>
+
                         <div id="myTabContent">
                             <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <p class="text-sm text-gray-500 dark:text-gray-400">
+                                <p class="text-md text-gray-500 dark:text-gray-400">
                                     <div class="grid grid-cols-2 gap-x-20">
                                         {{-- all delived docs --}}
                                         <admin-cards />
@@ -51,12 +56,17 @@
                                 </p>
                             </div>
                             <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                                <p class="text-sm text-gray-500 dark:text-gray-400">
+                                <p class="text-md text-gray-500 dark:text-gray-400">
                                     <div class="grid grid-cols-2 gap-x-20">
                                         {{-- all drafted docs --}}
                                         <admin-drafts />
                                     </div>
                                 </p>
+                            </div>
+                            <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="categories" role="tabpanel" aria-labelledby="categories-tab">
+                                <div class="admin-categories">
+                                    <admin-categories />
+                                </div>
                             </div>
                         </div>
                     </div>

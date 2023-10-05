@@ -25,14 +25,16 @@
             'title',
             'caption',
             'contents',
-            'status'
+            'status',
+            'blog_category_id'
         ];
 
         protected $with = [
             'docComments',
             'docMedia',
             'docTopic',
-            'likes'
+            'likes',
+            'views'
         ];
 
         /**
@@ -71,11 +73,28 @@
         }
 
         /**
+         * Doc BelongsTo Category
+         * @return BelongsTo
+         */
+        public function category(): BelongsTo {
+            return $this->belongsTo(BlogCategory::class);
+        }
+
+        /**
          * Doc has Many likes
          *
          * @return HasMany
          */
         public function likes(): HasMany {
             return $this->hasMany(DocLike::class);
+        }
+
+        /**
+         * Doc has Many views
+         *
+         * @return HasMany
+         */
+        public function views(): HasMany {
+            return $this->hasMany(DocView::class);
         }
     }
