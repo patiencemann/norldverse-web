@@ -88,8 +88,8 @@
 
             $newsletter = Newsletter::create($request->validated());
 
-            $emailData = ['title' => 'Stay in the know with Norldverse Newsletter!'];
-            Mail::to($newsletter->email)->send(new NewsletterEmail($emailData));
+            // $emailData = ['title' => 'Stay in the know with Norldverse Newsletter!'];
+            // Mail::to($newsletter->email)->send(new NewsletterEmail($emailData));
 
             return response()->json([
                 'message' => "Thank for subscribe to our newsletter"

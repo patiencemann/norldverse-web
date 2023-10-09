@@ -23,6 +23,7 @@
                 'media' => DocMediaResource::make($this->docMedia),
                 'topics' => DocTopicResource::make($this->docTopic),
                 'likes' => $this->likes->count(),
+                'views' => $this->views->count(),
                 'iLiked' => (Auth::guard('api')->check()) ? $this->likes->filter(fn($value) => $value->user_id == Auth::guard('api')->user()->id)->isNotEmpty() : false,
                 'comments' => DocCommentUserResource::collection($this->docComments()->distinct()->select('user_id')->take(5)->get()),
                 'created_at' => $this->created_at->diffForHumans()

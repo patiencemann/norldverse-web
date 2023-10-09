@@ -35,7 +35,7 @@
             return response()->json([
                 "data" =>  NotificationResource::make($notification),
                 "message" => "Notification readed"
-            ]);;
+            ]);
         }
 
         /**

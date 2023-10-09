@@ -238,7 +238,7 @@
 
         <div class="post-content-container dark:bg-[#10172a]">
             <div class="post-content dark:text-gray-300" id="page_brak_post_content">
-                <render-mark-down-contents contents="{{ $doc->contents }}" />
+                <render-mark-down-contents contents="{{ $doc->contents }}" doc_id="{{ $doc->id }}" />
             </div>
         </div>
     </div>
@@ -285,6 +285,6 @@
     </section>
 
     <div><newsletter-card /></div>
-    
+
     <div><card-slider story_id="{{ $doc->id }}" /></div>
 @endsection

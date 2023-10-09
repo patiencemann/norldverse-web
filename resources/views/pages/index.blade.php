@@ -66,7 +66,7 @@
         <div class="loop-section global-padding dark:bg-deep-green-800">
             <div> <global-tags /> </div>
             <div class="px-4"> <title-section /> </div>
-            <div class="px-4"> <public-cards auth="{{ Auth::check() }}" /> </div>
+            <div class=""><public-cards auth="{{ Auth::check() }}" /></div>
         </div>
     </main>
 

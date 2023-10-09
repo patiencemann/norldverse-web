@@ -187,7 +187,7 @@ body .is-partial-color:not(.is-partial-dark) {
     DOCS SECTION
     ---------------------------------------- */
 .loop-section {
-    background-color: #f8fafc;
+    background-color: #fff;
 }
 .loop-wrap {
     -webkit-animation: slideTop 0.8s ease;
@@ -208,8 +208,9 @@ body .is-partial-color:not(.is-partial-dark) {
 }
 .loop-subtitle {
     display: flex;
-    margin-bottom: 10.5vh;
+    /* margin-bottom: 10.5vh; */
     padding-top: 4vh;
+    padding-bottom: 4vh;
 }
 .loop-subtitle-title,
 .loop-subtitle-title span {
@@ -918,6 +919,7 @@ body .is-partial-color:not(.is-partial-dark) {
     .is-partial-color + div .loop-subtitle,
     .is-partial-dark + div .loop-subtitle {
         padding-top: 3vh;
+        padding-bottom: 3vh;
     }
 }
 
@@ -997,12 +999,20 @@ body .is-partial-color:not(.is-partial-dark) {
 }
 .global-subtitle {
     display: flex;
-    margin-bottom: 2vh;
+    margin-bottom: 1vh;
     padding-top: 1.8vh;
     border-top: var(--border) var(--color-border-one);
 }
 .global-subtitle-title {
     font-size: 2rem;
+    line-height: 1.1;
+    flex: 1 0 50%;
+    max-width: 800px;
+    margin: 0;
+    font-family: var(--font-logo);
+}
+.global-subtitle-section-title {
+    font-size: 3rem;
     line-height: 1.1;
     flex: 1 0 50%;
     max-width: 800px;
@@ -1319,6 +1329,9 @@ body .is-partial-color:not(.is-partial-dark) {
     .global-subtitle-title {
         font-size: 1.8rem;
     }
+    .global-subtitle-section-title {
+        font-size: 2rem;
+    }
     .global-excerpt {
         font-size: 2.3rem;
         max-width: 660px;
@@ -1385,6 +1398,9 @@ body .is-partial-color:not(.is-partial-dark) {
         font-size: 3.4rem;
     }
     .global-subtitle-title {
+        font-size: 1.6rem;
+    }
+    .global-subtitle-section-title {
         font-size: 1.6rem;
     }
     .global-button {

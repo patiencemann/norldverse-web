@@ -101,7 +101,15 @@
                         @focus="cleanTopicPlaceholder"
                         @keypress.enter="onNewTopicEnter"
                     />
-                    <p style="font-size: 14px !important" class="mt-3 text-sm text-gray-400 font-semibold dark:text-gray-400">Ex: economic, applications, etc...</p>
+                    <p style="font-size: 14px !important" class="text-sm text-gray-400 font-semibold dark:text-gray-400">Ex: economic, applications, etc...</p>
+
+                    <select
+                        v-model="data.blog_category_id"
+                        style="font-size: 17px"
+                        class="bg-gray-50 mt-4 border border-none text-gray-900 text-md rounded-[0.7rem] focus:ring-green-500 focus:border-green-500 block w-full py-[1.3rem] px-[1.5rem] leading-[1.5rem] text-[1rem] dark:bg-[#10172a] dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        <option value="">Choose Category</option>
+                        <option v-for="category in categories" :key="category.id" :value="category.id">{{ category.name }}</option>
+                    </select>
                 </div>
 
                 <!-- Rich text area -->
@@ -233,9 +241,11 @@
                         contents: "## Start writing",
                         image: '',
                         selectedTopics: [],
-                        topic: ''
+                        topic: '',
+                        blog_category_id: '',
                     },
                     response: "",
+                    categories: [],
                     hasResponse: false,
                     isLoading: false,
                     responseType: 'success',
@@ -248,7 +258,7 @@
                 /**
                  * Check if trying to edit drafts
                  * and async drafts
-                */
+                 */
                 asyncDraftDoc() {
                     const draftId = this.getParameterByName('draft');
                     const user = document.querySelector("meta[name='user']").getAttribute("content");
@@ -265,6 +275,7 @@
                         this.data.image = doc.image;
                         this.data.selectedTopics = doc.selectedTopics;
                         this.data.topic = doc.topic;
+                        this.data.blog_category_id = doc.blog_category_id;
                     }
                 },
 
@@ -281,12 +292,14 @@
                             formData.append('image', this.data.image);
                             formData.append('caption', this.data.caption);
                             formData.append('contents', this.data.contents);
+                            formData.append('blog_category_id', this.data.blog_category_id);
                             formData.append('topics', JSON.stringify(this.data.selectedTopics));
 
                         let response = await axios.post("/api/docs", formData);
 
                         this.responseType = "success";
                         this.response = response.data.message;
+
                         window.location.href = '/dashboard';
                     } catch(error) {
                         this.responseType = "error";
@@ -300,7 +313,7 @@
                 /**
                  * Save blog in localstorange
                  * then show-off success message
-                */
+                 */
                 saveInDraft() {
                     const user = document.querySelector("meta[name='user']").getAttribute("content");
                     const authUser = JSON.parse(user);
@@ -313,6 +326,7 @@
                     if(myDrafts){
                         const newDrafts = JSON.parse(myDrafts);
                             newDrafts[`${uniqueId}`] = newData;
+
                         localStorage.setItem(key, JSON.stringify(newDrafts));
                     } else {
                         const newDrafts = {};
@@ -365,6 +379,7 @@
                 cleanTopicPlaceholder() {
                     this.data.topic = "";
                 },
+
                 getParameterByName(name, url = window.location.href) {
                     name = name.replace(/[\[\]]/g, '\\$&');
                     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -373,8 +388,17 @@
                     if (!results[2]) return '';
                     return decodeURIComponent(results[2].replace(/\+/g, ' '));
                 },
+
+                async getAllCategories() {
+                    this.categories = [];
+                    console.log("there")
+                    let response = await axios.get(`/api/public/categories`);
+                    this.categories = response.data.data
+                }
             },
-            mounted() {
+
+            async mounted() {
+                await this.getAllCategories();
                 this.asyncDraftDoc();
             }
         };
