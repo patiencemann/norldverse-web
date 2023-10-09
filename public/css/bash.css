@@ -208,8 +208,9 @@ body .is-partial-color:not(.is-partial-dark) {
 }
 .loop-subtitle {
     display: flex;
-    margin-bottom: 10.5vh;
+    /* margin-bottom: 10.5vh; */
     padding-top: 4vh;
+    padding-bottom: 4vh;
 }
 .loop-subtitle-title,
 .loop-subtitle-title span {
@@ -918,6 +919,7 @@ body .is-partial-color:not(.is-partial-dark) {
     .is-partial-color + div .loop-subtitle,
     .is-partial-dark + div .loop-subtitle {
         padding-top: 3vh;
+        padding-bottom: 3vh;
     }
 }
 

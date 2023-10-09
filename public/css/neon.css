@@ -28,19 +28,18 @@
 }
 
 .site-header {
-    padding-top: 25px;
-    padding-bottom: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     background-color: #f8fafc;
-    /* background-size: auto; */
-    background-position: right center;
-    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .header-inner {
     background-color: var(--card-background-color);
     padding: 2rem 2.5rem;
-    border-radius: 50px;
-    /* box-shadow: var(--shadow); */
+    border-radius: 10px;
+    box-shadow: var(--shadow);
     align-items: center;
 }
 

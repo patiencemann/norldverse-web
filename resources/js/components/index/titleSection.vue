@@ -1,5 +1,5 @@
 <template>
-    <div class="loop-subtitle relative bg-center bg-no-repeat bg-cover" style="height: 52vh;">
+    <div class="loop-subtitle relative">
         <small class="loop-subtitle-title text-center global-title text-gray-700 dark:text-gray-200">
             See what has been found 🔭<br /> and 📚
             <span class="text-[#50217b]/90 dark:text-[#7123bb]">Written Lately.</span>
