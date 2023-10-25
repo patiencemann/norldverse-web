@@ -70,5 +70,7 @@
         </div>
     </main>
 
+    <button class="notify" onclick="requestNotificationPermission">Notify Me</button>
+
     <x-footer />
 @stop
