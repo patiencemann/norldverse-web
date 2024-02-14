@@ -250,10 +250,13 @@ use Illuminate\Support\Facades\App;
 
         public function blogView(Doc $doc, Request $request) {
             $address = $request->ip();
-            $view = DocView::where('doc_id', $doc->id)->where('ip_address', $address)->exists();
-            
-            $view ?? $doc->views()->create([
-                'ip_address' => $request->ip()
-            ]);
+
+            if(!DocView::where('doc_id', $doc->id)->where('ip_address', $address)->first()) {
+                $doc->views()->create([
+                    'ip_address' => $request->ip()
+                ]);
+            }
+
+            return response()->json([ 'message' => 'view submited' ], 201);
         }
     }

@@ -18,7 +18,7 @@
     <meta name='revised' content='Sunday, June 12th, 2023'>
     <meta name='abstract' content=''>
     <meta name='topic' content="{{ $doc->title }}">
-    <meta name='summary' content="{{ $doc->caption }}">
+    <meta name='summary' content="{{ $doc->caption }}"> 
     <meta name='Classification' content='blogging'>
     <meta name='author' content='{{ $doc->user->name }}, {{ $doc->user->email }}'>
     <meta name='designer' content='{{ $doc->user->name }}'>
