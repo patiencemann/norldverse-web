@@ -11952,6 +11952,9 @@ input:checked + .toggle-bg {
 .ml-4 {
   margin-left: 1rem;
 }
+.mt-5 {
+  margin-top: 1.25rem;
+}
 .mb-6 {
   margin-bottom: 1.5rem;
 }
@@ -12032,9 +12035,6 @@ input:checked + .toggle-bg {
 }
 .ml-auto {
   margin-left: auto;
-}
-.mt-5 {
-  margin-top: 1.25rem;
 }
 .-ml-px {
   margin-left: -1px;
