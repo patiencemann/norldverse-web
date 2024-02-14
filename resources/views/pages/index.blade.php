@@ -12,10 +12,8 @@
     <meta data-rh="true" name="referrer" content="unsafe-url">
 
     <meta data-rh="true" name="title" content="norldverse">
-    <meta data-rh="true" name="description"
-        content="Norldverse: online website where you can find dynamic thinking, experiences, or creative work including technology, tips, personal development, and much more.">
-    <meta data-rh="true" name="keywords"
-        content="manirabona, patience, manirabona patience, norldverse, personal blog, blogs, docs, Norldverse blogs, blogs" />
+    <meta name="description" content="Different life's insights, stories, and experiences. Whether it's my travel adventures or reflections on personal growth, Journey through the ups and downs Of everyday life. Get ready for inspiring anecdotes, & practical tips to help you navigate life's twists and turns.">
+    <meta name="keywords" content="manirabona, patience, patienceman, insights, stories, experiences, travel adventures, personal growth, everyday life, anecdotes, practical tips, life's twists and turns">
     <meta data-rh="true" property="article:published_time" content="May 01 2023">
     <meta data-rh="true" property="article:author" content="{{ env('APP_URL') }}">
     <meta data-rh="true" name="robots" content="index,follow,max-image-preview:large">
@@ -56,7 +54,7 @@
 @stop
 
 @section('title')
-    Home
+    Blogs
 @stop
 
 @section('content')

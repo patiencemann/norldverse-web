@@ -32,6 +32,33 @@ export default {
         findByTag(tag) {
             this.$root.$emit("loadedDoc", tag);
         },
+
+        async requestPermission() {
+            if(!("Notification" in window))
+                throw new Error("Browser doesn't support notification");
+
+            if ('Notification' in window) {
+                const permission = await Notification.requestPermission();
+
+                if(permission === "granted") {
+
+                    const notificationOptions = {
+                        body: "Welcome to Javascript Notifications",
+                        icon: "http://norldverse.patienceman.com/img/logos/logo-black.png",
+                        sound: "/notificare_1.mp3",
+                        badge: "http://norldverse.patienceman.com/img/logos/logo-black.png",
+                        timestamp: Date.now()
+                    };
+
+                    const notification = new Notification("Norldverse | Patienceman", notificationOptions);
+
+                    notification.onclick = function() {
+                        window.open("https://norldverse.patienceman.com", "_blank");
+                        notification.close();
+                    };
+                }
+            }
+        }
     },
     mounted() {
         this.getTags();

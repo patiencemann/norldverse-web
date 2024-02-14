@@ -11,9 +11,11 @@
                 </div>
             </a>
             <p class="my-6 text-gray-500 dark:text-gray-400 font-calistoga">
-                Source of dynamic thinking, experiences, or creative work and share your thoughts <br /> with an audience, including technology, tips, personal development, and much more.
+                Different life's insights, stories, and experiences. </br> Whether it's my travel adventures or reflections <br>
+                on personal growth, Journey through the ups and downs <br> Of everyday life. Get ready for inspiring anecdotes, & practical<br> tips to help you navigate
+                life's twists and turns.
             </p>
-            <span class="text-md text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline dark:text-gray-200 font-calistoga">Norldverse</a>. All Rights Reserved.</span>
+            <div class="text-md text-gray-500 mt-5 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline dark:text-gray-200 font-calistoga">Norldverse</a>. All Rights Reserved.</div>
         </div>
     </footer>
 </footer>
