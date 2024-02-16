@@ -12667,6 +12667,16 @@ input:checked + .toggle-bg {
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
 }
+.bg-\[\#50217be6\]\/90 {
+  background-color: rgb(80 33 123 / 0.9);
+}
+.bg-\[\#80a49a\]\/90 {
+  background-color: rgb(128 164 154 / 0.9);
+}
+.bg-\[\#80a49a\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(128 164 154 / var(--tw-bg-opacity));
+}
 .bg-opacity-50 {
   --tw-bg-opacity: 0.5;
 }
