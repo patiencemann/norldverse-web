@@ -30,7 +30,7 @@ jobs:
         with:
           php-version: "8.3.1"
       - name: Install Dependencies
-        run: composer update --no-interaction --no-progress --prefer-dist
+        run: composer update --no-interaction --no-progress --prefer-dist --optimize-autoloader --no-scripts --no-dev --ignore-platform-reqs -W
       - name: Generate key
         run: php artisan key:generate
       - name: Directory Permissions
