@@ -1,0 +1,48 @@
+openapi: 3.0.0
+info:
+  title: Bump.sh API Documentation
+  description: API documentation for the Bump.sh service
+  version: 1.0.0
+servers:
+  - url: https://api.bump.sh/v1
+paths:
+  /users:
+    get:
+      summary: Get a list of users
+      description: Returns a list of all users in the system
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+    post:
+      summary: Create a new user
+      description: Creates a new user in the system
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: The user's ID
+        name:
+          type: string
+          description: The user's name

@@ -18,41 +18,49 @@
 
             <hr class="w-full h-1 mx-auto my-6 bg-gray-500 border-0 rounded md:my-10 dark:bg-gray-700">
 
-            <!-- File input -->
-            <div class="flex items-center justify-center w-full">
-                <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                        <svg
-                            aria-hidden="true"
-                            class="w-20 h-20 mb-3 text-gray-400"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                stroke-width="2"
-                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                            ></path>
-                        </svg>
-                        <p class="mb-2 text-sm text-gray-500 dark:text-gray-400" style="font-size: 17px; line-height: 24px">
-                            <span class="font-semibold">Click to upload</span>
-                            or drag and drop
-                        </p>
-                        <p class="text-xs text-gray-500 dark:text-gray-400" style="font-size: 17px">
-                            SVG, PNG, JPG or GIF (MAX. 800x400px)
-                        </p>
-                    </div>
-                    <input
-                        type="file"
-                        class="hidden"
-                        id="dropzone-file"
-                        @change="onFileChange"
-                    />
-                </label>
+            <div class="flex pr-2 divide-x-2">
+                <!-- Image preview -->
+                <div v-if="data.image" class="mr-5">
+                    <img :src="imageUrl" alt="Selected Image" class="mt-4 mb-2 rounded-lg shadow-md" style="max-height: 300px;">
+                </div>
+
+                <!-- File input -->
+                <div class="flex items-center justify-center w-1/3">
+                    <label for="dropzone-file" class="flex flex-col ml-5 items-center justify-center w-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                            <svg
+                                aria-hidden="true"
+                                class="w-20 h-20 mb-3 text-gray-400"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                                ></path>
+                            </svg>
+                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400" style="font-size: 17px; line-height: 24px">
+                                <span class="font-semibold">Click to upload</span>
+                                or drag and drop
+                            </p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400" style="font-size: 17px">
+                                SVG, PNG, JPG or GIF (MAX. 800x400px)
+                            </p>
+                        </div>
+                        <input
+                            type="file"
+                            class="hidden"
+                            id="dropzone-file"
+                            @change="onFileChange"
+                        />
+                    </label>
+                </div>
             </div>
+
 
             <hr class="w-full h-1 mx-auto my-6 bg-gray-500 border-0 rounded md:my-10 dark:bg-gray-700">
 
@@ -96,7 +104,7 @@
             </div>
         </form>
 
-        <div v-if="isLoading" class="bg-transparent w-full h-full z-50 flex items-center justify-center absolute top-0 right-0 bottom-0 left-0 backdrop-blur-sm">
+        <div v-if="isLoading">
             <loader />
         </div>
 
@@ -185,6 +193,15 @@
                 responseType: 'success',
             };
         },
+        computed: {
+            imageUrl() {
+                if (this.data.image instanceof File) {
+                    return URL.createObjectURL(this.data.image);
+                } else {
+                    return this.data.image;
+                }
+            }
+        },
         methods: {
             async getDoc() {
                 this.isLoading = true;
@@ -199,21 +216,62 @@
                 this.isLoading = false;
             },
 
-            // Create and store doc
+            /**
+             * Convert image URL to Blob
+             *
+             * @param imageUrl
+             * @returns {Promise<File|null>}
+             */
+             async convertImageUrlToBlob(imageUrl) {
+                try {
+                    const response = await fetch(imageUrl);
+                    const imageData = await response.blob();
+
+                    const file = new File([imageData], 'image.jpg', { type: 'image/jpeg' });
+                    return file;
+                } catch (error) {
+                    this.responseType = "error";
+                    this.response = "Error parsing image URL to Blob";
+                    return null; // Return null in case of an error
+                }
+            },
+
+            /**
+             * Update the document
+             *
+             * @param e
+             * @returns {Promise<void>}
+             */
             async updateDoc() {
                 this.isLoading = true;
 
                 try{
                     let formData = new FormData();
                         formData.append('title', this.data.title);
-                        formData.append('image', this.data.image);
                         formData.append('caption', this.data.caption);
                         formData.append('contents', this.data.contents);
+                        formData.append('blog_category_id', this.doc_identity);
                         formData.append('topics', JSON.stringify(this.data.selectedTopics));
+
+                    if (this.data.image instanceof File) {
+                        formData.append('image', this.data.image);
+                    } else {
+                        const imageFile = await this.convertImageUrlToBlob(this.data.image);
+
+                        if (imageFile) {
+                            // Successfully converted image URL to File object
+                            formData.append('image', imageFile);
+                        } else {
+                            // Error occurred while converting image URL
+                            this.response = 'Error converting image URL to File object 😟';
+                            this.responseType = 'error';
+                        }
+                    }
 
                     let response = await axios.post(`/api/docs/${this.doc_identity}`, formData);
                     this.response = response.data.message;
                     this.responseType = "success";
+
                     window.location.href = '/dashboard';
                 }catch(error){
                     this.response = "Something went wrong, 😞 try again later, with image";
@@ -223,20 +281,51 @@
                 this.isLoading = false;
                 this.hasResponse = true;
             },
+
+            /**
+             * Handle file change
+             *
+             * @param e
+             */
             onFileChange(e) {
                 this.data.image = e.target.files[0];
+
+                // Check file type
+                const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+                if (!allowedTypes.includes(this.data.image.type)) {
+                    this.data.image = '';
+                    this.responseType = "error";
+                    this.response = "The selected file is not a valid image. Please select a file of type: jpeg, png, jpg, gif.";
+                    return;
+                }
             },
+
+            /**
+             * Add new topic
+             *
+             * @param e
+             */
             onNewTopicEnter(e) {
                 if (!this.data.selectedTopics.includes(e.target.value)) {
                     this.data.topic = "";
                     this.data.selectedTopics.push(e.target.value);
                 }
             },
+
+            /**
+             * Remove topic
+             *
+             * @param topic
+             */
             removeTopic(topic) {
                 this.data.selectedTopics.splice(
                     this.data.selectedTopics.indexOf(topic), 1
                 );
             },
+
+            /**
+             * Clean topic placeholder
+             */
             cleanTopicPlaceholder() {
                 this.data.topic = "";
             }

@@ -7,11 +7,11 @@ on:
   push:
     branches:
       - main
-      - master
+      - test
   pull_request:
     branches:
       - main
-      - master
+      - test
 jobs:
   deploy-doc:
     if: ${{ github.event_name == 'push' }}
@@ -23,9 +23,9 @@ jobs:
       - name: Deploy API documentation
         uses: bump-sh/github-action@v1
         with:
-          doc: DOCUMENTATION_SLUG_OR_ID
+          doc: https://bump.sh/patienceman/doc/norldverse
           token: g7e6mZESUkimN1gjc23U42PV84w6UfYe
-          file: doc/api-documentation.yml
+          file: docs/api-documentation.yml
   api-diff:
     if: ${{ github.event_name == 'pull_request' }}
     name: Check API diff on Bump.sh
@@ -36,12 +36,9 @@ jobs:
       - name: Comment pull request with API diff
         uses: bump-sh/github-action@v1
         with:
-          doc: DOCUMENTATION_SLUG_OR_ID
+          doc: https://bump.sh/patienceman/doc/norldverse
           token: g7e6mZESUkimN1gjc23U42PV84w6UfYe
-          file: doc/api-documentation.yml
+          file: docs/api-documentation.yml
           command: diff
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
-
-    

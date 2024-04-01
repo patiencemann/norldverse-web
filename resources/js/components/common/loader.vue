@@ -1,279 +1,70 @@
 <template>
-    <div class="loader-wrapper" id="loader">
-        <div class="content">
-            <div class="planet">
-                <div class="ring"></div>
-                <div class="cover-ring"></div>
-                <div class="spots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </div>
+    <div style="z-index: 999" class="bg-transparent w-full h-full flex flex-col items-center justify-center fixed !top-0 right-0 bottom-0 left-0 backdrop-blur-sm">
+        <div class="loader"></div>
+        <div class="font-bold mt-3">Processing Request...</div>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "Loader",
-    };
+export default {
+    name: "Loader",
+};
 </script>
 
 <style>
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap");
 
-.loader-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.content {
-    width: 300px;
-    height: 300px;
+.loader {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline-block;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border: 3px solid;
+    border-color: rgb(128 164 154) rgb(128 164 154) transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
 }
-
-.content .planet {
-    width: 65%;
-    height: 65%;
-    background-color: #546c8c;
-    border-radius: 100%;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    transform-origin: center center;
-    box-shadow: inset 2px -10px 0px rgba(0, 0, 0, 0.1);
-    -webkit-animation: planet 5s ease infinite alternate;
-    animation: planet 5s ease infinite alternate;
-    /* planet ring */
-    /* to cover the back of the ring */
-    /* planet spots */
-}
-@-webkit-keyframes planet {
-    0% {
-        transform: rotate(10deg);
-    }
-    100% {
-        transform: rotate(-10deg);
-    }
-}
-@keyframes planet {
-    0% {
-        transform: rotate(10deg);
-    }
-    100% {
-        transform: rotate(-10deg);
-    }
-}
-.content .planet .ring {
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 100%;
-    background-color: #bacbd9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform-origin: 33% center;
-    box-shadow: 2px -10px 0px rgba(0, 0, 0, 0.1),
-        inset -5px -10px 0px rgba(0, 0, 0, 0.1);
-    -webkit-animation: ring 3s ease infinite;
-    animation: ring 3s ease infinite;
-    /* small ball */
-    /* inner ring */
-}
-@-webkit-keyframes ring {
-    0% {
-        transform: rotateX(110deg) rotateZ(0deg) translate(-50px, 5px);
-    }
-    100% {
-        transform: rotateX(110deg) rotateZ(360deg) translate(-50px, 5px);
-    }
-}
-@keyframes ring {
-    0% {
-        transform: rotateX(110deg) rotateZ(0deg) translate(-50px, 5px);
-    }
-    100% {
-        transform: rotateX(110deg) rotateZ(360deg) translate(-50px, 5px);
-    }
-}
-.content .planet .ring:before {
+.loader::after,
+.loader::before {
     content: "";
+    box-sizing: border-box;
     position: absolute;
-    width: 10px;
-    height: 30px;
-    border-radius: 100%;
-    background-color: #7ea1bf;
-    z-index: 2;
-    left: calc(0px - 5px);
-    box-shadow: inset -3px 3px 0px rgba(0, 0, 0, 0.2);
-}
-.content .planet .ring:after {
-    content: "";
-    position: absolute;
-    width: 240px;
-    height: 240px;
-    border-radius: 100%;
-    background-color: #7ea1bf;
-    box-shadow: inset 2px -10px 0px rgba(0, 0, 0, 0.1);
-}
-.content .planet .cover-ring {
-    position: absolute;
-    width: 100%;
-    height: 50%;
-    border-bottom-left-radius: 80%;
-    border-bottom-right-radius: 80%;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
-    transform: translate(0px, -17px);
-    background-color: #546c8c;
-    z-index: 2;
-    box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
-}
-.content .planet .spots {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    z-index: 2;
-}
-.content .planet .spots span {
-    width: 30px;
-    height: 30px;
-    background-color: #3c4359;
-    position: absolute;
-    border-radius: 100%;
-    box-shadow: inset -2px 3px 0px rgba(0, 0, 0, 0.3);
-    -webkit-animation: dots 5s ease infinite alternate;
-    animation: dots 5s ease infinite alternate;
-}
-@-webkit-keyframes dots {
-    0% {
-        box-shadow: inset -3px 3px 0px rgba(0, 0, 0, 0.3);
-    }
-    100% {
-        box-shadow: inset 3px 3px 0px rgba(0, 0, 0, 0.3);
-    }
-}
-@keyframes dots {
-    0% {
-        box-shadow: inset -3px 3px 0px rgba(0, 0, 0, 0.3);
-    }
-    100% {
-        box-shadow: inset 3px 3px 0px rgba(0, 0, 0, 0.3);
-    }
-}
-.content .planet .spots span:nth-child(1) {
-    top: 20px;
-    right: 50px;
-}
-.content .planet .spots span:nth-child(2) {
-    top: 40px;
-    left: 50px;
-    width: 15px;
-    height: 15px;
-}
-.content .planet .spots span:nth-child(3) {
-    top: 80px;
-    left: 20px;
-    width: 25px;
-    height: 25px;
-}
-.content .planet .spots span:nth-child(4) {
-    top: 80px;
-    left: 90px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent #ff3d00 #ff3d00;
     width: 40px;
     height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
 }
-.content .planet .spots span:nth-child(5) {
-    top: 160px;
-    left: 70px;
-    width: 15px;
-    height: 15px;
+.loader::before {
+    width: 32px;
+    height: 32px;
+    border-color: rgb(128 164 154) rgb(128 164 154) transparent transparent;
+    animation: rotation 1.5s linear infinite;
 }
-.content .planet .spots span:nth-child(6) {
-    top: 165px;
-    left: 125px;
-    width: 10px;
-    height: 10px;
-}
-.content .planet .spots span:nth-child(7) {
-    top: 90px;
-    left: 150px;
-    width: 15px;
-    height: 15px;
-}
-.content p {
-    color: #bacbd9;
-    font-size: 14px;
-    z-index: 2;
-    position: absolute;
-    bottom: -20px;
-    font-family: "Roboto Mono", monospace;
-    -webkit-animation: text 4s ease infinite;
-    animation: text 4s ease infinite;
-    width: 100px;
-    text-align: center;
-}
-@-webkit-keyframes text {
+
+@keyframes rotation {
     0% {
-        transform: translateX(-30px);
-        letter-spacing: 0px;
-        color: #bacbd9;
-    }
-    25% {
-        letter-spacing: 3px;
-        color: #7ea1bf;
-    }
-    50% {
-        transform: translateX(30px);
-        letter-spacing: 0px;
-        color: #bacbd9;
-    }
-    75% {
-        letter-spacing: 3px;
-        color: #7ea1bf;
+        transform: rotate(0deg);
     }
     100% {
-        transform: translateX(-30px);
-        letter-spacing: 0px;
-        color: #bacbd9;
+        transform: rotate(360deg);
     }
 }
-@keyframes text {
+@keyframes rotationBack {
     0% {
-        transform: translateX(-30px);
-        letter-spacing: 0px;
-        color: #bacbd9;
-    }
-    25% {
-        letter-spacing: 3px;
-        color: #7ea1bf;
-    }
-    50% {
-        transform: translateX(30px);
-        letter-spacing: 0px;
-        color: #bacbd9;
-    }
-    75% {
-        letter-spacing: 3px;
-        color: #7ea1bf;
+        transform: rotate(0deg);
     }
     100% {
-        transform: translateX(-30px);
-        letter-spacing: 0px;
-        color: #bacbd9;
+        transform: rotate(-360deg);
     }
 }
 </style>

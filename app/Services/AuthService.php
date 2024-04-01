@@ -1,10 +1,12 @@
 <?php
     namespace App\Services;
 
+    use App\Mail\NotifyOnboarUser;
     use App\Models\Role;
     use App\Models\User;
     use App\Notifications\DatabaseNotification;
     use Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Facades\Mail;
     use Illuminate\Support\Facades\Session;
     use Patienceman\Notifier\Notifier;
 
@@ -56,6 +58,8 @@
                     'action' => "/"
                 ])->to($user)
             ]);
+
+            Mail::to($this->providerUser['email'])->send(new NotifyOnboarUser($user));
 
             return $user;
         }
