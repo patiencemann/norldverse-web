@@ -4,10 +4,8 @@
     use App\Http\Controllers\DocController;
     use App\Http\Controllers\HomeController;
     use App\Http\Controllers\LoginController;
-    use App\Notifications\CloudNotification;
     use Illuminate\Support\Facades\Auth;
     use Illuminate\Support\Facades\Route;
-    use Patienceman\Notifier\Notifier;
 
     /*
     |--------------------------------------------------------------------------
@@ -58,6 +56,5 @@
 
         Route::get('/logout', [LoginController::class, 'logout'])->name('post.logout');
     });
-
 
     Auth::routes();

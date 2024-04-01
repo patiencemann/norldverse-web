@@ -308,6 +308,8 @@
                         this.responseType = "success";
                         this.response = response.data.message;
 
+                        
+
                         window.location.href = '/dashboard';
                     } catch(error) {
                         this.responseType = "error";

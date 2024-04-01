@@ -2,20 +2,23 @@
     namespace App\Notifications;
 
     use App\Facades\FirebaseMessaging;
+    use App\Mail\NewDocEmail;
+    use App\Models\User;
+    use Illuminate\Support\Facades\Mail;
     use Patienceman\Notifier\NotifyHandler;
     use Patienceman\Notifier\Traits\NotifyPayload;
+    use Mailgun\Mailgun;
 
     class CloudNotification extends NotifyHandler {
         use NotifyPayload;
 
         /**
          * Execute notification
-         * @return mixed
+         * @retxurn mixed
          */
         public function handle() {
-            FirebaseMessaging::make($this->topic, [
-                'title' => $this->subject,
-                'body' => $this->message,
-            ]);
+            foreach (User::all() as $user) {
+                Mail::to($user->email)->send(new NewDocEmail($this->doc));
+            }
         }
     }

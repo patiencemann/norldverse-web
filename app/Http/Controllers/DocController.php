@@ -4,21 +4,20 @@
 
     use App\Filters\DocFilter;
     use App\Http\Requests\StoreDocRequest;
-use App\Http\Resources\BlogCategoryResource;
-use App\Http\Resources\BlogCategoryWithDocs;
-use App\Http\Resources\Public\DocResource as PublicDocResource;
+    use App\Http\Resources\BlogCategoryResource;
+    use App\Http\Resources\Public\DocResource as PublicDocResource;
     use App\Http\Resources\Private\DocResource as PrivateDocResource;
     use App\Jobs\ProcessNewDocEmails;
-use App\Models\BlogCategory;
-use App\Models\Doc;
+    use App\Models\BlogCategory;
+    use App\Models\Doc;
     use App\Models\DocTopic;
-use App\Models\DocView;
-use App\Notifications\CloudNotification;
+    use App\Models\DocView;
+    use App\Notifications\CloudNotification;
     use App\Notifications\DatabaseNotification;
     use App\Traits\FileStorage;
     use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
+    use Illuminate\Http\Request;
+    use Illuminate\Support\Facades\App;
     use Patienceman\Notifier\Notifier;
 
     class DocController extends Controller {
@@ -104,15 +103,16 @@ use Illuminate\Support\Facades\App;
             $doc->docTopic()->create(['topics' => array_map('trim', array_map('strtolower', $request->topics))]);
 
             $notificationPayload = [
-                "subject" => "New published blog",
+                "subject" => authUser()->name." Published a new Blog Post - ".$doc->title,
                 "message" => $doc->title." have been published and ready",
                 'action' => "/dashboard",
-                "topic" => "newBlogs"
+                "topic" => "newBlogs",
+                "doc" => $doc
             ];
 
             (new Notifier())->send([
                 DatabaseNotification::process($notificationPayload)->to(authUser()),
-                // CloudNotification::process($notificationPayload),
+                CloudNotification::process($notificationPayload),
             ]);
 
             ProcessNewDocEmails::dispatch($doc);

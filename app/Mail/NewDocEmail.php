@@ -27,8 +27,9 @@
          * @return $this
          */
         public function build(){
-            return $this->subject($this->doc->title)
-                        ->view('emails.new_doc')
-                        ->with('data', $this->doc);
+            return $this->from('noreply@norldverse.patienceman.com', 'Norldverse')
+                    ->subject($this->doc->title)
+                    ->view('emails.new_doc')
+                    ->with('data', $this->doc);
         }
     }
