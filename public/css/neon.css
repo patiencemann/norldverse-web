@@ -3,11 +3,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Calistoga&family=Rubik+Wet+Paint&display=swap");
+
 :root {
     --font-title: "Source Serif 4", serif;
     --font-body: "Source Serif 4", serif;
     --font-logo: "Calistoga", cursive;
 }
+
 .no-rounded {
     --radius-4: 0;
     --radius-8: 0;
@@ -106,15 +108,11 @@ input[type="search"]:focus {
     font-family: var(--font-title) !important;
 }
 @media (max-width: 768px) {
-    body {
-        overflow-x: auto !important; /* Allow horizontal scrolling on small devices */
-        overflow-y: hidden !important; /* Hide vertical scrolling */
-    }
-
     .site-header {
         padding-top: 40px;
         padding-bottom: 40px;
     }
+
     .header-inner {
         padding: 1.5rem 1rem;
     }
