@@ -30,48 +30,47 @@
                     <p style="font-size: 14px !important" class="mt-4 text-sm text-gray-400 font-semibold dark:text-gray-400">Short description about the blog</p>
                 </div>
 
-                <!-- File input -->
-                <div class="mt-5 mb-6">
-                    <div class="inline-flex mb-3 shadow-sm items-center justify-between pl-3 py-2 pr-4 text-md text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white" aria-label="Component requires Tailwind v3.0">
-                        <span class="text-xs bg-white dark:bg-gray-900 rounded-full text-gray-900 px-3 py-1.5 mr-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
-                            </svg>
-                        </span>
-                        <span class="text-md font-bold">Cover image</span>
+                <div class="flex pr-2 divide-x-2">
+                    <!-- Image preview -->
+                    <div v-if="data.image" class="mr-5">
+                        <img :src="imageUrl" alt="Selected Image" class="mt-4 mb-2 rounded-lg shadow-md" style="max-height: 300px;">
                     </div>
-                    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-[#10172a] hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                            <svg
-                                aria-hidden="true"
-                                class="w-20 h-20 mb-3 text-gray-400"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                                ></path>
-                            </svg>
-                            <p class="mb-2 text-sm text-gray-500 dark:text-gray-400" style="font-size: 17px; line-height: 24px">
-                                <span class="font-semibold">Click to upload</span>
-                                or drag and drop
-                            </p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400" style="font-size: 17px">
-                                SVG, PNG, JPG or GIF (MAX. 800x400px)
-                            </p>
-                        </div>
-                        <input
-                            type="file"
-                            class="hidden"
-                            id="dropzone-file"
-                            @change="onFileChange"
-                        />
-                    </label>
+
+                    <!-- File input -->
+                    <div class="flex items-center justify-center w-1/3">
+                        <label for="dropzone-file" class="flex flex-col ml-5 items-center justify-center w-full border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
+                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                <svg
+                                    aria-hidden="true"
+                                    class="w-20 h-20 mb-3 text-gray-400"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                                    ></path>
+                                </svg>
+                                <p class="mb-2 text-sm text-gray-500 dark:text-gray-400" style="font-size: 17px; line-height: 24px">
+                                    <span class="font-semibold">Click to upload</span>
+                                    or drag and drop
+                                </p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400" style="font-size: 17px">
+                                    SVG, PNG, JPG or GIF (MAX. 800x400px)
+                                </p>
+                            </div>
+                            <input
+                                type="file"
+                                class="hidden"
+                                id="dropzone-file"
+                                @change="onFileChange"
+                            />
+                        </label>
+                    </div>
                 </div>
 
                 <!-- Topics -->
@@ -143,7 +142,7 @@
                 </div>
             </form>
 
-            <div v-if="isLoading" class="bg-transparent w-full h-full z-50 flex items-center justify-center absolute top-0 right-0 bottom-0 left-0 backdrop-blur-sm">
+            <div v-if="isLoading">
                 <loader />
             </div>
 
@@ -254,6 +253,15 @@
                     authUser: null
                 };
             },
+            computed: {
+                imageUrl() {
+                    if (this.data.image instanceof File) {
+                        return URL.createObjectURL(this.data.image);
+                    } else {
+                        return this.data.image;
+                    }
+                }
+            },
             methods: {
                 /**
                  * Check if trying to edit drafts
@@ -345,6 +353,16 @@
                 */
                 onFileChange(e) {
                     this.data.image = e.target.files[0];
+
+                    // Check file type
+                    const allowedTypes = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif'];
+                    if (!allowedTypes.includes(this.data.image.type)) {
+                        this.data.image = '';
+                        this.responseType = "error";
+                        this.response = "The selected file is not a valid image. Please select a file of type: jpeg, png, jpg, gif.";
+                        return;
+                    }
+
                     this.preview = URL.createObjectURL(e.target.files[0]);
                 },
 
@@ -389,6 +407,10 @@
                     return decodeURIComponent(results[2].replace(/\+/g, ' '));
                 },
 
+                /**
+                 * Fetch all categories
+                 *
+                 * */
                 async getAllCategories() {
                     this.categories = [];
                     console.log("there")
