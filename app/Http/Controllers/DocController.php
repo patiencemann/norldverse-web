@@ -248,10 +248,18 @@
             ]);
         }
 
+        /**
+         * Increment the view of a blog post
+         *
+         * @param Doc $doc
+         * @param Request $request
+         * @return \Illuminate\Http\JsonResponse
+         */
         public function blogView(Doc $doc, Request $request) {
             $address = $request->ip();
+            $currentView = DocView::where('doc_id', $doc->id)->where('ip_address', $address)->first();
 
-            if(!DocView::where('doc_id', $doc->id)->where('ip_address', $address)->first()) {
+            if(!$currentView) {
                 $doc->views()->create([
                     'ip_address' => $request->ip()
                 ]);
