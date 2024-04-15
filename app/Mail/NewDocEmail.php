@@ -7,7 +7,7 @@
     use Illuminate\Mail\Mailable;
     use Illuminate\Queue\SerializesModels;
 
-    class NewDocEmail extends Mailable {
+    class NewDocEmail extends Mailable implements ShouldQueue {
         use Queueable, SerializesModels;
 
         public $doc;
