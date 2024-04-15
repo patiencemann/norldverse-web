@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title') Home @stop
+@section('title') Dashboard @stop
 
 @section('style')
     <link rel="stylesheet" href="/css/dashboard.css">
