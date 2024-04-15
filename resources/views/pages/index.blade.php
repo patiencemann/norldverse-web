@@ -54,7 +54,7 @@
 @stop
 
 @section('title')
-    Blogs
+    Home
 @stop
 
 @section('content')

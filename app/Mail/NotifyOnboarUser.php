@@ -8,7 +8,7 @@
     use Illuminate\Mail\Mailable;
     use Illuminate\Queue\SerializesModels;
 
-    class NotifyOnboarUser extends Mailable {
+    class NotifyOnboarUser extends Mailable implements ShouldQueue {
         use Queueable, SerializesModels;
 
         protected User $user;
@@ -16,6 +16,7 @@
         /**
          * Create a new message instance.
          *
+         * @param  User  $user
          * @return void
          */
         public function __construct(User $user) {
@@ -29,8 +30,8 @@
          */
         public function build() {
             return $this->from('noreply@norldverse.patienceman.com', 'Norldverse')
-                    ->subject('Welcome to Norldverse - blogs')
-                    ->view('emails.new_user')
-                    ->with('user', $this->user);
+                        ->subject('Welcome to Norldverse - blogs')
+                        ->view('emails.new_user')
+                        ->with('user', $this->user);
         }
     }

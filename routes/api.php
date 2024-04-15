@@ -92,7 +92,7 @@
 
         /**
          * ---------------------------------------------
-         * ADMIN Routes
+         * Writer Routes
          * ---------------------------------------------
          */
         Route::group(['middleware' => ['hasWritterRole']], function() {
@@ -105,14 +105,21 @@
             Route::post('/docs/categories', [DocController::class, 'categories'])->name('post.categories');
             Route::post('/docs/{doc}', [DocController::class, 'update'])->name('update.docs');
             Route::delete('/docs/{doc}', [DocController::class, 'destroy'])->name('delete.docs');
+        });
 
+        /**
+         * ---------------------------------------------
+         * ADMIN Routes
+         * ---------------------------------------------
+         */
+        Route::group(['middleware' => ['hasAdminRole']], function() {
             /**
              * --------------------------
              * User routes
              * --------------------------
              */
             Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('delete.user');
-
+            Route::post('/users/{user}/role', [UserController::class, 'assignRole'])->name('post.role');
         });
 
         /**

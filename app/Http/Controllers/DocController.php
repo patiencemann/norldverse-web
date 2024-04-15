@@ -14,14 +14,14 @@
     use App\Models\DocView;
     use App\Notifications\CloudNotification;
     use App\Notifications\DatabaseNotification;
-    use App\Traits\FileStorage;
+    use App\Traits\ImageStorage;
     use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\App;
     use Patienceman\Notifier\Notifier;
 
     class DocController extends Controller {
-        use FileStorage;
+        use ImageStorage;
 
         /**
          * Display a listing of the resource.
@@ -91,12 +91,9 @@
          * @return \Illuminate\Http\Response
          */
         public function store(StoreDocRequest $request) {
-            $imageFile = Cloudinary::uploadFile(
-                $request->file('image')->getRealPath(),
-                $options = array(
-                    'public_id' => 'patienceman-docs/' . $request->image,
-                    'folder' => (!App::environment(['local', 'staging'])) ? 'patienceman-docs-prod' : 'patienceman-docs-test'
-            ))->getSecurePath();
+            $imageFile = ($request->hasFile('image'))
+                            ? trim(env('APP_URL'), '/').'/'.$this->storeImage('blogs', $request->file('image'))
+                            : $request->image;
 
             $doc = authUser()->docs()->create($request->validated());
             $doc->docMedia()->create(['file_url' => $imageFile]);
@@ -123,9 +120,15 @@
             ], 201);
         }
 
+        /**
+         * Store a newly created resource in storage.
+         *
+         * @param  StoreDocRequest $request
+         * @return \Illuminate\Http\Response
+         */
         public function categories(Request $request) {
             BlogCategory::create([
-                'name' => $request->name
+                'name' => trim(strtolower($request->name))
             ]);
 
             return response()->json(['message' => "category created"], 201);
@@ -179,12 +182,9 @@
          * @return \Illuminate\Http\Response
          */
         public function update(StoreDocRequest $request, Doc $doc) {
-            $imageFile = Cloudinary::uploadFile(
-                $request->file('image')->getRealPath(),
-                $options = array(
-                    'public_id' => 'patienceman-docs/' . $request->image,
-                    'folder' => (!App::environment(['local', 'staging'])) ? 'patienceman-docs-prod' : 'patienceman-docs-test'
-            ))->getSecurePath();
+            $imageFile = ($request->hasFile('image'))
+                            ? trim(env('APP_URL'), '/').'/'.$this->storeImage('blogs', $request->file('image'))
+                            : $request->image;
 
             $doc->update($request->validated());
             $doc->docMedia()->update([ 'file_url' => $imageFile ]);

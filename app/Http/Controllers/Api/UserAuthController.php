@@ -9,6 +9,7 @@
     use Illuminate\Support\Facades\Hash;
     use App\Models\Role;
     use App\Http\Resources\Private\UserResource as PrivateUserResource;
+    use Illuminate\Support\Facades\Auth;
 
     class UserAuthController extends Controller {
         /**

@@ -6,13 +6,12 @@
     use App\Http\Requests\StoreClientRequest;
     use App\Http\Requests\UpdateUserProfileRequest;
     use App\Http\Requests\UserLoginRequest;
+    use App\Http\Requests\ValidateRoleAssignRequest;
     use App\Http\Resources\Private\UserResource as PrivateUserResource;
     use App\Http\Resources\Public\UserResource as PublicUserResource;
-    use App\Mail\NewsletterEmail;
     use App\Models\Newsletter;
     use App\Models\User;
     use App\Models\UserRequest;
-    use Illuminate\Support\Facades\Mail;
     use Laravel\Passport\ClientRepository;
 
     class UserController extends Controller {
@@ -141,5 +140,16 @@
             ]);
 
             return response()->json(['message' => "Your profile updated"]);
+        }
+
+        /**
+         * Assign role to user
+         *
+         * @param User $user
+         * @return JsonResponse
+         */
+        public function assignRole(User $user, ValidateRoleAssignRequest $request) {
+            $user->attachRole($request->role);
+            return response()->json(['message' => "Role assigned successfully"]);
         }
     }
