@@ -70,7 +70,7 @@
          * ------------------------------------------------
          */
         Route::get('/docs', [DocController::class, 'index'])->name('get.docs');
-        Route::get('/docs/{doc}', [DocController::class, 'show'])->name('get.doc');
+        Route::get('/docs/{doc}', [DocController::class, 'show'])->name('get.single.doc');
         Route::post('/docs/like/{doc}', [DocLikeController::class, 'store'])->name('doc.like');
 
         /**
