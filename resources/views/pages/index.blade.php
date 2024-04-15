@@ -1,60 +1,41 @@
 @extends('layouts.app')
 
 @section('meta-data')
+    <!-- Basic Meta Tags -->
+    <meta name="description" content="Norldverse: journey through life's diverse experiences and valuable lessons. Follow along as I share captivating travel stories and reflections on personal growth, navigating the highs and lows of everyday existence. Through heartwarming tales, practical wisdom, and thought-provoking stories, this compelling mixture of inspiration and guidance will leave you eager for more. Join me as we explore life's rich tapestry and discover new insights to guide us through its myriad challenges and victories.">
+    <meta name="keywords" content="norldverse, norldverse patienceman, blogs, norldverse blogs, manirabona, patience, patienceman, insights, stories, experiences, travel adventures, personal growth, everyday life, anecdotes, practical tips, life's twists and turns">
+    <meta name="author" content="Manirabona Patience">
     <meta data-rh="true" name="theme-color" content="#000000">
 
-    <meta data-rh="true" name="googlebot" content="noodp" />
-    <meta data-rh="true" name="copyright" content="Manirabona Patience" />
-    <meta data-rh="true" name="author" content="Manirabona Patience" />
-    <meta data-rh="true" name="news_keywords"
-        content="manirabona, patience, manirabona patience, norldverse, personal blog, blogs, docs, patienceman">
-    <link data-rh="true" rel="author" href="https://twitter.com/manirabonaW">
-    <meta data-rh="true" name="referrer" content="unsafe-url">
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="norldverse">
+    <meta itemprop="description" content="Norldverse: journey through life's diverse experiences and valuable lessons. Follow along as I share captivating travel stories and reflections on personal growth, navigating the highs and lows of everyday existence. Through heartwarming tales, practical wisdom, and thought-provoking stories, this compelling mixture of inspiration and guidance will leave you eager for more. Join me as we explore life's rich tapestry and discover new insights to guide us through its myriad challenges and victories.">
+    <meta itemprop="image" content="{{ env('APP_URL') }}/img/logos/logo-black.png">
 
-    <meta data-rh="true" name="title" content="norldverse">
-    <meta name="description" content="Different life's insights, stories, and experiences. Whether it's my travel adventures or reflections on personal growth, Journey through the ups and downs Of everyday life. Get ready for inspiring anecdotes, & practical tips to help you navigate life's twists and turns.">
-    <meta name="keywords" content="manirabona, patience, patienceman, insights, stories, experiences, travel adventures, personal growth, everyday life, anecdotes, practical tips, life's twists and turns">
-    <meta data-rh="true" property="article:published_time" content="May 01 2023">
-    <meta data-rh="true" property="article:author" content="{{ env('APP_URL') }}">
-    <meta data-rh="true" name="robots" content="index,follow,max-image-preview:large">
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="{{ env('APP_URL') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="norldverse">
+    <meta property="og:description" content="Norldverse: journey through life's diverse experiences and valuable lessons. Follow along as I share captivating travel stories and reflections on personal growth, navigating the highs and lows of everyday existence. Through heartwarming tales, practical wisdom, and thought-provoking stories, this compelling mixture of inspiration and guidance will leave you eager for more. Join me as we explore life's rich tapestry and discover new insights to guide us through its myriad challenges and victories.">
+    <meta property="og:image" content="{{ env('APP_URL') }}/img/logos/logo-black.png">
 
-    <link data-rh="true" rel="canonical" href="{{ env('APP_URL') }}">
-    <link rel="alternate" type="application/rss+xml" title="Norldverse - blogs &raquo; Feed"
-        href="{{ env('APP_URL') . '/feed.xml' }}" />
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="norldverse">
+    <meta name="twitter:description" content="Norldverse: journey through life's diverse experiences and valuable lessons. Follow along as I share captivating travel stories and reflections on personal growth, navigating the highs and lows of everyday existence. Through heartwarming tales, practical wisdom, and thought-provoking stories, this compelling mixture of inspiration and guidance will leave you eager for more. Join me as we explore life's rich tapestry and discover new insights to guide us through its myriad challenges and victories.">
+    <meta name="twitter:image" content="{{ env('APP_URL') }}/img/logos/logo-black.png">
 
-    {{-- Twitter tags --}}
-    <meta data-rh="true" name="twitter:image:src" content="/img/logos/logo-black.png">
-    <meta data-rh="true" name="twitter:card"
-        content="Norldverse: an online platform where you can find dynamic thinking, experiences, or creative work and share your thoughts with an audience, including technology, tips, personal development, and much more.">
-    <meta data-rh="true" name="twitter:creator" content="Manirabona Patience">
-    <meta data-rh="true" name="twitter:label1" content="Reading time">
-    <meta data-rh="true" name="twitter:data1" content="10 min read">
-    <meta data-rh="true" name="twitter:tile:template:testing" content="2">
-    <meta data-rh="true" name="twitter:tile:image" content="/img/logos/logo-black.png">
-    <meta data-rh="true" name="twitter:tile:info1:icon" content="Person">
-    <meta data-rh="true" name="twitter:tile:info1:text" content="Manirabona Patience">
-    <meta data-rh="true" name="twitter:tile:info2:icon" content="Calendar">
-    <meta data-rh="true" name="twitter:tile:info2:text" content="May 01 2023">
-    <meta data-rh="true" name="twitter:cta" content="Visit Norldverse">
-    <meta data-rh="true" property="twitter:title"
-        content="Norldverse: an online platform where you can find dynamic thinking, experiences, or creative work and share your thoughts with an audience, including technology, tips, personal development, and much more.">
-    <meta data-rh="true" property="twitter:description"
-        content="Norldverse: an online platform where you can find dynamic thinking, experiences, or creative work and share your thoughts with an audience, including technology, tips, personal development, and much more.">
+    <!-- Meta Tags Generated via http://heymeta.com -->
 
-    {{-- Facebook tags --}}
-    <meta data-rh="true" property="og:type" content="article">
-    <meta data-rh="true" property="og:site_name" content="norldverse.patienceman.com">
-    <meta data-rh="true" property="og:title" content="norldverse">
-    <meta data-rh="true" property="og:description"
-        content="Norldverse: an online platform where you can find dynamic thinking, experiences, or creative work and share your thoughts with an audience, including technology, tips, personal development, and much more.">
-    <meta data-rh="true" property="og:image" content="/img/logos/logo-black.png">
-    <meta data-rh="true" property="og:url" content="{{ env('APP_URL') }}">
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Norldverse - blogs &raquo; Feed" href="{{ env('APP_URL') . '/feed.xml' }}" />
 
+    <!-- Styles -->
     <link rel="stylesheet" href="/css/temp.css">
 @stop
 
 @section('title')
-    Home
+Life's Diverse Adventures: A Journey Through Growth and Reflection
 @stop
 
 @section('content')

@@ -15,6 +15,7 @@
     @yield('meta-data')
 
     <link rel="icon" type="image/x-icon" href="/img/logos/logo-black.png">
+    <link data-rh="true" rel="canonical" href="{{ url()->current() }}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
