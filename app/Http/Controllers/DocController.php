@@ -92,7 +92,7 @@
          */
         public function store(StoreDocRequest $request) {
             $imageFile = ($request->hasFile('image'))
-                            ? trim(env('APP_URL'), '/').'/'.$this->storeImage('blogs', $request->file('image'))
+                            ? trim(env('APP_URL'), '/').'/storage/'.$this->storeImage('blogs', $request->file('image'))
                             : $request->image;
 
             $doc = authUser()->docs()->create($request->validated());
@@ -183,7 +183,7 @@
          */
         public function update(StoreDocRequest $request, Doc $doc) {
             $imageFile = ($request->hasFile('image'))
-                            ? trim(env('APP_URL'), '/').'/'.$this->storeImage('blogs', $request->file('image'))
+                            ? trim(env('APP_URL'), '/').'/storage/'.$this->storeImage('blogs', $request->file('image'))
                             : $request->image;
 
             $doc->update($request->validated());
