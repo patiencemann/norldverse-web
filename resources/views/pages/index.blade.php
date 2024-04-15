@@ -2,6 +2,7 @@
 
 @section('meta-data')
     <!-- Basic Meta Tags -->
+    <meta charset='UTF-8'>
     <meta name="description" content="Norldverse: journey through life's diverse experiences and valuable lessons. Follow along as I share captivating travel stories and reflections on personal growth, navigating the highs and lows of everyday existence. Through heartwarming tales, practical wisdom, and thought-provoking stories, this compelling mixture of inspiration and guidance will leave you eager for more. Join me as we explore life's rich tapestry and discover new insights to guide us through its myriad challenges and victories.">
     <meta name="keywords" content="norldverse, norldverse patienceman, blogs, norldverse blogs, manirabona, patience, patienceman, insights, stories, experiences, travel adventures, personal growth, everyday life, anecdotes, practical tips, life's twists and turns">
     <meta name="author" content="Manirabona Patience">
