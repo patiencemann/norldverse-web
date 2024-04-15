@@ -5,8 +5,8 @@
     use Illuminate\Http\UploadedFile;
     use Illuminate\Support\Facades\Storage;
 
-    trait FileStorage {
-        public $prefix = 'patienceman_blogs_';
+    trait ImageStorage {
+        public $prefix = 'norldverse_blogs_image_';
 
         /**
          * Upload given file to public/images

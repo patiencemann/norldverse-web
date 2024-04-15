@@ -10,6 +10,7 @@
         "doctrine/dbal": "^3.6",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "illuminate/mail": "*",
         "kakaprodo/custom-data": "^1.8",
         "laravel/framework": "^8.75",
         "laravel/passport": "~10.0",
