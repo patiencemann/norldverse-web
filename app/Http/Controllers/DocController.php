@@ -15,7 +15,6 @@
     use App\Notifications\CloudNotification;
     use App\Notifications\DatabaseNotification;
     use App\Traits\ImageStorage;
-    use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\App;
     use Patienceman\Notifier\Notifier;

@@ -1,15 +1,12 @@
 @component('mail::message')
-# {{ $data->title }}
+    # {{ $doc->title }}
 
-@component('mail::image', ['url' => $data->docMedia->file_url, 'alt' => $data->title ])
-@endcomponent
+    ![{{ $doc->title }}]({{ $doc->docMedia->file_url }})
 
-{{ $data->caption }}
+    {{ $doc->caption }}
 
-@component('mail::button', ['url' => env('APP_URL').'/docs/'.$data->slug ])
-Read More
-@endcomponent
+    [Read More]({{ env('APP_URL') }}/docs/{{ $doc->slug }})
 
-Thanks,<br>
-{{ config('app.name') }}
+    Thanks,
+    The {{ config('app.name') }} Team
 @endcomponent

@@ -13,18 +13,6 @@ init: ## Initialize the project
 	php artisan event:generate
 	php artisan optimize:clear
     php artisan storage:link
-    composer dump-autoload --optimize
-
-init-prod: ## Initialize the project in prod
-	if ! [ -f .env ];then cp .env.example .env;fi
-	composer update -w
-	composer dump-autoload -o
-	php artisan key:generate
-    php artisan vendor:publish --tag=laravel-mail
-	php artisan event:generate
-	php artisan optimize:clear --production
-    php artisan storage:link
-    composer dump-autoload --optimize
 
 .PHONY: help
 help:

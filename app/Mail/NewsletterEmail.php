@@ -3,22 +3,21 @@
     namespace App\Mail;
 
     use Illuminate\Bus\Queueable;
-    use Illuminate\Contracts\Queue\ShouldQueue;
     use Illuminate\Mail\Mailable;
     use Illuminate\Queue\SerializesModels;
 
     class NewsletterEmail extends Mailable {
         use Queueable, SerializesModels;
 
-        public $emailData;
+        public $data;
 
         /**
          * Create a new message instance.
          *
          * @return void
          */
-        public function __construct($emailData) {
-            $this->emailData = $emailData;
+        public function __construct($data) {
+            $this->data = $data;
         }
 
         /**
@@ -27,8 +26,6 @@
          * @return $this
          */
         public function build() {
-            return $this->subject($this->emailData['title'])
-                        ->view('emails.newsletter')
-                        ->with('data', $this->emailData);
+            return $this->markdown('emails.newsletter')->subject($this->data['title']);
         }
     }

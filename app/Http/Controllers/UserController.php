@@ -9,9 +9,11 @@
     use App\Http\Requests\ValidateRoleAssignRequest;
     use App\Http\Resources\Private\UserResource as PrivateUserResource;
     use App\Http\Resources\Public\UserResource as PublicUserResource;
-    use App\Models\Newsletter;
+use App\Mail\NewsletterEmail;
+use App\Models\Newsletter;
     use App\Models\User;
     use App\Models\UserRequest;
+    use Illuminate\Support\Facades\Mail;
     use Laravel\Passport\ClientRepository;
 
     class UserController extends Controller {
@@ -87,8 +89,8 @@
 
             $newsletter = Newsletter::create($request->validated());
 
-            // $emailData = ['title' => 'Stay in the know with Norldverse Newsletter!'];
-            // Mail::to($newsletter->email)->send(new NewsletterEmail($emailData));
+            $emailData = ['title' => 'Stay in the know with Norldverse Newsletter!'];
+            Mail::to($newsletter->email)->send(new NewsletterEmail($emailData));
 
             return response()->json([
                 'message' => "Thank for subscribe to our newsletter"
