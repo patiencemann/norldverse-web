@@ -28,6 +28,6 @@
          * @return $this
          */
         public function build() {
-            return $this->markdown('emails.new_user')->subject('Welcome to Norldverse - App');
+            return $this->markdown('emails.new_user')->subject('Welcome to Norldverse');
         }
     }
