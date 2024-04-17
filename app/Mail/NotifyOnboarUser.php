@@ -4,14 +4,13 @@
 
     use App\Models\User;
     use Illuminate\Bus\Queueable;
-    use Illuminate\Contracts\Queue\ShouldQueue;
     use Illuminate\Mail\Mailable;
     use Illuminate\Queue\SerializesModels;
 
-    class NotifyOnboarUser extends Mailable implements ShouldQueue {
+    class NotifyOnboarUser extends Mailable {
         use Queueable, SerializesModels;
 
-        protected User $user;
+        public User $user;
 
         /**
          * Create a new message instance.
@@ -29,9 +28,6 @@
          * @return $this
          */
         public function build() {
-            return $this->from('noreply@norldverse.patienceman.com', 'Norldverse')
-                        ->subject('Welcome to Norldverse - blogs')
-                        ->view('emails.new_user')
-                        ->with('user', $this->user);
+            return $this->markdown('emails.new_user')->subject('Welcome to Norldverse - App');
         }
     }

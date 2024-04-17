@@ -1,12 +1,4 @@
-@component('mail::layout')
-{{-- Header --}}
-@slot('header')
-    @component('mail::header', ['url' => config('app.url')])
-        {{ config('app.name') }}
-    @endcomponent
-@endslot
-
-{{-- Body --}}
+@component('mail::message')
 # Welcome to Our Newsletter
 
 Hello {{ $user->name }},
@@ -22,13 +14,6 @@ We hope you enjoy our newsletter. If you have any questions or feedback, feel fr
 
 Thank you for joining us!
 
-Best regards,<br>
+Best regards,
 The {{ config('app.name') }} Team
-
-{{-- Footer --}}
-@slot('footer')
-    @component('mail::footer')
-        You're receiving this email because you signed up for our newsletter.
-    @endcomponent
-@endslot
 @endcomponent
