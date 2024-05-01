@@ -34,11 +34,11 @@
                         <div class="card bg-gray-50 w-100 dark:bg-deep-green-700 border-1 border-gray-300 dark:border-gray-200" style="border: 1px solid #dbe0e4">
                             <div class="card-body p-4">
                                 <div class="comment-contents">
-                                    <div class="comment-title">
+                                    <div class="comment-title !mb-1">
                                         <h5 class="dark:text-[#E8E8ED]">{{ comment.user.name }}</h5>
                                         <span>commented on {{comment.created_at}}</span>
                                     </div>
-                                    <p class="dark:text-[#E8E8ED]">{{ comment.message }}</p>
+                                    <p class="dark:text-[#E8E8ED]" style="font-size: 15px !important; line-height: 23px !important">{{ comment.message }}</p>
                                 </div>
                             </div>
                         </div>
