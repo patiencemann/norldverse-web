@@ -8,9 +8,9 @@
             </div>
             <form class="mb-3 w-full ml-7">
                 <div class="relative px-2 py-2 rounded-xl bg-gray-50 dark:bg-deep-green-900 border border-[#dbe0e4] dark:border-none">
-                    <div class="bg-gray-50 py-2 px-4 mb-4 rounded-lg dark:bg-deep-green-900" style="with: 100%">
+                    <div class="bg-gray-50 py-2 px-4 mb-4 rounded-lg dark:bg-deep-green-900" style="width: 100%">
                         <label for="comment" class="sr-only font-anek">Your comment</label>
-                        <textarea id="comment" v-model="comments" @keypress.enter.prevent="createComment()" rows="1" style="font-size: 17px; line-height: 22px; width: 100%" class="bg-gray-50 px-0 w-full text-base font-anek font-bold leading-9 text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-deep-green-900 pt-3" placeholder="Write your comment..." required></textarea>
+                        <textarea id="comment" v-model="comments" @keypress.enter.prevent="createComment()" rows="4" style="font-size: 17px; line-height: 22px; width: 100%" class="bg-gray-50 px-0 w-full text-base font-anek font-bold leading-9 text-gray-900 border-0 focus:ring-0 focus:outline-none dark:text-white dark:placeholder-gray-400 dark:bg-deep-green-900 pt-3" placeholder="Write your comment..." required></textarea>
                     </div>
                     <div class="absolute right-3 top-6">
                         <button type="button" style="font-size: 16px !important;" :disabled="isLoading" @click="createComment()" class="disabled:opacity-75 shadow-sm relative p-4 h-22 w-22 inline-flex font-anek items-center justify-center py-2.5 px-4 text-sm font-bold text-center text-white bg-deep-green-700 rounded-circle focus:ring-4 focus:ring-primary-200 dark:focus:ring-primary-900 hover:bg-deep-green-800 border border-[#dbe0e4] dark:border-none">
