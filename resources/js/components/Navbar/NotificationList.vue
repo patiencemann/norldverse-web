@@ -21,7 +21,7 @@
             <div class="block px-4 py-2 font-calistoga font-semibold text-center text-gray-700 rounded-t-lg bg-gray-50 dark:bg-gray-800 dark:text-white">
                 Notifications
             </div>
-            <div class="divide-y divide-gray-100 dark:divide-gray-700">
+            <div class="divide-y divide-gray-100 dark:divide-gray-700 overflow-auto max-h-[300px]">
                 <a v-for="notification in notifications" :key="notification.id" class="single-notification px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 dark:bg-deep-green-900 dark:text-gray-50">
                     <div class="flex-shrink-0">
                         <svg class="w-10 h-10 text-gray-300" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"></path></svg>
